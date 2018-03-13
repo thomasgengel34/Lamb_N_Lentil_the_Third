@@ -4,7 +4,7 @@ using System.Linq;
 using System.Web;
 using System.Web.Mvc;
 
-namespace Lamb_N_Lentil.Controllers
+namespace Lamb_N_Lentil.UI.Controllers
 {
     public class HomeController : Controller
     {

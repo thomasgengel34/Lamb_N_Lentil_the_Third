@@ -1,7 +1,7 @@
 ﻿using System.Web;
 using System.Web.Optimization;
 
-namespace Lamb_N_Lentil
+namespace Lamb_N_Lentil.UI
 {
     public class BundleConfig
     {

@@ -1,15 +1,12 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Web;
-using System.Web.Http;
+﻿using System.Web.Http;
 using System.Web.Mvc;
 using System.Web.Optimization;
 using System.Web.Routing;
+using System.Web;
 
-namespace Lamb_N_Lentil
+namespace Lamb_N_Lentil.UI
 {
-    public class MvcApplication : System.Web.HttpApplication
+    public class MvcApplication :  HttpApplication
     {
         protected void Application_Start()
         {
@@ -18,6 +15,7 @@ namespace Lamb_N_Lentil
             FilterConfig.RegisterGlobalFilters(GlobalFilters.Filters);
             RouteConfig.RegisterRoutes(RouteTable.Routes);
             BundleConfig.RegisterBundles(BundleTable.Bundles);
+            ControllerBuilder.Current.DefaultNamespaces.Add("Lamb_N_Lentil.UI");
         }
     }
 }

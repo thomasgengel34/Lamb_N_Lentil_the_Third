@@ -99,9 +99,9 @@
     <None Include="packages.config" />
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\Lamb_N_Lentil\Lamb_N_Lentil.csproj">
+    <ProjectReference Include="..\Lamb_N_Lentil\Lamb_N_Lentil.UI.csproj">
       <Project>{35D082B0-73DB-4CEA-A0A6-41CDA8148B4F}</Project>
-      <Name>Lamb_N_Lentil</Name>
+      <Name>Lamb_N_Lentil.UI</Name>
     </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
