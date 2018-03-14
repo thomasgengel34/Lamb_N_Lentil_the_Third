@@ -10,13 +10,21 @@ using Lamb_N_Lentil.UI.Controllers;
 namespace Lamb_N_Lentil.Tests.Controllers
 {
     [TestClass]
-    public class HomeControllerTest
+    public class HomeControllerShould
     {
+        private HomeController controller;
+
+        [TestInitialize]
+        public void Setup()
+        {
+            controller = new HomeController();
+        }
+
+
+
         [TestMethod]
         public void Index()
-        { 
-            HomeController controller = new HomeController();
-             
+        {  
             ViewResult result = controller.Index() as ViewResult;
              
             Assert.IsNotNull(result);
@@ -24,9 +32,7 @@ namespace Lamb_N_Lentil.Tests.Controllers
 
         [TestMethod]
         public void About()
-        { 
-            HomeController controller = new HomeController();
-             
+        {  
             ViewResult result = controller.About() as ViewResult;
              
             Assert.AreEqual("Your application description page.", result.ViewBag.Message);
@@ -34,9 +40,7 @@ namespace Lamb_N_Lentil.Tests.Controllers
 
         [TestMethod]
         public void Contact()
-        { 
-            HomeController controller = new HomeController();
-             
+        {  
             ViewResult result = controller.Contact() as ViewResult;
              
             Assert.IsNotNull(result);

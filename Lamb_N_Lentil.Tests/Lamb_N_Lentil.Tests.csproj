@@ -89,8 +89,13 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Classes\IEntityShouldContain.cs" />
+    <Compile Include="Classes\EntityClassShould.cs" />
+    <Compile Include="Views\BaseViewTests.cs" />
+    <Compile Include="Views\HomeIndexViewShould.cs" />
+    <Compile Include="Views\SharedViewShould.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="Controllers\HomeControllerTest.cs" />
+    <Compile Include="Controllers\HomeControllerShould.cs" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="App.config" />
@@ -99,11 +104,16 @@
     <None Include="packages.config" />
   </ItemGroup>
   <ItemGroup>
+    <ProjectReference Include="..\Lamb_N_Lentil.Domain\Lamb_N_Lentil.Domain.csproj">
+      <Project>{9A81FA92-BF05-4EE6-A9E8-A774FE9CB062}</Project>
+      <Name>Lamb_N_Lentil.Domain</Name>
+    </ProjectReference>
     <ProjectReference Include="..\Lamb_N_Lentil\Lamb_N_Lentil.UI.csproj">
       <Project>{35D082B0-73DB-4CEA-A0A6-41CDA8148B4F}</Project>
       <Name>Lamb_N_Lentil.UI</Name>
     </ProjectReference>
   </ItemGroup>
+  <ItemGroup />
   <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
   <Target Name="EnsureNuGetPackageBuildImports" BeforeTargets="PrepareForBuild">
     <PropertyGroup>
