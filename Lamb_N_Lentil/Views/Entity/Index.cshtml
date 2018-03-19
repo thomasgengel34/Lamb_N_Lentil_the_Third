@@ -1,0 +1,30 @@
+﻿@model Lamb_N_Lentil.Domain.Entity
+
+@{
+    ViewBag.Title = "Index";
+}
+
+<h2>Index</h2>
+
+<div>
+    <h4>An Ingredient</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.InstanceName)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.InstanceName)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.IngredientsList)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.IngredientsList)
+        </dd>
+
+    </dl>
+</div> 

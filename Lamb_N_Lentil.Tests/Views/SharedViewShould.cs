@@ -1,4 +1,5 @@
-﻿using Microsoft.VisualStudio.TestTools.UnitTesting;
+﻿using System;
+using Microsoft.VisualStudio.TestTools.UnitTesting;
 
 namespace Lamb_N_Lentil.Tests.Views
 {
@@ -21,6 +22,16 @@ namespace Lamb_N_Lentil.Tests.Views
         public void HaveCorrectNameInFooter() => HaveCorrectText("\n<p>&copy;@DateTime.Now.Year", applicationName);
 
         [TestMethod]
-        public void HaveCorrectRevisionDateInFooter() => HaveCorrectText("\n<p>ReleaseDate:", "<p>Release Date: 3/14/2018</p>");
+        public void HaveTodaysRevisionDateInFooter()
+        {
+            DateTime dateTime = DateTime.Now;
+            HaveCorrectText("\n<p>ReleaseDate:", "<p>Release Date: "+dateTime.ToShortDateString());
+        }
+
+        [TestMethod]
+        public void HaveCorrectPromiseInFooter() => HaveCorrectText("\n<p>ReleaseDate:", "A Work in Progress</p>");
+
+        [TestMethod]
+        public void HaveIngredientLinkCorrect() => HaveCorrectText("\n<li>@Html.ActionLink(\"Ingredient\",\"Index\",\"Entity\")</li>", "   <li>@Html.ActionLink(\"Ingredient\", \"Index\", \"Entity\")</li>");
     }
 }

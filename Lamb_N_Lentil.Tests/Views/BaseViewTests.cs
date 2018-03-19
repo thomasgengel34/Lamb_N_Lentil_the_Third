@@ -16,7 +16,7 @@ namespace Lamb_N_Lentil.Tests.Views
         protected string[] linesCompressed;
         protected string applicationName = "Lamb 'N' Lentil";
 
-        internal void HaveCorrectText(string lineBeginning, string textOfInterest)
+        internal void HaveCorrectText(string lineBeginning, string textOfInterest, int lineNumber=-1)
         {
             bool titleHasName = false;
             int i = 0;
@@ -31,7 +31,11 @@ namespace Lamb_N_Lentil.Tests.Views
                 }
                 i++;
             }
-            Assert.IsTrue(titleHasName);
+           Assert.IsTrue(titleHasName);
+            //if (lineNumber>-1)
+            //{
+            //    Assert.AreEqual(i, lineNumber);
+            //}
         }
 
         protected void ObtainFileAsString(string path)

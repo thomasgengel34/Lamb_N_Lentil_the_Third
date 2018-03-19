@@ -1,19 +1,16 @@
 ﻿using System;
+using System.ComponentModel.DataAnnotations; 
 
 namespace Lamb_N_Lentil.Domain
 {
     public class Entity : IEntity
     {
         public int ID { get; set; }
+
+        [Display(Name = "Name")]
         public string InstanceName { get; set; }
-        public string ClassName { get; set; }
-        public string DisplayName { get; set; }
-        public string Discriminator { get; set; }
-        public string Description { get; set; }
-        public string CreatedByUser { get; set; }
-        public DateTime CreationDate { get; set; }
-        public string ModifiedByUser { get; set; }
-        public DateTime ModifiedDate { get; set; }
+
+        [Display(Name = "List of Ingredients")]
         public string IngredientsList { get; set; }
     }
 }

@@ -21,35 +21,10 @@ namespace Lamb_N_Lentil.Tests.Classes
         public void IDProperty() => VerifyPropertyIsValid("ID");
 
         [TestMethod]
-        public void InstanceNameProperty() => VerifyPropertyIsValid("InstanceName");
+        public void InstanceNameProperty() => VerifyPropertyIsValid("InstanceName"); 
 
         [TestMethod]
-        public void ClassNameProperty() => VerifyPropertyIsValid("ClassName");
-
-        [TestMethod]
-        public void DiscriminatorProperty() => VerifyPropertyIsValid("Discriminator");
-
-        [TestMethod]
-        public void DisplayNameProperty() => VerifyPropertyIsValid("DisplayName");
-
-        [TestMethod]
-        public void DescriptionProperty() => VerifyPropertyIsValid("Description");
-
-        [TestMethod]
-        public void IngredientsListProperty() => VerifyPropertyIsValid("IngredientsList");
-
-        [TestMethod]
-        public void CreatedByUserProperty() => VerifyPropertyIsValid("CreatedByUser");
-
-
-        [TestMethod]
-        public void CreationDateProperty() => VerifyPropertyIsValid("CreationDate");
-
-        [TestMethod]
-        public void ModifiedByUserProperty() => VerifyPropertyIsValid("ModifiedByUser");
-
-        [TestMethod]
-        public void ModifiedDateProperty() => VerifyPropertyIsValid("ModifiedDate");
+        public void IngredientsListProperty() => VerifyPropertyIsValid("IngredientsList"); 
 
 
         private void VerifyPropertyIsValid(string value)

@@ -96,6 +96,7 @@
     <Compile Include="Views\SharedViewShould.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Controllers\HomeControllerShould.cs" />
+    <Compile Include="WebAPI\GetFoodsBySearchingUsingFreeTextToLocateFoodsInTheDatabase.cs" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="App.config" />
