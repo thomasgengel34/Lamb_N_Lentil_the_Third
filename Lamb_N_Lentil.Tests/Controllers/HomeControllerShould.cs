@@ -1,16 +1,12 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
 using System.Web.Mvc;
-using Microsoft.VisualStudio.TestTools.UnitTesting;
-using Lamb_N_Lentil;
 using Lamb_N_Lentil.UI.Controllers;
+using Microsoft.VisualStudio.TestTools.UnitTesting;
 
 namespace Lamb_N_Lentil.Tests.Controllers
 {
     [TestClass]
-    public class HomeControllerShould
+    public class HomeControllerShould 
     {
         private HomeController controller;
 
@@ -45,5 +41,7 @@ namespace Lamb_N_Lentil.Tests.Controllers
              
             Assert.IsNotNull(result);
         }
+
+          
     }
 }

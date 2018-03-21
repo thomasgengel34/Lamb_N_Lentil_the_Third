@@ -22,8 +22,8 @@ namespace Lamb_N_Lentil.UI.Controllers
             //    usdaWebApiDataSource: UsdaWebApiDataSource.BrandedFoodProducts
             //    );
             //string description = descriptionTask.Result.ToString();
-            string description = "Salt, Pepper, Egg, Flour, Baking Soda";
-            Entity entity = new Entity() { ID = 1, InstanceName = "Trial", IngredientsList = description };
+            string description = "ground meat, often pork, beef, or veal, along with salt, spices and other flavourings, and breadcrumbs, encased by a skin.";
+            Entity entity = new Entity() { ID = 1, InstanceName = "Sausage", IngredientsList = description };
              return View("Index", entity);
         } 
     }

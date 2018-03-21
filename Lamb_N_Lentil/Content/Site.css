@@ -53,7 +53,7 @@ textarea {
     }
 
 .navbar {
-    margin-left: 00px;
+    margin-left: 0 ;
 }
 
 
@@ -94,5 +94,27 @@ h2 {
 p {
     line-height: 2.4em;
     margin-top: -10px;
+}
+
+.IngredientsTable{
+    background-color:white;
+    width:60%;
+}
+
+.IngredientsTable .rightJustify{
+   text-align:right; 
+}
+
+tr td:first-of-type{
+    width:40%;
+    padding-left:2%;
+}
+
+tr td:last-of-type{
+    padding-right:2%;
+}
+
+tr .leftpadding10 {
+    padding-left:10%;
 }
  

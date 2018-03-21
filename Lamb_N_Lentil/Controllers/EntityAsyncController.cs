@@ -1,16 +1,12 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Net.Http;
 using System.Net.Http.Headers;
+using System.Threading.Tasks;
 using Lamb_N_Lentil.Domain;
-using System.Net.Http.Formatting;
 
 namespace Lamb_N_Lentil.UI.Controllers
 {
-    public class EntityAsyncController
+    public class EntityAsyncController : IEntityAsyncController
     { 
         static string key = "sFtfcrVdSOKA4ip3Z1MlylQmdj5Uw3JoIIWlbeQm";
 
@@ -22,8 +18,7 @@ namespace Lamb_N_Lentil.UI.Controllers
                 HttpClient client = new HttpClient();
                 string http = "https://api.nal.usda.gov/ndb/V2/reports?ndbno=";
                 string apiKey = String.Concat("&type=f&format=json&", ds, "&fgcd=", foodGroup, "&api_key=");
-                int? ndbno = await GetNdbnoFromSearchStringAsync(client, searchString, ds);
-              //  string key = "sFtfcrVdSOKA4ip3Z1MlylQmdj5Uw3JoIIWlbeQm";
+                int? ndbno = await GetNdbnoFromSearchStringAsync(client, searchString, ds); 
                 string foodsUrl = String.Concat(http, ndbno, apiKey, key);
                 client.BaseAddress = new Uri(foodsUrl);
                 client.DefaultRequestHeaders.Accept.Clear();

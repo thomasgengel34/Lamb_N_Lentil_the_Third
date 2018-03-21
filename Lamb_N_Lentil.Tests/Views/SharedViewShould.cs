@@ -31,7 +31,9 @@ namespace Lamb_N_Lentil.Tests.Views
         [TestMethod]
         public void HaveCorrectPromiseInFooter() => HaveCorrectText("\n<p>ReleaseDate:", "A Work in Progress</p>");
 
-        [TestMethod]
-        public void HaveIngredientLinkCorrect() => HaveCorrectText("\n<li>@Html.ActionLink(\"Ingredient\",\"Index\",\"Entity\")</li>", "   <li>@Html.ActionLink(\"Ingredient\", \"Index\", \"Entity\")</li>");
-    }
+        [TestMethod]                                                             
+        public void HaveIngredientLinkCorrect() =>
+            HaveCorrectText("\n<li>@Html.ActionLink(UIType.Ingredient.ToString(),UIType.Index.ToString(),UIType.Entity.ToString())</li>",
+                                     "   <li>@Html.ActionLink( UIType.Ingredient.ToString() , UIType.Index.ToString(), UIType.Entity.ToString())</li>");
+    } 
 }
