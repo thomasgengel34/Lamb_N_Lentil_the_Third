@@ -25,7 +25,7 @@ namespace Lamb_N_Lentil.Tests.Infrastructure
         [TestMethod]
         public void HaveCorrectNumberOfOptions()
         {
-            int numberOfOptions = 6;
+            int numberOfOptions = 7;
             Assert.AreEqual(numberOfOptions+1,fields.Count());
         }
 
@@ -48,6 +48,17 @@ namespace Lamb_N_Lentil.Tests.Infrastructure
                         select f.Name).First();
 
             Assert.AreEqual("Contact", name);
+        }
+
+
+        [TestMethod]
+        public void HasDetails()
+        {
+            var name = (from f in fields
+                        where f.Name == "Details"
+                        select f.Name).First();
+
+            Assert.AreEqual("Details", name);
         }
 
         [TestMethod]

@@ -9,6 +9,7 @@ namespace Lamb_N_Lentil.UI
     {
         About,
         Contact,
+        Details,
         Entity,
         Ingredient,
         Home,

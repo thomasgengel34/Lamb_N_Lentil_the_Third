@@ -18,7 +18,7 @@ namespace Lamb_N_Lentil.Tests.Classes
         }
 
         [TestMethod]
-        public void HaveGetIngredientsFromDescriptionMethod() => VerifyMethodIsValid("GetIngredientsFromDescription");
+        public void HaveGetIngredientsFromDescriptionMethod() => VerifyMethodIsValid("GetIngredientFromSearchText");
 
         [TestMethod]
         public void HaveGetNdbnoFromSearchStringAsyncMethod() => VerifyMethodIsValid("GetNdbnoFromSearchStringAsync");

@@ -2,6 +2,7 @@
 using System.Threading.Tasks;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
 using Lamb_N_Lentil.UI.Controllers;
+using Lamb_N_Lentil.Domain;
 
 namespace Lamb_N_Lentil.Tests.WebAPI
 {
@@ -19,9 +20,9 @@ namespace Lamb_N_Lentil.Tests.WebAPI
             string searchString = " 076606619663";
             string correctIngredients = "INGREDIENTS: GREEN ASPARAGUS, WATER, VINEGAR, SUGAR, SALT, MUSTARD SEEDS, BLACK PEPPER, RED HOT PEPPER, GARLIC";
            
-            string returnedIngredients = await controller.GetIngredientsFromDescription(searchString);
+            Entity entity = await controller.GetIngredientFromSearchText(searchString);
 
-            Assert.AreEqual(correctIngredients, returnedIngredients);
+            Assert.AreEqual(correctIngredients, entity.IngredientsList);
 
         }
     }

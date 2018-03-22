@@ -10,7 +10,7 @@ namespace Lamb_N_Lentil.UI.Controllers
     { 
         static string key = "sFtfcrVdSOKA4ip3Z1MlylQmdj5Uw3JoIIWlbeQm";
 
-        public async Task<string> GetIngredientsFromDescription(string searchString, string foodGroup = "", UsdaWebApiDataSource usdaWebApiDataSource = UsdaWebApiDataSource.BrandedFoodProducts)
+        public async Task<Entity> GetIngredientFromSearchText(string searchString, string foodGroup = "", UsdaWebApiDataSource usdaWebApiDataSource = UsdaWebApiDataSource.BrandedFoodProducts)
         {
             try
             {
@@ -24,7 +24,7 @@ namespace Lamb_N_Lentil.UI.Controllers
                 client.DefaultRequestHeaders.Accept.Clear();
                 client.DefaultRequestHeaders.Accept.Add(new MediaTypeWithQualityHeaderValue("application/json"));
 
-
+                string name = "nothing returned";
                 string description = "nothing returned";
 
                 HttpResponseMessage response2 = await client.GetAsync(foodsUrl);
@@ -39,6 +39,7 @@ namespace Lamb_N_Lentil.UI.Controllers
                     else
                     {
                         description = food.foods[0].food.ing != null ? food.foods[0].food.ing.desc : food.foods[0].food.footnotes[0].desc;
+                        name = food.foods[0].food.desc.Name;
                     }
 
                      
@@ -47,12 +48,14 @@ namespace Lamb_N_Lentil.UI.Controllers
                     //    description = await GetIngredientsByNdbno((int)ndbno, usdaWebApiDataSource);
                     //}
                 }
-                return description;
+                Entity entity = new Entity() { InstanceName = name, IngredientsList = description };
+                 return entity;
 
             }
             catch (Exception ex)
-            {
-                return "error in getting ingredient from web:" + ex.Message;
+            { 
+                Entity entity = new Entity() { InstanceName = "error in getting ingredient from web:" + ex.Message  };
+                return entity; 
             }
         }
 

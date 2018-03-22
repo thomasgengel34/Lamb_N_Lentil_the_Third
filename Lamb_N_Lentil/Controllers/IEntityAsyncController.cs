@@ -6,7 +6,7 @@ namespace Lamb_N_Lentil.UI.Controllers
 {
     public interface IEntityAsyncController
     {
-        Task<string> GetIngredientsFromDescription(string searchString, string foodGroup = "", UsdaWebApiDataSource usdaWebApiDataSource = UsdaWebApiDataSource.BrandedFoodProducts);
+        Task<Entity> GetIngredientFromSearchText(string searchString, string foodGroup = "", UsdaWebApiDataSource usdaWebApiDataSource = UsdaWebApiDataSource.BrandedFoodProducts);
 
         Task<int?> GetNdbnoFromSearchStringAsync(HttpClient client2, string searchString, string dataSource = "");
     }

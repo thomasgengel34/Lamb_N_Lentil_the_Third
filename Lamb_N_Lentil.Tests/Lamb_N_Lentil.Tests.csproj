@@ -92,6 +92,8 @@
     <Compile Include="Classes\IEntityShouldContain.cs" />
     <Compile Include="Classes\EntityClassShould.cs" />
     <Compile Include="Classes\IEntityAsyncControllerShould.cs" />
+    <Compile Include="Controllers\EntityControllerShould.cs" />
+    <Compile Include="Controllers\TestEntityAsyncController.cs" />
     <Compile Include="Infrastructure\UITypeShould.cs" />
     <Compile Include="Views\BaseViewTests.cs" />
     <Compile Include="Views\HomeIndexViewShould.cs" />
