@@ -1,9 +1,9 @@
 ﻿using System;
-using System.ComponentModel.DataAnnotations; 
+using System.ComponentModel.DataAnnotations;
 
 namespace Lamb_N_Lentil.Domain
 {
-    public class Entity : IEntity
+    public class Entity : IIngredient
     {
         public int ID { get; set; }
 
@@ -12,5 +12,18 @@ namespace Lamb_N_Lentil.Domain
 
         [Display(Name = "List of Ingredients")]
         public string IngredientsList { get; set; }
+
+
+
+        int IIngredient.Ndbno { get; set; }
+
+        [Display(Name = "USDA Data Source")]
+        UsdaDataSource IIngredient.UsdaDataSource { get; set; }
+
+        string IIngredient.Description { get; set; }
+
+        [Display(Name = "Manufacturer Or Food Group")]
+        string IIngredient.ManufacturerOrFoodGroup { get; set; }
+
     }
 }

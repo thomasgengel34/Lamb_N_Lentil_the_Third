@@ -1,16 +1,15 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Linq;
 using System.Net.Http;
-using System.Net.Http.Headers;
+using System.Net.Http.Headers; 
 using System.Threading.Tasks;
-using Lamb_N_Lentil.Domain;
 using static Lamb_N_Lentil.Domain.Foods;
 using static Lamb_N_Lentil.Domain.Foods.Food;
+using System.Collections.Generic;
+using System.Linq;
 
-namespace Lamb_N_Lentil.UI.Controllers
+namespace Lamb_N_Lentil.Domain.UsdaInformation
 {
-    public class xxxxxEntityAsyncController// : IEntityAsyncController
+    public class UsdaAsync : IUsdaAsync
     {
         static string key = "sFtfcrVdSOKA4ip3Z1MlylQmdj5Uw3JoIIWlbeQm";
 
@@ -119,7 +118,64 @@ namespace Lamb_N_Lentil.UI.Controllers
             return searchString;
         }
 
-        public async Task<string> GetListOfIngredientsFromTextSearch(string searchString)
+
+        public async Task<List<IIngredient>> GetListOfIngredientsFromTextSearch(string searchString)
+        {
+            UsdaWebApiDataSource usdaWebApiDataSource = UsdaWebApiDataSource.BrandedFoodProducts;
+            string foodGroup = "";
+            try
+            {
+                string ds = usdaWebApiDataSource == UsdaWebApiDataSource.BrandedFoodProducts ? "" : "ds=Standard+Reference";
+                HttpClient client = new HttpClient();
+                string http = "https://api.nal.usda.gov/ndb/V2/reports?ndbno=";
+                string apiKey = String.Concat("&type=f&format=json&", ds, "&fgcd=", foodGroup, "&api_key=");
+
+
+                int? ndbno = await GetNdbnoFromSearchStringAsync(client, searchString, ds);
+                string foodsUrl = String.Concat(http, ndbno, apiKey, key);
+                client.BaseAddress = new Uri(foodsUrl);
+                client.DefaultRequestHeaders.Accept.Clear();
+                client.DefaultRequestHeaders.Accept.Add(new MediaTypeWithQualityHeaderValue("application/json"));
+
+                List<IIngredient> listOfIngredients = new List<IIngredient>();
+
+                HttpResponseMessage response2 = await client.GetAsync(foodsUrl);
+                if (response2.IsSuccessStatusCode)
+                {
+                    //  UsdaFood food = await response2.Content.ReadAsAsync<UsdaFood>();
+                    UsdaFood food = await response2.Content.ReadAsAsync<UsdaFood>();
+                    foreach (var individual in food.list.item)
+                    {
+                        listOfIngredients.Add(new Entity()
+                        {
+                            InstanceName = individual.name,
+                            IngredientsList = individual.ing.desc
+                        });
+                    } 
+                }
+               
+                return listOfIngredients;
+            }
+            catch (Exception ex)
+            {
+
+                throw ex;
+            }
+        }
+
+        public Task<Entity> GetEntityFromTextSearch(string searchText) => throw new NotImplementedException();
+
+        public Task<string> GetManufacturerOrFoodGroup(int ndbno)
+        {
+            throw new Exception("not implemented");
+        }
+
+        public Task<Entity> GetIngredientFromTextSearch(string searchText)
+        {
+            throw new Exception("not implemented");
+        }
+
+        public async Task<string> GetListOfIngredientPropertyFromTextSearch(string searchString)
         {
             UsdaWebApiDataSource usdaWebApiDataSource = UsdaWebApiDataSource.BrandedFoodProducts;
             string foodGroup = "";
@@ -167,15 +223,6 @@ namespace Lamb_N_Lentil.UI.Controllers
 
                 throw ex;
             }
-        }
-
-        public Task<Entity> GetEntityFromTextSearch(string searchText) => throw new NotImplementedException();
-
-        public static string GetManufacturerOrFoodGroup(int ndbno)
-        {
-            string returnValue = "";
-
-            return returnValue;
         }
     }
 }

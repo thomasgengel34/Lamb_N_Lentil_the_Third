@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace Lamb_N_Lentil.Domain
 {
-    public class UsdaSingleItemSearch
+    public class UsdaItem
     {
         public ListOMatic list { get; set; }
 

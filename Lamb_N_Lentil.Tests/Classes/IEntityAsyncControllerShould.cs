@@ -1,6 +1,7 @@
 ﻿using System.Collections.Generic;
 using System.Linq;
 using System.Reflection;
+using Lamb_N_Lentil.Domain.UsdaInformation;
 using Lamb_N_Lentil.UI.Controllers;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
 
@@ -13,17 +14,11 @@ namespace Lamb_N_Lentil.Tests.Classes
 
         public IEntityAsyncControllerShould()
         {
-            MethodInfo[] methodInfos = typeof(IEntityAsyncController).GetMethods();
+            MethodInfo[] methodInfos = typeof(UsdaAsync).GetMethods();
             listOfMethodInfos = methodInfos.Select(i => i).ToList();
         }
 
-        [TestMethod]
-        public void HaveGetIngredientsFromDescriptionMethod() => VerifyMethodIsValid("GetIngredientFromSearchText");
 
-        [TestMethod]
-        public void HaveGetNdbnoFromSearchStringAsyncMethod() => VerifyMethodIsValid("GetNdbnoFromSearchStringAsync");
-
-       
 
         private void VerifyMethodIsValid(string value)
         {
@@ -34,5 +29,16 @@ namespace Lamb_N_Lentil.Tests.Classes
             Assert.AreEqual(methodName.First(), value);
             Assert.IsNotNull(methodName.Count());
         }
+
+        [TestMethod]
+        public void HaveGetIngredientsFromDescriptionMethod() => VerifyMethodIsValid("GetIngredientFromSearchText");
+
+        [TestMethod]
+        public void HaveGetNdbnoFromSearchStringAsyncMethod() => VerifyMethodIsValid("GetNdbnoFromSearchStringAsync");
+
+        [TestMethod]
+        public void HaveGetListOfIngredientsFromTextSearchMethod() => VerifyMethodIsValid("GetListOfIngredientsFromTextSearch");
+
+
     }
 }

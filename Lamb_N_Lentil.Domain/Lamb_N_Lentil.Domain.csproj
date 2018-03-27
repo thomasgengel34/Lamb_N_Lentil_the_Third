@@ -33,6 +33,10 @@
     <Reference Include="System" />
     <Reference Include="System.ComponentModel.DataAnnotations" />
     <Reference Include="System.Core" />
+    <Reference Include="System.Net.Http.Formatting, Version=4.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\packages\Microsoft.AspNet.WebApi.Client.5.2.3\lib\net45\System.Net.Http.Formatting.dll</HintPath>
+    </Reference>
     <Reference Include="System.Xml.Linq" />
     <Reference Include="System.Data.DataSetExtensions" />
     <Reference Include="Microsoft.CSharp" />
@@ -43,9 +47,14 @@
   <ItemGroup>
     <Compile Include="Entity.cs" />
     <Compile Include="IEntity.cs" />
+    <Compile Include="IIngredient.cs" />
+    <Compile Include="MapUsdaFoodToIngredient.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="UsdaDataSource.cs" />
     <Compile Include="UsdaFood.cs" />
-    <Compile Include="UsdaSingleItemSearch.cs" />
+    <Compile Include="UsdaInformation\UsdaAsync.cs" />
+    <Compile Include="UsdaInformation\IUsdaAync.cs" />
+    <Compile Include="UsdaItem.cs" />
     <Compile Include="UsdaWebApiDataSource.cs" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

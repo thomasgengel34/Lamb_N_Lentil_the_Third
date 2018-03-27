@@ -10,47 +10,18 @@ namespace Lamb_N_Lentil.UI.Controllers
 {
     public class EntityController : Controller
     {
-        IEntityAsyncController apiController;
+         Controller controller;
 
-            public EntityController()
-        {
-                 apiController = new EntityAsyncController();
-        }
-
-        public EntityController(IEntityAsyncController controller = null)
-        {
-            if (controller == null)
-            {
-                apiController = new EntityAsyncController();
-            }
-            else
-            {
-                apiController = controller;
-            }
-        }
-
-
-        // GET: Entity
-        public ActionResult Index()
-        {
-            return View();
-        }
-
-        public async Task<ActionResult> ShowResults(string searchText)
-        {
-            // searchText = " 076606619663";
-
-           Entity entity= await apiController.GetIngredientFromSearchText(searchText);
              
-            return View(UIType.Index.ToString(), entity);
-        }
 
-        public async Task<ActionResult> Details(string searchText)
+        public EntityController( Controller _controller = null)
         {
-            Entity entity = await apiController.GetIngredientFromSearchText(searchText); 
-
-          
-            return View(UIType.Details.ToString(), entity);
+            if (_controller != null) 
+            {
+                controller = _controller;
+            }
         }
+
+
     }
 }
