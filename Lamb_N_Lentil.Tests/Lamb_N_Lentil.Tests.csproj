@@ -92,16 +92,20 @@
     <Compile Include="Classes\IEntityShouldContain.cs" />
     <Compile Include="Classes\EntityClassShould.cs" />
     <Compile Include="Classes\IEntityAsyncControllerShould.cs" />
+    <Compile Include="Classes\MapUsdaFoodToIngredientShould.cs" />
     <Compile Include="Controllers\EntityControllerShould.cs" />
     <Compile Include="Controllers\TestUsdaAsyncController.cs" />
     <Compile Include="Controllers\EnteringTextInTheSearchBoxOnTheIngredientsIndexViewShouldReturn.cs" />
     <Compile Include="Infrastructure\UITypeShould.cs" />
+    <Compile Include="UsdaInformationTest\UsdaAsyncTest.cs" />
+    <Compile Include="ViewModelTest\IngredientListViewModelShould.cs" />
     <Compile Include="Views\BaseViewTests.cs" />
     <Compile Include="Views\HomeContactViewShould.cs" />
     <Compile Include="Views\HomeIndexViewShould.cs" />
     <Compile Include="Views\SharedViewShould.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Controllers\HomeControllerShould.cs" />
+    <Compile Include="Views\IngredientsIndexShould.cs" />
     <Compile Include="WebAPI\GetFoodsBySearchingUsingFreeTextToLocateFoodsInTheDatabase.cs" />
   </ItemGroup>
   <ItemGroup>

@@ -18,6 +18,7 @@ namespace Lamb_N_Lentil.Tests.Views
 
         internal void HaveCorrectText(string lineBeginning, string textOfInterest, int lineNumber=-1)
         {
+            lineBeginning = CompressString(lineBeginning);
             bool titleHasName = false;
             int i = 0;
             foreach (string line in linesCompressed)
@@ -44,8 +45,10 @@ namespace Lamb_N_Lentil.Tests.Views
             fileContents = reader.ReadToEnd();
             reader.Close();
             lines = fileContents.Split('\r');
-            string fileContentsCompressed = Regex.Replace(fileContents, " ", "");
+            string fileContentsCompressed = CompressString(fileContents);
             linesCompressed = fileContentsCompressed.Split('\r');
         }
+
+        private string CompressString(string toBeCompressed) => Regex.Replace(toBeCompressed, " ", "");
     }
 }

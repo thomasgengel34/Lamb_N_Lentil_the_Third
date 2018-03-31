@@ -1,0 +1,55 @@
+﻿@model IEnumerable<Lamb_N_Lentil.UI.Models.IngredientListViewModel>
+
+@{
+    ViewBag.Title = "Index";
+}
+ 
+<h1>Search For Ingredients</h1>
+ 
+    @using (Html.BeginForm("ShowResults", "Ingredients", new { Controller = "Ingredients", searchText = "searchText" }))
+    {
+
+    <p>  <label>Enter text to search for ingredients from the branded food database:</label></p>
+    <p> <input name="searchText" value="searchText" maxlength="43" /></p>
+
+    <input type="submit" value="Search" />}
+  
+    <table class="table">
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.UsdaDataSource)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Ndbno)
+            </th>
+            <th>
+               @Html.DisplayNameFor(model => model.Description) 
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.ManufacturerOrFoodGroup)
+            </th>
+            <th></th>
+        </tr>
+
+        @foreach (var item in Model)
+        {
+            <tr>
+                <td>
+                    @Html.DisplayFor(model => item.UsdaDataSource)
+                </td>
+                <td>
+                    @Html.DisplayFor(model => item.Ndbno)
+                </td>
+                <td>
+                    @Html.DisplayFor(model => item.Description)
+                </td>
+                <td>
+               @Html.DisplayFor(model => item.ManufacturerOrFoodGroup)
+                </td>
+                <td>
+                    @*@Html.ActionLink("Details", "Detail", new {Controller = "Ingredients",  id = item.Ndbno })*@ 
+                </td>
+            </tr>
+        }
+
+    </table>

@@ -6,12 +6,16 @@ using System.Web;
 using System.Web.Mvc;
 using Lamb_N_Lentil.Domain;
 using Lamb_N_Lentil.Domain.UsdaInformation;
+using Lamb_N_Lentil.UI.Models;
 
 namespace Lamb_N_Lentil.UI.Controllers
 {
     public class IngredientsController : EntityController
     {
-        static IIngredient ingredient;
+        public IngredientsController()
+        {
+
+        }
 
         public IngredientsController(Controller _controller = null) :base()
         {
@@ -20,17 +24,21 @@ namespace Lamb_N_Lentil.UI.Controllers
         // GET: Ingredients
         public ActionResult Index()
         {
-            return View();
+            List<IngredientListViewModel> vm = new List<IngredientListViewModel>();
+            return View(UIType.Index.ToString(), vm);
         }
          
 
         public async Task<ActionResult> ShowResults(string searchText)
-        {
+        { 
+           var ingredients = await new UsdaAsync().GetListOfIngredientsFromTextSearch(searchText);
+            List<IngredientListViewModel> vm = new List<IngredientListViewModel>();
+            foreach (IIngredient ingredient in ingredients)
+            {
+                vm.Add(IngredientListViewModel.MapIIngredientToIngredientListViewModel(ingredient));
+            }
 
-            List<IIngredient> ingredients = await new UsdaAsync().GetListOfIngredientsFromTextSearch( searchText);
-
-            return View(UIType.Index.ToString(), ingredients);
-        }
-         
+            return View(UIType.Index.ToString(), vm);
+        } 
     }
 }

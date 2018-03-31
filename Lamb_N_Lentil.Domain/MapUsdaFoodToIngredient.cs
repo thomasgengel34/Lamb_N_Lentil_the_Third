@@ -1,36 +1,62 @@
 ﻿using System;
+using System.Collections.Generic;
+using System.Threading.Tasks;
 using Lamb_N_Lentil.Domain.UsdaInformation;
 
 namespace Lamb_N_Lentil.Domain
 {
-    public class MapUsdaFoodToIngredient
-    {
 
-        public static async System.Threading.Tasks.Task<IIngredient> ConvertUsdaFoodToIIngredientAsync(UsdaFood food, int index)
+
+    public class MapUsdaFoodToIngredient : IMapUsdaFoodToIngredient
+    {
+        public static async Task<IIngredient> ConvertUsdaFoodToIIngredientAsync(Foods[] foods, int index, string ds = "BL")
         {
             IIngredient ingredient = new Entity();
 
-            ingredient.InstanceName = food.foods[index].food.desc.Name;
+            ingredient.InstanceName = foods[index].food.desc.Name;
 
-            ingredient.IngredientsList = food.foods[index].food.ing.desc; 
+            ingredient.IngredientsList = foods[index].food.ing.desc;
 
-            ingredient.Ndbno = food.foods[index].food.desc.Ndbno;
+            ingredient.Ndbno = foods[index].food.desc.Ndbno;
 
-            if (food.list.ds == "BL")
+            if (ds == "BL")
             {
                 ingredient.UsdaDataSource = UsdaDataSource.BrandedFoodProducts;
             }
             else
             {
                 ingredient.UsdaDataSource = UsdaDataSource.StandardReference;
-            } 
+            }
 
             ingredient.Description = ingredient.InstanceName;
-            ingredient.ManufacturerOrFoodGroup =await new UsdaAsync().GetManufacturerOrFoodGroup(ingredient.Ndbno);
+            ingredient.ManufacturerOrFoodGroup = await new MapUsdaFoodToIngredient().GetManufacturerOrFoodGroup(ingredient.Ndbno);
 
             return ingredient;
         }
 
-       
+        public async Task<string> GetManufacturerOrFoodGroup(int ndbno) => await new UsdaAsync().GetManufacturerOrFoodGroup(ndbno);
+
+        internal static async Task<List<IIngredient>> ConvertUsdaFoodToListOfIngredients(UsdaFood usdaFood)
+        {
+            List<IIngredient> ingredients = new List<IIngredient>();
+            int index = 0;
+
+            foreach (var food in usdaFood.list.item)
+            {
+                if (food.ds == "BL")
+                {
+                    IIngredient ingredient = new Entity();
+                    ingredient.Ndbno = food.ndbno;
+                    ingredient.UsdaDataSource = (food.ds == "sr") ? UsdaDataSource.StandardReference : UsdaDataSource.BrandedFoodProducts;
+                    ingredient.InstanceName = food.name;
+                    ingredient.Description = food.name;
+                    ingredient.ManufacturerOrFoodGroup = await new MapUsdaFoodToIngredient().GetManufacturerOrFoodGroup(ingredient.Ndbno);
+
+                    ingredients.Add(ingredient);
+                    index++;
+                }
+            }
+            return ingredients;
+        }
     }
 }

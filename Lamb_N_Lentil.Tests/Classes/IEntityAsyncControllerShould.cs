@@ -28,17 +28,9 @@ namespace Lamb_N_Lentil.Tests.Classes
 
             Assert.AreEqual(methodName.First(), value);
             Assert.IsNotNull(methodName.Count());
-        }
+        } 
 
         [TestMethod]
-        public void HaveGetIngredientsFromDescriptionMethod() => VerifyMethodIsValid("GetIngredientFromSearchText");
-
-        [TestMethod]
-        public void HaveGetNdbnoFromSearchStringAsyncMethod() => VerifyMethodIsValid("GetNdbnoFromSearchStringAsync");
-
-        [TestMethod]
-        public void HaveGetListOfIngredientsFromTextSearchMethod() => VerifyMethodIsValid("GetListOfIngredientsFromTextSearch");
-
-
+        public void HaveGetListOfIngredientsFromTextSearchMethod() => VerifyMethodIsValid("GetListOfIngredientsFromTextSearch"); 
     }
 }

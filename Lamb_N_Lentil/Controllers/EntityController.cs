@@ -12,7 +12,10 @@ namespace Lamb_N_Lentil.UI.Controllers
     {
          Controller controller;
 
-             
+        public EntityController()
+        {
+
+        }
 
         public EntityController( Controller _controller = null)
         {
