@@ -48,15 +48,15 @@
     <Compile Include="Entity.cs" />
     <Compile Include="IEntity.cs" />
     <Compile Include="IIngredient.cs" />
-    <Compile Include="IMapUsdaFoodToIngredient.cs" />
-    <Compile Include="MapUsdaFoodToIngredient.cs" />
+    <Compile Include="UsdaInformation\IMapUsdaFoodToIngredient.cs" />
+    <Compile Include="UsdaInformation\MapUsdaFoodToIngredient.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="UsdaDataSource.cs" />
-    <Compile Include="UsdaFood.cs" />
-    <Compile Include="UsdaFoodReport.cs" />
+    <Compile Include="UsdaInformation\UsdaDataSource.cs" />
+    <Compile Include="UsdaInformation\UsdaFood.cs" />
+    <Compile Include="UsdaInformation\UsdaFoodReport.cs" />
     <Compile Include="UsdaInformation\UsdaAsync.cs" />
     <Compile Include="UsdaInformation\IUsdaAync.cs" />
-    <Compile Include="UsdaWebApiDataSource.cs" />
+    <Compile Include="UsdaInformation\UsdaWebApiDataSource.cs" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

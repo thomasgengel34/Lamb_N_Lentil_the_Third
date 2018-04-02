@@ -1,10 +1,7 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Linq;
 using System.Net.Http;
-using System.Text;
 using System.Threading.Tasks;
-using Lamb_N_Lentil.Domain;
+using Lamb_N_Lentil.Domain.UsdaInformation;
 using Lamb_N_Lentil.UI.Controllers;
 
 namespace Lamb_N_Lentil.Tests.Controllers

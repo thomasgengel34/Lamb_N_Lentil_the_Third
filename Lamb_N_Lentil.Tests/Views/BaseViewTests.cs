@@ -39,7 +39,7 @@ namespace Lamb_N_Lentil.Tests.Views
             //}
         }
 
-        protected void ObtainFileAsString(string path)
+        internal void ObtainFileAsString(string path)
         {
             StreamReader reader = File.OpenText(path);
             fileContents = reader.ReadToEnd();
@@ -49,6 +49,6 @@ namespace Lamb_N_Lentil.Tests.Views
             linesCompressed = fileContentsCompressed.Split('\r');
         }
 
-        private string CompressString(string toBeCompressed) => Regex.Replace(toBeCompressed, " ", "");
+        internal string CompressString(string toBeCompressed) => Regex.Replace(toBeCompressed, " ", "");
     }
 }

@@ -1,9 +1,7 @@
 ﻿using System;
 using System.Net.Http;
 using System.Net.Http.Headers;
-using System.Threading.Tasks;
-using static Lamb_N_Lentil.Domain.Foods;
-using static Lamb_N_Lentil.Domain.Foods.Food;
+using System.Threading.Tasks; 
 using System.Collections.Generic;
 using System.Linq;
 
@@ -29,8 +27,7 @@ namespace Lamb_N_Lentil.Domain.UsdaInformation
                 usdaFood = await response.Content.ReadAsAsync<UsdaFood>();
 
             }
-            List<IIngredient> ingredients = await MapUsdaFoodToIngredient.ConvertUsdaFoodToListOfIngredients(usdaFood);
-
+            List<IIngredient> ingredients = await MapUsdaFoodToIngredient.ConvertUsdaFoodToListOfIngredients(usdaFood); 
             return ingredients;
         }
 

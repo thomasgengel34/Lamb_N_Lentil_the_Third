@@ -2,6 +2,7 @@
 using Lamb_N_Lentil.Domain;
 using Lamb_N_Lentil.UI.Models;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
+using Lamb_N_Lentil.Domain.UsdaInformation;
 
 namespace Lamb_N_Lentil.Tests.ViewModelTest
 {

@@ -1,4 +1,6 @@
-﻿namespace Lamb_N_Lentil.Domain
+﻿using Lamb_N_Lentil.Domain.UsdaInformation;
+
+namespace Lamb_N_Lentil.Domain
 {
     public interface IIngredient : IEntity
     {

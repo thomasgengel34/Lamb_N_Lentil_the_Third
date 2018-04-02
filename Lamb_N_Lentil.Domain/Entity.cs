@@ -1,5 +1,6 @@
 ﻿using System;
 using System.ComponentModel.DataAnnotations;
+using Lamb_N_Lentil.Domain.UsdaInformation;
 
 namespace Lamb_N_Lentil.Domain
 {

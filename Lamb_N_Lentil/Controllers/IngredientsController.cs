@@ -25,6 +25,7 @@ namespace Lamb_N_Lentil.UI.Controllers
         public ActionResult Index()
         {
             List<IngredientListViewModel> vm = new List<IngredientListViewModel>();
+            ViewBag.SearchText = "Write Your Query Here";
             return View(UIType.Index.ToString(), vm);
         }
          

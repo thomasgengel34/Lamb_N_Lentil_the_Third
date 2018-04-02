@@ -1,6 +1,6 @@
 ﻿using System.ComponentModel.DataAnnotations;
 
-namespace Lamb_N_Lentil.Domain
+namespace Lamb_N_Lentil.Domain.UsdaInformation
 {
     public enum UsdaDataSource
     {

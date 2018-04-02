@@ -1,8 +1,5 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Web;
-using Lamb_N_Lentil.Domain;
+﻿using Lamb_N_Lentil.Domain;
+using Lamb_N_Lentil.Domain.UsdaInformation;
 
 namespace Lamb_N_Lentil.UI.Models
 {

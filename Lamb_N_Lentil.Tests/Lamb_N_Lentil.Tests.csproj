@@ -93,6 +93,7 @@
     <Compile Include="Classes\EntityClassShould.cs" />
     <Compile Include="Classes\IEntityAsyncControllerShould.cs" />
     <Compile Include="Classes\MapUsdaFoodToIngredientShould.cs" />
+    <Compile Include="Content\SiteCssFileShould.cs" />
     <Compile Include="Controllers\EntityControllerShould.cs" />
     <Compile Include="Controllers\TestUsdaAsyncController.cs" />
     <Compile Include="Controllers\EnteringTextInTheSearchBoxOnTheIngredientsIndexViewShouldReturn.cs" />
