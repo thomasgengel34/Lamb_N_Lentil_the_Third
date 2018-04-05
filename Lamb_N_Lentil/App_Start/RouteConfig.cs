@@ -24,6 +24,28 @@ namespace Lamb_N_Lentil.UI
                     id = UrlParameter.Optional
                 } 
             );
+
+            routes.MapRoute(
+                name: "Default No Param",
+                url: "{controller}/{action} ",
+                 namespaces: new string[] { "Lamb_N_Lentil.UI.Controllers" },
+                defaults: new
+                {
+                    controller = "Home",
+                    action = "Index" 
+                }
+            );
+
+            routes.MapRoute(
+              name: "Default One Word",
+              url: "{controller}",
+               namespaces: new string[] { "Lamb_N_Lentil.UI.Controllers" },
+              defaults: new
+              {
+                  controller = "Home",
+                  action = "Index"
+              }
+          );
         }
     }
 }

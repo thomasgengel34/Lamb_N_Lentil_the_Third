@@ -1,7 +1,7 @@
 ﻿using System;
 using System.Net.Http;
 using System.Net.Http.Headers;
-using System.Threading.Tasks; 
+using System.Threading.Tasks;
 using System.Collections.Generic;
 using System.Linq;
 
@@ -27,11 +27,19 @@ namespace Lamb_N_Lentil.Domain.UsdaInformation
                 usdaFood = await response.Content.ReadAsAsync<UsdaFood>();
 
             }
-            List<IIngredient> ingredients = await MapUsdaFoodToIngredient.ConvertUsdaFoodToListOfIngredients(usdaFood); 
+            List<IIngredient> ingredients;
+            if (usdaFood.list != null)
+            {
+                ingredients = await MapUsdaFoodToIngredient.ConvertUsdaFoodToListOfIngredients(usdaFood);
+            }
+            else
+            {
+                ingredients = new List<IIngredient>();
+            }
             return ingredients;
         }
 
-       public static string ReduceStringLengthToWhatWillWorkOnUSDA(string searchString="")
+        public static string ReduceStringLengthToWhatWillWorkOnUSDA(string searchString = "")
         {
             const int MaxStringLengthThatWillWork = 43;
             searchString = searchString ?? "";
@@ -44,7 +52,7 @@ namespace Lamb_N_Lentil.Domain.UsdaInformation
         }
 
 
-        public async Task<string> GetManufacturerOrFoodGroup(  int ndbno)
+        public async Task<string> GetManufacturerOrFoodGroup(int ndbno)
         {
             HttpClient client = new HttpClient();
 
@@ -66,7 +74,7 @@ namespace Lamb_N_Lentil.Domain.UsdaInformation
             string manufacturer = usdaFoodReport.report.food.manu;
             string ds = usdaFoodReport.report.food.ds;
 
-            string  manufacturerOrFoodGroup=manufacturer ;
+            string manufacturerOrFoodGroup = manufacturer;
 
             if (manufacturer == "")
             {

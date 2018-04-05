@@ -1,10 +1,5 @@
-﻿using System;
-using System.Collections.Generic;
-using System.IO;
-using System.Linq;
-using System.Text;
+﻿using System.IO;
 using System.Text.RegularExpressions;
-using System.Threading.Tasks;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
 
 namespace Lamb_N_Lentil.Tests.Views
@@ -16,7 +11,12 @@ namespace Lamb_N_Lentil.Tests.Views
         protected string[] linesCompressed;
         protected string applicationName = "Lamb 'N' Lentil";
 
-        internal void HaveCorrectText(string lineBeginning, string textOfInterest, int lineNumber=-1)
+        internal void HaveCorrectText(string text)
+        {
+            HaveCorrectText("\n" + text, text);
+        }
+
+        internal void HaveCorrectText(string lineBeginning, string textOfInterest, int lineNumber = -1)
         {
             lineBeginning = CompressString(lineBeginning);
             bool titleHasName = false;
@@ -25,6 +25,7 @@ namespace Lamb_N_Lentil.Tests.Views
             {
                 if (line.StartsWith(lineBeginning))
                 {
+                 //    textOfInterest = "Look up ingredients on :<a href=\"https://ndb.nal.usda.gov/ndb\" target=\"_blank\">the USDA nutritional site</a>";
                     if (lines[i].Contains(textOfInterest))
                     {
                         titleHasName = true;
@@ -32,11 +33,7 @@ namespace Lamb_N_Lentil.Tests.Views
                 }
                 i++;
             }
-           Assert.IsTrue(titleHasName);
-            //if (lineNumber>-1)
-            //{
-            //    Assert.AreEqual(i, lineNumber);
-            //}
+            Assert.IsTrue(titleHasName);
         }
 
         internal void ObtainFileAsString(string path)

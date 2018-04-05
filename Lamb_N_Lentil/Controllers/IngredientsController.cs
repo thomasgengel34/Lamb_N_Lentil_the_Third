@@ -38,7 +38,14 @@ namespace Lamb_N_Lentil.UI.Controllers
             {
                 vm.Add(IngredientListViewModel.MapIIngredientToIngredientListViewModel(ingredient));
             }
-
+            if (ingredients.Count==0)
+            {
+                ViewBag.NoResults = "Nothing was found.  Please try a different search.";
+            }
+            else
+            {
+                ViewBag.NoResults = "";
+            }
             return View(UIType.Index.ToString(), vm);
         } 
     }

@@ -5,14 +5,13 @@
 }
 
 <h1>Search For Ingredients</h1>
+<h2>@ViewBag.NoResults</h2>
 
-@using (Html.BeginForm("ShowResults", "Ingredients", new { Controller = "Ingredients", searchText = "searchText" }))
+@using (Html.BeginForm("ShowResults", UIType.Ingredients.ToString(), new { Controller = UIType.Ingredients.ToString(), searchText = "searchText" }))
 {
 
     <p>  <label>Enter text to search for ingredients from the branded food database:</label></p>
-    <p width="1000">     @Html.TextBox("searchText", null, new { @class = "ingredientTextBox",
-                        maxlength = "43" }) 
-    </p>
+    <p>     @Html.TextBox("searchText", "Enter Description of What You are Looking For Here", new { @class = "ingredientTextBox", maxlength = "43" }) </p>
   
   <p>  <input type="submit" value="Search" /></p>
 }

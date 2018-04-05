@@ -4,7 +4,7 @@ using Microsoft.VisualStudio.TestTools.UnitTesting;
 namespace Lamb_N_Lentil.Tests.Views
 {
     [TestClass]
-    public class IngredientsIndexShould:BaseViewTests
+    public class IngredientsIndexShould : BaseViewTests
     {
         private static string filePath = @"C:\Dev\TGE\Lamb_N_Lentil\Lamb_N_Lentil\Views\Ingredients\Index.cshtml";
 
@@ -16,16 +16,29 @@ namespace Lamb_N_Lentil.Tests.Views
 
         [TestMethod]
         public void HaveCorrectSearchForm() => HaveCorrectText(
-            "\n    @using (Html.BeginForm(\"ShowResults\", \"Ingredients\", new { Controller = \"Ingredients\", searchText = \"searchText\" }))",
-            "@using (Html.BeginForm(\"ShowResults\", \"Ingredients\", new { Controller = \"Ingredients\", searchText = \"searchText\" }))");
+            "@using (Html.BeginForm(\"ShowResults\", UIType.Ingredients.ToString(), new { Controller = UIType.Ingredients.ToString(), searchText = \"searchText\" }))" ) ;
 
         [TestMethod]
         public void HaveCorrectLabelForTextSearch() => HaveCorrectText(
-        "\n <p>  <label>Enter text to search for ingredients from the branded food database:</label></p>", "<p>  <label>Enter text to search for ingredients from the branded food database:</label></p>");
+        "<p>  <label>Enter text to search for ingredients from the branded food database:</label></p>");
 
 
         [TestMethod]
         public void HaveCorrectLineForItemManufacturerOrFoodGroup() => HaveCorrectText(
-           "\n @Html.DisplayFor(model => item.ManufacturerOrFoodGroup)", "@Html.DisplayFor(model => item.ManufacturerOrFoodGroup)"); 
+            "@Html.DisplayFor(model => item.ManufacturerOrFoodGroup)");
+
+        [TestMethod]
+        public void HaveCorrectTextBoxToSearchForIngredients()
+        {
+            string testString = "<p>     @Html.TextBox(\"searchText\", \"Enter Description of What You are Looking For Here\", new { @class = \"ingredientTextBox\", maxlength = \"43\" }) </p>";
+            HaveCorrectText(testString);
+        }
+
+        [TestMethod]
+        public void HaveCorrectNoResultsLabel()
+        {
+            string testString = "<h2>@ViewBag.NoResults</h2>";
+            HaveCorrectText(testString);
+        }
     }
 }

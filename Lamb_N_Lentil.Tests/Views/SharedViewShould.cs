@@ -33,7 +33,8 @@ namespace Lamb_N_Lentil.Tests.Views
 
         [TestMethod]                                                             
         public void HaveIngredientLinkCorrect() =>
-            HaveCorrectText("\n<li>@Html.ActionLink(UIType.Ingredient.ToString(),UIType.Index.ToString(),new{Controller=\"Ingredients\"})</li>",
-                                     "   <li>@Html.ActionLink(UIType.Ingredient.ToString(), UIType.Index.ToString(), new { Controller= \"Ingredients\"})</li>");
+            HaveCorrectText(
+                                     "<li>@Html.ActionLink(UIType.Ingredient.ToString(), UIType.Index.ToString(), new { Controller= UIType.Ingredients.ToString()})</li>"
+                                    );
     } 
 }

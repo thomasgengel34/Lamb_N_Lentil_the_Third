@@ -1,17 +1,14 @@
-﻿using System;
-using System.Threading.Tasks;
-using Lamb_N_Lentil.Domain;
+﻿using System.Threading.Tasks;
 using Lamb_N_Lentil.Domain.UsdaInformation;
-using Lamb_N_Lentil.Tests.Controllers;
-using Lamb_N_Lentil.Tests.UsdaInformationTest;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
 
-namespace Lamb_N_Lentil.Tests.Classes
+namespace Lamb_N_Lentil.Tests.LiveUsdaSite
+
 {
     [TestClass]
     public class MapUsdaFoodToIngredientShould
     {
-        IMapUsdaFoodToIngredient tester = new UsdaAsyncTest();
+        IMapUsdaFoodToIngredient tester = new LiveUsdaAsyncTest();
 
        [TestMethod]
         public async Task  ReturnManufacturerOrFoodGroupFromNdbnoTest()

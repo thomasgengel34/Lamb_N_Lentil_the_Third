@@ -25,7 +25,7 @@ namespace Lamb_N_Lentil.Tests.Infrastructure
         [TestMethod]
         public void HaveCorrectNumberOfOptions()
         {
-            int numberOfOptions = 7;
+            int numberOfOptions = 8;
             Assert.AreEqual(numberOfOptions+1,fields.Count());
         }
 

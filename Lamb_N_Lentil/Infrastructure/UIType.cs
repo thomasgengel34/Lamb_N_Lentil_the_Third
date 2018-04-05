@@ -10,9 +10,10 @@ namespace Lamb_N_Lentil.UI
         About,
         Contact,
         Details,
-        Entity,
-        Ingredient,
+        Entity, 
         Home,
-        Index
+        Index,
+        Ingredient,
+        Ingredients
     }
 }

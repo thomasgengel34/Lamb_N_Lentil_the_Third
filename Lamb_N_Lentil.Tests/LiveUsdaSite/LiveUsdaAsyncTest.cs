@@ -6,10 +6,10 @@ using Lamb_N_Lentil.Domain;
 using Lamb_N_Lentil.Domain.UsdaInformation;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
 
-namespace Lamb_N_Lentil.Tests.UsdaInformationTest
+namespace Lamb_N_Lentil.Tests.LiveUsdaSite
 {
     [TestClass]
-    public class UsdaAsyncTest : IUsdaAsync, IMapUsdaFoodToIngredient
+    public class LiveUsdaAsyncTest : IUsdaAsync, IMapUsdaFoodToIngredient
     {
         async Task<string> IMapUsdaFoodToIngredient.GetManufacturerOrFoodGroup(int ndbno)
         {
@@ -80,6 +80,17 @@ namespace Lamb_N_Lentil.Tests.UsdaInformationTest
             Assert.IsInstanceOfType(list, typeof(List<IIngredient>));
         }
 
-        Task<List<IIngredient>> IUsdaAsync.GetListOfIngredientsFromTextSearch(string searchString, string dataSource) => throw new NotImplementedException();
+        [TestMethod]
+        public async Task ShouldCreateNewIngredientsListWhenNoResultsASreFound()
+        {
+            string testString = "qq";
+            List<IIngredient> list = await new UsdaAsync().GetListOfIngredientsFromTextSearch(testString, "");
+
+            Assert.IsNotNull(list);
+            Assert.IsInstanceOfType(list, typeof(List<IIngredient>));
+        }
+
+
+         Task<List<IIngredient>> IUsdaAsync.GetListOfIngredientsFromTextSearch(string searchString, string dataSource) => throw new NotImplementedException();
     }
 }
