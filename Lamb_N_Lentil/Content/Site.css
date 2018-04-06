@@ -59,6 +59,7 @@ textarea {
 
 h1, h2, h3, h4, h5, h6, table, a {
     font-family: 'Lucida Handwriting';
+    background: #ffd800;
     background-color: rgba(250,207,78,0);
     color: green;
 }

@@ -6,12 +6,10 @@ using Lamb_N_Lentil.UI.Controllers;
 
 namespace Lamb_N_Lentil.Tests.Controllers
 {
-    class TestUsdaAsyncController : IngredientsController
+   public class TestUsdaAsyncController : IngredientsController
     {
         public async Task<string> GetListOfIngredientstFromTextSearch(string searchString, string foodGroup = "", UsdaWebApiDataSource usdaWebApiDataSource = UsdaWebApiDataSource.BrandedFoodProducts)
-        {
-             
-
+        { 
             Foods foods = new Foods();
             foods.food = new Foods.Food();
             foods.food.desc = new Foods.Food.Desc();

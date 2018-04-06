@@ -39,42 +39,6 @@ namespace Lamb_N_Lentil.Tests.Controllers
             var ctors = type.GetConstructors();
             int count = ctors.Length;
             Assert.AreEqual(2, count);
-        }
-
-        [TestMethod]
-        public void HaveIndexMethod()
-        {
-            var methodSought = type.GetMethod("Index");
-            Assert.IsNotNull(methodSought);
-        }
-
-        [TestMethod]
-        public void HaveShowResultsMethod()
-        {
-            var methodSought = type.GetMethod("ShowResults");
-            Assert.IsNotNull(methodSought);
-        }
-
-        [TestMethod]
-        public async Task HaveShowResultsReturnNullMessageinViewBagResultsIfIngredientsCountIsOverZero()
-        {
-            IngredientsController controller = new IngredientsController();
-            string expectedResult = "";
-           ActionResult actionResult =  await controller.ShowResults("cream");
-            ViewResult viewResult = (ViewResult)actionResult;
-            string noResults = viewResult.ViewBag.NoResults;
-            Assert.AreEqual(expectedResult, noResults);
-        }
-
-        [TestMethod]
-        public async Task HaveShowResultsReturnNullMessageinViewBagResultsIfIngredientsCountIsZero()
-        {
-            IngredientsController controller = new IngredientsController();
-            string expectedResult = "Nothing was found.  Please try a different search.";
-            ActionResult actionResult = await controller.ShowResults("qqqq");
-            ViewResult viewResult = (ViewResult)actionResult;
-            string noResults = viewResult.ViewBag.NoResults;
-            Assert.AreEqual(expectedResult, noResults);
-        }
+        } 
     }
 }

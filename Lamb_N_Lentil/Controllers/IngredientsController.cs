@@ -14,13 +14,12 @@ namespace Lamb_N_Lentil.UI.Controllers
     {
         public IngredientsController()
         {
-
         }
 
-        public IngredientsController(Controller _controller = null) :base()
+        public IngredientsController(Controller _controller = null) : base()
         {
-
         }
+
         // GET: Ingredients
         public ActionResult Index()
         {
@@ -28,17 +27,19 @@ namespace Lamb_N_Lentil.UI.Controllers
             ViewBag.SearchText = "Write Your Query Here";
             return View(UIType.Index.ToString(), vm);
         }
-         
 
-        public async Task<ActionResult> ShowResults(string searchText)
-        { 
-           var ingredients = await new UsdaAsync().GetListOfIngredientsFromTextSearch(searchText);
+
+        public async Task<ActionResult> ShowResults(string searchText, string databaseSelection = "both")
+        {
+            string _databaseSelection = databaseSelection;
+
+            var ingredients = await new UsdaAsync().GetListOfIngredientsFromTextSearch(searchText);
             List<IngredientListViewModel> vm = new List<IngredientListViewModel>();
             foreach (IIngredient ingredient in ingredients)
             {
                 vm.Add(IngredientListViewModel.MapIIngredientToIngredientListViewModel(ingredient));
             }
-            if (ingredients.Count==0)
+            if (ingredients.Count == 0)
             {
                 ViewBag.NoResults = "Nothing was found.  Please try a different search.";
             }
@@ -47,6 +48,6 @@ namespace Lamb_N_Lentil.UI.Controllers
                 ViewBag.NoResults = "";
             }
             return View(UIType.Index.ToString(), vm);
-        } 
+        }
     }
 }

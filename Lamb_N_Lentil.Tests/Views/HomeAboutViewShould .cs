@@ -5,7 +5,7 @@ namespace Lamb_N_Lentil.Tests.Views
     [TestClass]
     public class HomeAboutViewShould : BaseViewTests
     {
-        // filePath =  "C:\\Dev\\TGE\\Lamb_N_Lentil\\Lamb_N_Lentil\\Views\\Home\\Index.cshtml";
+       
         private static string filePath = @"C:\Dev\TGE\Lamb_N_Lentil\Lamb_N_Lentil\Views\Home\About.cshtml";
 
         public HomeAboutViewShould()

@@ -163,6 +163,7 @@
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
     <Compile Include="Infrastructure\UIType.cs" />
+    <Compile Include="Infrastructure\UsdaDataSourceSelections.cs" />
     <Compile Include="Models\IngredientListViewModel.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>

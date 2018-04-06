@@ -52,44 +52,8 @@ namespace Lamb_N_Lentil.Tests.MockUsdaSite
             Assert.AreEqual(whatTestStringLengthShouldBe, testStringLength);
             Assert.AreEqual(correctLength, returnedString.Length);
         }
-
-        [TestMethod]
-        public async Task ShouldIgnoreAnIngredientInStandardReferenceWhenBuildingAList()
-        { 
-            //int testNdbno = 1050;  //  this is in search for cream, is the second, is in SR
-            //string testString = "cream";
-            //List<IIngredient> list = await new UsdaAsync().GetListOfIngredientsFromTextSearch(testString, "");
-
-            //var ndbnosReturned = from r in list
-            //                     where r.Ndbno == testNdbno
-            //                     select r.Ndbno;
-
-            //int? ndbnoReturned = ndbnosReturned.FirstOrDefault();
-
-            //Assert.AreEqual(0, ndbnoReturned);  
-        }
-
-
-        [TestMethod]
-       public async Task  ShouldGetListOfIngredientsFromTextSearch()
-        {
-            //string testString = "cream";
-            //   List<IIngredient> list = await new UsdaAsync().GetListOfIngredientsFromTextSearch(testString,"");
-
-            //Assert.IsNotNull(list);
-            //Assert.IsInstanceOfType(list, typeof(List<IIngredient>));
-        }
-
-        [TestMethod]
-        public async Task ShouldCreateNewIngredientsListWhenNoResultsASreFound()
-        {
-            //string testString = "qq";
-            //List<IIngredient> list = await new UsdaAsync().GetListOfIngredientsFromTextSearch(testString, "");
-
-            //Assert.IsNotNull(list);
-            //Assert.IsInstanceOfType(list, typeof(List<IIngredient>));
-        }
-
+         
+  
 
          Task<List<IIngredient>> IUsdaAsync.GetListOfIngredientsFromTextSearch(string searchString, string dataSource) => throw new NotImplementedException();
     }

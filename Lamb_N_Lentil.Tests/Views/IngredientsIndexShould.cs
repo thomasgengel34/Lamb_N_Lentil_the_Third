@@ -16,11 +16,11 @@ namespace Lamb_N_Lentil.Tests.Views
 
         [TestMethod]
         public void HaveCorrectSearchForm() => HaveCorrectText(
-            "@using (Html.BeginForm(\"ShowResults\", UIType.Ingredients.ToString(), new { Controller = UIType.Ingredients.ToString(), searchText = \"searchText\" }))" ) ;
+            "@using (Html.BeginForm(\"ShowResults\", UIType.Ingredients.ToString(), new { Controller = UIType.Ingredients.ToString(), searchText = \"searchText\", databaseSelection=\"databaseSelection\" }))") ;
 
         [TestMethod]
         public void HaveCorrectLabelForTextSearch() => HaveCorrectText(
-        "<p>  <label>Enter text to search for ingredients from the branded food database:</label></p>");
+        "<p>  <label>Enter text to search for ingredients:</label></p>");
 
 
         [TestMethod]
@@ -30,7 +30,7 @@ namespace Lamb_N_Lentil.Tests.Views
         [TestMethod]
         public void HaveCorrectTextBoxToSearchForIngredients()
         {
-            string testString = "<p>     @Html.TextBox(\"searchText\", \"Enter Description of What You are Looking For Here\", new { @class = \"ingredientTextBox\", maxlength = \"43\" }) </p>";
+            string testString = "@Html.TextBox(\"searchText\", \"Enter Description of What You are Looking For Here\", new { @class = \"ingredientTextBox\", maxlength = \"43\" })";
             HaveCorrectText(testString);
         }
 

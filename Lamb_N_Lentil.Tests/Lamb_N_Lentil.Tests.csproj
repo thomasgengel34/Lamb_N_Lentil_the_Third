@@ -104,6 +104,8 @@
     <Compile Include="Classes\IEntityShouldContain.cs" />
     <Compile Include="Classes\EntityClassShould.cs" />
     <Compile Include="Classes\IEntityAsyncControllerShould.cs" />
+    <Compile Include="Controllers\IngredientControllerActionMethodsShouldInclude.cs" />
+    <Compile Include="Controllers\IngredientControllerActionMethodsShould.cs" />
     <Compile Include="LiveUsdaSite\MapUsdaFoodToIngredientShould.cs" />
     <Compile Include="Content\SiteCssFileShould.cs" />
     <Compile Include="Controllers\EntityControllerShould.cs" />

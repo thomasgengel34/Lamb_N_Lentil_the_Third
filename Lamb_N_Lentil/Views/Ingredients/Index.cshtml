@@ -1,30 +1,41 @@
-﻿@model IEnumerable<Lamb_N_Lentil.UI.Models.IngredientListViewModel>
+﻿@using Lamb_N_Lentil.UI.Infrastructure
+@model IEnumerable<Lamb_N_Lentil.UI.Models.IngredientListViewModel>
 
 @{
+    /**/
+
     ViewBag.Title = "Index";
+    IList<SelectListItem> ulist = EnumHelper.GetSelectList(typeof(UsdaDataSourceSelections));
+    List<SelectListItem> list = (List<SelectListItem>)ulist;
 }
 
 <h1>Search For Ingredients</h1>
 <h2>@ViewBag.NoResults</h2>
 
-@using (Html.BeginForm("ShowResults", UIType.Ingredients.ToString(), new { Controller = UIType.Ingredients.ToString(), searchText = "searchText" }))
+@using (Html.BeginForm("ShowResults", UIType.Ingredients.ToString(), new { Controller = UIType.Ingredients.ToString(), searchText = "searchText", databaseSelection="databaseSelection" }))
 {
+    <p>
+        @Html.DropDownList("databaseSelection", list, "Select Database",new { @class = "input" })
+        The default is "all databases".
+    </p>
+    <p>  <label>Enter text to search for ingredients:</label></p>
+    <p>
+        @Html.TextBox("searchText", "Enter Description of What You are Looking For Here", new { @class = "ingredientTextBox", maxlength = "43" })
+        <br />
+        There is a 43 character limit on searches in the USDA databases.
+    </p>
 
-    <p>  <label>Enter text to search for ingredients from the branded food database:</label></p>
-    <p>     @Html.TextBox("searchText", "Enter Description of What You are Looking For Here", new { @class = "ingredientTextBox", maxlength = "43" }) </p>
-  
-  <p>  <input type="submit" value="Search" /></p>
+
+    <p>  <input type="submit" value="Search" /></p>
 }
- 
+
+
 
 
 <table class="table">
     <tr>
         <th>
             @Html.DisplayNameFor(model => model.UsdaDataSource)
-        </th>
-        <th>
-            @Html.DisplayNameFor(model => model.Ndbno)
         </th>
         <th>
             @Html.DisplayNameFor(model => model.Description)
@@ -40,10 +51,7 @@
         <tr>
             <td>
                 @Html.DisplayFor(model => item.UsdaDataSource)
-            </td>
-            <td>
-                @Html.DisplayFor(model => item.Ndbno)
-            </td>
+            </td> 
             <td>
                 @Html.DisplayFor(model => item.Description)
             </td>

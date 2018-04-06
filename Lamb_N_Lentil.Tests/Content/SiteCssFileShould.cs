@@ -7,16 +7,17 @@ namespace Lamb_N_Lentil.Tests.Content
     [TestClass]
     public class SiteCssFileShould : BaseViewTests
     {
-        string testFileContents = @"body {
+
+        static string testFileContents = @"body {
      padding-top: 50px;
     padding-bottom: 20px;
-    background: linear-gradient(90deg, rgba(250,207,78,0) 12%, transparent 0, transparent 99%, #dca 0);
+    background: linear-gradient(90deg,rgba(250,207,78,0) 12%, transparent 0, transparent 99%, #dca 0);
     background-size: 100px 100px;
     font-family: 'Lucida Handwriting';
     color: green; 
 }
 
-.container.body-content {
+.container .body-content {
     margin-bottom: 0;
     padding-bottom: 0;
     min-height: 80vh;
@@ -35,8 +36,7 @@ namespace Lamb_N_Lentil.Tests.Content
 /* Override the default bootstrap behavior where horizontal description lists 
    will truncate terms that are too long to fit in the left column 
 */
-.dl-horizontal dt
-{
+.dl-horizontal dt {
     white-space: normal;
 }
 
@@ -49,8 +49,8 @@ textarea {
 
 
 .nav, .menu, .navbar-header, .navbar-collapse, .collapse, .navbar, .navbar-inverse, .navbar-fixed-top, .li {
-    background - color: green;
-color: white;
+    background-color: green;
+    color: white;
 }
 
 #navA a, #navB a, #navC a {
@@ -69,8 +69,9 @@ color: white;
 
 h1, h2, h3, h4, h5, h6, table, a {
     font-family: 'Lucida Handwriting';
+    background: #ffd800;
     background-color: rgba(250,207,78,0);
-color: green;
+    color: green;
 }
 
 a {
@@ -79,7 +80,7 @@ a {
 
 .alert-container {
     position: fixed;
-left: 0;
+    left: 0;
     right: 0;
     padding-left: 3em;
     padding-right: 3em;
@@ -90,7 +91,7 @@ left: 0;
     background-color: lightgoldenrodyellow;
     background-image: linear-gradient(90deg, transparent 79px, pink 79px, pink 80px, transparent 81px), linear-gradient(#eee .1em, transparent .4em);
     background-size: 100% 2.4em;
-min-height: 90vh;
+    min-height: 90vh;
 }
 
 h1 {
@@ -111,7 +112,7 @@ p {
     width:60%;
 }
 
-.IngredientsTable.rightJustify{
+.IngredientsTable .rightJustify{
    text-align:right; 
 }
 
@@ -124,7 +125,7 @@ tr td:last-of-type{
     padding-right:2%;
 }
 
-tr.leftpadding10 {
+tr .leftpadding10 {
     padding-left:10%;
 }
 
@@ -135,13 +136,18 @@ tr.leftpadding10 {
     max-width:450px; 
 }";
 
-        private static string filePath = @"C:\Dev\TGE\Lamb_N_Lentil\Lamb_N_Lentil\Content\Site.css";
-
+       private static string filePath = @"C:\Dev\TGE\Lamb_N_Lentil\Lamb_N_Lentil\Content\Site.css";
+     
 
         public SiteCssFileShould()
         {
             ObtainFileAsString(filePath);
         }
-         
+
+        [TestMethod]
+        public void LookLikeThis()
+        {
+          Assert.IsTrue( testFileContents.Equals(fileContents));
+        }
     }
 }
