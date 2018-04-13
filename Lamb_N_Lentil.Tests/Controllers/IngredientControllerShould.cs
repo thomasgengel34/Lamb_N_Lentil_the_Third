@@ -2,6 +2,7 @@
 using System.Linq;
 using System.Threading.Tasks;
 using System.Web.Mvc;
+using Lamb_N_Lentil.Domain.UsdaInformation;
 using Lamb_N_Lentil.UI.Controllers;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
 
@@ -34,11 +35,26 @@ namespace Lamb_N_Lentil.Tests.Controllers
         }
 
         [TestMethod]
-        public void HasTwoConstructors()
+        public void HasTheCorrectNumberofConstructors()
         {
+            int correctNumber = 3;
             var ctors = type.GetConstructors();
             int count = ctors.Length;
-            Assert.AreEqual(2, count);
+            Assert.AreEqual(correctNumber, count);
+        }
+
+        [TestMethod]
+        public void HaveANonNullUsdaAsync() 
+        {
+            IngredientsController controller = new IngredientsController();
+            Assert.IsNotNull(controller.usdaAsync);
+        }
+
+        [TestMethod]
+        public void HaveAUsdaAsyncOfTypeUsdaAsync()
+        {
+            IngredientsController controller = new IngredientsController();
+            Assert.IsInstanceOfType(controller.usdaAsync, typeof(UsdaAsync));
         } 
     }
 }

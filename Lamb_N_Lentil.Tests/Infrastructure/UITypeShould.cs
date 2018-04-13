@@ -72,15 +72,7 @@ namespace Lamb_N_Lentil.Tests.Infrastructure
         }
 
 
-        [TestMethod]
-        public void HasIngredient()
-        {
-            var name = (from f in fields
-                        where f.Name == "Ingredient"
-                        select f.Name).First();
-
-            Assert.AreEqual("Ingredient", name);
-        }
+      
 
         [TestMethod]
         public void HasHome()
@@ -100,6 +92,26 @@ namespace Lamb_N_Lentil.Tests.Infrastructure
                         select f.Name).First();
 
             Assert.AreEqual("Index", name);
+        }
+
+        [TestMethod]
+        public void HasIngredient()
+        {
+            var name = (from f in fields
+                        where f.Name == "Ingredient"
+                        select f.Name).First();
+
+            Assert.AreEqual("Ingredient", name);
+        }
+
+        [TestMethod]
+        public void HasIngredients()
+        {
+            var name = (from f in fields
+                        where f.Name == "Ingredients"
+                        select f.Name).First();
+
+            Assert.AreEqual("Ingredients", name);
         }
     }
 }

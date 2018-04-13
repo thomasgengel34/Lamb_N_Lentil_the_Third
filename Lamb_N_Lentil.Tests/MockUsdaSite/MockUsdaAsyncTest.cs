@@ -1,31 +1,19 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Threading.Tasks;
-using Lamb_N_Lentil.Domain;
+﻿using System.Threading.Tasks;
 using Lamb_N_Lentil.Domain.UsdaInformation;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
 
 namespace Lamb_N_Lentil.Tests.MockUsdaSite
 {
     [TestClass]
-    public class MockUsdaAsyncTest : IUsdaAsync, IMapUsdaFoodToIngredient
+    public class MockUsdaAsyncTest  
     {
-        async Task<string> IMapUsdaFoodToIngredient.GetManufacturerOrFoodGroup(int ndbno)
-        {
-            string foo = "this is a test";
-            await Task.Delay(0);
-            return foo;
-        }
+        private IUsdaAsync usdaAsync { get; set; }
 
-         Task<List<IIngredient>> GetListOfIngredientsFromTextSearch(string searchString, string dataSource = "") => throw new NotImplementedException();
-
-        async Task<string> IUsdaAsync.GetManufacturerOrFoodGroup(int ndbno)
+        public MockUsdaAsyncTest()
         {
-            string foo = "this is fake for now";
-            await Task.Delay(0);
-            return foo;
+            usdaAsync = new MockUsdaAsync();
         }
+       
 
         [TestMethod]
         public void ReduceStringLengthToWhatWillWorkOnUsdaWillNotThrowErrorWithEmptyString()
@@ -52,9 +40,12 @@ namespace Lamb_N_Lentil.Tests.MockUsdaSite
             Assert.AreEqual(whatTestStringLengthShouldBe, testStringLength);
             Assert.AreEqual(correctLength, returnedString.Length);
         }
-         
-  
 
-         Task<List<IIngredient>> IUsdaAsync.GetListOfIngredientsFromTextSearch(string searchString, string dataSource) => throw new NotImplementedException();
+        [TestMethod]
+        public async Task ReturnManufacturerOrFoodGroupFromNdbnoTest()
+        {
+            string returnString = await   usdaAsync.GetManufacturerOrFoodGroup("01009");
+            Assert.AreEqual("Valley Brook Farm", returnString);
+        } 
     }
 }

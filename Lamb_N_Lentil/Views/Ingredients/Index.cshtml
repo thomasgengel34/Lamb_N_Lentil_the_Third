@@ -1,18 +1,19 @@
-﻿@using Lamb_N_Lentil.UI.Infrastructure
+﻿
+@using Lamb_N_Lentil.Domain.UsdaInformation
 @model IEnumerable<Lamb_N_Lentil.UI.Models.IngredientListViewModel>
 
 @{
     /**/
 
     ViewBag.Title = "Index";
-    IList<SelectListItem> ulist = EnumHelper.GetSelectList(typeof(UsdaDataSourceSelections));
+    IList<SelectListItem> ulist = EnumHelper.GetSelectList(typeof(UsdaDataSource));
     List<SelectListItem> list = (List<SelectListItem>)ulist;
 }
 
 <h1>Search For Ingredients</h1>
 <h2>@ViewBag.NoResults</h2>
 
-@using (Html.BeginForm("ShowResults", UIType.Ingredients.ToString(), new { Controller = UIType.Ingredients.ToString(), searchText = "searchText", databaseSelection="databaseSelection" }))
+@using (Html.BeginForm("ShowResults", UIType.Ingredients.ToString(), new { Controller = UIType.Ingredients.ToString(), searchText = "searchText", databaseSelection=Enum.TryParse("databaseSelection",out UsdaDataSource databaseSelection) }))
 {
     <p>
         @Html.DropDownList("databaseSelection", list, "Select Database",new { @class = "input" })

@@ -2,6 +2,7 @@
 using System.Linq;
 using System.Threading.Tasks;
 using System.Web.Mvc;
+using Lamb_N_Lentil.Tests.MockUsdaSite;
 using Lamb_N_Lentil.UI.Controllers;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
 
@@ -16,7 +17,7 @@ namespace Lamb_N_Lentil.Tests.Controllers
         public IngredientControllerActionMethodsShouldInclude()
         {
             type = Type.GetType("Lamb_N_Lentil.UI.Controllers.IngredientsController, Lamb_N_Lentil.UI", true);
-            Controller = new TestUsdaAsyncController();
+            Controller = new IngredientsController(null,new MockUsdaAsync());
         }
         [TestMethod]
         public void CorrectNumberOfMethods()
@@ -44,5 +45,7 @@ namespace Lamb_N_Lentil.Tests.Controllers
             var methodSought = type.GetMethod("ShowResults");
             Assert.IsNotNull(methodSought);
         }
+
+
     }
 }

@@ -19,7 +19,7 @@
             public class Desc
             {
                 public string Name { get; set; }
-                public int Ndbno { get; set; }
+                public string Ndbno { get; set; }
             }
 
             public class Ing
@@ -37,7 +37,7 @@
     public class list
     {
         public  string q  { get; set; }
-        public int sr { get; set; }
+        public string sr { get; set; }
         public string ds { get; set; }
         public int start { get; set; }
         public int end { get; set; }
@@ -54,7 +54,7 @@
             public int offset { get; set; }
             public string group { get; set; }
             public string name { get; set; }
-            public int ndbno { get; set; }
+            public string ndbno { get; set; }
             public string ds { get; set; }
 
 

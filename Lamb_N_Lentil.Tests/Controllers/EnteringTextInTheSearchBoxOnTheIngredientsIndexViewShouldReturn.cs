@@ -6,6 +6,7 @@ using Lamb_N_Lentil.UI.Controllers;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
 using System.Linq;
 using Lamb_N_Lentil.UI.Models;
+using Lamb_N_Lentil.Tests.MockUsdaSite;
 
 namespace Lamb_N_Lentil.Tests.Controllers
 {
@@ -17,7 +18,7 @@ namespace Lamb_N_Lentil.Tests.Controllers
         [TestInitialize]
         public void Setup()
         {
-          controller = new IngredientsController(new TestUsdaAsyncController()); 
+          controller = new IngredientsController(null,new  MockUsdaAsync()); 
         }
 
         [TestMethod]
@@ -42,15 +43,15 @@ namespace Lamb_N_Lentil.Tests.Controllers
         public async Task AnIngredientViewModelContainingAListOfFoodsWithNdbno()
         {
             IIngredient ingredient = await GetTheIngredient();
-            int ndbno = ingredient.Ndbno;
-            Assert.AreEqual(45237067, ndbno);
+            string ndbno = ingredient.Ndbno;
+            Assert.AreEqual("45237067", ndbno);
         }
 
         [TestMethod]
         public async Task  IngredientViewModelContainingAListOfFoodsWithDescriptionAndManufacturereOrFoodGroup()
         {
             IIngredient ingredient = await GetTheIngredient();
-            string descriptionAndManufacturereOrFoodGroup = "Haddon House Food Products Inc";
+            string descriptionAndManufacturereOrFoodGroup = "Sample Manufacturer Or Food Group For Empty String";
             Assert.AreEqual(descriptionAndManufacturereOrFoodGroup, ingredient.ManufacturerOrFoodGroup);
         }
     }

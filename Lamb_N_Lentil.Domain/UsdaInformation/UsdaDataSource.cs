@@ -4,10 +4,13 @@ namespace Lamb_N_Lentil.Domain.UsdaInformation
 {
     public enum UsdaDataSource
     {
-        [Display(Name ="Branded Food Products")]
+        [Display(Name = "Branded Food Products")]
         BrandedFoodProducts,
 
         [Display(Name = "Standard Reference")]
-        StandardReference
+        StandardReference,
+
+             [Display(Name = "All Data Sources")]
+        Both,
     }
 }

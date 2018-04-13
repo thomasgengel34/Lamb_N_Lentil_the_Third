@@ -1,5 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
+﻿using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
 using Lamb_N_Lentil.Domain;
@@ -9,23 +8,20 @@ using Microsoft.VisualStudio.TestTools.UnitTesting;
 namespace Lamb_N_Lentil.Tests.LiveUsdaSite
 {
     [TestClass]
-    public class LiveUsdaAsyncTest : IUsdaAsync, IMapUsdaFoodToIngredient
+    public class LiveUsdaAsyncTest 
     {
-        async Task<string> IMapUsdaFoodToIngredient.GetManufacturerOrFoodGroup(int ndbno)
+       
+
+        [TestMethod]
+        public async Task ReturnManufacturerFromNdbnoRealDatabase()
         {
-            string foo = "this is a test";
-            await Task.Delay(0);
-            return foo;
+            string aRealNdbno = "45059050";
+            string realManufacturerOrFoodGroup = "Valley Brook Farm";
+            string returnedValue = await new UsdaAsync().GetManufacturerOrFoodGroup(aRealNdbno);
+            Assert.AreEqual(realManufacturerOrFoodGroup, returnedValue);
         }
 
-         Task<List<IIngredient>> GetListOfIngredientsFromTextSearch(string searchString, string dataSource = "") => throw new NotImplementedException();
-
-        async Task<string> IUsdaAsync.GetManufacturerOrFoodGroup(int ndbno)
-        {
-            string foo = "this is fake for now";
-            await Task.Delay(0);
-            return foo;
-        }
+         
 
         [TestMethod]
         public void ReduceStringLengthToWhatWillWorkOnUsdaWillNotThrowErrorWithEmptyString()
@@ -56,7 +52,7 @@ namespace Lamb_N_Lentil.Tests.LiveUsdaSite
         [TestMethod]
         public async Task ShouldIgnoreAnIngredientInStandardReferenceWhenBuildingAList()
         { 
-            int testNdbno = 1050;  //  this is in search for cream, is the second, is in SR
+            string testNdbno = "1050";  //  this is in search for cream, is the second, is in SR
             string testString = "cream";
             List<IIngredient> list = await new UsdaAsync().GetListOfIngredientsFromTextSearch(testString, "");
 
@@ -64,9 +60,9 @@ namespace Lamb_N_Lentil.Tests.LiveUsdaSite
                                  where r.Ndbno == testNdbno
                                  select r.Ndbno;
 
-            int? ndbnoReturned = ndbnosReturned.FirstOrDefault();
+            string  ndbnoReturned = ndbnosReturned.FirstOrDefault();
 
-            Assert.AreEqual(0, ndbnoReturned);  
+            Assert.AreEqual(null, ndbnoReturned);  
         }
 
 
@@ -90,7 +86,18 @@ namespace Lamb_N_Lentil.Tests.LiveUsdaSite
             Assert.IsInstanceOfType(list, typeof(List<IIngredient>));
         }
 
+         
 
-         Task<List<IIngredient>> IUsdaAsync.GetListOfIngredientsFromTextSearch(string searchString, string dataSource) => throw new NotImplementedException();
+        [TestMethod]
+        public async Task ReturnSomethingFromTheDataBaseWhenBothDatabasesAreSpecified()
+        {
+            string searchString = "Butter";
+            string dbSearchParameter = UsdaDataSource.Both.ToString();
+            IUsdaAsync usdaAsync = new UsdaAsync();
+
+            List<IIngredient> list = await usdaAsync.GetListOfIngredientsFromTextSearch(searchString, dbSearchParameter);
+
+            Assert.AreEqual(4415,usdaAsync.FetchedTotalFromSearch);
+        }
     }
 }

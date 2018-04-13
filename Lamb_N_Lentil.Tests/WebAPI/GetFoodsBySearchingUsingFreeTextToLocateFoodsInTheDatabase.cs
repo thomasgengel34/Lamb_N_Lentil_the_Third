@@ -15,12 +15,12 @@ namespace Lamb_N_Lentil.Tests.WebAPI
         UsdaAsync  controller = new UsdaAsync();
          
         [TestMethod]
-        public async Task  ReturnAListOf50IngredientsFromTextSearchOnSingleSpace()
+        public async Task  ReturnAListOf150IngredientsFromTextSearchOnSingleSpace()
         {
             string searchString = " ";
             await Task.Delay(0); 
             List<IIngredient> returnedList = await controller.GetListOfIngredientsFromTextSearch(searchString);
-            Assert.AreEqual(50, returnedList.Count); 
+            Assert.AreEqual(150, returnedList.Count); 
         }
     }
 }

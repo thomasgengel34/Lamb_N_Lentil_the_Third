@@ -17,7 +17,7 @@ namespace Lamb_N_Lentil.Tests.ViewModelTest
         public IngredientListViewModelShould()
         {
             Ingredient = new Entity();
-            Ingredient.Ndbno = 101;
+            Ingredient.Ndbno = "101";
             Ingredient.UsdaDataSource = UsdaDataSource.StandardReference;
             Ingredient.Description = "this is for a test";
             Ingredient.ManufacturerOrFoodGroup = "Jawa";
@@ -26,7 +26,7 @@ namespace Lamb_N_Lentil.Tests.ViewModelTest
 
             Vm_2 = new IngredientListViewModel()
             {
-                Ndbno = 7890,
+                Ndbno = "7890",
                 UsdaDataSource = UsdaDataSource.BrandedFoodProducts,
                 Description = "vm text",
                 ManufacturerOrFoodGroup = "Wookie"
@@ -62,7 +62,7 @@ namespace Lamb_N_Lentil.Tests.ViewModelTest
         public void CopyNdbnoFromIngredientListViewModelToIIngredient()
         {
             Ingredient_2 = IngredientListViewModel.MapIIngredientListViewModelToIngredient(Vm_2); Assert.AreEqual(Vm_2.Ndbno, Ingredient_2.Ndbno);
-            Assert.AreEqual(7890, Vm_2.Ndbno);
+            Assert.AreEqual("7890", Vm_2.Ndbno);
         }
 
         [TestMethod]

@@ -10,7 +10,7 @@ namespace Lamb_N_Lentil.Domain
          
         public string IngredientsList { get; set; }
          
-        int IIngredient.Ndbno { get; set; }
+        string IIngredient.Ndbno { get; set; }
 
  
         UsdaDataSource IIngredient.UsdaDataSource { get; set; }

@@ -6,7 +6,7 @@ namespace Lamb_N_Lentil.UI.Models
 {
     public class IngredientListViewModel
     {
-        public int Ndbno { get; set; }
+        public string Ndbno { get; set; }
 
         [Display(Name = "USDA Data Source")]
         public UsdaDataSource UsdaDataSource { get; set; }

@@ -4,6 +4,6 @@ namespace Lamb_N_Lentil.Domain.UsdaInformation
 {
     public interface IMapUsdaFoodToIngredient
     {
-        Task<string> GetManufacturerOrFoodGroup(int ndbno);
+        Task<string> GetManufacturerOrFoodGroup(string ndbno);
     }
 }
