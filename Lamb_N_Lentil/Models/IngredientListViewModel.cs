@@ -8,6 +8,8 @@ namespace Lamb_N_Lentil.UI.Models
     {
         public string Ndbno { get; set; }
 
+        public string DataSourceDisplayName { get; set; }
+
         [Display(Name = "USDA Data Source")]
         public UsdaDataSource UsdaDataSource { get; set; }
 
@@ -24,6 +26,7 @@ namespace Lamb_N_Lentil.UI.Models
             {
                 Ndbno = ingredient.Ndbno,
                 UsdaDataSource = ingredient.UsdaDataSource,
+                DataSourceDisplayName=GetDisplayNameOfUsdaDataSource(ingredient.UsdaDataSource.ToString()),
                 Description = ingredient.Description,
                 ManufacturerOrFoodGroup = ingredient.ManufacturerOrFoodGroup
             };
@@ -40,5 +43,18 @@ namespace Lamb_N_Lentil.UI.Models
 
             return ingredient; 
         } 
+
+        private static string GetDisplayNameOfUsdaDataSource(string source)
+        {
+            if (source == UsdaDataSource.BrandedFoodProducts.ToString())
+            {
+                return "Branded Food Products";
+            }
+            else if (source == UsdaDataSource.StandardReference.ToString())
+            {
+                return "Standard Reference";
+            }
+            else return "Other or Not Provided";
+        }
     }
 }

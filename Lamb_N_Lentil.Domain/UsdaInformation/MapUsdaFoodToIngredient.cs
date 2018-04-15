@@ -9,7 +9,7 @@ namespace Lamb_N_Lentil.Domain.UsdaInformation
 
     public class MapUsdaFoodToIngredient : IMapUsdaFoodToIngredient
     {
-        public static async Task<IIngredient> ConvertUsdaFoodToIIngredientAsync(Foods[] foods, int index, string ds = "BL")
+        public static async Task<IIngredient> ConvertUsdaFoodToIIngredient(Foods[] foods, int index, string ds = "BL")
         {
             IIngredient ingredient = new Entity();
 

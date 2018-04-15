@@ -1,9 +1,9 @@
 ﻿
 @using Lamb_N_Lentil.Domain.UsdaInformation
+@using System.ComponentModel.DataAnnotations
 @model IEnumerable<Lamb_N_Lentil.UI.Models.IngredientListViewModel>
 
-@{
-    /**/
+@{ 
 
     ViewBag.Title = "Index";
     IList<SelectListItem> ulist = EnumHelper.GetSelectList(typeof(UsdaDataSource));
@@ -11,7 +11,7 @@
 }
 
 <h1>Search For Ingredients</h1>
-<h2>@ViewBag.NoResults</h2>
+<h2 class="no_results">@ViewBag.NoResults</h2>
 
 @using (Html.BeginForm("ShowResults", UIType.Ingredients.ToString(), new { Controller = UIType.Ingredients.ToString(), searchText = "searchText", databaseSelection=Enum.TryParse("databaseSelection",out UsdaDataSource databaseSelection) }))
 {
@@ -33,7 +33,7 @@
 
 
 
-<table class="table">
+<table class="table table-bordered table-hover table-striped" id="IngredientsIndexTable">
     <tr>
         <th>
             @Html.DisplayNameFor(model => model.UsdaDataSource)
@@ -51,7 +51,7 @@
     {
         <tr>
             <td>
-                @Html.DisplayFor(model => item.UsdaDataSource)
+                @Html.DisplayFor(model => item.DataSourceDisplayName) 
             </td> 
             <td>
                 @Html.DisplayFor(model => item.Description)

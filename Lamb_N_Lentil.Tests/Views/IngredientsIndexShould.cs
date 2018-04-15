@@ -40,7 +40,7 @@ namespace Lamb_N_Lentil.Tests.Views
         [TestMethod]
         public void HaveCorrectNoResultsLabel()
         {
-            string testString = "<h2>@ViewBag.NoResults</h2>";
+            string testString = "<h2 class=\"no_results\">@ViewBag.NoResults</h2>";
             HaveCorrectText(testString);
         }
     }

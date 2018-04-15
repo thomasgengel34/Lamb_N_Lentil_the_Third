@@ -6,8 +6,7 @@ namespace Lamb_N_Lentil.Tests.Content
 {
     [TestClass]
     public class SiteCssFileShould : BaseViewTests
-    {
-
+    { 
         static string testFileContents = @"body {
      padding-top: 50px;
     padding-bottom: 20px;
@@ -107,12 +106,12 @@ p {
     margin-top: -10px;
 }
 
-.IngredientsTable{
+.IngredientsIndexTable{
     background-color:white;
     width:60%;
 }
 
-.IngredientsTable .rightJustify{
+.IngredientsIndexTable .rightJustify{
    text-align:right; 
 }
 
@@ -134,10 +133,19 @@ tr .leftpadding10 {
     padding-left:5px;  
     width:450px;
     max-width:450px; 
-}";
+}
+ 
+h2.no_results {
+    color:red;
+}
 
-       private static string filePath = @"C:\Dev\TGE\Lamb_N_Lentil\Lamb_N_Lentil\Content\Site.css";
-     
+#IngredientsIndexTable tr th:first-child, #IngredientsIndexTable tr td:first-child { 
+    width:10%;
+} ";
+
+
+private static string filePath = @"C:\Dev\TGE\Lamb_N_Lentil\Lamb_N_Lentil\Content\Site.css";
+                                           
 
         public SiteCssFileShould()
         {
@@ -146,8 +154,9 @@ tr .leftpadding10 {
 
         [TestMethod]
         public void LookLikeThis()
-        {
-          Assert.IsTrue( testFileContents.Equals(fileContents));
+        { 
+          Assert.IsTrue(testFileContents.Equals(fileContents)); 
         }
+         
     }
-}
+} 

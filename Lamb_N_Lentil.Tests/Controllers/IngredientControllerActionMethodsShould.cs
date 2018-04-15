@@ -6,6 +6,7 @@ using Lamb_N_Lentil.UI.Controllers;
 using Lamb_N_Lentil.UI.Models;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
 using System.Linq;
+using System.Collections.Generic;
 
 namespace Lamb_N_Lentil.Tests.Controllers
 {
@@ -89,10 +90,12 @@ namespace Lamb_N_Lentil.Tests.Controllers
         {
             ActionResult actionResult = await Controller.ShowResults("0000", UsdaDataSource.Both);
             ViewResult viewResult = (ViewResult)actionResult;
-            var model = (System.Collections.Generic.List<IngredientListViewModel>)viewResult.Model;
+            var model = ( List<IngredientListViewModel>)viewResult.Model;
             string returnedManuOrFoodGroup = model.First().ManufacturerOrFoodGroup;
             string correctDatabase = "Sample Manufacturer Or Food Group For Empty String";
             Assert.AreEqual(correctDatabase, returnedManuOrFoodGroup);
         }
+
+      
     }
 }

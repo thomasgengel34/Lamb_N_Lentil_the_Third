@@ -69,5 +69,19 @@ namespace Lamb_N_Lentil.Tests.Views
             string testString = "<p>Look up ingredients on :<a href=\"https://ndb.nal.usda.gov/ndb\" target=\"_blank\">the USDA nutritional site</a></p>";
             HaveCorrectText(testString);
         }
+
+        [TestMethod]
+        public void HaveCorrectReferenceAndLinkToAmericanDiabetesAssociation()
+        {
+            string testString = "<a href=\"http://www.diabetes.org/\" target=\"_blank\">American Diabetes Association</a>";
+            HaveCorrectText(testString);
+        }
+
+        [TestMethod]
+        public void HaveCorrectReferenceAndLinkToJuvenileDiabetesResearchFoundation()
+        {
+            string testString = "<a href=\"http://www.jdrf.org/\" target=\"_blank\">JDRF</a>";
+            HaveCorrectText(testString);
+        }
     }
 }

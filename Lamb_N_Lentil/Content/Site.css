@@ -97,12 +97,12 @@ p {
     margin-top: -10px;
 }
 
-.IngredientsTable{
+.IngredientsIndexTable{
     background-color:white;
     width:60%;
 }
 
-.IngredientsTable .rightJustify{
+.IngredientsIndexTable .rightJustify{
    text-align:right; 
 }
 
@@ -125,3 +125,11 @@ tr .leftpadding10 {
     width:450px;
     max-width:450px; 
 }
+ 
+h2.no_results {
+    color:red;
+}
+
+#IngredientsIndexTable tr th:first-child, #IngredientsIndexTable tr td:first-child { 
+    width:10%;
+} 

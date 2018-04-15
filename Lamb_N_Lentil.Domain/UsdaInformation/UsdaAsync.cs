@@ -14,7 +14,7 @@ namespace Lamb_N_Lentil.Domain.UsdaInformation
 
         public async Task<List<IIngredient>> GetListOfIngredientsFromTextSearch(string searchString, string dataSource = "")
         {
-            UsdaFood usdaFood = await FetchUsdaFoodAsync(searchString, dataSource);
+            UsdaFood usdaFood = await FetchUsdaFood(searchString, dataSource);
             List<IIngredient> ingredients;
             if (usdaFood.list != null)
             {
@@ -27,7 +27,7 @@ namespace Lamb_N_Lentil.Domain.UsdaInformation
             return ingredients;
         }
 
-        public async Task<UsdaFood> FetchUsdaFoodAsync(string searchString, string dataSource = "")
+        public async Task<UsdaFood> FetchUsdaFood(string searchString, string dataSource = "")
         {
                string  _dataSource = "";
 
