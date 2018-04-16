@@ -4,9 +4,7 @@ using System.Threading.Tasks;
 using Lamb_N_Lentil.Domain.UsdaInformation;
 
 namespace Lamb_N_Lentil.Domain.UsdaInformation
-{
-
-
+{ 
     public class MapUsdaFoodToIngredient : IMapUsdaFoodToIngredient
     {
         public static async Task<IIngredient> ConvertUsdaFoodToIIngredient(Foods[] foods, int index, string ds = "BL")

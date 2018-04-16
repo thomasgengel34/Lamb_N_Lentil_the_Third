@@ -19,6 +19,8 @@ namespace Lamb_N_Lentil.UI.Models
         [Display(Name = "Manufacturer Or Food Group")]
         public string ManufacturerOrFoodGroup { get; set; }
 
+        public int TotalFromSearch { get; set; }
+
 
         public static IngredientListViewModel MapIIngredientToIngredientListViewModel(IIngredient ingredient)
         {

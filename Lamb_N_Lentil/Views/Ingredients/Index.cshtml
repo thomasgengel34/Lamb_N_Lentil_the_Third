@@ -12,6 +12,8 @@
 
 <h1>Search For Ingredients</h1>
 <h2 class="no_results">@ViewBag.NoResults</h2>
+<h3>Results Shown: @ViewBag.TotalShown </h3>
+<h3>Results Found: @ViewBag.SearchTotal  </h3>
 
 @using (Html.BeginForm("ShowResults", UIType.Ingredients.ToString(), new { Controller = UIType.Ingredients.ToString(), searchText = "searchText", databaseSelection=Enum.TryParse("databaseSelection",out UsdaDataSource databaseSelection) }))
 {

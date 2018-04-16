@@ -20,15 +20,7 @@ namespace Lamb_N_Lentil.Tests.Controllers
         {
           controller = new IngredientsController(null,new  MockUsdaAsync()); 
         }
-
-        [TestMethod]
-        public async Task  AnIngredientViewModelContainingAListOfFoodsWithDataSource()
-        {
-            IIngredient ingredient = await GetTheIngredient();
-            string dataSource = ingredient.UsdaDataSource.ToString();
-            Assert.AreEqual("BrandedFoodProducts", dataSource);
-
-        }
+         
 
         private async Task<IIngredient> GetTheIngredient()
         {

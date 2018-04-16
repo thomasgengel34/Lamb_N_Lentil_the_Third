@@ -9,12 +9,16 @@ namespace Lamb_N_Lentil.Domain.UsdaInformation
 {
     public class UsdaAsync : IUsdaAsync
     {
+
+
         static string key = "sFtfcrVdSOKA4ip3Z1MlylQmdj5Uw3JoIIWlbeQm";
         public int FetchedTotalFromSearch { get; set; }
+
 
         public async Task<List<IIngredient>> GetListOfIngredientsFromTextSearch(string searchString, string dataSource = "")
         {
             UsdaFood usdaFood = await FetchUsdaFood(searchString, dataSource);
+          
             List<IIngredient> ingredients;
             if (usdaFood.list != null)
             {

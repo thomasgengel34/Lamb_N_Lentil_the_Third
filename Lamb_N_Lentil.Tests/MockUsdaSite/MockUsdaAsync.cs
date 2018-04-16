@@ -10,26 +10,21 @@ namespace Lamb_N_Lentil.Tests.MockUsdaSite
     {
         public int FetchedTotalFromSearch { get; set; }
 
-        /// <summary>
-        /// TODO: should this method have Async in the name?
-        /// </summary>
-        /// <param name="searchString"></param>
-        /// <param name="description"></param>
-        /// <returns></returns>
+
         public async Task<List<IIngredient>> GetListOfIngredientsFromTextSearch(string searchString, string description)
         {
             int someRandomID = 79258888;
             string someRandomNumber = "45237067";
             string sampleManufacturereOrFoodGroup = "xxxx";
-            if (description == ""||description==UsdaDataSource.Both.ToString())
+            if (description == "" || description == UsdaDataSource.Both.ToString())
             {
                 sampleManufacturereOrFoodGroup = "Sample Manufacturer Or Food Group For Empty String";
             }
-            if (description== UsdaDataSource.BrandedFoodProducts.ToString())
+            if (description == UsdaDataSource.BrandedFoodProducts.ToString())
             {
-                sampleManufacturereOrFoodGroup= "Sample Manufacturer Or Food Group For Branded Products String";
+                sampleManufacturereOrFoodGroup = "Sample Manufacturer Or Food Group For Branded Products String";
             }
-            if (description==UsdaDataSource.StandardReference.ToString())
+            if (description == UsdaDataSource.StandardReference.ToString())
             {
                 sampleManufacturereOrFoodGroup = "Sample Manufacturer Or Food Group For Standard String";
             }
@@ -39,11 +34,46 @@ namespace Lamb_N_Lentil.Tests.MockUsdaSite
             IIngredient ingredient = new Entity() { InstanceName = searchString, ID = someRandomID };
             ingredient.Ndbno = someRandomNumber;
             ingredient.ManufacturerOrFoodGroup = sampleManufacturereOrFoodGroup;
-            if (searchString != "This Should Return No Ingredients")
+            if (searchString == "This Should Return No Ingredients")
+            {
+                return list;
+            }
+           
+            if (searchString == "1000")
+                return BuildIngredientList(list, searchString);
+
+            if (searchString == "1003")
+                return BuildIngredientList(list, searchString);
+
+            if (searchString == "1049")
+                return BuildIngredientList(list, searchString);
+
+            if (searchString == "1050")
+                return BuildIngredientList(list, searchString);
+
+            if (searchString == "1051")
+                return BuildIngredientList(list, searchString);
+            if (searchString== "total")
+            {
+                FetchedTotalFromSearch = 445321;
+                list.Add(ingredient);
+                return list;
+            }
+           else
             {
                 list.Add(ingredient);
+                return list;
             }
+        }
 
+        private static List<IIngredient> BuildIngredientList(List<IIngredient> list, string searchString)
+        {
+            int length = Convert.ToInt32(searchString) - 1000;
+            list.Clear();
+            for (int i = 0; i < length; i++)
+            {
+                list.Add(new Entity { ID = i });
+            }
             return list;
         }
 
