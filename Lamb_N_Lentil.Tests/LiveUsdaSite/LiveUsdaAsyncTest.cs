@@ -10,17 +10,7 @@ namespace Lamb_N_Lentil.Tests.LiveUsdaSite
     [TestClass]
     public class LiveUsdaAsyncTest 
     {
-       
-
-        [TestMethod]
-        public async Task ReturnManufacturerFromNdbnoRealDatabase()
-        {
-            string aRealNdbno = "45059050";
-            string realManufacturerOrFoodGroup = "Valley Brook Farm";
-            string returnedValue = await new UsdaAsync().GetManufacturerOrFoodGroup(aRealNdbno);
-            Assert.AreEqual(realManufacturerOrFoodGroup, returnedValue);
-        }
-
+      
          
 
         [TestMethod]
@@ -48,29 +38,13 @@ namespace Lamb_N_Lentil.Tests.LiveUsdaSite
             Assert.AreEqual(whatTestStringLengthShouldBe, testStringLength);
             Assert.AreEqual(correctLength, returnedString.Length);
         }
-
-        [TestMethod]
-        public async Task ShouldIgnoreAnIngredientInStandardReferenceWhenBuildingAList()
-        { 
-            string testNdbno = "1050";  //  this is in search for cream, is the second, is in SR
-            string testString = "cream";
-            List<IIngredient> list = await new UsdaAsync().GetListOfIngredientsFromTextSearch(testString, "");
-
-            var ndbnosReturned = from r in list
-                                 where r.Ndbno == testNdbno
-                                 select r.Ndbno;
-
-            string  ndbnoReturned = ndbnosReturned.FirstOrDefault();
-
-            Assert.AreEqual(null, ndbnoReturned);  
-        }
-
+         
 
         [TestMethod]
        public async Task  ShouldGetListOfIngredientsFromTextSearch()
         {
             string testString = "cream";
-               List<IIngredient> list = await new UsdaAsync().GetListOfIngredientsFromTextSearch(testString,"");
+               List<IIngredient> list = await new UsdaAsync().GetListOfIngredientsFromTextSearch(testString );
 
             Assert.IsNotNull(list);
             Assert.IsInstanceOfType(list, typeof(List<IIngredient>));
@@ -80,24 +54,36 @@ namespace Lamb_N_Lentil.Tests.LiveUsdaSite
         public async Task ShouldCreateNewIngredientsListWhenNoResultsASreFound()
         {
             string testString = "qq";
-            List<IIngredient> list = await new UsdaAsync().GetListOfIngredientsFromTextSearch(testString, "");
+            List<IIngredient> list = await new UsdaAsync().GetListOfIngredientsFromTextSearch(testString );
 
             Assert.IsNotNull(list);
             Assert.IsInstanceOfType(list, typeof(List<IIngredient>));
         }
 
-         
+          
 
         [TestMethod]
-        public async Task ReturnSomethingFromTheDataBaseWhenBothDatabasesAreSpecified()
+        public async Task ReturnIngredientsListInFoodReport()
         {
-            string searchString = "Butter";
-            string dbSearchParameter = UsdaDataSource.Both.ToString();
             IUsdaAsync usdaAsync = new UsdaAsync();
-
-            List<IIngredient> list = await usdaAsync.GetListOfIngredientsFromTextSearch(searchString, dbSearchParameter);
-
-            Assert.AreEqual(4415,usdaAsync.FetchedTotalFromSearch);
+            string testString = "45032698";
+            string correctIngredients = "DICED PEACHES, WATER, SUGAR, NATURAL FLAVOR, ASCORBIC ACID (VITAMIN C) TO PROTECT COLOR, CITRIC ACID.";
+            UsdaFoodReport report = await usdaAsync.FetchUsdaFoodReport(testString);
+            string returnedIngredients = report.foods.First().food.ing.desc;
+            Assert.AreEqual(correctIngredients, returnedIngredients);
         }
+
+        [TestMethod]
+        public async Task ReturnIngredientsListInFoodReportFor078895122565()
+        {
+            IUsdaAsync usdaAsync = new UsdaAsync();
+            string testString = "078895122565";
+            string correctIngredients = "SUGAR, SALTED PLUMS (PLUMS, SALT), WATER, RICE VINEGAR, MODIFIED CORN STARCH, GINGER, CITRIC ACID, SODIUM CITRATE, CHILI PEPPERS, XANTHAN GUM.";
+
+            List<IIngredient> list = await new UsdaAsync().GetListOfIngredientsFromTextSearch(testString);
+            UsdaFoodReport report = await usdaAsync.FetchUsdaFoodReport(list.First().Ndbno);
+            string returnedIngredients = report.foods.First().food.ing.desc;
+            Assert.AreEqual(correctIngredients, returnedIngredients);
+        } 
     }
 }

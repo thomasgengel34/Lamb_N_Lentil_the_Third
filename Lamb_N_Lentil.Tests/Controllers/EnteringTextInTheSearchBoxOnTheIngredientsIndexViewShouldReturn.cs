@@ -30,21 +30,6 @@ namespace Lamb_N_Lentil.Tests.Controllers
             IIngredient ingredient = IngredientListViewModel.MapIIngredientListViewModelToIngredient(ingredients.First());
             return ingredient;
         }
-
-        [TestMethod]
-        public async Task AnIngredientViewModelContainingAListOfFoodsWithNdbno()
-        {
-            IIngredient ingredient = await GetTheIngredient();
-            string ndbno = ingredient.Ndbno;
-            Assert.AreEqual("45237067", ndbno);
-        }
-
-        [TestMethod]
-        public async Task  IngredientViewModelContainingAListOfFoodsWithDescriptionAndManufacturereOrFoodGroup()
-        {
-            IIngredient ingredient = await GetTheIngredient();
-            string descriptionAndManufacturereOrFoodGroup = "Sample Manufacturer Or Food Group For Empty String";
-            Assert.AreEqual(descriptionAndManufacturereOrFoodGroup, ingredient.ManufacturerOrFoodGroup);
-        }
+  
     }
 }

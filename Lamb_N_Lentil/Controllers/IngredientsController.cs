@@ -36,13 +36,9 @@ namespace Lamb_N_Lentil.UI.Controllers
         }
 
 
-        public async Task<ActionResult> ShowResults(string searchText, UsdaDataSource  databaseSelection = UsdaDataSource.Both)
-        {
-            
-             ViewBag.DatabaseSelection = databaseSelection;
-             
-          
-            var ingredients = await   usdaAsync.GetListOfIngredientsFromTextSearch(searchText, databaseSelection.ToString());
+        public async Task<ActionResult> ShowResults(string searchText)
+        { 
+            var ingredients = await   usdaAsync.GetListOfIngredientsFromTextSearch(searchText);
             List<IngredientListViewModel> vm = new List<IngredientListViewModel>();
             foreach (IIngredient ingredient in ingredients)
             {

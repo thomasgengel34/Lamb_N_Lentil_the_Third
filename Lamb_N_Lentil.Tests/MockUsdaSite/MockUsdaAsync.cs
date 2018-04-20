@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Linq;
 using System.Threading.Tasks;
 using Lamb_N_Lentil.Domain;
 using Lamb_N_Lentil.Domain.UsdaInformation;
@@ -9,36 +10,34 @@ namespace Lamb_N_Lentil.Tests.MockUsdaSite
     internal class MockUsdaAsync : IUsdaAsync
     {
         public int FetchedTotalFromSearch { get; set; }
-
+        public string FetchedIngredientsInIngredient { get; set; }
 
         public async Task<List<IIngredient>> GetListOfIngredientsFromTextSearch(string searchString, string description)
         {
             int someRandomID = 79258888;
-            string someRandomNumber = "45237067";
-            string sampleManufacturereOrFoodGroup = "xxxx";
+            string sampleManufacturerOrFoodGroup;
             if (description == "" || description == UsdaDataSource.Both.ToString())
             {
-                sampleManufacturereOrFoodGroup = "Sample Manufacturer Or Food Group For Empty String";
+                sampleManufacturerOrFoodGroup = "Sample Manufacturer Or Food Group For Empty String";
             }
             if (description == UsdaDataSource.BrandedFoodProducts.ToString())
             {
-                sampleManufacturereOrFoodGroup = "Sample Manufacturer Or Food Group For Branded Products String";
+                sampleManufacturerOrFoodGroup = "Sample Manufacturer Or Food Group For Branded Products String";
             }
             if (description == UsdaDataSource.StandardReference.ToString())
             {
-                sampleManufacturereOrFoodGroup = "Sample Manufacturer Or Food Group For Standard String";
+                sampleManufacturerOrFoodGroup = "Sample Manufacturer Or Food Group For Standard String";
             }
 
             await Task.Delay(0);
             List<IIngredient> list = new List<IIngredient>();
             IIngredient ingredient = new Entity() { InstanceName = searchString, ID = someRandomID };
-            ingredient.Ndbno = someRandomNumber;
-            ingredient.ManufacturerOrFoodGroup = sampleManufacturereOrFoodGroup;
+
             if (searchString == "This Should Return No Ingredients")
             {
                 return list;
             }
-           
+
             if (searchString == "1000")
                 return BuildIngredientList(list, searchString);
 
@@ -53,13 +52,13 @@ namespace Lamb_N_Lentil.Tests.MockUsdaSite
 
             if (searchString == "1051")
                 return BuildIngredientList(list, searchString);
-            if (searchString== "total")
+            if (searchString == "total")
             {
                 FetchedTotalFromSearch = 445321;
                 list.Add(ingredient);
                 return list;
             }
-           else
+            else
             {
                 list.Add(ingredient);
                 return list;
@@ -104,20 +103,21 @@ namespace Lamb_N_Lentil.Tests.MockUsdaSite
         }
 
 
-        public async Task<string> GetListOfIngredientsFromTextSearch(string searchString)
+        public async Task<UsdaFoodReport> FetchUsdaFoodReport(string searchString)
         {
-            string correctList = "onion, garlic, turmeric, basil";
-            if (searchString != "foo")
+            UsdaFoodReport report = new UsdaFoodReport();
+            await Task.Delay(0);
+            if (searchString == "ShouldReturnIngredients")
             {
-                throw new Exception("wrong parameter!");
+                report.foods = new foods[1];
+                food food = new food() { ing = new ing() { desc = "peas, porridge, hot" } };
+                foods testfoods = new foods { food = food };
+               
+                    report.foods[0] = testfoods;  
+              
+                return report;
             }
-            else
-            {
-                await Task.Delay(0);
-                return correctList;
-            }
-        }
-
-
+            else throw new NotImplementedException();
+        }   
     }
 }

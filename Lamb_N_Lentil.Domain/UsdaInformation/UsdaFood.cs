@@ -36,7 +36,7 @@
 
     public class list
     {
-        public  string q  { get; set; }
+        public string q { get; set; }
         public string sr { get; set; }
         public string ds { get; set; }
         public int start { get; set; }

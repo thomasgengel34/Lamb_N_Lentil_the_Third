@@ -130,7 +130,6 @@
     <Compile Include="Controllers\HomeControllerShould.cs" />
     <Compile Include="Views\IngredientsIndexShould.cs" />
     <Compile Include="Views\ErrorViewShould.cs" />
-    <Compile Include="WebAPI\GetFoodsBySearchingUsingFreeTextToLocateFoodsInTheDatabase.cs" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="App.config" />

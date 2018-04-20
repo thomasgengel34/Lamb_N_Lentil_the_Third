@@ -9,16 +9,14 @@ namespace Lamb_N_Lentil.Domain.UsdaInformation
 {
     public class UsdaAsync : IUsdaAsync
     {
-
-
         static string key = "sFtfcrVdSOKA4ip3Z1MlylQmdj5Uw3JoIIWlbeQm";
         public int FetchedTotalFromSearch { get; set; }
-
+        public string FetchedIngredientsInIngredient { get; set; }
 
         public async Task<List<IIngredient>> GetListOfIngredientsFromTextSearch(string searchString, string dataSource = "")
         {
-            UsdaFood usdaFood = await FetchUsdaFood(searchString, dataSource);
-          
+            UsdaFood usdaFood = await FetchUsdaFood(searchString);
+
             List<IIngredient> ingredients;
             if (usdaFood.list != null)
             {
@@ -31,24 +29,16 @@ namespace Lamb_N_Lentil.Domain.UsdaInformation
             return ingredients;
         }
 
-        public async Task<UsdaFood> FetchUsdaFood(string searchString, string dataSource = "")
+        public async Task<UsdaFood> FetchUsdaFood(string searchString)
         {
-               string  _dataSource = "";
+            string _dataSource = "";
 
-            if (dataSource == UsdaDataSource.StandardReference.ToString())
-            {
-                _dataSource = "Standard Reference";
-            }
-            else if (dataSource==UsdaDataSource.BrandedFoodProducts.ToString())
-            {
-                _dataSource = "Branded Food Products";
-            }
 
 
             HttpClient client = new HttpClient();
             searchString = ReduceStringLengthToWhatWillWorkOnUSDA(searchString);
             string http = "https://api.nal.usda.gov/ndb/search/?format=json&q=";
-            string apiKey = "&max=5000&offset=0&ds=" + _dataSource + "&api_key=";
+            string apiKey = "&max=50&offset=0&ds=" + _dataSource + "&api_key=";
             string foodsUrl = String.Concat(http, searchString, apiKey, key);
             client.BaseAddress = new Uri(foodsUrl);
 
@@ -57,8 +47,7 @@ namespace Lamb_N_Lentil.Domain.UsdaInformation
             HttpResponseMessage response = await client.GetAsync(foodsUrl);
             if (response.IsSuccessStatusCode)
             {
-                var x= await response.Content.ReadAsAsync<UsdaFood>();
-                usdaFood = x;
+                usdaFood = await response.Content.ReadAsAsync<UsdaFood>();
             }
             if (usdaFood.list != null)
             {
@@ -79,13 +68,13 @@ namespace Lamb_N_Lentil.Domain.UsdaInformation
 
             return searchString;
         }
-        
 
-        public async Task<string> GetManufacturerOrFoodGroup(string ndbno)
+
+        public async Task<UsdaFoodReport> FetchUsdaFoodReport(string ndbno)
         {
             HttpClient client = new HttpClient();
 
-            string http = "https://api.nal.usda.gov/ndb/reports/?ndbno=";
+            string http = "https://api.nal.usda.gov/ndb/V2/reports/?ndbno=";
             //                     &type=f&format=json&api_key= 
             string apiKey = "&type=b&format=json&api_key=";
             string foodsUrl = String.Concat(http, ndbno, apiKey, key);
@@ -99,19 +88,23 @@ namespace Lamb_N_Lentil.Domain.UsdaInformation
                 usdaFoodReport = await response.Content.ReadAsAsync<UsdaFoodReport>();
 
             }
-            string foodGroup = usdaFoodReport.report.food.fg ??"";
-            string manufacturer = usdaFoodReport.report.food.manu??"";
-            string ds = usdaFoodReport.report.food.ds;
-
-            string manufacturerOrFoodGroup = manufacturer;
-
-            if (manufacturer == "")
+            if (usdaFoodReport != null && usdaFoodReport.foods != null && usdaFoodReport.foods.First() != null && usdaFoodReport.foods.First().food != null && usdaFoodReport.foods.First().food.ing != null && usdaFoodReport.foods.First().food.ing.desc != null)
             {
-                manufacturerOrFoodGroup = foodGroup;
+                FetchedIngredientsInIngredient = usdaFoodReport.foods.First().food.ing.desc;
             }
-            return manufacturerOrFoodGroup;
+            else
+            {
+                FetchedIngredientsInIngredient = "Not provided";
+            }
+            if (usdaFoodReport.foods.First().food.ing == null)
+            {
+                usdaFoodReport.foods.First().food.ing = new ing() { desc = FetchedIngredientsInIngredient };
+            }
+            else
+            {
+                usdaFoodReport.foods.First().food.ing.desc = FetchedIngredientsInIngredient;
+            }
+            return usdaFoodReport;
         }
-
-     
     }
 }

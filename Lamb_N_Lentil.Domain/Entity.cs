@@ -9,15 +9,11 @@ namespace Lamb_N_Lentil.Domain
         public string InstanceName { get; set; }
          
         public string IngredientsList { get; set; }
-         
-        string IIngredient.Ndbno { get; set; }
+        public string Ndbno { get; set; }
+        string IIngredient.Description { get; set; } 
+        
+        string IEntity.IngredientsInIngredient { get; set; } 
 
- 
-        UsdaDataSource IIngredient.UsdaDataSource { get; set; }
-
-        string IIngredient.Description { get; set; }
- 
-        string IIngredient.ManufacturerOrFoodGroup { get; set; }
 
     }
 }

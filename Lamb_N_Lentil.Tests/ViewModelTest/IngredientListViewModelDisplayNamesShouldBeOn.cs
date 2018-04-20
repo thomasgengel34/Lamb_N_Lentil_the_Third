@@ -17,17 +17,7 @@ namespace Lamb_N_Lentil.Tests.ViewModelTest
             var name = attribute.GetType().Name;
             Assert.AreEqual("DisplayAttribute", name);
         }
-
-        [TestMethod]
-        public void ShouldHaveDisplayNamePropertyOnManufacturerOrFoodGroup()
-        {
-            var attributes = typeof(IngredientListViewModel).GetProperty("ManufacturerOrFoodGroup").GetCustomAttributes(false);
-            var attribute = attributes[0];
-            var name = attribute.GetType().Name;
-            Assert.AreEqual("DisplayAttribute", name);
-        }
-
-       
+         
 
         [TestMethod]
         public void ShouldHaveCorrectDisplayNamePropertyOnUsdaDataSource()
@@ -38,17 +28,6 @@ namespace Lamb_N_Lentil.Tests.ViewModelTest
             var name = pInfo.Name;
 
             Assert.AreEqual("USDA Data Source", name);
-        }
-
-        [TestMethod]
-        public void ShouldHaveCorrectDisplayNamePropertyOnManufacturerOrFoodGroup()
-        {
-            var pInfo = typeof(IngredientListViewModel).GetProperty("ManufacturerOrFoodGroup")
-                                .GetCustomAttributes(typeof(DisplayAttribute), false)
-                                .Cast<DisplayAttribute>().FirstOrDefault();
-            var name = pInfo.Name;
-
-            Assert.AreEqual("Manufacturer Or Food Group", name);
-        }
+        } 
     }
 }

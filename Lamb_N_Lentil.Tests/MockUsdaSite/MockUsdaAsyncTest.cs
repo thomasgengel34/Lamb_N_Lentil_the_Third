@@ -1,4 +1,5 @@
-﻿using System.Threading.Tasks;
+﻿using System.Linq;
+using System.Threading.Tasks;
 using Lamb_N_Lentil.Domain.UsdaInformation;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
 
@@ -42,10 +43,13 @@ namespace Lamb_N_Lentil.Tests.MockUsdaSite
         }
 
         [TestMethod]
-        public async Task ReturnManufacturerOrFoodGroupFromNdbnoTest()
+        public async Task ReturnIngredientsListInFoodReport()
         {
-            string returnString = await   usdaAsync.GetManufacturerOrFoodGroup("01009");
-            Assert.AreEqual("Valley Brook Farm", returnString);
-        } 
+            string testString = "ShouldReturnIngredients";
+            string correctIngredients = "peas, porridge, hot";
+            UsdaFoodReport report = await usdaAsync.FetchUsdaFoodReport(testString);
+                string returnedIngredients = report.foods.First().food.ing.desc;
+            Assert.AreEqual(correctIngredients, returnedIngredients);
+        }
     }
 }

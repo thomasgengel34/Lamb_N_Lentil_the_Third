@@ -1,0 +1,265 @@
+{
+  "foods": [
+    {
+      "food": {
+        "sr": "v0.0 March, 2018",
+        "type": "b",
+        "desc": {
+          "ndbno": "45189498",
+          "name": "RAVIOLI FIVE CHEESE, UPC: 008005658134",
+          "ds": "Label Insight",
+          "manu": "Nuovo Pasta Productions Ltd",
+          "ru": "g"
+        },
+        "ing": {
+          "desc": "FILLING: RICOTTA CHEESE (MILK, WHEY, CREAM, VINEGAR, SALT, NATURAL STABILIZERS [XANTHAN GUM, LOCUST BEAN GUM, GUAR GUM]), PARMESAN CHEESE (CULTURED PASTEURIZED MILK, SALT, ENZYMES), ASIAGO CHEESE (MILK, ENZYMES, SALT), MOZZARELLA CHEESE (CULTURED PASTEURIZED WHOLE MILK AND SKIM MILK, SALT, ENZYMES), ROMANO CHEESE (MILK, SALT, ENZYMES), MILK, NATURAL PARMESAN FLAVOR (PARMESAN CHEESE {MILK, CULTURE, SALT, ENZYMES}, SALT, YEAST EXTRACT, UNSALTED BUTTER, CORN OIL, OLIVE OIL, CREME POWDER, SUGAR AND NATURAL FLAVORINGS), OLIVE OIL, EGG WHITES, BLACK PEPPER, SALT, NUTMEG. PASTA: GLUTEN FREE FLOUR (MAIZE STARCH, RICE FLOUR, POTATO STARCH, SKIM MILK POWDER, MILK PROTEIN, GUAR GUM, DEXTROSE, MODIFIED CELLULOSE), EGGS, WATER.",
+          "upd": "07/14/2017"
+        },
+        "nutrients": [
+          {
+            "nutrient_id": "208",
+            "name": "Energy",
+            "derivation": "LCCS",
+            "group": "Proximates",
+            "unit": "kcal",
+            "value": "276",
+            "measures": [
+              {
+                "label": "ONZ",
+                "eqv": 127.0,
+                "eunit": "g",
+                "qty": 4.5,
+                "value": "351"
+              }
+            ]
+          },
+          {
+            "nutrient_id": "203",
+            "name": "Protein",
+            "derivation": "LCCS",
+            "group": "Proximates",
+            "unit": "g",
+            "value": "14.96",
+            "measures": [
+              {
+                "label": "ONZ",
+                "eqv": 127.0,
+                "eunit": "g",
+                "qty": 4.5,
+                "value": "19.00"
+              }
+            ]
+          },
+          {
+            "nutrient_id": "204",
+            "name": "Total lipid (fat)",
+            "derivation": "LCCS",
+            "group": "Proximates",
+            "unit": "g",
+            "value": "8.66",
+            "measures": [
+              {
+                "label": "ONZ",
+                "eqv": 127.0,
+                "eunit": "g",
+                "qty": 4.5,
+                "value": "11.00"
+              }
+            ]
+          },
+          {
+            "nutrient_id": "205",
+            "name": "Carbohydrate, by difference",
+            "derivation": "LCCS",
+            "group": "Proximates",
+            "unit": "g",
+            "value": "34.65",
+            "measures": [
+              {
+                "label": "ONZ",
+                "eqv": 127.0,
+                "eunit": "g",
+                "qty": 4.5,
+                "value": "44.01"
+              }
+            ]
+          },
+          {
+            "nutrient_id": "291",
+            "name": "Fiber, total dietary",
+            "derivation": "LCCS",
+            "group": "Proximates",
+            "unit": "g",
+            "value": "1.6",
+            "measures": [
+              {
+                "label": "ONZ",
+                "eqv": 127.0,
+                "eunit": "g",
+                "qty": 4.5,
+                "value": "2.0"
+              }
+            ]
+          },
+          {
+            "nutrient_id": "269",
+            "name": "Sugars, total",
+            "derivation": "LCCS",
+            "group": "Proximates",
+            "unit": "g",
+            "value": "0.79",
+            "measures": [
+              {
+                "label": "ONZ",
+                "eqv": 127.0,
+                "eunit": "g",
+                "qty": 4.5,
+                "value": "1.00"
+              }
+            ]
+          },
+          {
+            "nutrient_id": "301",
+            "name": "Calcium, Ca",
+            "derivation": "LCCD",
+            "group": "Minerals",
+            "unit": "mg",
+            "value": "236",
+            "measures": [
+              {
+                "label": "ONZ",
+                "eqv": 127.0,
+                "eunit": "g",
+                "qty": 4.5,
+                "value": "300"
+              }
+            ]
+          },
+          {
+            "nutrient_id": "303",
+            "name": "Iron, Fe",
+            "derivation": "LCCD",
+            "group": "Minerals",
+            "unit": "mg",
+            "value": "0.00",
+            "measures": [
+              {
+                "label": "ONZ",
+                "eqv": 127.0,
+                "eunit": "g",
+                "qty": 4.5,
+                "value": "0.00"
+              }
+            ]
+          },
+          {
+            "nutrient_id": "307",
+            "name": "Sodium, Na",
+            "derivation": "LCCS",
+            "group": "Minerals",
+            "unit": "mg",
+            "value": "276",
+            "measures": [
+              {
+                "label": "ONZ",
+                "eqv": 127.0,
+                "eunit": "g",
+                "qty": 4.5,
+                "value": "351"
+              }
+            ]
+          },
+          {
+            "nutrient_id": "401",
+            "name": "Vitamin C, total ascorbic acid",
+            "derivation": "LCCD",
+            "group": "Vitamins",
+            "unit": "mg",
+            "value": "0.0",
+            "measures": [
+              {
+                "label": "ONZ",
+                "eqv": 127.0,
+                "eunit": "g",
+                "qty": 4.5,
+                "value": "0.0"
+              }
+            ]
+          },
+          {
+            "nutrient_id": "318",
+            "name": "Vitamin A, IU",
+            "derivation": "LCCD",
+            "group": "Vitamins",
+            "unit": "IU",
+            "value": "174",
+            "measures": [
+              {
+                "label": "ONZ",
+                "eqv": 127.0,
+                "eunit": "g",
+                "qty": 4.5,
+                "value": "221"
+              }
+            ]
+          },
+          {
+            "nutrient_id": "606",
+            "name": "Fatty acids, total saturated",
+            "derivation": "LCCS",
+            "group": "Lipids",
+            "unit": "g",
+            "value": "5.510",
+            "measures": [
+              {
+                "label": "ONZ",
+                "eqv": 127.0,
+                "eunit": "g",
+                "qty": 4.5,
+                "value": "6.998"
+              }
+            ]
+          },
+          {
+            "nutrient_id": "605",
+            "name": "Fatty acids, total trans",
+            "derivation": "LCCS",
+            "group": "Lipids",
+            "unit": "g",
+            "value": "0.000",
+            "measures": [
+              {
+                "label": "ONZ",
+                "eqv": 127.0,
+                "eunit": "g",
+                "qty": 4.5,
+                "value": "0.000"
+              }
+            ]
+          },
+          {
+            "nutrient_id": "601",
+            "name": "Cholesterol",
+            "derivation": "LCCS",
+            "group": "Lipids",
+            "unit": "mg",
+            "value": "59",
+            "measures": [
+              {
+                "label": "ONZ",
+                "eqv": 127.0,
+                "eunit": "g",
+                "qty": 4.5,
+                "value": "75"
+              }
+            ]
+          }
+        ],
+        "footnotes": []
+      }
+    }
+  ],
+  "count": 1,
+  "notfound": 0,
+  "api": 2.0
+}

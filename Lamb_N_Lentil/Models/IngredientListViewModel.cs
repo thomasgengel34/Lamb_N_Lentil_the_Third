@@ -13,24 +13,21 @@ namespace Lamb_N_Lentil.UI.Models
         [Display(Name = "USDA Data Source")]
         public UsdaDataSource UsdaDataSource { get; set; }
 
-
+        [Display(Name = "Ingredient")]
         public string Description { get; set; }
 
-        [Display(Name = "Manufacturer Or Food Group")]
-        public string ManufacturerOrFoodGroup { get; set; }
-
         public int TotalFromSearch { get; set; }
+
+        [Display(Name = "List of Ingredients")]
+        public string  IngredientsInIngredient { get; set; }
 
 
         public static IngredientListViewModel MapIIngredientToIngredientListViewModel(IIngredient ingredient)
         {
             IngredientListViewModel Vm = new IngredientListViewModel()
             {
-                Ndbno = ingredient.Ndbno,
-                UsdaDataSource = ingredient.UsdaDataSource,
-                DataSourceDisplayName=GetDisplayNameOfUsdaDataSource(ingredient.UsdaDataSource.ToString()),
                 Description = ingredient.Description,
-                ManufacturerOrFoodGroup = ingredient.ManufacturerOrFoodGroup
+                 IngredientsInIngredient = ingredient.IngredientsInIngredient
             };
             return Vm;
         }
@@ -38,13 +35,12 @@ namespace Lamb_N_Lentil.UI.Models
         public static IIngredient MapIIngredientListViewModelToIngredient(IngredientListViewModel vm)
         {
             IIngredient ingredient = new Entity();
-            ingredient.Ndbno = vm.Ndbno;
-            ingredient.UsdaDataSource = vm.UsdaDataSource;
             ingredient.Description = vm.Description;
-            ingredient.ManufacturerOrFoodGroup = vm.ManufacturerOrFoodGroup;
+            ingredient.IngredientsInIngredient = vm.IngredientsInIngredient;
 
-            return ingredient; 
-        } 
+
+            return ingredient;
+        }
 
         private static string GetDisplayNameOfUsdaDataSource(string source)
         {

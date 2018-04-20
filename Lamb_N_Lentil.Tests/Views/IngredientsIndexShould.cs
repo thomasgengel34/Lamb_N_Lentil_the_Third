@@ -15,20 +15,18 @@ namespace Lamb_N_Lentil.Tests.Views
 
         [TestMethod]
         public void UseDomainUsdaInformation() => HaveCorrectText("@using Lamb_N_Lentil.Domain.UsdaInformation");
-        
+
 
         [TestMethod]
-        public void HaveCorrectSearchForm() => HaveCorrectText(
-            "@using (Html.BeginForm(\"ShowResults\", UIType.Ingredients.ToString(), new { Controller = UIType.Ingredients.ToString(), searchText = \"searchText\", databaseSelection=Enum.TryParse(\"databaseSelection\",out UsdaDataSource databaseSelection) }))") ;
+        public void HaveCorrectSearchForm() => HaveCorrectText("@using (Html.BeginForm(\"ShowResults\", UIType.Ingredients.ToString(), new { Controller = UIType.Ingredients.ToString(), searchText = \"searchText\" }))");
+        //  "@using (Html.BeginForm(\"ShowResults\", UIType.Ingredients.ToString(), new { Controller = UIType.Ingredients.ToString(), searchText = \"searchText\", databaseSelection=Enum.TryParse(\"databaseSelection\",out UsdaDataSource databaseSelection) }))") ;
 
         [TestMethod]
         public void HaveCorrectLabelForTextSearch() => HaveCorrectText(
         "<p>  <label>Enter text to search for ingredients:</label></p>");
 
 
-        [TestMethod]
-        public void HaveCorrectLineForItemManufacturerOrFoodGroup() => HaveCorrectText(
-            "@Html.DisplayFor(model => item.ManufacturerOrFoodGroup)");
+       
 
         [TestMethod]
         public void HaveCorrectTextBoxToSearchForIngredients()

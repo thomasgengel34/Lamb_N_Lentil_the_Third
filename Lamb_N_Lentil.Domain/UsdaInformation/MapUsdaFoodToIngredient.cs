@@ -1,38 +1,28 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Linq;
 using System.Threading.Tasks;
 using Lamb_N_Lentil.Domain.UsdaInformation;
 
 namespace Lamb_N_Lentil.Domain.UsdaInformation
-{ 
-    public class MapUsdaFoodToIngredient : IMapUsdaFoodToIngredient
+{
+    public class MapUsdaFoodToIngredient
     {
-        public static async Task<IIngredient> ConvertUsdaFoodToIIngredient(Foods[] foods, int index, string ds = "BL")
+        public static IIngredient ConvertUsdaFoodToIIngredient(Foods[] foods, int index, string ds = "BL")
         {
             IIngredient ingredient = new Entity();
 
             ingredient.InstanceName = foods[index].food.desc.Name;
 
-            ingredient.IngredientsList = foods[index].food.ing.desc;
+            ingredient.IngredientsInIngredient = foods[index].food.ing.desc;
 
-            ingredient.Ndbno = foods[index].food.desc.Ndbno;
 
-            if (ds == "BL")
-            {
-                ingredient.UsdaDataSource = UsdaDataSource.BrandedFoodProducts;
-            }
-            else
-            {
-                ingredient.UsdaDataSource = UsdaDataSource.StandardReference;
-            }
 
             ingredient.Description = ingredient.InstanceName;
-            ingredient.ManufacturerOrFoodGroup = await new MapUsdaFoodToIngredient().GetManufacturerOrFoodGroup(ingredient.Ndbno);
 
             return ingredient;
         }
 
-        public async Task<string> GetManufacturerOrFoodGroup(string ndbno) => await new UsdaAsync().GetManufacturerOrFoodGroup(ndbno);
 
         internal static async Task<List<IIngredient>> ConvertUsdaFoodToListOfIngredients(UsdaFood usdaFood)
         {
@@ -41,54 +31,37 @@ namespace Lamb_N_Lentil.Domain.UsdaInformation
 
             foreach (var food in usdaFood.list.item)
             {
-                if (food.ds == "BL")
-                {
-                    IIngredient ingredient = new Entity();
-                    ingredient.Ndbno = food.ndbno;
-                    ingredient.UsdaDataSource = (food.ds == "sr") ? UsdaDataSource.StandardReference : UsdaDataSource.BrandedFoodProducts;
-                    ingredient.InstanceName = food.name;
-                    ingredient.Description = food.name;
-                    ingredient.ManufacturerOrFoodGroup = await new MapUsdaFoodToIngredient().GetManufacturerOrFoodGroup(ingredient.Ndbno);
+                IIngredient ingredient = new Entity();
+                ingredient.Description = food.name ?? "";
+                ingredient.InstanceName = food.name;
+                ingredient.IngredientsInIngredient = await GetIngredientsList(food);
+                ingredient.Ndbno = food.ndbno;
 
-                    ingredients.Add(ingredient);
-                    index++;
-                }
-                else if (food.ds == "LI")
-                {
-                    IIngredient ingredient = new Entity();
-                    ingredient.Ndbno = food.ndbno;
-                    ingredient.UsdaDataSource = (food.ds == "sr") ? UsdaDataSource.StandardReference : UsdaDataSource.BrandedFoodProducts;
-                    ingredient.InstanceName = food.name;
-                    ingredient.Description = food.name;
-                    ingredient.ManufacturerOrFoodGroup = await new MapUsdaFoodToIngredient().GetManufacturerOrFoodGroup(ingredient.Ndbno);
-
-                    ingredients.Add(ingredient);
-                    index++;
-                }
-                else if (food.ds == "SR" || food.ds == "Legacy")
-                {
-                    IIngredient ingredient = new Entity();
-                    ingredient.Ndbno = food.ndbno;
-                    ingredient.UsdaDataSource = (food.ds == "SR" || food.ds == "Legacy") ? UsdaDataSource.StandardReference : UsdaDataSource.BrandedFoodProducts;
-                    ingredient.InstanceName = food.name;
-                    ingredient.Description = food.name;
-                    ingredient.ManufacturerOrFoodGroup = await new MapUsdaFoodToIngredient().GetManufacturerOrFoodGroup(ingredient.Ndbno);
-                    ingredients.Add(ingredient);
-                    index++;
-                }
-                else
-                {
-                    IIngredient ingredient = new Entity();
-                    ingredient.Ndbno = food.ndbno;
-                    ingredient.UsdaDataSource = (food.ds == "SR" || food.ds == "Legacy") ? UsdaDataSource.StandardReference : UsdaDataSource.BrandedFoodProducts;
-                    ingredient.InstanceName = food.name;
-                    ingredient.Description = food.name;
-                    ingredient.ManufacturerOrFoodGroup = await new MapUsdaFoodToIngredient().GetManufacturerOrFoodGroup(ingredient.Ndbno);
-                    ingredients.Add(ingredient);
-                    index++;
-                }
+                ingredients.Add(ingredient);
+                index++; 
             }
             return ingredients;
+        }
+
+        private static async Task<string> GetIngredientsList(list.Food food)
+        { 
+            IUsdaAsync usdaAsync = new UsdaAsync();
+            UsdaFoodReport report = await usdaAsync.FetchUsdaFoodReport(food.ndbno);
+            string returnedIngredients = report.foods.First().food.ing.desc;
+            string alternate="";
+            if (food.ing != null)
+            {
+                alternate= food.ing.desc ?? "Not provided";
+            }
+            else
+            {
+                alternate = "Not provided";
+            }
+            if (returnedIngredients==null||returnedIngredients=="")
+            {
+                returnedIngredients = alternate;
+            }
+             return returnedIngredients;
         }
     }
 }

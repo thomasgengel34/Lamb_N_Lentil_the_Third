@@ -24,7 +24,7 @@ namespace Lamb_N_Lentil.Tests.Classes
         public void InstanceNameProperty() => VerifyPropertyIsValid("InstanceName"); 
 
         [TestMethod]
-        public void IngredientsListProperty() => VerifyPropertyIsValid("IngredientsList"); 
+        public void IngredientsListProperty() => VerifyPropertyIsValid("IngredientsInIngredient"); 
 
 
         private void VerifyPropertyIsValid(string value)

@@ -3,7 +3,7 @@
 @using System.ComponentModel.DataAnnotations
 @model IEnumerable<Lamb_N_Lentil.UI.Models.IngredientListViewModel>
 
-@{ 
+@{
 
     ViewBag.Title = "Index";
     IList<SelectListItem> ulist = EnumHelper.GetSelectList(typeof(UsdaDataSource));
@@ -11,23 +11,25 @@
 }
 
 <h1>Search For Ingredients</h1>
-<h2 class="no_results">@ViewBag.NoResults</h2>
-<h3>Results Shown: @ViewBag.TotalShown </h3>
-<h3>Results Found: @ViewBag.SearchTotal  </h3>
 
-@using (Html.BeginForm("ShowResults", UIType.Ingredients.ToString(), new { Controller = UIType.Ingredients.ToString(), searchText = "searchText", databaseSelection=Enum.TryParse("databaseSelection",out UsdaDataSource databaseSelection) }))
+<p>You can use this to search for foods and their ingredients.  Soon you will be able to get a detailed nutrient report on each food.  This is a way of accessing the USDA database that may be more convenient for cooks and meal planners.  The database can be searched at https://ndb.nal.usda.gov/ndb/search/list and it may be more convenient for you to use it directly than to come here.  </p>
+<h2 class="no_results">@ViewBag.NoResults</h2>
+
+
+@using (Html.BeginForm("ShowResults", UIType.Ingredients.ToString(), new { Controller = UIType.Ingredients.ToString(), searchText = "searchText" }))
 {
-    <p>
-        @Html.DropDownList("databaseSelection", list, "Select Database",new { @class = "input" })
-        The default is "all databases".
-    </p>
+
+
+
+
     <p>  <label>Enter text to search for ingredients:</label></p>
     <p>
         @Html.TextBox("searchText", "Enter Description of What You are Looking For Here", new { @class = "ingredientTextBox", maxlength = "43" })
         <br />
         There is a 43 character limit on searches in the USDA databases.
     </p>
-
+    <h3>Results Shown: @ViewBag.TotalShown  - this will show a maximum of 50 results</h3>
+    <h3>Results Found: @ViewBag.SearchTotal  </h3>
 
     <p>  <input type="submit" value="Search" /></p>
 }
@@ -38,32 +40,20 @@
 <table class="table table-bordered table-hover table-striped" id="IngredientsIndexTable">
     <tr>
         <th>
-            @Html.DisplayNameFor(model => model.UsdaDataSource)
-        </th>
-        <th>
             @Html.DisplayNameFor(model => model.Description)
         </th>
-        <th>
-            @Html.DisplayNameFor(model => model.ManufacturerOrFoodGroup)
-        </th>
-        <th></th>
     </tr>
 
     @foreach (var item in Model)
     {
         <tr>
+
             <td>
-                @Html.DisplayFor(model => item.DataSourceDisplayName) 
-            </td> 
-            <td>
-                @Html.DisplayFor(model => item.Description)
+                <strong>@Html.DisplayFor(model => item.Description)</strong> <br />
+                <p>@Html.DisplayNameFor(model => model.IngredientsInIngredient)</p>
+                <p>@Html.DisplayFor(model => item.IngredientsInIngredient)</p>
             </td>
-            <td>
-                @Html.DisplayFor(model => item.ManufacturerOrFoodGroup)
-            </td>
-            <td>
-                @*@Html.ActionLink("Details", "Detail", new {Controller = "Ingredients",  id = item.Ndbno })*@
-            </td>
+
         </tr>
     }
 

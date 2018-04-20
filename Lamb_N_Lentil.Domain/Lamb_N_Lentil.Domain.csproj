@@ -48,7 +48,6 @@
     <Compile Include="Entity.cs" />
     <Compile Include="IEntity.cs" />
     <Compile Include="IIngredient.cs" />
-    <Compile Include="UsdaInformation\IMapUsdaFoodToIngredient.cs" />
     <Compile Include="UsdaInformation\MapUsdaFoodToIngredient.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="UsdaInformation\UsdaDataSource.cs" />

@@ -1,0 +1,115 @@
+
+//
+
+{
+	"foods": [
+		{
+			"food": {
+				"sr": "v0.0 March, 2018",
+				"type": "b",
+				"desc": {
+					"ndbno": "45059050",
+					"name": "A.A. BORSARI, PEPPER SEASONING PEPPERCORN, UPC: 815893000163",
+					"ds": "Label Insight",
+					"manu": "Valley Brook Farm",
+					"ru": "g"
+				},
+				"ing": {
+					"desc": "CRACKED BLACK PEPPER, GARLIC, SEA SALT, SPICES.",
+					"upd": "03/11/2018"
+				},
+				"nutrients": [
+					{
+						"nutrient_id": "208",
+						"name": "Energy",
+						"derivation": "LCCS",
+						"group": "Proximates",
+						"unit": "kcal",
+						"value": "0",
+						"measures": [
+							{
+								"label": "tsp",
+								"eqv": 0.9,
+								"eunit": "g",
+								"qty": 0.25,
+								"value": "0"
+							}
+						]
+					},
+					{
+						"nutrient_id": "203",
+						"name": "Protein",
+						"derivation": "LCCS",
+						"group": "Proximates",
+						"unit": "g",
+						"value": "0.00",
+						"measures": [
+							{
+								"label": "tsp",
+								"eqv": 0.9,
+								"eunit": "g",
+								"qty": 0.25,
+								"value": "0.00"
+							}
+						]
+					},
+					{
+						"nutrient_id": "204",
+						"name": "Total lipid (fat)",
+						"derivation": "LCCD",
+						"group": "Proximates",
+						"unit": "g",
+						"value": "0.00",
+						"measures": [
+							{
+								"label": "tsp",
+								"eqv": 0.9,
+								"eunit": "g",
+								"qty": 0.25,
+								"value": "0.00"
+							}
+						]
+					},
+					{
+						"nutrient_id": "205",
+						"name": "Carbohydrate, by difference",
+						"derivation": "LCCD",
+						"group": "Proximates",
+						"unit": "g",
+						"value": "0.00",
+						"measures": [
+							{
+								"label": "tsp",
+								"eqv": 0.9,
+								"eunit": "g",
+								"qty": 0.25,
+								"value": "0.00"
+							}
+						]
+					},
+					{
+						"nutrient_id": "307",
+						"name": "Sodium, Na",
+						"derivation": "LCCS",
+						"group": "Minerals",
+						"unit": "mg",
+						"value": "10556",
+						"measures": [
+							{
+								"label": "tsp",
+								"eqv": 0.9,
+								"eunit": "g",
+								"qty": 0.25,
+								"value": "95"
+							}
+						]
+					}
+				],
+				"footnotes": []
+			}
+		}
+	],
+	"count": 1,
+	"notfound": 0,
+	"api": 2.0
+}
