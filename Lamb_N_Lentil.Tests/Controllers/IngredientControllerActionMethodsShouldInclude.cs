@@ -22,7 +22,7 @@ namespace Lamb_N_Lentil.Tests.Controllers
         [TestMethod]
         public void CorrectNumberOfMethods()
         {
-            int correctCount = 2;
+            int correctCount = 3;
             IController baseController = new EntityController();
 
             var baseMethods = Type.GetType("Lamb_N_Lentil.UI.Controllers.EntityController, Lamb_N_Lentil.UI", true).GetMethods().ToList();
@@ -43,6 +43,13 @@ namespace Lamb_N_Lentil.Tests.Controllers
         public void ShowResults()
         {
             var methodSought = type.GetMethod("ShowResults");
+            Assert.IsNotNull(methodSought);
+        }
+
+        [TestMethod]
+        public void Details()
+        {
+            var methodSought = type.GetMethod("Details");
             Assert.IsNotNull(methodSought);
         }
 

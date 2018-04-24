@@ -10,15 +10,11 @@ namespace Lamb_N_Lentil.Domain.UsdaInformation
     {
         public static IIngredient ConvertUsdaFoodToIIngredient(Foods[] foods, int index, string ds = "BL")
         {
-            IIngredient ingredient = new Entity();
+            IIngredient ingredient = new Entity(); 
 
-            ingredient.InstanceName = foods[index].food.desc.Name;
-
+            ingredient.InstanceName = foods[index].food.desc.Name; 
             ingredient.IngredientsInIngredient = foods[index].food.ing.desc;
-
-
-
-            ingredient.Description = ingredient.InstanceName;
+            ingredient.Ndbno = foods[index].food.desc.Ndbno; 
 
             return ingredient;
         }

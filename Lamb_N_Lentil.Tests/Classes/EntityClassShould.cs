@@ -30,10 +30,10 @@ namespace Lamb_N_Lentil.Tests.Classes
         }
 
         [TestMethod]
-        public void ShouldHaveIngredientsListProperty()
+        public void ShouldHaveIngredientsInIngredientProperty()
         {
-            var pInfo = typeof(Entity).GetProperty("IngredientsList");
-            Assert.AreEqual("IngredientsList", pInfo.Name);
+            var pInfo = typeof(Entity).GetProperty("IngredientsInIngredient");
+            Assert.AreEqual("IngredientsInIngredient", pInfo.Name);
         }
 
     }

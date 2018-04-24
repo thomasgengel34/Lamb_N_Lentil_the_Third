@@ -32,6 +32,8 @@ namespace Lamb_N_Lentil.UI.Controllers
         {
             List<IngredientListViewModel> vm = new List<IngredientListViewModel>();
             ViewBag.SearchText = "Write Your Query Here";
+            ViewBag.SearchTotal = 0;
+            ViewBag.TotalShown = 0;
             return View(UIType.Index.ToString(), vm);
         }
 
@@ -57,6 +59,15 @@ namespace Lamb_N_Lentil.UI.Controllers
             ViewBag.TotalShown = ingredients.Count();
 
             return View(UIType.Index.ToString(), vm);
+        }
+
+        public async Task<ViewResult> Details(string ndbno)
+        {
+            var report = await usdaAsync.FetchUsdaFoodReport(ndbno); 
+            var food = report.foods[0].food; 
+            IIngredient ingredient = MapUsdaFoodReportToIIngredient.ConvertUsdaFoodReportToIIngredient(food);
+            var  vm = IngredientDetailViewModel.MapIIngredientToIngredientDetailViewModel(ingredient);
+            return View(UIType.Details.ToString(),vm);
         }
     }
 }

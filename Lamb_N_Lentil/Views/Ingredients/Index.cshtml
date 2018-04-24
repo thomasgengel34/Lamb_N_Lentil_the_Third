@@ -37,10 +37,12 @@
 
 
 
-<table class="table table-bordered table-hover table-striped" id="IngredientsIndexTable">
+<table class="table table-bordered table-hover" id="IngredientsIndexTable">
     <tr>
         <th>
             @Html.DisplayNameFor(model => model.Description)
+        </th>
+        <th> 
         </th>
     </tr>
 
@@ -53,7 +55,9 @@
                 <p>@Html.DisplayNameFor(model => model.IngredientsInIngredient)</p>
                 <p>@Html.DisplayFor(model => item.IngredientsInIngredient)</p>
             </td>
-
+            <td>
+                @Html.ActionLink("Get Details",UIType.Details.ToString(),new {ndbno=item.Ndbno})
+            </td>
         </tr>
     }
 

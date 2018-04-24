@@ -106,6 +106,7 @@
     <Compile Include="Classes\IEntityAsyncControllerShould.cs" />
     <Compile Include="Controllers\IngredientControllerActionMethodsShouldInclude.cs" />
     <Compile Include="Controllers\IngredientControllerActionMethodsShould.cs" />
+    <Compile Include="Controllers\IngredientControllerDetailsActionMethodShould.cs" />
     <Compile Include="Infrastructure\UsdaDataSourceShould.cs" />
     <Compile Include="Content\SiteCssFileShould.cs" />
     <Compile Include="Controllers\EntityControllerShould.cs" />
@@ -114,9 +115,14 @@
     <Compile Include="Controllers\IngredientControllerShould.cs" />
     <Compile Include="Infrastructure\UITypeShould.cs" />
     <Compile Include="LiveUsdaSite\LiveUsdaAsyncShouldReturnValidFoodWhen.cs" />
+    <Compile Include="LiveUsdaSite\LiveUsdaAsyncShouldReturnValidFullFoodReportForGreatValueDicedPeaches45032698 .cs" />
+    <Compile Include="LiveUsdaSite\LiveUsdaAsyncShouldReturnValidFullFoodReportForHominy20030.cs" />
+    <Compile Include="LiveUsdaSite\IngredientControllerDetailMethodShould.cs" />
     <Compile Include="MockUsdaSite\MockUsdaAsync.cs" />
     <Compile Include="MockUsdaSite\MockUsdaAsyncTest.cs" />
     <Compile Include="MockUsdaSite\MockUsdaAsyncShouldReturnValidFoodWhen.cs" />
+    <Compile Include="Models\MapUsdaFoodReportToIngredientShould.cs" />
+    <Compile Include="Models\IngredientDetailViewModelShould.cs" />
     <Compile Include="RouteTests.cs" />
     <Compile Include="LiveUsdaSite\LiveUsdaAsyncTest.cs" />
     <Compile Include="ViewModelTest\IngredientListViewModelShould.cs" />

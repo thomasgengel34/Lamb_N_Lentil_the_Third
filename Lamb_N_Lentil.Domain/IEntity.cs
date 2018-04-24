@@ -5,5 +5,7 @@
         int ID { get; set; } 
         string InstanceName { get; set; }
         string IngredientsInIngredient { get; set; } 
+        string Description { get; set; } 
+        string UpdateDate { get; set; }
     } 
 }

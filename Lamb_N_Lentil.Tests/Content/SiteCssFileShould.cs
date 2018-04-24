@@ -139,9 +139,22 @@ h2.no_results {
     color:red;
 }
 
-#IngredientsIndexTable tr th:first-child, #IngredientsIndexTable tr td:first-child { 
-    width:10%;
-} ";
+#IngredientsIndexTable tr th:last-child, #IngredientsIndexTable tr td:last-child { 
+    width:5%;
+}
+
+/* Nutrition Label - begin*/
+#NutritionLabel {
+    background: white;
+    border: solid black 1px;
+    padding: 1%;
+}
+
+    #NutritionLabel.h1, #NutritionLabel.h2, #NutritionLabel.p, #NutritionLabel.dd, #NutritionLabel.dt, #NutritionLabel.dl, #NutritionLabel.td {
+        font-family: Arial;
+        color: black;
+    } 
+/* Nutrition Label - end*/";
 
 
 private static string filePath = @"C:\Dev\TGE\Lamb_N_Lentil\Lamb_N_Lentil\Content\Site.css";

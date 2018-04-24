@@ -74,9 +74,44 @@ namespace Lamb_N_Lentil.Domain.UsdaInformation
         {
             HttpClient client = new HttpClient();
 
-            string http = "https://api.nal.usda.gov/ndb/V2/reports/?ndbno=";
-            //                     &type=f&format=json&api_key= 
+            string http = "https://api.nal.usda.gov/ndb/V2/reports/?ndbno="; 
             string apiKey = "&type=b&format=json&api_key=";
+            string foodsUrl = String.Concat(http, ndbno, apiKey, key);
+
+            client.BaseAddress = new Uri(foodsUrl);
+
+            UsdaFoodReport usdaFoodReport = null;
+            HttpResponseMessage response = await client.GetAsync(foodsUrl);
+            if (response.IsSuccessStatusCode)
+            {
+                usdaFoodReport = await response.Content.ReadAsAsync<UsdaFoodReport>();
+
+            }
+            if (usdaFoodReport != null && usdaFoodReport.foods != null && usdaFoodReport.foods.First() != null && usdaFoodReport.foods.First().food != null && usdaFoodReport.foods.First().food.ing != null && usdaFoodReport.foods.First().food.ing.desc != null)
+            {
+                FetchedIngredientsInIngredient = usdaFoodReport.foods.First().food.ing.desc;
+            }
+            else
+            {
+                FetchedIngredientsInIngredient = "Not provided";
+            }
+            if (usdaFoodReport != null && usdaFoodReport.foods != null && usdaFoodReport.foods.First() != null && usdaFoodReport.foods.First().food != null && usdaFoodReport.foods.First().food.ing == null)
+            {
+                usdaFoodReport.foods.First().food.ing = new ing() { desc = FetchedIngredientsInIngredient };
+            }
+            else
+            {
+                usdaFoodReport.foods.First().food.ing.desc = FetchedIngredientsInIngredient;
+            }
+            return usdaFoodReport;
+        }
+
+        public async Task<UsdaFoodReport> FetchFullUsdaFoodReport(string ndbno)
+        {
+            HttpClient client = new HttpClient();
+
+            string http = "https://api.nal.usda.gov/ndb/V2/reports/?ndbno="; 
+            string apiKey = "&type=f&format=json&api_key=";
             string foodsUrl = String.Concat(http, ndbno, apiKey, key);
 
             client.BaseAddress = new Uri(foodsUrl);

@@ -1,0 +1,113 @@
+﻿@model Lamb_N_Lentil.UI.Models.IngredientDetailViewModel
+
+@{
+    ViewBag.Title = "Index";
+}
+<div id="NutritionLabel">
+    <h1>Nutrition Facts</h1>
+    <h2> @Html.DisplayFor(model => model.Description) </h2>
+   
+    <div>
+
+        <dl class="dl-horizontal">
+            <dt>
+                @Html.DisplayNameFor(model => model.IngredientsInIngredient)
+            </dt>
+
+            <dd>
+                @Html.DisplayFor(model => model.IngredientsInIngredient)
+            </dd>
+            <dt>
+                @Html.DisplayNameFor(model => model.UpdateDate)
+            </dt>
+            <dd>
+                @Html.DisplayFor(model => model.UpdateDate)
+            </dd>
+        </dl>
+    </div>
+    <hr />
+    <p>Amount Per 1 serving (  g)</p>
+    <p>Calories  </p>
+    <hr />
+
+    <table class="IngredientsDetailsTable">
+        <tbody>
+            <tr>
+                <td></td>
+                <td></td>
+                <td class="rightJustify">  % Daily Value* </td>
+            </tr>
+            <tr>
+                <td>Total Fat</td>
+                <td>  g</td>
+                <td class="rightJustify"> %</td>
+            </tr>
+            <tr>
+                <td class="leftpadding10">Saturated fat	</td>
+                <td>  g</td>
+                <td class="rightJustify"> %</td>
+            </tr>
+            <tr>
+                <td class="leftpadding10">Polyunsaturated fat</td>
+                <td>   g</td>
+                <td class="rightJustify"> </td>
+            </tr>
+            <tr>
+                <td class="leftpadding10">Monounsaturated fat</td>
+                <td>   g</td>
+                <td class="rightJustify"> </td>
+            </tr>
+            <tr>
+                <td>Cholesterol </td>
+                <td>  mg	</td>
+                <td class="rightJustify"> %</td>
+            </tr>
+            <tr>
+                <td>Sodium </td>
+                <td>530 mg </td>
+                <td class="rightJustify"> %</td>
+            </tr>
+            <tr>
+                <td>Potassium  </td>
+                <td>  mg</td>
+                <td class="rightJustify"> %</td>
+            </tr>
+            <tr>
+                <td>Total Carbohydrate </td>
+                <td>   g</td>
+                <td class="rightJustify"> %</td>
+            </tr>
+            <tr>
+                <td class="leftpadding10">  Dietary fiber </td>
+                <td> g </td>
+                <td class="rightJustify"> %</td>
+            </tr>
+            <tr>
+                <td class="leftpadding10">Sugar </td>
+                <td> g</td>
+                <td></td>
+            </tr>
+            <tr>
+                <td> Protein </td>
+                <td> g </td>
+                <td class="rightJustify">16%</td>
+            </tr>
+        </tbody>
+    </table>
+    <hr />
+    <table class="IngredientsTable">
+        <tbody>
+            <tr><td> Vitamin A	 %</td><td> 	Vitamin C	 %</td></tr>
+            <tr><td> Calcium	 % </td><td> Iron	 %	 </td></tr>
+            <tr><td> Vitamin D	 %  </td> 	<td>Vitamin B-6    % </td></tr>
+            <tr><td>  Vitamin B-12	 %  </td><td>  	Magnesium	 % </td></tr>
+        </tbody>
+    </table>
+    <p></p>
+    <p>  *Percent Daily Values are based on a 2,000 calorie diet. Your daily values may be higher or lower depending on your calorie needs.</p>
+
+</div>
+ 
+
+
+@*<p>style from  https://www.google.com/search?q=nutrition+facts+for+turkey+sausage&oq=nutrition&aqs=chrome.0.69i59j69i57j69i59j0l3.3343j0j7&sourceid=chrome&ie=UTF-8</p>*@

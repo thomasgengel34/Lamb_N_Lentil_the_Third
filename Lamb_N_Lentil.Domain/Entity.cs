@@ -8,12 +8,10 @@ namespace Lamb_N_Lentil.Domain
          
         public string InstanceName { get; set; }
          
-        public string IngredientsList { get; set; }
+        public string IngredientsInIngredient { get; set; }
         public string Ndbno { get; set; }
-        string IIngredient.Description { get; set; } 
-        
-        string IEntity.IngredientsInIngredient { get; set; } 
+        public string  Description { get; set; }
 
-
+        public string UpdateDate { get; set; }
     }
 }
