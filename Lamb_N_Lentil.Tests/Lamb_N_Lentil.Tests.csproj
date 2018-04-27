@@ -101,9 +101,11 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Classes\Common.cs" />
     <Compile Include="Classes\IEntityShouldContain.cs" />
     <Compile Include="Classes\EntityClassShould.cs" />
     <Compile Include="Classes\IEntityAsyncControllerShould.cs" />
+    <Compile Include="Classes\IIngredientShouldContain.cs" />
     <Compile Include="Controllers\IngredientControllerActionMethodsShouldInclude.cs" />
     <Compile Include="Controllers\IngredientControllerActionMethodsShould.cs" />
     <Compile Include="Controllers\IngredientControllerDetailsActionMethodShould.cs" />
@@ -118,6 +120,7 @@
     <Compile Include="LiveUsdaSite\LiveUsdaAsyncShouldReturnValidFullFoodReportForGreatValueDicedPeaches45032698 .cs" />
     <Compile Include="LiveUsdaSite\LiveUsdaAsyncShouldReturnValidFullFoodReportForHominy20030.cs" />
     <Compile Include="LiveUsdaSite\IngredientControllerDetailMethodShould.cs" />
+    <Compile Include="LiveUsdaSite\LiveUsdaAsyncTestForNutrientsShouldFind.cs" />
     <Compile Include="MockUsdaSite\MockUsdaAsync.cs" />
     <Compile Include="MockUsdaSite\MockUsdaAsyncTest.cs" />
     <Compile Include="MockUsdaSite\MockUsdaAsyncShouldReturnValidFoodWhen.cs" />
@@ -127,6 +130,7 @@
     <Compile Include="LiveUsdaSite\LiveUsdaAsyncTest.cs" />
     <Compile Include="ViewModelTest\IngredientListViewModelShould.cs" />
     <Compile Include="ViewModelTest\IngredientListViewModelDisplayNamesShouldBeOn.cs" />
+    <Compile Include="ViewModelTest\IngredientDetailViewModelShould.cs" />
     <Compile Include="Views\BaseViewTests.cs" />
     <Compile Include="Views\HomeAboutViewShould .cs" />
     <Compile Include="Views\HomeContactViewShould.cs" />

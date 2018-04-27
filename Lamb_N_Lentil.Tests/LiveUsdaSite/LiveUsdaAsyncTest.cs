@@ -9,10 +9,7 @@ namespace Lamb_N_Lentil.Tests.LiveUsdaSite
 {
     [TestClass]
     public class LiveUsdaAsyncTest 
-    {
-      
-         
-
+    { 
         [TestMethod]
         public void ReduceStringLengthToWhatWillWorkOnUsdaWillNotThrowErrorWithEmptyString()
         {
@@ -66,9 +63,9 @@ namespace Lamb_N_Lentil.Tests.LiveUsdaSite
         public async Task ReturnIngredientsListInFoodReport()
         {
             IUsdaAsync usdaAsync = new UsdaAsync();
-            string testString = "45032698";
+            string testNdbno = "45032698";
             string correctIngredients = "DICED PEACHES, WATER, SUGAR, NATURAL FLAVOR, ASCORBIC ACID (VITAMIN C) TO PROTECT COLOR, CITRIC ACID.";
-            UsdaFoodReport report = await usdaAsync.FetchUsdaFoodReport(testString);
+            UsdaFoodReport report = await usdaAsync.FetchUsdaFoodReport(testNdbno);
             string returnedIngredients = report.foods.First().food.ing.desc;
             Assert.AreEqual(correctIngredients, returnedIngredients);
         }

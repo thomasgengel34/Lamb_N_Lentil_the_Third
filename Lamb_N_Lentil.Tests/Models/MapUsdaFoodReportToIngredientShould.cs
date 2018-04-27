@@ -9,24 +9,30 @@ namespace Lamb_N_Lentil.Tests.Models
     public class MapUsdaFoodReportToIngredientShould
     {
         private food food;
-        private string correctName="test name";
-        private string correctNumber="test number";
-        private string correctDesc="test desc";
+        private string correctName = "test name";
+        private string correctNumber = "test number";
+        private string correctDesc = "test desc";
         private string correctDate = "4/17/2017";
+        private decimal correctCalories = 99M;
 
         private IIngredient ingredient;
 
 
         public MapUsdaFoodReportToIngredientShould()
         {
-              food = new food();
+            food = new food();
             food.desc = new desc();
             food.desc.name = correctName;
             food.desc.ndbno = correctNumber;
             food.ing = new ing();
             food.ing.desc = correctDesc;
             food.ing.upd = correctDate;
-             ingredient = MapUsdaFoodReportToIIngredient.ConvertUsdaFoodReportToIIngredient(food);
+            food.nutrients = new nutrients[1];
+            food.nutrients[0] = new nutrients();
+            food.nutrients[0].measures = new measures[1];
+            food.nutrients[0].measures[0] = new measures();
+            food.nutrients[0].measures[0].value = correctCalories;
+            ingredient = MapUsdaFoodReportToIIngredient.ConvertUsdaFoodReportToIIngredient(food);
         }
 
         [TestMethod]
@@ -39,6 +45,12 @@ namespace Lamb_N_Lentil.Tests.Models
         public void ConvertUpdateDate()
         {
             Assert.AreEqual(correctDate, ingredient.UpdateDate);
+        }
+
+        [TestMethod]
+        public void ConvertCaloriesValue()
+        {
+            Assert.AreEqual(correctCalories, ingredient.Calories);
         }
     }
 }

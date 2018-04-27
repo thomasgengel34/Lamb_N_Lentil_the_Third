@@ -112,12 +112,18 @@ namespace Lamb_N_Lentil.Tests.MockUsdaSite
                 report.foods = new foods[1];
                 food food = new food() { ing = new ing() { desc = "peas, porridge, hot" } };
                 foods testfoods = new foods { food = food };
-               
-                    report.foods[0] = testfoods;  
-              
+
+                report.foods[0] = testfoods;
+                food.nutrients = new nutrients[1];
+                food.nutrients[0] = new nutrients();
+                food.nutrients[0].measures = new measures[1];
+                food.nutrients[0].measures[0] = new measures();
+                food.nutrients[0].measures[0].label = "I am a label";
+                food.nutrients[0].measures[0].eqv = 3.1415926M; 
+                food.nutrients[0].measures[0].value = 76M;
                 return report;
             }
-            else throw new NotImplementedException();
-        }   
+            else throw new NotImplementedException("wrong search string");
+        }
     }
 }

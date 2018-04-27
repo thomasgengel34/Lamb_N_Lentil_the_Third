@@ -6,28 +6,14 @@
 <div id="NutritionLabel">
     <h1>Nutrition Facts</h1>
     <h2> @Html.DisplayFor(model => model.Description) </h2>
-   
-    <div>
 
-        <dl class="dl-horizontal">
-            <dt>
-                @Html.DisplayNameFor(model => model.IngredientsInIngredient)
-            </dt>
 
-            <dd>
-                @Html.DisplayFor(model => model.IngredientsInIngredient)
-            </dd>
-            <dt>
-                @Html.DisplayNameFor(model => model.UpdateDate)
-            </dt>
-            <dd>
-                @Html.DisplayFor(model => model.UpdateDate)
-            </dd>
-        </dl>
-    </div>
     <hr />
-    <p>Amount Per 1 serving (  g)</p>
-    <p>Calories  </p>
+    <p>Amount Per 1 serving     ( @Html.DisplayFor(model => model.Label) )  ( @Html.DisplayFor(model => model.Eqv)  g)</p>
+    <p>Calories:   @Html.DisplayFor(model => model.Calories) </p>
+    <p>
+        Calories From Fat:
+    </p>
     <hr />
 
     <table class="IngredientsDetailsTable">
@@ -107,7 +93,24 @@
     <p>  *Percent Daily Values are based on a 2,000 calorie diet. Your daily values may be higher or lower depending on your calorie needs.</p>
 
 </div>
- 
+<div>
+
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.IngredientsInIngredient)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.IngredientsInIngredient)
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.UpdateDate)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.UpdateDate)
+        </dd>
+    </dl>
+</div>
 
 
 @*<p>style from  https://www.google.com/search?q=nutrition+facts+for+turkey+sausage&oq=nutrition&aqs=chrome.0.69i59j69i57j69i59j0l3.3343j0j7&sourceid=chrome&ie=UTF-8</p>*@

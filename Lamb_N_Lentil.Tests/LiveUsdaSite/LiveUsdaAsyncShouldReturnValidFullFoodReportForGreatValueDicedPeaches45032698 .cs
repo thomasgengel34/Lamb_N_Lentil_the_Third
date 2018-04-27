@@ -4,6 +4,7 @@ using Lamb_N_Lentil.UI.Models;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
 using Lamb_N_Lentil.Domain.UsdaInformation;
 using System.Threading.Tasks;
+using System.Linq;
 
 namespace Lamb_N_Lentil.Tests.LiveUsdaSite
 { 
@@ -45,6 +46,16 @@ namespace Lamb_N_Lentil.Tests.LiveUsdaSite
             UsdaAsync usdaAsync = new UsdaAsync();
             UsdaFoodReport report = await usdaAsync.FetchFullUsdaFoodReport(ndbno);
             Assert.AreEqual(correctUpdateDate, report.foods[0].food.ing.upd);
+        }
+
+        [TestMethod]
+        public async Task WithCorrectEqv()
+        {
+           decimal correctEqv = 113.0M;
+            UsdaAsync usdaAsync = new UsdaAsync();
+            UsdaFoodReport report = await usdaAsync.FetchFullUsdaFoodReport(ndbno);
+           decimal returnedEqv = report.foods[0].food.nutrients.First().measures.First().eqv;
+            Assert.AreEqual(correctEqv, returnedEqv  );
         }
     }
 }

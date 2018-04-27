@@ -43,13 +43,23 @@ namespace Lamb_N_Lentil.Tests.MockUsdaSite
         }
 
         [TestMethod]
-        public async Task ReturnIngredientsListInFoodReport()
+        public async Task ReturnIngredientsInIngredientInFoodReport()
         {
             string testString = "ShouldReturnIngredients";
             string correctIngredients = "peas, porridge, hot";
             UsdaFoodReport report = await usdaAsync.FetchUsdaFoodReport(testString);
                 string returnedIngredients = report.foods.First().food.ing.desc;
-            Assert.AreEqual(correctIngredients, returnedIngredients);
+           Assert.AreEqual(correctIngredients, returnedIngredients);
+        }
+
+        [TestMethod]
+        public async Task ReturnValueInFoodReport()
+        {
+            string testString = "ShouldReturnIngredients";
+            decimal correctValue = 76M;
+            UsdaFoodReport report = await usdaAsync.FetchUsdaFoodReport(testString);
+           decimal returnedValue = report.foods.First().food.nutrients[0].measures[0].value = 76M;
+            Assert.AreEqual(correctValue, returnedValue);
         }
     }
 }

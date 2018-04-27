@@ -22,6 +22,12 @@ namespace Lamb_N_Lentil.UI.Models
         [Display(Name = "Updated On")]
         public string UpdateDate { get; set; }
 
+        public string Label { get; set; }
+
+        public decimal Eqv { get; set; }
+
+        public decimal Calories { get; set; }
+
 
         public static IngredientDetailViewModel MapIIngredientToIngredientDetailViewModel(IIngredient ingredient)
         {
@@ -29,8 +35,12 @@ namespace Lamb_N_Lentil.UI.Models
             {
                 Description = ingredient.Description,
                 IngredientsInIngredient = ingredient.IngredientsInIngredient,
+
                 Ndbno = ingredient.Ndbno,
-                UpdateDate=ingredient.UpdateDate
+                UpdateDate=ingredient.UpdateDate,
+                Label=ingredient.Label,
+                Eqv=ingredient.Eqv,
+                Calories=ingredient.Calories
             };
             return Vm;
         }
@@ -39,9 +49,7 @@ namespace Lamb_N_Lentil.UI.Models
         {
             IIngredient ingredient = new Entity();
             ingredient.Description = vm.Description;
-            ingredient.IngredientsInIngredient = vm.IngredientsInIngredient;
-
-
+            ingredient.IngredientsInIngredient = vm.IngredientsInIngredient; 
             return ingredient;
         }
     }

@@ -7,10 +7,8 @@ using Microsoft.VisualStudio.TestTools.UnitTesting;
 namespace Lamb_N_Lentil.Tests.Classes
 {
     [TestClass]
-    public class IEntityShouldContain
-    {  
-        List<PropertyInfo> listOfPropertyInfos;
-        
+    public class IEntityShouldContain:Common
+    { 
         public IEntityShouldContain()
         {
             PropertyInfo[] propertyInfos = typeof(IEntity).GetProperties();
@@ -27,14 +25,6 @@ namespace Lamb_N_Lentil.Tests.Classes
         public void IngredientsListProperty() => VerifyPropertyIsValid("IngredientsInIngredient"); 
 
 
-        private void VerifyPropertyIsValid(string value)
-        {
-            var propertyName = from c in listOfPropertyInfos
-                               where c.Name == value
-                               select c.Name;
-
-            Assert.AreEqual(propertyName.First(), value);
-            Assert.IsNotNull(propertyName.Count());
-        }
+        
     } 
 }

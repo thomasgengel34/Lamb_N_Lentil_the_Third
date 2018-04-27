@@ -99,7 +99,7 @@ namespace Lamb_N_Lentil.Domain.UsdaInformation
             {
                 usdaFoodReport.foods.First().food.ing = new ing() { desc = FetchedIngredientsInIngredient };
             }
-            else
+            else if (usdaFoodReport != null && usdaFoodReport.foods != null && usdaFoodReport.foods.First() != null && usdaFoodReport.foods.First().food != null && usdaFoodReport.foods.First().food.ing != null) 
             {
                 usdaFoodReport.foods.First().food.ing.desc = FetchedIngredientsInIngredient;
             }
