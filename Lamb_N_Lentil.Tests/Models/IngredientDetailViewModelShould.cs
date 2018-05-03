@@ -16,6 +16,8 @@ namespace Lamb_N_Lentil.Tests.Models
         private string correctLabel = "cup for label";
         private decimal correctEqv = 113.0M;
         private decimal correctCalories = 43.0M;
+        private decimal correctTotalCarbohydrate = 810.1M;
+        private decimal correctTotalFat = 11.0M;
 
         private IngredientDetailViewModel idvm;
 
@@ -30,6 +32,8 @@ namespace Lamb_N_Lentil.Tests.Models
             ingredient.Label = correctLabel;
             ingredient.Eqv = correctEqv;
             ingredient.Calories = correctCalories;
+            ingredient.TotalFat = correctTotalFat;
+            ingredient.TotalCarbohydrate = correctTotalCarbohydrate;
             idvm = IngredientDetailViewModel.MapIIngredientToIngredientDetailViewModel(ingredient);
         }
 
@@ -73,6 +77,18 @@ namespace Lamb_N_Lentil.Tests.Models
         public void HaveCorrectCalories()
         {
             Assert.AreEqual(correctCalories, idvm.Calories);
+        }
+
+        [TestMethod]
+        public void HaveCorrectCaloriesFromFat()
+        { 
+            Assert.AreEqual(9 * correctTotalFat, idvm.CaloriesFromFat);
+        }
+
+        [TestMethod]
+        public void HaveCorrectTotalCarbohydrate()
+        {
+            Assert.AreEqual( correctTotalCarbohydrate, idvm.TotalCarbohydrate);
         }
     }
 }

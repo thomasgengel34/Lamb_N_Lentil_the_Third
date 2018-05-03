@@ -1,0 +1,282 @@
+{
+  "foods": [
+    {
+      "food": {
+        "sr": "v0.0 March, 2018",
+        "type": "b",
+        "desc": {
+          "ndbno": "45322307",
+          "name": "PREMIUM SPUMONI ICE CREAM, UPC: 070640000067",
+          "ds": "Label Insight",
+          "manu": "WELLS ENTERPRISES, INC.",
+          "ru": "g"
+        },
+        "ing": {
+          "desc": "MILK, CREAM, SUGAR, BUTTERMILK, FRUIT MIX (SUGAR, PINEAPPLE, APPLES PRESERVED WITH SULFUR DIOXIDE, CRANBERRIES, RAISINS, HIGH FRUCTOSE CORN SYRUP, CHERRIES, GRAPES, PEACHES, NATURAL FLAVORS, MALIC ACID, CAROB BEAN GUM, SODIUM BICARBONATE, SODIUM BENZOATE AS PRESERVATIVE, RED 40, NUTMEG), CORN SYRUP, COCOA PROCESSED WITH ALKALI, MIXED NUTS (CASHEWS, ALMONDS, BRAZIL NUTS, FILBERTS, WALNUTS, PECANS, PEANUTS, PARTIALLY HYDROGENATED SOYBEAN OIL, SALT), CAROB BEAN GUM, GUAR GUM, MONO & DIGLYCERIDES, NATURAL FLAVORS, CARRAGEENAN, ARTIFICIAL FLAVOR, RED 40, BLUE 1, TURMERIC FOR COLOR.",
+          "upd": "11/01/2017"
+        },
+        "nutrients": [
+          {
+            "nutrient_id": "208",
+            "name": "Energy",
+            "derivation": "LCCS",
+            "group": "Proximates",
+            "unit": "kcal",
+            "value": "208",
+            "measures": [
+              {
+                "label": "cup",
+                "eqv": 72.0,
+                "eunit": "g",
+                "qty": 0.5,
+                "value": "150"
+              }
+            ]
+          },
+          {
+            "nutrient_id": "203",
+            "name": "Protein",
+            "derivation": "LCCS",
+            "group": "Proximates",
+            "unit": "g",
+            "value": "4.17",
+            "measures": [
+              {
+                "label": "cup",
+                "eqv": 72.0,
+                "eunit": "g",
+                "qty": 0.5,
+                "value": "3.00"
+              }
+            ]
+          },
+          {
+            "nutrient_id": "204",
+            "name": "Total lipid (fat)",
+            "derivation": "LCCS",
+            "group": "Proximates",
+            "unit": "g",
+            "value": "9.72",
+            "measures": [
+              {
+                "label": "cup",
+                "eqv": 72.0,
+                "eunit": "g",
+                "qty": 0.5,
+                "value": "7.00"
+              }
+            ]
+          },
+          {
+            "nutrient_id": "205",
+            "name": "Carbohydrate, by difference",
+            "derivation": "LCCS",
+            "group": "Proximates",
+            "unit": "g",
+            "value": "25.00",
+            "measures": [
+              {
+                "label": "cup",
+                "eqv": 72.0,
+                "eunit": "g",
+                "qty": 0.5,
+                "value": "18.00"
+              }
+            ]
+          },
+          {
+            "nutrient_id": "291",
+            "name": "Fiber, total dietary",
+            "derivation": "LCCD",
+            "group": "Proximates",
+            "unit": "g",
+            "value": "0.0",
+            "measures": [
+              {
+                "label": "cup",
+                "eqv": 72.0,
+                "eunit": "g",
+                "qty": 0.5,
+                "value": "0.0"
+              }
+            ]
+          },
+          {
+            "nutrient_id": "269",
+            "name": "Sugars, total",
+            "derivation": "LCCS",
+            "group": "Proximates",
+            "unit": "g",
+            "value": "22.22",
+            "measures": [
+              {
+                "label": "cup",
+                "eqv": 72.0,
+                "eunit": "g",
+                "qty": 0.5,
+                "value": "16.00"
+              }
+            ]
+          },
+          {
+            "nutrient_id": "301",
+            "name": "Calcium, Ca",
+            "derivation": "LCCD",
+            "group": "Minerals",
+            "unit": "mg",
+            "value": "111",
+            "measures": [
+              {
+                "label": "cup",
+                "eqv": 72.0,
+                "eunit": "g",
+                "qty": 0.5,
+                "value": "80"
+              }
+            ]
+          },
+          {
+            "nutrient_id": "303",
+            "name": "Iron, Fe",
+            "derivation": "LCCD",
+            "group": "Minerals",
+            "unit": "mg",
+            "value": "0.00",
+            "measures": [
+              {
+                "label": "cup",
+                "eqv": 72.0,
+                "eunit": "g",
+                "qty": 0.5,
+                "value": "0.00"
+              }
+            ]
+          },
+          {
+            "nutrient_id": "306",
+            "name": "Potassium, K",
+            "derivation": "LCCS",
+            "group": "Minerals",
+            "unit": "mg",
+            "value": "188",
+            "measures": [
+              {
+                "label": "cup",
+                "eqv": 72.0,
+                "eunit": "g",
+                "qty": 0.5,
+                "value": "135"
+              }
+            ]
+          },
+          {
+            "nutrient_id": "307",
+            "name": "Sodium, Na",
+            "derivation": "LCCS",
+            "group": "Minerals",
+            "unit": "mg",
+            "value": "90",
+            "measures": [
+              {
+                "label": "cup",
+                "eqv": 72.0,
+                "eunit": "g",
+                "qty": 0.5,
+                "value": "65"
+              }
+            ]
+          },
+          {
+            "nutrient_id": "401",
+            "name": "Vitamin C, total ascorbic acid",
+            "derivation": "LCCD",
+            "group": "Vitamins",
+            "unit": "mg",
+            "value": "0.0",
+            "measures": [
+              {
+                "label": "cup",
+                "eqv": 72.0,
+                "eunit": "g",
+                "qty": 0.5,
+                "value": "0.0"
+              }
+            ]
+          },
+          {
+            "nutrient_id": "318",
+            "name": "Vitamin A, IU",
+            "derivation": "LCCD",
+            "group": "Vitamins",
+            "unit": "IU",
+            "value": "417",
+            "measures": [
+              {
+                "label": "cup",
+                "eqv": 72.0,
+                "eunit": "g",
+                "qty": 0.5,
+                "value": "300"
+              }
+            ]
+          },
+          {
+            "nutrient_id": "606",
+            "name": "Fatty acids, total saturated",
+            "derivation": "LCCS",
+            "group": "Lipids",
+            "unit": "g",
+            "value": "6.940",
+            "measures": [
+              {
+                "label": "cup",
+                "eqv": 72.0,
+                "eunit": "g",
+                "qty": 0.5,
+                "value": "4.997"
+              }
+            ]
+          },
+          {
+            "nutrient_id": "605",
+            "name": "Fatty acids, total trans",
+            "derivation": "LCCS",
+            "group": "Lipids",
+            "unit": "g",
+            "value": "0.000",
+            "measures": [
+              {
+                "label": "cup",
+                "eqv": 72.0,
+                "eunit": "g",
+                "qty": 0.5,
+                "value": "0.000"
+              }
+            ]
+          },
+          {
+            "nutrient_id": "601",
+            "name": "Cholesterol",
+            "derivation": "LCCS",
+            "group": "Lipids",
+            "unit": "mg",
+            "value": "42",
+            "measures": [
+              {
+                "label": "cup",
+                "eqv": 72.0,
+                "eunit": "g",
+                "qty": 0.5,
+                "value": "30"
+              }
+            ]
+          }
+        ],
+        "footnotes": []
+      }
+    }
+  ],
+  "count": 1,
+  "notfound": 0,
+  "api": 2.0
+}

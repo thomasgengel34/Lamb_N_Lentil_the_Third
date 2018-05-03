@@ -46,6 +46,20 @@ namespace Lamb_N_Lentil.Tests.ViewModelTest
         }
 
         [TestMethod]
+        public void HaveSaturatedFatProperty()
+        {
+            var pInfo = type.GetProperty("SaturatedFat");
+            Assert.AreEqual("SaturatedFat", pInfo.Name);
+        }
+
+        [TestMethod]
+        public void HaveSodiumProperty()
+        {
+            var pInfo = type.GetProperty("Sodium");
+            Assert.AreEqual("Sodium", pInfo.Name);
+        }
+
+        [TestMethod]
         public void HaveUpdateDateProperty()
         {
             var pInfo = type.GetProperty("UpdateDate");
@@ -59,18 +73,20 @@ namespace Lamb_N_Lentil.Tests.ViewModelTest
             Assert.AreEqual("Label", pInfo.Name);
         }
 
+   
+        [TestMethod]
+        public void HavePolyunsaturatedFatProperty()
+        {
+            var pInfo = type.GetProperty("PolyunsaturatedFat");
+            Assert.AreEqual("PolyunsaturatedFat", pInfo.Name);
+        }
+
+
         [TestMethod]
         public void HaveMapIIngredientToIngredientDetailViewModelMethod()
         {
             var mInfo = type.GetMethod("MapIIngredientToIngredientDetailViewModel");
             Assert.AreEqual("MapIIngredientToIngredientDetailViewModel", mInfo.Name);
-        }
-
-        [TestMethod]
-        public void HaveMapIIngredientDetailViewModelToIngredientMethod()
-        {
-            var mInfo = type.GetMethod("MapIIngredientDetailViewModelToIngredient");
-            Assert.AreEqual("MapIIngredientDetailViewModelToIngredient", mInfo.Name);
-        }
+        } 
     }
 }

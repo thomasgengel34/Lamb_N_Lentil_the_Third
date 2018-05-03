@@ -66,8 +66,8 @@ namespace Lamb_N_Lentil.UI.Controllers
             var report = await usdaAsync.FetchUsdaFoodReport(ndbno); 
             var food = report.foods[0].food; 
             IIngredient ingredient = MapUsdaFoodReportToIIngredient.ConvertUsdaFoodReportToIIngredient(food);
-            var  vm = IngredientDetailViewModel.MapIIngredientToIngredientDetailViewModel(ingredient);
-            return View(UIType.Details.ToString(),vm);
+            var vm = IngredientDetailViewModel.MapIIngredientToIngredientDetailViewModel(ingredient);
+            return View(UIType.Details.ToString(), vm);
         }
     }
 }

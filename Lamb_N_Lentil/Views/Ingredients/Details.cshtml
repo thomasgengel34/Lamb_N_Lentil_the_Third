@@ -12,7 +12,7 @@
     <p>Amount Per 1 serving     ( @Html.DisplayFor(model => model.Label) )  ( @Html.DisplayFor(model => model.Eqv)  g)</p>
     <p>Calories:   @Html.DisplayFor(model => model.Calories) </p>
     <p>
-        Calories From Fat:
+        @Html.DisplayNameFor(m => m.CaloriesFromFat) : @Html.DisplayFor(m => m.CaloriesFromFat)
     </p>
     <hr />
 
@@ -24,18 +24,18 @@
                 <td class="rightJustify">  % Daily Value* </td>
             </tr>
             <tr>
-                <td>Total Fat</td>
-                <td>  g</td>
+                <td>@Html.DisplayNameFor(m=>m.TotalFat)</td>
+                <td>@Html.DisplayFor(m => m.TotalFat)  g</td>
                 <td class="rightJustify"> %</td>
             </tr>
             <tr>
-                <td class="leftpadding10">Saturated fat	</td>
-                <td>  g</td>
+                <td>@Html.DisplayNameFor(m=>m.SaturatedFat)</td>
+                <td>@Html.DisplayFor(m => m.SaturatedFat)  g</td> 
                 <td class="rightJustify"> %</td>
             </tr>
             <tr>
-                <td class="leftpadding10">Polyunsaturated fat</td>
-                <td>   g</td>
+                <td>@Html.DisplayNameFor(m => m.PolyunsaturatedFat)</td>
+                <td>@Html.DisplayFor(m => m.PolyunsaturatedFat)  g</td> 
                 <td class="rightJustify"> </td>
             </tr>
             <tr>
@@ -49,8 +49,9 @@
                 <td class="rightJustify"> %</td>
             </tr>
             <tr>
-                <td>Sodium </td>
-                <td>530 mg </td>
+                <td>@Html.DisplayNameFor(m => m.Sodium)</td>
+                <td>@Html.DisplayFor(m => m.Sodium)  mg</td>
+              
                 <td class="rightJustify"> %</td>
             </tr>
             <tr>
@@ -59,58 +60,63 @@
                 <td class="rightJustify"> %</td>
             </tr>
             <tr>
-                <td>Total Carbohydrate </td>
-                <td>   g</td>
-                <td class="rightJustify"> %</td>
-            </tr>
-            <tr>
-                <td class="leftpadding10">  Dietary fiber </td>
-                <td> g </td>
-                <td class="rightJustify"> %</td>
-            </tr>
-            <tr>
-                <td class="leftpadding10">Sugar </td>
-                <td> g</td>
-                <td></td>
-            </tr>
-            <tr>
-                <td> Protein </td>
-                <td> g </td>
-                <td class="rightJustify">16%</td>
-            </tr>
-        </tbody>
-    </table>
-    <hr />
-    <table class="IngredientsTable">
-        <tbody>
-            <tr><td> Vitamin A	 %</td><td> 	Vitamin C	 %</td></tr>
-            <tr><td> Calcium	 % </td><td> Iron	 %	 </td></tr>
-            <tr><td> Vitamin D	 %  </td> 	<td>Vitamin B-6    % </td></tr>
-            <tr><td>  Vitamin B-12	 %  </td><td>  	Magnesium	 % </td></tr>
-        </tbody>
-    </table>
-    <p></p>
-    <p>  *Percent Daily Values are based on a 2,000 calorie diet. Your daily values may be higher or lower depending on your calorie needs.</p>
+                <td>
+                    @Html.DisplayNameFor(m => m.TotalCarbohydrate) </td>
+
+                    <td>@Html.DisplayFor(m => m.TotalCarbohydrate)  g </td>
+
+                    <td class="rightJustify"> %
+                </td>
+    </tr>
+    <tr>
+        <td class="leftpadding10">  Dietary fiber</td>
+        <td> g</td>
+        <td class="rightJustify"> %</td>
+    </tr>
+    <tr>
+        <td class="leftpadding10">Sugar</td>
+        <td> g</td>
+        <td></td>
+    </tr>
+    <tr>
+        <td> Protein</td>
+        <td> g</td>
+        <td class="rightJustify">
+        %</td>
+    </tr>
+</tbody>
+</table>
+<hr />
+<table class="IngredientsTable">
+<tbody>
+    <tr><td> Vitamin A	 %</td><td> 	Vitamin C	 %</td></tr>
+    <tr><td> Calcium	 % </td><td> Iron	 %	 </td></tr>
+    <tr><td> Vitamin D	 %  </td> 	<td>Vitamin B-6    % </td></tr>
+    <tr><td>  Vitamin B-12	 %  </td><td>  	Magnesium	 % </td></tr>
+</tbody>
+</table>
+<p></p>
+<p>  *Percent Daily Values are based on a 2,000 calorie diet.Your daily values may be higher or lower depending on your calorie needs.</p>
 
 </div>
 <div>
 
-    <dl class="dl-horizontal">
-        <dt>
-            @Html.DisplayNameFor(model => model.IngredientsInIngredient)
-        </dt>
+<dl class="dl-horizontal">
+<dt>
+    @Html.DisplayNameFor(model => model.IngredientsInIngredient)
+</dt>
 
-        <dd>
-            @Html.DisplayFor(model => model.IngredientsInIngredient)
-        </dd>
-        <dt>
-            @Html.DisplayNameFor(model => model.UpdateDate)
-        </dt>
-        <dd>
-            @Html.DisplayFor(model => model.UpdateDate)
-        </dd>
-    </dl>
+<dd>
+    @Html.DisplayFor(model => model.IngredientsInIngredient)
+</dd>
+<dt>
+    @Html.DisplayNameFor(model => model.UpdateDate)
+</dt>
+<dd>
+    @Html.DisplayFor(model => model.UpdateDate)
+</dd>
+</dl>
 </div>
 
 
-@*<p>style from  https://www.google.com/search?q=nutrition+facts+for+turkey+sausage&oq=nutrition&aqs=chrome.0.69i59j69i57j69i59j0l3.3343j0j7&sourceid=chrome&ie=UTF-8</p>*@
+                @*<p>style from  https://www.google.com/search?q=nutrition+facts+for+turkey+sausage&oq=nutrition&aqs=chrome.0.69i59j69i57j69i59j0l3.3343j0j7&sourceid=chrome&ie=UTF-8</p>*@

@@ -36,5 +36,19 @@ namespace Lamb_N_Lentil.Tests.Classes
             Assert.AreEqual("IngredientsInIngredient", pInfo.Name);
         }
 
+        [TestMethod]
+        public void ShouldHaveSaturatedFatProperty()
+        {
+            var pInfo = typeof(Entity).GetProperty("SaturatedFat");
+            Assert.AreEqual("SaturatedFat", pInfo.Name);
+        }
+
+        [TestMethod]
+        public void ShouldHavePolyunsaturatedFatProperty()
+        {
+            var pInfo = typeof(Entity).GetProperty("PolyunsaturatedFat");
+            Assert.AreEqual("PolyunsaturatedFat", pInfo.Name);
+        }
+
     }
 } 

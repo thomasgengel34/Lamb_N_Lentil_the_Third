@@ -8,9 +8,12 @@ namespace Lamb_N_Lentil.Domain.UsdaInformation
 {
     public class MapUsdaFoodReportToIIngredient
     {
-        public static IIngredient ConvertUsdaFoodReportToIIngredient(food food)
+        private static food food;
+
+        public static IIngredient ConvertUsdaFoodReportToIIngredient(food _food)
         {
             IIngredient ingredient = new Entity();
+            food = _food;
             if (food == null)
             {
                 return ingredient;
@@ -31,9 +34,34 @@ namespace Lamb_N_Lentil.Domain.UsdaInformation
             {
                 ingredient.Label = food.nutrients.First().measures.First().label;
                 ingredient.Eqv = food.nutrients.First().measures.First().eqv;
-                ingredient.Calories = Convert.ToInt16( food.nutrients[0].measures[0].value);
-            }  
+                Convert.ToInt16(food.nutrients[0].measures[0].value);
+            }
+         
+            ingredient.TotalFat = FindNutrient(204); 
+            ingredient.TotalCarbohydrate = FindNutrient(205);
+            ingredient.Calories = FindNutrient(208);
+            ingredient.Sodium =  FindNutrient(307);
+            ingredient.SaturatedFat = FindNutrient(606);
+            ingredient.PolyunsaturatedFat = FindNutrient(646);
             return ingredient;
+        }
+         
+
+        private static decimal FindNutrient(int nutrient_ID)
+        {
+            var target = (from x in food.nutrients
+                          where x != null && x.nutrient_id == nutrient_ID && x.measures[0] != null
+                          select x.measures[0]).FirstOrDefault();
+            if (target==null)
+            {
+                return 0;
+            }
+            decimal? result = target.value;
+            if (result == null)
+            {
+                return 0;
+            }
+            return (decimal)result;
         }
     }
 }

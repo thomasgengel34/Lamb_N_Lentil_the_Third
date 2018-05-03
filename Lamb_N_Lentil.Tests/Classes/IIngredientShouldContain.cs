@@ -5,10 +5,10 @@ using Lamb_N_Lentil.Domain;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
 
 namespace Lamb_N_Lentil.Tests.Classes
-{ 
+{
     [TestClass]
-    public class IIngredientShouldContain:Common
-    { 
+    public class IIngredientShouldContain : Common
+    {
 
         public IIngredientShouldContain()
         {
@@ -24,5 +24,40 @@ namespace Lamb_N_Lentil.Tests.Classes
 
         [TestMethod]
         public void EqvProperty() => VerifyPropertyIsValid("Eqv");
+
+        [TestMethod]
+        public void CaloriesFromFatIsNineTimesTotalFat()
+        {
+            decimal totalFat = 10.0M;
+            decimal expectedCaloriesFromFat = 9 * totalFat;
+            IIngredient ingredient = new Entity();
+            ingredient.TotalFat = totalFat;
+            decimal returnedCaloriesFromFat = ingredient.CaloriesFromFat;
+            Assert.AreEqual(expectedCaloriesFromFat, returnedCaloriesFromFat);
+        }
+
+        [TestMethod]
+        public void CaloriesFromFatIsZeroWhenTotalFatIsZero()
+        {
+            decimal totalFat =  0.0M;
+            decimal expectedCaloriesFromFat = 9 * totalFat;
+            IIngredient ingredient = new Entity();
+            ingredient.TotalFat = totalFat;
+            decimal returnedCaloriesFromFat = ingredient.CaloriesFromFat;
+            Assert.AreEqual(expectedCaloriesFromFat, returnedCaloriesFromFat);
+        }
+
+        [TestMethod]
+        public void CaloriesFromFatIsCorrectlyChangedWhenTotalFatIsChanged()
+        {
+            decimal totalFat = 0.333M;
+            decimal expectedCaloriesFromFat = 9 * totalFat;
+            IIngredient ingredient = new Entity();
+            ingredient.TotalFat =11M;
+            ingredient.CaloriesFromFat = 700M;
+            ingredient.TotalFat = totalFat;
+            decimal returnedCaloriesFromFat = ingredient.CaloriesFromFat;
+            Assert.AreEqual(expectedCaloriesFromFat, returnedCaloriesFromFat);
+        }
     }
 }

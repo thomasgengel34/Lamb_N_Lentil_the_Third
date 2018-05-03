@@ -110,17 +110,65 @@ namespace Lamb_N_Lentil.Tests.MockUsdaSite
             if (searchString == "ShouldReturnIngredients")
             {
                 report.foods = new foods[1];
-                food food = new food() { ing = new ing() { desc = "peas, porridge, hot" } };
-                foods testfoods = new foods { food = food };
+                report.foods[0] = new foods { food = new food() { ing = new ing() { desc = "peas, porridge, hot" } } };
+                int setHigherThanEverExpected = 40;
+                report.foods[0].food.nutrients = new nutrients[setHigherThanEverExpected];
+                report.foods[0].food.nutrients[0] = new nutrients();
+                report.foods[0].food.nutrients[0].name = "Energy";
+                report.foods[0].food.nutrients[0].nutrient_id = 208;
 
-                report.foods[0] = testfoods;
-                food.nutrients = new nutrients[1];
-                food.nutrients[0] = new nutrients();
-                food.nutrients[0].measures = new measures[1];
-                food.nutrients[0].measures[0] = new measures();
-                food.nutrients[0].measures[0].label = "I am a label";
-                food.nutrients[0].measures[0].eqv = 3.1415926M; 
-                food.nutrients[0].measures[0].value = 76M;
+                report.foods[0].food.nutrients[0].measures = new measures[1];
+                report.foods[0].food.nutrients[0].measures[0] = new measures();
+                report.foods[0].food.nutrients[0].measures[0].label = "I am a label";
+                report.foods[0].food.nutrients[0].measures[0].eqv = 3.1415926M;
+                report.foods[0].food.nutrients[0].measures[0].value = 76M;
+
+                report.foods[0].food.nutrients[2] = new nutrients();
+                report.foods[0].food.nutrients[2].name = "Total lipid(fat)";
+                report.foods[0].food.nutrients[2].nutrient_id = 204;
+                report.foods[0].food.nutrients[2].measures = new measures[1];
+                report.foods[0].food.nutrients[2].measures[0] = new measures(); 
+                report.foods[0].food.nutrients[2].measures[0].value = 987654.2M ;
+
+                report.foods[0].food.nutrients[3] = new nutrients();
+                report.foods[0].food.nutrients[3].nutrient_id = 205;  // total carbs - test w/o label
+                report.foods[0].food.nutrients[3].measures = new measures[1];
+                report.foods[0].food.nutrients[3].measures[0] = new measures();
+                report.foods[0].food.nutrients[3].measures[0].value = 77.04M;
+
+                report.foods[0].food.nutrients[4] = new nutrients();
+                report.foods[0].food.nutrients[4].name = "Fatty acids, total saturated";
+                report.foods[0].food.nutrients[4].nutrient_id = 606;
+                report.foods[0].food.nutrients[4].measures = new measures[1];
+                report.foods[0].food.nutrients[4].measures[0] = new measures();
+                report.foods[0].food.nutrients[4].measures[0].value = 987654.2M;
+
+                report.foods[0].food.nutrients[5] = new nutrients();
+                report.foods[0].food.nutrients[5].name = "Fatty acids, total polyunsaturated";
+                report.foods[0].food.nutrients[5].nutrient_id = 646;
+                report.foods[0].food.nutrients[5].measures = new measures[1];
+                report.foods[0].food.nutrients[5].measures[0] = new measures();
+                report.foods[0].food.nutrients[5].measures[0].value = 736.08M;
+
+
+
+
+                report.foods[0].food.nutrients[8] = new nutrients();
+                report.foods[0].food.nutrients[8].name = "Sodium, Na";
+                report.foods[0].food.nutrients[8].nutrient_id = 307;
+                report.foods[0].food.nutrients[8].measures = new measures[1];
+                report.foods[0].food.nutrients[8].measures[0] = new measures();
+                report.foods[0].food.nutrients[8].measures[0].value = 143.0M;
+
+
+
+                report.foods[0].food.nutrients[9] = new nutrients();
+                report.foods[0].food.nutrients[9].measures = new measures[1];
+                report.foods[0].food.nutrients[9].measures[0] = new measures();
+                report.foods[0].food.nutrients[9].measures[0].value = 1234.56M;
+
+
+
                 return report;
             }
             else throw new NotImplementedException("wrong search string");

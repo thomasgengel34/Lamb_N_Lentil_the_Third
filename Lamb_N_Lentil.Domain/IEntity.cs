@@ -7,5 +7,7 @@
         string IngredientsInIngredient { get; set; } 
         string Description { get; set; } 
         string UpdateDate { get; set; }
+        decimal SaturatedFat { get; set; }
+        decimal PolyunsaturatedFat { get; set; }
     } 
 }

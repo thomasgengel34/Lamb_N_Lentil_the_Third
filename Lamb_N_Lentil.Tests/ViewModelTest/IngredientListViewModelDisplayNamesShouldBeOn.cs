@@ -28,6 +28,8 @@ namespace Lamb_N_Lentil.Tests.ViewModelTest
             var name = pInfo.Name;
 
             Assert.AreEqual("USDA Data Source", name);
-        } 
+        }
+
+       
     }
 }

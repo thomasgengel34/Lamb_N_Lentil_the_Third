@@ -17,12 +17,15 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Sample USDA Json Files", "S
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Reports", "Reports", "{4EF1B80D-A9D2-4CBE-ABAA-CB8BBBBDE416}"
 	ProjectSection(SolutionItems) = preProject
-		45059050.json = 45059050.json
+		45059050CheddarCheeseFullReport.json = 45059050CheddarCheeseFullReport.json
+		45169419OrganicPepperSauceBasicReport.json = 45169419OrganicPepperSauceBasicReport.json
+		45169419OrganicPepperSauceFullReport.json = 45169419OrganicPepperSauceFullReport.json
 		4518498.json = 4518498.json
 		FoodsYellowClingPeachesBrandedWithIngredients.json = FoodsYellowClingPeachesBrandedWithIngredients.json
 		MinuteMaidLightLemonade.json = MinuteMaidLightLemonade.json
 		SampleUSDABrandedReport.json = SampleUSDABrandedReport.json
 		SampleUSDAStandardReport.json = SampleUSDAStandardReport.json
+		Spumoni45322307FullReport.json = Spumoni45322307FullReport.json
 		ThreeIngredientsOnUsdaSiteReport.json = ThreeIngredientsOnUsdaSiteReport.json
 		WhiteHominyFullReport.json = WhiteHominyFullReport.json
 	EndProjectSection

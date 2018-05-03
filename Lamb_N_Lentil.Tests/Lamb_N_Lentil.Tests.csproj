@@ -131,6 +131,7 @@
     <Compile Include="ViewModelTest\IngredientListViewModelShould.cs" />
     <Compile Include="ViewModelTest\IngredientListViewModelDisplayNamesShouldBeOn.cs" />
     <Compile Include="ViewModelTest\IngredientDetailViewModelShould.cs" />
+    <Compile Include="ViewModelTest\IngredientDetailViewModelDisplayNamesShouldBeOn.cs" />
     <Compile Include="Views\BaseViewTests.cs" />
     <Compile Include="Views\HomeAboutViewShould .cs" />
     <Compile Include="Views\HomeContactViewShould.cs" />
