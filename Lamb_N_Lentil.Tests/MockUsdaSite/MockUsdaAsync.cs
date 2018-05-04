@@ -179,14 +179,24 @@ namespace Lamb_N_Lentil.Tests.MockUsdaSite
                 report.foods[0].food.nutrients[8].measures[0] = new measures();
                 report.foods[0].food.nutrients[8].measures[0].value = 143.0M;
 
-
-
                 report.foods[0].food.nutrients[9] = new nutrients();
                 report.foods[0].food.nutrients[9].measures = new measures[1];
                 report.foods[0].food.nutrients[9].measures[0] = new measures();
                 report.foods[0].food.nutrients[9].measures[0].value = 1234.56M;
 
+                report.foods[0].food.nutrients[10] = new nutrients();
+                report.foods[0].food.nutrients[10].name = "Sugars, total";
+                report.foods[0].food.nutrients[10].nutrient_id = 269;
+                report.foods[0].food.nutrients[10].measures = new measures[1];
+                report.foods[0].food.nutrients[10].measures[0] = new measures();
+                report.foods[0].food.nutrients[10].measures[0].value = 14.30M;
 
+                report.foods[0].food.nutrients[11] = new nutrients();
+                report.foods[0].food.nutrients[11].name = "Protein";
+                report.foods[0].food.nutrients[11].nutrient_id = 203;
+                report.foods[0].food.nutrients[11].measures = new measures[1];
+                report.foods[0].food.nutrients[11].measures[0] = new measures();
+                report.foods[0].food.nutrients[11].measures[0].value = 7.15M;
 
                 return report;
             }

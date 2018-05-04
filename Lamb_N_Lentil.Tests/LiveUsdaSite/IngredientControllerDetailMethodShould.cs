@@ -16,6 +16,7 @@ namespace Lamb_N_Lentil.Tests.LiveUsdaSite
         private int Total { get; set; } = 4411; 
         private int correctEqv=113;
         private decimal correctCholesterol = 25;
+        
 
         public IngredientControllerDetailMethodShould()
         {
@@ -56,12 +57,32 @@ namespace Lamb_N_Lentil.Tests.LiveUsdaSite
         }
 
         [TestMethod]
-        public async Task HaveCholesterolTheViewModelForLightChurnedStyleIcecream45039512()
+        public async Task HaveCholesterolInTheViewModelForLightChurnedStyleIcecream45039512()
         {
             var viewResult = await Controller.Details("45039512");
             var model = (IngredientDetailViewModel)viewResult.Model;
             decimal returned  = model.Cholesterol;
             Assert.AreEqual(correctCholesterol, returned );
+        }
+
+        [TestMethod]
+        public async Task HavePotassiumInTheViewModelForDannonLightStrawberryBananaYogurt45035088()
+        {
+            var viewResult = await Controller.Details("45035088");
+            var model = (IngredientDetailViewModel)viewResult.Model;
+            var correct = 250.00M;
+            decimal returned = model.Potassium;
+            Assert.AreEqual(correct, returned);
+        }
+
+        [TestMethod]
+        public async Task HaveDietaryFiberInTheViewModelForWheaties45310806()
+        {
+            var viewResult = await Controller.Details("45310806");
+            var model = (IngredientDetailViewModel)viewResult.Model;
+            var correct = 3.00M;
+            decimal returned = model.DietaryFiber;
+            Assert.AreEqual(correct, returned);
         }
     }
 }

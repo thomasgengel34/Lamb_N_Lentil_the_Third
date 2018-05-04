@@ -1,8 +1,6 @@
-﻿using System;
-using System.Collections.Generic;
+﻿using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
-using Lamb_N_Lentil.Domain.UsdaInformation;
 
 namespace Lamb_N_Lentil.Domain.UsdaInformation
 {

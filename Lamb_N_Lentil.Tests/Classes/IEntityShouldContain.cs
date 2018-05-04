@@ -22,9 +22,13 @@ namespace Lamb_N_Lentil.Tests.Classes
         public void InstanceNameProperty() => VerifyPropertyIsValid("InstanceName"); 
 
         [TestMethod]
-        public void IngredientsListProperty() => VerifyPropertyIsValid("IngredientsInIngredient"); 
+        public void IngredientsListProperty() => VerifyPropertyIsValid("IngredientsInIngredient");
 
+        [TestMethod]
+        public void Sodium() => VerifyPropertyIsValid("Sodium");
 
-        
+        [TestMethod]
+        public void DietaryFiber() => VerifyPropertyIsValid("DietaryFiber");
+
     } 
 }

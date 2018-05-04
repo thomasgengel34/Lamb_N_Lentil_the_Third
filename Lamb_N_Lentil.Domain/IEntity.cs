@@ -17,5 +17,9 @@
         decimal PolyunsaturatedFat { get; set; }
         decimal TransFat { get; set; }
         decimal Cholesterol { get; set; } 
+        decimal Potassium { get; set; }
+        decimal DietaryFiber { get; set; }
+        decimal Sugars { get; set; }
+        decimal Protein { get; set; }
     } 
 }

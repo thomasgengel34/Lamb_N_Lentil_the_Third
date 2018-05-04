@@ -7,20 +7,20 @@ using System;
 namespace Lamb_N_Lentil.Tests.ViewModelTest
 {
     [TestClass]
-    public class IngredientDetailViewModelShould:Common
+    public class IngredientDetailViewModelShould : Common
     {
-        
+
         Type type;
 
         public IngredientDetailViewModelShould()
         {
-              type = typeof(IngredientDetailViewModel);
+            type = typeof(IngredientDetailViewModel);
         }
 
         [TestMethod]
         public void HaveNdbnoProperty()
         {
-            var pInfo =type.GetProperty("Ndbno");
+            var pInfo = type.GetProperty("Ndbno");
             Assert.AreEqual("Ndbno", pInfo.Name);
         }
 
@@ -41,7 +41,7 @@ namespace Lamb_N_Lentil.Tests.ViewModelTest
         [TestMethod]
         public void HaveIngredientInIngredientsProperty()
         {
-            var pInfo =  type.GetProperty("IngredientsInIngredient");
+            var pInfo = type.GetProperty("IngredientsInIngredient");
             Assert.AreEqual("IngredientsInIngredient", pInfo.Name);
         }
 
@@ -103,12 +103,41 @@ namespace Lamb_N_Lentil.Tests.ViewModelTest
         }
 
         [TestMethod]
+        public void HavePotassiumProperty()
+        {
+            var pInfo = type.GetProperty("Potassium");
+            Assert.AreEqual("Potassium", pInfo.Name);
+        }
+
+        [TestMethod]
+        public void HaveDietaryFiberProperty()
+        {
+            var pInfo = type.GetProperty("DietaryFiber");
+            Assert.AreEqual("DietaryFiber", pInfo.Name);
+        }
+
+        [TestMethod]
+        public void HaveSugarsProperty()
+        {
+            var pInfo = type.GetProperty("Sugars");
+            Assert.AreEqual("Sugars", pInfo.Name);
+        }
+
+        [TestMethod]
+        public void HaveProteinProperty()
+        {
+            var pInfo = type.GetProperty("Protein");
+            Assert.AreEqual("Protein", pInfo.Name);
+        }
+
+
+        [TestMethod]
         public void HaveMapIIngredientToIngredientDetailViewModelMethod()
         {
             var mInfo = type.GetMethod("MapIIngredientToIngredientDetailViewModel");
             Assert.AreEqual("MapIIngredientToIngredientDetailViewModel", mInfo.Name);
         }
 
-        
+
     }
 }

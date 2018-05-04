@@ -20,6 +20,10 @@ namespace Lamb_N_Lentil.Domain
         public string UpdateDate { get; set; }
         public decimal Calories { get; set; }
         public decimal Cholesterol { get; set; }
+        public decimal Potassium { get; set; }
+        public decimal DietaryFiber { get; set; }
+        public decimal Sugars { get; set; }
+        public decimal Protein { get; set; }
 
         string IIngredient.Label { get; set; }
         decimal IIngredient.Eqv { get; set; }

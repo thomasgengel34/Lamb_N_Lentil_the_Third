@@ -32,6 +32,7 @@ namespace Lamb_N_Lentil.UI.Models
         public decimal CaloriesFromFat { get; set; }
 
         public decimal Cholesterol { get; set; }
+        public decimal Potassium { get; set; }
 
         [Display(Name = "Saturated Fat")]
         public decimal SaturatedFat { get; set; }
@@ -50,6 +51,12 @@ namespace Lamb_N_Lentil.UI.Models
         [Display(Name = "Total Carbohydrate")]
         public decimal TotalCarbohydrate { get; set; }
 
+        [Display(Name = "Dietary Fiber")]
+        public decimal DietaryFiber { get; set; }
+
+        public decimal Sugars { get; set; }
+
+        public decimal Protein { get; set; }
 
         public static IngredientDetailViewModel MapIIngredientToIngredientDetailViewModel(IIngredient ingredient)
         {
@@ -71,7 +78,11 @@ namespace Lamb_N_Lentil.UI.Models
                 TotalCarbohydrate = ingredient.TotalCarbohydrate,
                 CaloriesFromFat = ingredient.CaloriesFromFat,
                 Sodium=ingredient.Sodium,
-                Cholesterol=ingredient.Cholesterol
+                Cholesterol=ingredient.Cholesterol,
+                Potassium=ingredient.Potassium,
+                DietaryFiber=ingredient.DietaryFiber,
+                Sugars=ingredient.Sugars,
+                Protein=ingredient.Protein
             };
             return Vm;
         }

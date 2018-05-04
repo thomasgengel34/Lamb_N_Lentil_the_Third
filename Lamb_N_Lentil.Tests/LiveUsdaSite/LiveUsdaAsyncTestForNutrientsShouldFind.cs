@@ -118,5 +118,44 @@ namespace Lamb_N_Lentil.Tests.LiveUsdaSite
                             select c.measures[0].value).FirstOrDefault();
             Assert.AreEqual(correct , returned);
         }
+
+        [TestMethod]
+        public async Task  PotassiumForDannonLightAndFitNonfatYogurtStrawberryBananaUPC036632006219_45035088()
+        {
+            IUsdaAsync usdaAsync = new UsdaAsync();
+            string testNdbno = "45035088";
+            decimal correct = 250.00m;
+            UsdaFoodReport report = await usdaAsync.FetchUsdaFoodReport(testNdbno);
+            var returned = (from c in report.foods[0].food.nutrients
+                            where c.nutrient_id == 306
+                            select c.measures[0].value).FirstOrDefault();
+            Assert.AreEqual(correct, returned);
+        }
+
+        [TestMethod]
+        public async Task DietaryFiberForWheaties45310806()
+        {
+            IUsdaAsync usdaAsync = new UsdaAsync();
+            string testNdbno = "45310806";
+            decimal correct = 3.00m;
+            UsdaFoodReport report = await usdaAsync.FetchUsdaFoodReport(testNdbno);
+            var returned = (from c in report.foods[0].food.nutrients
+                            where c.nutrient_id == 291
+                            select c.measures[0].value).FirstOrDefault();
+            Assert.AreEqual(correct, returned);
+        }
+
+        [TestMethod]
+        public async Task SugarForWheaties45310806()
+        {
+            IUsdaAsync usdaAsync = new UsdaAsync();
+            string testNdbno = "45310806";
+            decimal correct = 4.00m;
+            UsdaFoodReport report = await usdaAsync.FetchUsdaFoodReport(testNdbno);
+            var returned = (from c in report.foods[0].food.nutrients
+                            where c.nutrient_id == 269
+                            select c.measures[0].value).FirstOrDefault();
+            Assert.AreEqual(correct, returned);
+        }
     }
 }

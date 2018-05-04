@@ -52,5 +52,16 @@ namespace Lamb_N_Lentil.Tests.ViewModelTest
 
             Assert.AreEqual("Monounsaturated Fat", name);
         }
+
+        [TestMethod]
+        public void ShouldHaveCorrectDisplayNamePropertyOnDietaryFiber()
+        {
+            var pInfo = typeof(IngredientDetailViewModel).GetProperty("DietaryFiber")
+                                .GetCustomAttributes(typeof(DisplayAttribute), false)
+                                .Cast<DisplayAttribute>().FirstOrDefault();
+            var name = pInfo.Name;
+
+            Assert.AreEqual("Dietary Fiber", name);
+        } 
     }
 }

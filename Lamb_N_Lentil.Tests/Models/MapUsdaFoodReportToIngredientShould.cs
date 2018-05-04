@@ -18,6 +18,7 @@ namespace Lamb_N_Lentil.Tests.Models
         private decimal correctSaturatedFat = 12345.67M;
         private decimal correctTotalCarbohydrate = 99.012M;
         private decimal correctSodium = 98.6M;
+        private decimal correctProtein = 7.15M;
 
         private IIngredient ingredient;
 
@@ -55,6 +56,19 @@ namespace Lamb_N_Lentil.Tests.Models
             food.nutrients[3].measures[0] = new measures();
             food.nutrients[3].measures[0].value = correctSaturatedFat;
 
+            food.nutrients[4] = new nutrients();
+            food.nutrients[4].name = "Fiber, total dietary";
+            food.nutrients[4].nutrient_id =291;
+            food.nutrients[4].measures = new measures[1];
+            food.nutrients[4].measures[0] = new measures();
+            food.nutrients[4].measures[0].value = correctSaturatedFat;
+
+            food.nutrients[9] = new nutrients();
+            food.nutrients[9].name = "Protein";
+            food.nutrients[9].nutrient_id = 203;
+            food.nutrients[9].measures = new measures[1];
+            food.nutrients[9].measures[0] = new measures();
+            food.nutrients[9].measures[0].value = 7.15M;
 
             food.nutrients[10] = new nutrients();
             food.nutrients[10].name = "Sodium, Na";
@@ -113,6 +127,12 @@ namespace Lamb_N_Lentil.Tests.Models
         public void ConvertSodium()
         {
             Assert.AreEqual(correctSodium, ingredient.Sodium);
+        }
+
+        [TestMethod]
+        public void ConvertProtein()
+        {
+            Assert.AreEqual(correctProtein, ingredient.Protein);
         }
     }
 }
