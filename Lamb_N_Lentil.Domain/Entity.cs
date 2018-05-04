@@ -16,14 +16,17 @@ namespace Lamb_N_Lentil.Domain
         public decimal Sodium { get; set; }
         public decimal TotalCarbohydrate { get; set; }
         public decimal SaturatedFat { get; set; }
+        public decimal TransFat { get; set; }
         public string UpdateDate { get; set; }
+        public decimal Calories { get; set; }
+        public decimal Cholesterol { get; set; }
 
         string IIngredient.Label { get; set; }
         decimal IIngredient.Eqv { get; set; }
-        decimal IIngredient.Calories { get; set; }
+
         string IIngredient.Ndbno { get; set; }
-       
-        decimal IIngredient.TotalFat
+
+        public decimal TotalFat
         {
             get { return _TotalFat; }
             set
@@ -32,12 +35,13 @@ namespace Lamb_N_Lentil.Domain
                 OnPropertyChanged("IIngredient.TotalFat");
             }
         }
-        decimal IIngredient.CaloriesFromFat
+        public decimal CaloriesFromFat
         {
             get { return _CaloriesFromFat; }
             set { _CaloriesFromFat = value; }
         }
 
+        public decimal MonounsaturatedFat { get; set; }
         public decimal PolyunsaturatedFat { get; set; }
 
         public Entity()

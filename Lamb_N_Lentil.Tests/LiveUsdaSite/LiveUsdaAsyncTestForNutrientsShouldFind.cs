@@ -105,5 +105,18 @@ namespace Lamb_N_Lentil.Tests.LiveUsdaSite
                             select c.measures[0].value).FirstOrDefault();
             Assert.AreEqual(correctSaturatedFat, returned);
         }
+
+        [TestMethod]
+        public async Task TransFatForSoftMargineUPC041250040538_45037282()
+        {
+            IUsdaAsync usdaAsync = new UsdaAsync();
+            string testNdbno = "45037282";
+            decimal correct = 1.00m;
+            UsdaFoodReport report = await usdaAsync.FetchUsdaFoodReport(testNdbno);
+            var returned = (from c in report.foods[0].food.nutrients
+                            where c.nutrient_id == 605
+                            select c.measures[0].value).FirstOrDefault();
+            Assert.AreEqual(correct , returned);
+        }
     }
 }

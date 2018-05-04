@@ -115,33 +115,40 @@ namespace Lamb_N_Lentil.Tests.MockUsdaSite
                 report.foods[0].food.nutrients = new nutrients[setHigherThanEverExpected];
                 report.foods[0].food.nutrients[0] = new nutrients();
                 report.foods[0].food.nutrients[0].name = "Energy";
-                report.foods[0].food.nutrients[0].nutrient_id = 208;
-
+                report.foods[0].food.nutrients[0].nutrient_id = 208; 
                 report.foods[0].food.nutrients[0].measures = new measures[1];
                 report.foods[0].food.nutrients[0].measures[0] = new measures();
                 report.foods[0].food.nutrients[0].measures[0].label = "I am a label";
                 report.foods[0].food.nutrients[0].measures[0].eqv = 3.1415926M;
                 report.foods[0].food.nutrients[0].measures[0].value = 76M;
 
+                report.foods[0].food.nutrients[1] = new nutrients();
+                report.foods[0].food.nutrients[1].name = "Total lipid(fat)";
+                report.foods[0].food.nutrients[1].nutrient_id = 204;
+                report.foods[0].food.nutrients[1].measures = new measures[1];
+                report.foods[0].food.nutrients[1].measures[0] = new measures(); 
+                report.foods[0].food.nutrients[1].measures[0].value = 987654.2M ;
+
                 report.foods[0].food.nutrients[2] = new nutrients();
-                report.foods[0].food.nutrients[2].name = "Total lipid(fat)";
-                report.foods[0].food.nutrients[2].nutrient_id = 204;
+                report.foods[0].food.nutrients[2].nutrient_id = 205;  // total carbs - test w/o label
                 report.foods[0].food.nutrients[2].measures = new measures[1];
-                report.foods[0].food.nutrients[2].measures[0] = new measures(); 
-                report.foods[0].food.nutrients[2].measures[0].value = 987654.2M ;
+                report.foods[0].food.nutrients[2].measures[0] = new measures();
+                report.foods[0].food.nutrients[2].measures[0].value = 77.04M;
 
                 report.foods[0].food.nutrients[3] = new nutrients();
-                report.foods[0].food.nutrients[3].nutrient_id = 205;  // total carbs - test w/o label
+                report.foods[0].food.nutrients[3].name = "Fatty acids, total saturated";
+                report.foods[0].food.nutrients[3].nutrient_id = 606;
                 report.foods[0].food.nutrients[3].measures = new measures[1];
                 report.foods[0].food.nutrients[3].measures[0] = new measures();
-                report.foods[0].food.nutrients[3].measures[0].value = 77.04M;
+                report.foods[0].food.nutrients[3].measures[0].value = 987654.2M;
 
                 report.foods[0].food.nutrients[4] = new nutrients();
-                report.foods[0].food.nutrients[4].name = "Fatty acids, total saturated";
-                report.foods[0].food.nutrients[4].nutrient_id = 606;
+                report.foods[0].food.nutrients[4].name = "Fatty acids, total trans";
+                report.foods[0].food.nutrients[4].nutrient_id = 605;
                 report.foods[0].food.nutrients[4].measures = new measures[1];
                 report.foods[0].food.nutrients[4].measures[0] = new measures();
-                report.foods[0].food.nutrients[4].measures[0].value = 987654.2M;
+                report.foods[0].food.nutrients[4].measures[0].value = 101.01M; 
+
 
                 report.foods[0].food.nutrients[5] = new nutrients();
                 report.foods[0].food.nutrients[5].name = "Fatty acids, total polyunsaturated";
@@ -150,7 +157,19 @@ namespace Lamb_N_Lentil.Tests.MockUsdaSite
                 report.foods[0].food.nutrients[5].measures[0] = new measures();
                 report.foods[0].food.nutrients[5].measures[0].value = 736.08M;
 
+                report.foods[0].food.nutrients[6] = new nutrients();
+                report.foods[0].food.nutrients[6].name = "Fatty acids, total monounsaturated";
+                report.foods[0].food.nutrients[6].nutrient_id = 645;
+                report.foods[0].food.nutrients[6].measures = new measures[1];
+                report.foods[0].food.nutrients[6].measures[0] = new measures();
+                report.foods[0].food.nutrients[6].measures[0].value = 81.92M;
 
+                report.foods[0].food.nutrients[7] = new nutrients();
+                report.foods[0].food.nutrients[7].name = "Cholesterol";
+                report.foods[0].food.nutrients[7].nutrient_id = 601;
+                report.foods[0].food.nutrients[7].measures = new measures[1];
+                report.foods[0].food.nutrients[7].measures[0] = new measures();
+                report.foods[0].food.nutrients[7].measures[0].value = 82.93M;
 
 
                 report.foods[0].food.nutrients[8] = new nutrients();

@@ -21,7 +21,18 @@ namespace Lamb_N_Lentil.Tests.ViewModelTest
         }
 
         [TestMethod]
-        public void ShouldHaveCorrectDisplayNamePropertyOnPolyUnSaturatedFat()
+        public void ShouldHaveCorrectDisplayNamePropertyOnTransFat()
+        {
+            var pInfo = typeof(IngredientDetailViewModel).GetProperty("TransFat")
+                                .GetCustomAttributes(typeof(DisplayAttribute), false)
+                                .Cast<DisplayAttribute>().FirstOrDefault();
+            var name = pInfo.Name;
+
+            Assert.AreEqual("Trans Fat", name);
+        }
+
+        [TestMethod]
+        public void ShouldHaveCorrectDisplayNamePropertyOnPolyunsaturatedFat()
         {
             var pInfo = typeof(IngredientDetailViewModel).GetProperty("PolyunsaturatedFat")
                                 .GetCustomAttributes(typeof(DisplayAttribute), false)
@@ -29,6 +40,17 @@ namespace Lamb_N_Lentil.Tests.ViewModelTest
             var name = pInfo.Name;
 
             Assert.AreEqual("Polyunsaturated Fat", name);
+        }
+
+        [TestMethod]
+        public void ShouldHaveCorrectDisplayNamePropertyOnMonunsaturatedFat()
+        {
+            var pInfo = typeof(IngredientDetailViewModel).GetProperty("MonounsaturatedFat")
+                                .GetCustomAttributes(typeof(DisplayAttribute), false)
+                                .Cast<DisplayAttribute>().FirstOrDefault();
+            var name = pInfo.Name;
+
+            Assert.AreEqual("Monounsaturated Fat", name);
         }
     }
 }

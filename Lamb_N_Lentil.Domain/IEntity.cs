@@ -8,6 +8,14 @@
         string Description { get; set; } 
         string UpdateDate { get; set; }
         decimal SaturatedFat { get; set; }
+        decimal MonounsaturatedFat { get; set; }
+        decimal Calories { get; set; }
+        decimal TotalFat { get; set; }
+        decimal CaloriesFromFat { get; set; }
+        decimal Sodium { get; set; }
+        decimal TotalCarbohydrate { get; set; } 
         decimal PolyunsaturatedFat { get; set; }
+        decimal TransFat { get; set; }
+        decimal Cholesterol { get; set; } 
     } 
 }

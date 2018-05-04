@@ -73,7 +73,14 @@ namespace Lamb_N_Lentil.Tests.ViewModelTest
             Assert.AreEqual("Label", pInfo.Name);
         }
 
-   
+        [TestMethod]
+        public void HaveTransFatProperty()
+        {
+            var pInfo = type.GetProperty("TransFat");
+            Assert.AreEqual("TransFat", pInfo.Name);
+        }
+
+
         [TestMethod]
         public void HavePolyunsaturatedFatProperty()
         {
@@ -81,12 +88,27 @@ namespace Lamb_N_Lentil.Tests.ViewModelTest
             Assert.AreEqual("PolyunsaturatedFat", pInfo.Name);
         }
 
+        [TestMethod]
+        public void HaveMonounsaturatedFatProperty()
+        {
+            var pInfo = type.GetProperty("MonounsaturatedFat");
+            Assert.AreEqual("MonounsaturatedFat", pInfo.Name);
+        }
+
+        [TestMethod]
+        public void HaveCholesterolProperty()
+        {
+            var pInfo = type.GetProperty("Cholesterol");
+            Assert.AreEqual("Cholesterol", pInfo.Name);
+        }
 
         [TestMethod]
         public void HaveMapIIngredientToIngredientDetailViewModelMethod()
         {
             var mInfo = type.GetMethod("MapIIngredientToIngredientDetailViewModel");
             Assert.AreEqual("MapIIngredientToIngredientDetailViewModel", mInfo.Name);
-        } 
+        }
+
+        
     }
 }

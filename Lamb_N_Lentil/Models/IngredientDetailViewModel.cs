@@ -31,11 +31,19 @@ namespace Lamb_N_Lentil.UI.Models
         [Display(Name = "Calories From Fat")]
         public decimal CaloriesFromFat { get; set; }
 
+        public decimal Cholesterol { get; set; }
+
         [Display(Name = "Saturated Fat")]
         public decimal SaturatedFat { get; set; }
 
+        [Display(Name = "Trans Fat")]
+        public decimal TransFat { get; set; }
+
         [Display(Name = "Polyunsaturated Fat")]
         public decimal PolyunsaturatedFat { get; set; }
+
+        [Display(Name = "Monounsaturated Fat")]
+        public decimal MonounsaturatedFat { get; set; }
 
         public decimal Sodium { get; set; }
 
@@ -56,11 +64,14 @@ namespace Lamb_N_Lentil.UI.Models
                 Eqv = ingredient.Eqv,
                 Calories = ingredient.Calories,
                 TotalFat = ingredient.TotalFat,
-                SaturatedFat=ingredient.SaturatedFat,
+                SaturatedFat = ingredient.SaturatedFat,
+                TransFat=ingredient.TransFat,
+                MonounsaturatedFat = ingredient.MonounsaturatedFat,
                 PolyunsaturatedFat=ingredient.PolyunsaturatedFat,
                 TotalCarbohydrate = ingredient.TotalCarbohydrate,
                 CaloriesFromFat = ingredient.CaloriesFromFat,
-                Sodium=ingredient.Sodium
+                Sodium=ingredient.Sodium,
+                Cholesterol=ingredient.Cholesterol
             };
             return Vm;
         }

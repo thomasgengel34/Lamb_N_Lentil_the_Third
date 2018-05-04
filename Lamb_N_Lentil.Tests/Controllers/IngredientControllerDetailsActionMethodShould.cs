@@ -83,5 +83,35 @@ namespace Lamb_N_Lentil.Tests.Controllers
             decimal returnedFat = model.PolyunsaturatedFat; 
             Assert.AreEqual(correctFat, returnedFat);
         }
+
+        [TestMethod]
+        public async Task ProduceAnIngredientDetailViewModelWithMonounsaturatedFat()
+        {
+            ViewResult vr = await Controller.Details("ShouldReturnIngredients");
+            decimal correctFat = 81.92M;
+            var model = (IngredientDetailViewModel)vr.Model;
+            decimal returnedFat = model.MonounsaturatedFat;
+            Assert.AreEqual(correctFat, returnedFat);
+        }
+
+        [TestMethod]
+        public async Task ProduceAnIngredientDetailViewModelWithCholesterol()
+        {
+            ViewResult vr = await Controller.Details("ShouldReturnIngredients");
+            decimal correct  = 82.93M;
+            var model = (IngredientDetailViewModel)vr.Model;
+            decimal returned  = model.Cholesterol;
+            Assert.AreEqual(correct , returned );
+        }
+
+        [TestMethod]
+        public async Task ProduceAnIngredientDetailViewModelWithTransFat()
+        {
+            ViewResult vr = await Controller.Details("ShouldReturnIngredients");
+            decimal correct = 101.01M;
+            var model = (IngredientDetailViewModel)vr.Model;
+            decimal returned = model.TransFat;
+            Assert.AreEqual(correct, returned);
+        }
     }
 }

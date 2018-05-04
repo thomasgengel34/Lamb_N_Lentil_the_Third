@@ -41,8 +41,11 @@ namespace Lamb_N_Lentil.Domain.UsdaInformation
             ingredient.TotalCarbohydrate = FindNutrient(205);
             ingredient.Calories = FindNutrient(208);
             ingredient.Sodium =  FindNutrient(307);
+            ingredient.Cholesterol = FindNutrient(601);     
             ingredient.SaturatedFat = FindNutrient(606);
             ingredient.PolyunsaturatedFat = FindNutrient(646);
+            ingredient.MonounsaturatedFat = FindNutrient(645);
+            ingredient.TransFat = FindNutrient(605);
             return ingredient;
         }
          
