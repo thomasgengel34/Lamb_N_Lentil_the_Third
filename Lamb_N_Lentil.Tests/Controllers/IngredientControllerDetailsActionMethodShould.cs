@@ -133,5 +133,35 @@ namespace Lamb_N_Lentil.Tests.Controllers
             decimal returned = model.Protein;
             Assert.AreEqual(correct, returned);
         }
+
+        [TestMethod]
+        public async Task ProduceAnIngredientDetailViewModelWithVitaminA()
+        {
+            ViewResult vr = await Controller.Details("ShouldReturnIngredients");
+            decimal correct = 3.625M;
+            var model = (IngredientDetailViewModel)vr.Model;
+            decimal returned = model.VitaminA;
+            Assert.AreEqual(correct, returned);
+        }
+
+        [TestMethod]
+        public async Task ProduceAnIngredientDetailViewModelWithVitaminC()
+        {
+            ViewResult vr = await Controller.Details("ShouldReturnIngredients");
+            decimal correct = 1.8M;
+            var model = (IngredientDetailViewModel)vr.Model;
+            decimal returned = model.VitaminC;
+            Assert.AreEqual(correct, returned);
+        }
+
+        [TestMethod]
+        public async Task ProduceAnIngredientDetailViewModelWithCalcium()
+        {
+            ViewResult vr = await Controller.Details("ShouldReturnIngredients");
+            decimal correct = 0.95M;
+            var model = (IngredientDetailViewModel)vr.Model;
+            decimal returned = model.Calcium;
+            Assert.AreEqual(correct, returned);
+        }
     }
 }

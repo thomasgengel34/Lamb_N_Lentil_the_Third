@@ -19,6 +19,7 @@ namespace Lamb_N_Lentil.Tests.Models
         private decimal correctTotalCarbohydrate = 99.012M;
         private decimal correctSodium = 98.6M;
         private decimal correctProtein = 7.15M;
+        private decimal correctVitaminA = 3.11M;
 
         private IIngredient ingredient;
 
@@ -62,6 +63,13 @@ namespace Lamb_N_Lentil.Tests.Models
             food.nutrients[4].measures = new measures[1];
             food.nutrients[4].measures[0] = new measures();
             food.nutrients[4].measures[0].value = correctSaturatedFat;
+             
+            food.nutrients[5] = new nutrients();
+            food.nutrients[5].name = "Vitamin A, IU";
+            food.nutrients[5].nutrient_id = 318;
+            food.nutrients[5].measures = new measures[1];
+            food.nutrients[5].measures[0] = new measures();
+            food.nutrients[5].measures[0].value = correctVitaminA;
 
             food.nutrients[9] = new nutrients();
             food.nutrients[9].name = "Protein";
@@ -133,6 +141,13 @@ namespace Lamb_N_Lentil.Tests.Models
         public void ConvertProtein()
         {
             Assert.AreEqual(correctProtein, ingredient.Protein);
+        }
+
+        [TestMethod]
+        public void ConvertVitaminA()
+        {
+            decimal correct = 3.11M;
+            Assert.AreEqual(correct , ingredient.VitaminA);
         }
     }
 }

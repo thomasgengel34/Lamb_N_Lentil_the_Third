@@ -62,6 +62,28 @@ namespace Lamb_N_Lentil.Tests.ViewModelTest
             var name = pInfo.Name;
 
             Assert.AreEqual("Dietary Fiber", name);
-        } 
+        }
+
+        [TestMethod]
+        public void ShouldHaveCorrectDisplayNamePropertyOnVitaminA()
+        {
+            var pInfo = typeof(IngredientDetailViewModel).GetProperty("VitaminA")
+                                .GetCustomAttributes(typeof(DisplayAttribute), false)
+                                .Cast<DisplayAttribute>().FirstOrDefault();
+            var name = pInfo.Name;
+
+            Assert.AreEqual("Vitamin A", name);
+        }
+
+        [TestMethod]
+        public void ShouldHaveCorrectDisplayNamePropertyOnVitaminC()
+        {
+            var pInfo = typeof(IngredientDetailViewModel).GetProperty("VitaminC")
+                                .GetCustomAttributes(typeof(DisplayAttribute), false)
+                                .Cast<DisplayAttribute>().FirstOrDefault();
+            var name = pInfo.Name;
+
+            Assert.AreEqual("Vitamin C", name);
+        }
     }
 }

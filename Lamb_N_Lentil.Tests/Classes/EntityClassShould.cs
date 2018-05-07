@@ -50,5 +50,12 @@ namespace Lamb_N_Lentil.Tests.Classes
             Assert.AreEqual("PolyunsaturatedFat", pInfo.Name);
         }
 
+        [TestMethod]
+        public void ShouldHaveVitaminAProperty()
+        {
+            var pInfo = typeof(Entity).GetProperty("VitaminA");
+            Assert.AreEqual("VitaminA", pInfo.Name);
+        }
+
     }
 } 

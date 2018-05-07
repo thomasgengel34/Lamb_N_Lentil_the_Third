@@ -84,5 +84,15 @@ namespace Lamb_N_Lentil.Tests.LiveUsdaSite
             decimal returned = model.DietaryFiber;
             Assert.AreEqual(correct, returned);
         }
+
+        [TestMethod]
+        public async Task HaveVitaminAInTheViewModelForBordenAmericanCheeseSlices45034617()
+        {
+            var viewResult = await Controller.Details("45034617");
+            var model = (IngredientDetailViewModel)viewResult.Model;
+            var correct = 526.00M;
+            decimal returned = model.VitaminA;
+            Assert.AreEqual(correct, returned);
+        }
     }
 }

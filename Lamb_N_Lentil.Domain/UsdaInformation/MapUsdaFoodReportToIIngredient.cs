@@ -36,6 +36,7 @@ namespace Lamb_N_Lentil.Domain.UsdaInformation
 
             ingredient.TotalFat = FindNutrient(204);
             ingredient.TotalCarbohydrate = FindNutrient(205);
+            ingredient.Calcium = FindNutrient(301);
             ingredient.Calories = FindNutrient(208);
             ingredient.DietaryFiber = FindNutrient(291);
             ingredient.Potassium = FindNutrient(306);
@@ -47,7 +48,8 @@ namespace Lamb_N_Lentil.Domain.UsdaInformation
             ingredient.TransFat = FindNutrient(605);
             ingredient.Sugars = FindNutrient(269);
             ingredient.Protein = FindNutrient(203);
-
+            ingredient.VitaminA = FindNutrient(318);
+            ingredient.VitaminC = FindNutrient(401);
             return ingredient;
         }
 

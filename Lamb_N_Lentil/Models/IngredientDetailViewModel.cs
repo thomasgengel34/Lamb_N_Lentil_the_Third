@@ -24,6 +24,7 @@ namespace Lamb_N_Lentil.UI.Models
         public string Label { get; set; }
         public decimal Eqv { get; set; }
         public decimal Calories { get; set; } 
+        public decimal Calcium { get; set; }
 
         [Display(Name = "Total Fat")]
         public decimal TotalFat { get; set; }
@@ -54,6 +55,12 @@ namespace Lamb_N_Lentil.UI.Models
         [Display(Name = "Dietary Fiber")]
         public decimal DietaryFiber { get; set; }
 
+        [Display(Name = "Vitamin A")]
+        public decimal VitaminA { get; set; }
+
+        [Display(Name = "Vitamin C")]
+        public decimal VitaminC { get; set; }
+
         public decimal Sugars { get; set; }
 
         public decimal Protein { get; set; }
@@ -69,6 +76,7 @@ namespace Lamb_N_Lentil.UI.Models
                 UpdateDate = ingredient.UpdateDate,
                 Label = ingredient.Label,
                 Eqv = ingredient.Eqv,
+                Calcium=ingredient.Calcium,
                 Calories = ingredient.Calories,
                 TotalFat = ingredient.TotalFat,
                 SaturatedFat = ingredient.SaturatedFat,
@@ -82,7 +90,9 @@ namespace Lamb_N_Lentil.UI.Models
                 Potassium=ingredient.Potassium,
                 DietaryFiber=ingredient.DietaryFiber,
                 Sugars=ingredient.Sugars,
-                Protein=ingredient.Protein
+                Protein=ingredient.Protein,
+                VitaminA=ingredient.VitaminA,
+                VitaminC=ingredient.VitaminC
             };
             return Vm;
         }

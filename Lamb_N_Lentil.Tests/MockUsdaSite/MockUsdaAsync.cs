@@ -198,6 +198,27 @@ namespace Lamb_N_Lentil.Tests.MockUsdaSite
                 report.foods[0].food.nutrients[11].measures[0] = new measures();
                 report.foods[0].food.nutrients[11].measures[0].value = 7.15M;
 
+                report.foods[0].food.nutrients[12] = new nutrients();
+                report.foods[0].food.nutrients[12].name = "Vitamin A, IU";
+                report.foods[0].food.nutrients[12].nutrient_id = 318;
+                report.foods[0].food.nutrients[12].measures = new measures[1];
+                report.foods[0].food.nutrients[12].measures[0] = new measures();
+                report.foods[0].food.nutrients[12].measures[0].value = 3.625M;
+
+                report.foods[0].food.nutrients[13] = new nutrients();
+                report.foods[0].food.nutrients[13].name = "Vitamin C, total ascorbic acid";
+                report.foods[0].food.nutrients[13].nutrient_id = 401;
+                report.foods[0].food.nutrients[13].measures = new measures[1];
+                report.foods[0].food.nutrients[13].measures[0] = new measures();
+                report.foods[0].food.nutrients[13].measures[0].value = 1.8M;
+
+                report.foods[0].food.nutrients[14] = new nutrients();
+                report.foods[0].food.nutrients[14].name = "Calcium, Ca";
+                report.foods[0].food.nutrients[14].nutrient_id = 301;
+                report.foods[0].food.nutrients[14].measures = new measures[1];
+                report.foods[0].food.nutrients[14].measures[0] = new measures();
+                report.foods[0].food.nutrients[14].measures[0].value = 0.95M;
+
                 return report;
             }
             else throw new NotImplementedException("wrong search string");

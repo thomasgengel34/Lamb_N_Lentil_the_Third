@@ -150,10 +150,49 @@ namespace Lamb_N_Lentil.Tests.LiveUsdaSite
         {
             IUsdaAsync usdaAsync = new UsdaAsync();
             string testNdbno = "45310806";
-            decimal correct = 4.00m;
+            decimal correct = 4.00M;
             UsdaFoodReport report = await usdaAsync.FetchUsdaFoodReport(testNdbno);
             var returned = (from c in report.foods[0].food.nutrients
                             where c.nutrient_id == 269
+                            select c.measures[0].value).FirstOrDefault();
+            Assert.AreEqual(correct, returned);
+        }
+
+        [TestMethod]
+        public async Task VitaminAForForWheaties45310806()
+        {
+            IUsdaAsync usdaAsync = new UsdaAsync();
+            string testNdbno = "45310806";
+            decimal correct = 400.00M;
+            UsdaFoodReport report = await usdaAsync.FetchUsdaFoodReport(testNdbno);
+            var returned = (from c in report.foods[0].food.nutrients
+                            where c.nutrient_id == 318
+                            select c.measures[0].value).FirstOrDefault();
+            Assert.AreEqual(correct, returned);
+        }
+
+        [TestMethod]
+        public  async Task VitaminCForLambsQuartersSteamedNorthernPlainsIndians35197()
+        {
+            IUsdaAsync usdaAsync = new UsdaAsync();
+            string testNdbno = "35197";
+            decimal correct =3.2M;
+            UsdaFoodReport report = await usdaAsync.FetchUsdaFoodReport(testNdbno);
+            var returned = (from c in report.foods[0].food.nutrients
+                            where c.nutrient_id == 401
+                            select c.measures[0].value).FirstOrDefault();
+            Assert.AreEqual(correct, returned);
+        }
+
+        [TestMethod]
+        public async Task CalciumFoCheddarCheese()
+        {
+            IUsdaAsync usdaAsync = new UsdaAsync();
+            string testNdbno = "01009";
+            decimal correct = 937.0M;
+            UsdaFoodReport report = await usdaAsync.FetchUsdaFoodReport(testNdbno);
+            var returned = (from c in report.foods[0].food.nutrients
+                            where c.nutrient_id == 301
                             select c.measures[0].value).FirstOrDefault();
             Assert.AreEqual(correct, returned);
         }

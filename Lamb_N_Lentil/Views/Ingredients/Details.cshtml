@@ -66,13 +66,13 @@
             </tr>
             <tr>
                 <td>@Html.DisplayNameFor(m => m.TotalCarbohydrate) </td>
-                <td>@Html.DisplayFor(m => m.TotalCarbohydrate)  g </td> 
+                <td>@Html.DisplayFor(m => m.TotalCarbohydrate)  g </td>
                 <td class="rightJustify">
                     %
                 </td>
             </tr>
             <tr>
-                <td>@Html.DisplayNameFor(m => m.DietaryFiber ) </td>
+                <td>@Html.DisplayNameFor(m => m.DietaryFiber) </td>
                 <td>@Html.DisplayFor(m => m.DietaryFiber)  g </td>
                 <td class="rightJustify"> %</td>
             </tr>
@@ -83,7 +83,7 @@
             </tr>
             <tr>
                 <td>@Html.DisplayNameFor(m => m.Protein) </td>
-                <td>@Html.DisplayFor(m => m.Protein)  g </td> 
+                <td>@Html.DisplayFor(m => m.Protein)  g </td>
                 <td class="rightJustify">
                     %
                 </td>
@@ -93,15 +93,28 @@
     <hr />
     <table class="IngredientsTable">
         <tbody>
-            <tr><td> Vitamin A	 %</td><td> 	Vitamin C	 %</td></tr>
-            <tr><td> Calcium	 % </td><td> Iron	 %	 </td></tr>
-            <tr><td> Vitamin D	 %  </td> 	<td>Vitamin B-6    % </td></tr>
-            <tr><td>  Vitamin B-12	 %  </td><td>  	Magnesium	 % </td></tr>
+            <tr>
+                <td>@Html.DisplayNameFor(m => m.VitaminA) </td>
+                <td>@Html.DisplayFor(m => m.VitaminA)  ui </td>
+            </tr>
+            <tr>
+                <td>@Html.DisplayNameFor(m => m.VitaminC) </td>
+                <td>@Html.DisplayFor(m => m.VitaminC)  mg </td>
+            </tr>
+            <tr>
+                <td>@Html.DisplayNameFor(m => m.Calcium) </td>
+                <td>@Html.DisplayFor(m => m.Calcium)  mg </td>
+            </tr>
+            <tr><td> Iron	 %	 </td></tr>
+            <tr><td> Vitamin D	 %  </td> </tr>
+            <tr>	<td>Vitamin B-6    % </td></tr>
+            <tr><td>  Vitamin B-12	 %  </td></tr>
+            <tr><td>  	Magnesium	 % </td></tr>
         </tbody>
     </table>
     <p></p>
     <p>  *Percent Daily Values are based on a 2,000 calorie diet.Your daily values may be higher or lower depending on your calorie needs.</p>
-
+    <p>Manufacturer or Food Group:</p>
 </div>
 <div>
 

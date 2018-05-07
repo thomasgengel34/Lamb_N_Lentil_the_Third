@@ -30,5 +30,8 @@ namespace Lamb_N_Lentil.Tests.Classes
         [TestMethod]
         public void DietaryFiber() => VerifyPropertyIsValid("DietaryFiber");
 
+        [TestMethod]
+        public void VitaminA() => VerifyPropertyIsValid("VitaminA");
+
     } 
 }

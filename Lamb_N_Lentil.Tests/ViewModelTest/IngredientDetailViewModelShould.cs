@@ -130,6 +130,28 @@ namespace Lamb_N_Lentil.Tests.ViewModelTest
             Assert.AreEqual("Protein", pInfo.Name);
         }
 
+        [TestMethod]
+        public void HaveVitaminAProperty()
+        {
+            var pInfo = type.GetProperty("VitaminA");
+            Assert.AreEqual("VitaminA", pInfo.Name);
+        }
+
+        [TestMethod]
+        public void HaveVitaminCProperty()
+        {
+            var pInfo = type.GetProperty("VitaminC");
+            Assert.AreEqual("VitaminC", pInfo.Name);
+        }
+
+
+        [TestMethod]
+        public void HaveCalciumProperty()
+        {
+            var pInfo = type.GetProperty("Calcium");
+            Assert.AreEqual("Calcium", pInfo.Name);
+        }
+
 
         [TestMethod]
         public void HaveMapIIngredientToIngredientDetailViewModelMethod()

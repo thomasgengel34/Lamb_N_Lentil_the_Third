@@ -12,6 +12,7 @@ namespace Lamb_N_Lentil.Domain
         public string InstanceName { get; set; }
         public string IngredientsInIngredient { get; set; }
         public string Ndbno { get; set; }
+        public decimal Calcium { get; set; }
         public string Description { get; set; }
         public decimal Sodium { get; set; }
         public decimal TotalCarbohydrate { get; set; }
@@ -24,6 +25,8 @@ namespace Lamb_N_Lentil.Domain
         public decimal DietaryFiber { get; set; }
         public decimal Sugars { get; set; }
         public decimal Protein { get; set; }
+        public decimal VitaminA { get; set; }
+        public decimal VitaminC { get; set; }
 
         string IIngredient.Label { get; set; }
         decimal IIngredient.Eqv { get; set; }
