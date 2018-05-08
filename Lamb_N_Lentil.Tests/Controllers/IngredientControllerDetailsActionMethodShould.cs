@@ -163,5 +163,75 @@ namespace Lamb_N_Lentil.Tests.Controllers
             decimal returned = model.Calcium;
             Assert.AreEqual(correct, returned);
         }
+
+        [TestMethod]
+        public async Task ProduceAnIngredientDetailViewModelWithIron()
+        {
+            ViewResult vr = await Controller.Details("ShouldReturnIngredients");
+            decimal correct = 0.114M;
+            var model = (IngredientDetailViewModel)vr.Model;
+            decimal returned = model.Iron;
+            Assert.AreEqual(correct, returned);
+        }
+
+        [TestMethod]
+        public async Task ProduceAnIngredientDetailViewModelWithVitaminD()
+        {
+            ViewResult vr = await Controller.Details("ShouldReturnIngredients");
+            decimal correct = 0.228M;
+            var model = (IngredientDetailViewModel)vr.Model;
+            decimal returned = model.VitaminD;
+            Assert.AreEqual(correct, returned);
+        }
+
+        [TestMethod]
+        public async Task ProduceAnIngredientDetailViewModelWithThiamine()
+        {
+            ViewResult vr = await Controller.Details("ShouldReturnIngredients");
+            decimal correct = 1.228M;
+            var model = (IngredientDetailViewModel)vr.Model;
+            decimal returned = model.Thiamine;
+            Assert.AreEqual(correct, returned);
+        }
+
+        [TestMethod]
+        public async Task ProduceAnIngredientDetailViewModelWithRiboflavin()
+        {
+            ViewResult vr = await Controller.Details("ShouldReturnIngredients");
+            decimal correct = 3.333M;
+            var model = (IngredientDetailViewModel)vr.Model;
+            decimal returned = model.Riboflavin;
+            Assert.AreEqual(correct, returned);
+        }
+
+        [TestMethod]
+        public async Task ProduceAnIngredientDetailViewModelWithNiacin()
+        {
+            ViewResult vr = await Controller.Details("ShouldReturnIngredients");
+            decimal correct = 21.045M;
+            var model = (IngredientDetailViewModel)vr.Model;
+            decimal returned = model.Niacin;
+            Assert.AreEqual(correct, returned);
+        }
+
+        [TestMethod]
+        public async Task ProduceAnIngredientDetailViewModelWithVitaminB6()
+        {
+            ViewResult vr = await Controller.Details("ShouldReturnIngredients");
+            decimal correct = 76.05M;
+            var model = (IngredientDetailViewModel)vr.Model;
+            decimal returned = model.VitaminB6;
+            Assert.AreEqual(correct, returned);
+        }
+
+        [TestMethod]
+        public async Task ProduceAnIngredientDetailViewModelWithVitaminB12()
+        {
+            ViewResult vr = await Controller.Details("ShouldReturnIngredients");
+            decimal correct = 71.055M;
+            var model = (IngredientDetailViewModel)vr.Model;
+            decimal returned = model.VitaminB12;
+            Assert.AreEqual(correct, returned);
+        }
     }
 }

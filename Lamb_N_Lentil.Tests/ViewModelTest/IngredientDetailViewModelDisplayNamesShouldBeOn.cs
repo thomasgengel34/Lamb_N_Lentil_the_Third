@@ -85,5 +85,71 @@ namespace Lamb_N_Lentil.Tests.ViewModelTest
 
             Assert.AreEqual("Vitamin C", name);
         }
+
+        [TestMethod]
+        public void ShouldHaveCorrectDisplayNamePropertyOnVitaminD()
+        {
+            var pInfo = typeof(IngredientDetailViewModel).GetProperty("VitaminD")
+                                .GetCustomAttributes(typeof(DisplayAttribute), false)
+                                .Cast<DisplayAttribute>().FirstOrDefault();
+            var name = pInfo.Name;
+
+            Assert.AreEqual("Vitamin D", name);
+        }
+
+        [TestMethod]
+        public void ShouldHaveCorrectDisplayNamePropertyOnThiamine()
+        {
+            var pInfo = typeof(IngredientDetailViewModel).GetProperty("Thiamine")
+                                .GetCustomAttributes(typeof(DisplayAttribute), false)
+                                .Cast<DisplayAttribute>().FirstOrDefault();
+            var name = pInfo.Name;
+
+            Assert.AreEqual("Thiamine (Vitamin B-1)", name);
+        }
+
+        [TestMethod]
+        public void ShouldHaveCorrectDisplayNamePropertyOnRiboflavin()
+        {
+            var pInfo = typeof(IngredientDetailViewModel).GetProperty("Riboflavin")
+                                .GetCustomAttributes(typeof(DisplayAttribute), false)
+                                .Cast<DisplayAttribute>().FirstOrDefault();
+            var name = pInfo.Name;
+
+            Assert.AreEqual("Riboflavin (Vitamin B-2)", name);
+        }
+
+        [TestMethod]
+        public void ShouldHaveCorrectDisplayNamePropertyOnNiacin()
+        {
+            var pInfo = typeof(IngredientDetailViewModel).GetProperty("Niacin")
+                                .GetCustomAttributes(typeof(DisplayAttribute), false)
+                                .Cast<DisplayAttribute>().FirstOrDefault();
+            var name = pInfo.Name;
+
+            Assert.AreEqual("Niacin (Vitamin B-3)", name);
+        }
+
+        [TestMethod]
+        public void ShouldHaveCorrectDisplayNamePropertyOnVitaminB6()
+        {
+            var pInfo = typeof(IngredientDetailViewModel).GetProperty("VitaminB6")
+                                .GetCustomAttributes(typeof(DisplayAttribute), false)
+                                .Cast<DisplayAttribute>().FirstOrDefault();
+            var name = pInfo.Name;
+
+            Assert.AreEqual("Vitamin B-6", name);
+        }
+
+        [TestMethod]
+        public void ShouldHaveCorrectDisplayNamePropertyOnVitaminB12()
+        {
+            var pInfo = typeof(IngredientDetailViewModel).GetProperty("VitaminB12")
+                                .GetCustomAttributes(typeof(DisplayAttribute), false)
+                                .Cast<DisplayAttribute>().FirstOrDefault();
+            var name = pInfo.Name;
+
+            Assert.AreEqual("Vitamin B-12", name);
+        }
     }
 }

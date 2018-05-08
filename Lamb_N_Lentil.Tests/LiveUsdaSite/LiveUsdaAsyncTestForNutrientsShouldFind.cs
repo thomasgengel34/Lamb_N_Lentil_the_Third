@@ -196,5 +196,96 @@ namespace Lamb_N_Lentil.Tests.LiveUsdaSite
                             select c.measures[0].value).FirstOrDefault();
             Assert.AreEqual(correct, returned);
         }
+
+        [TestMethod]
+        public async Task IronForBrownAndServeBreakfastPatty45133988()
+        {
+            IUsdaAsync usdaAsync = new UsdaAsync(); 
+            string testNdbno = "45133988";
+            decimal correct = 0.72M;
+            UsdaFoodReport report = await usdaAsync.FetchUsdaFoodReport(testNdbno);
+            var returned = (from c in report.foods[0].food.nutrients
+                            where c.nutrient_id == 303
+                            select c.measures[0].value).FirstOrDefault();
+            Assert.AreEqual(correct, returned);
+        }
+
+        [TestMethod]
+        public async Task VitaminDForCheddarCheese01009()
+        {
+            IUsdaAsync usdaAsync = new UsdaAsync();
+            string testNdbno = "01009";
+            decimal correct = 32.0M;
+            UsdaFoodReport report = await usdaAsync.FetchUsdaFoodReport(testNdbno);
+            var returned = (from c in report.foods[0].food.nutrients
+                            where c.nutrient_id == 324
+                            select c.measures[0].value).FirstOrDefault();
+            Assert.AreEqual(correct, returned);
+        }
+
+        [TestMethod]
+        public async Task ThiamineForCheddarCheese01009()
+        {
+            IUsdaAsync usdaAsync = new UsdaAsync();
+            string testNdbno = "01009";
+            decimal correct = 0.038M;
+            UsdaFoodReport report = await usdaAsync.FetchUsdaFoodReport(testNdbno);
+            var returned = (from c in report.foods[0].food.nutrients
+                            where c.nutrient_id == 404
+                            select c.measures[0].value).FirstOrDefault();
+            Assert.AreEqual(correct, returned);
+        }
+
+        [TestMethod]
+        public async Task RiboflavinForCheddarCheese01009()
+        {
+            IUsdaAsync usdaAsync = new UsdaAsync();
+            string testNdbno = "01009";
+            decimal correct = 0.565M;
+            UsdaFoodReport report = await usdaAsync.FetchUsdaFoodReport(testNdbno);
+            var returned = (from c in report.foods[0].food.nutrients
+                            where c.nutrient_id == 405
+                            select c.measures[0].value).FirstOrDefault();
+            Assert.AreEqual(correct, returned);
+        }
+
+        [TestMethod]
+        public async Task NiacinForCheddarCheese01009()
+        {
+            IUsdaAsync usdaAsync = new UsdaAsync();
+            string testNdbno = "01009";
+            decimal correct = 0.078M;
+            UsdaFoodReport report = await usdaAsync.FetchUsdaFoodReport(testNdbno);
+            var returned = (from c in report.foods[0].food.nutrients
+                            where c.nutrient_id == 406
+                            select c.measures[0].value).FirstOrDefault();
+            Assert.AreEqual(correct, returned);
+        }
+
+        [TestMethod]
+        public async Task VitaminB6ForCheddarCheese01009()
+        {
+            IUsdaAsync usdaAsync = new UsdaAsync();
+            string testNdbno = "01009";
+            decimal correct = 0.087M;
+            UsdaFoodReport report = await usdaAsync.FetchUsdaFoodReport(testNdbno);
+            var returned = (from c in report.foods[0].food.nutrients
+                            where c.nutrient_id == 415
+                            select c.measures[0].value).FirstOrDefault();
+            Assert.AreEqual(correct, returned);
+        }
+
+        [TestMethod]
+        public async Task VitaminB12ForCheddarCheese01009()
+        {
+            IUsdaAsync usdaAsync = new UsdaAsync();
+            string testNdbno = "01009";
+            decimal correct = 1.45M;
+            UsdaFoodReport report = await usdaAsync.FetchUsdaFoodReport(testNdbno);
+            var returned = (from c in report.foods[0].food.nutrients
+                            where c.nutrient_id == 418
+                            select c.measures[0].value).FirstOrDefault();
+            Assert.AreEqual(correct, returned);
+        }
     }
 }

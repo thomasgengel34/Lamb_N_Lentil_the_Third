@@ -219,6 +219,56 @@ namespace Lamb_N_Lentil.Tests.MockUsdaSite
                 report.foods[0].food.nutrients[14].measures[0] = new measures();
                 report.foods[0].food.nutrients[14].measures[0].value = 0.95M;
 
+                report.foods[0].food.nutrients[15] = new nutrients();
+                report.foods[0].food.nutrients[15].name = "Iron, Fe";
+                report.foods[0].food.nutrients[15].nutrient_id = 303;
+                report.foods[0].food.nutrients[15].measures = new measures[1];
+                report.foods[0].food.nutrients[15].measures[0] = new measures();
+                report.foods[0].food.nutrients[15].measures[0].value = 0.114M;
+
+                report.foods[0].food.nutrients[16] = new nutrients();
+                report.foods[0].food.nutrients[16].name = "Vitamin D";
+                report.foods[0].food.nutrients[16].nutrient_id = 324;
+                report.foods[0].food.nutrients[16].measures = new measures[1];
+                report.foods[0].food.nutrients[16].measures[0] = new measures();
+                report.foods[0].food.nutrients[16].measures[0].value = 0.228M;
+
+                report.foods[0].food.nutrients[17] = new nutrients();
+                report.foods[0].food.nutrients[17].name = "Thiamine";
+                report.foods[0].food.nutrients[17].nutrient_id = 404;
+                report.foods[0].food.nutrients[17].measures = new measures[1];
+                report.foods[0].food.nutrients[17].measures[0] = new measures();
+                report.foods[0].food.nutrients[17].measures[0].value = 1.228M;
+
+                report.foods[0].food.nutrients[18] = new nutrients();
+                report.foods[0].food.nutrients[18].name = "Riboflavin";
+                report.foods[0].food.nutrients[18].nutrient_id = 405;
+                report.foods[0].food.nutrients[18].measures = new measures[1];
+                report.foods[0].food.nutrients[18].measures[0] = new measures();
+                report.foods[0].food.nutrients[18].measures[0].value = 3.333M;
+
+                report.foods[0].food.nutrients[19] = new nutrients();
+                report.foods[0].food.nutrients[19].name = "Niacin";
+                report.foods[0].food.nutrients[19].nutrient_id = 406;
+                report.foods[0].food.nutrients[19].measures = new measures[1];
+                report.foods[0].food.nutrients[19].measures[0] = new measures();
+                report.foods[0].food.nutrients[19].measures[0].value = 21.045M;
+
+                report.foods[0].food.nutrients[20] = new nutrients();
+                report.foods[0].food.nutrients[20].name = "VitaminB6";
+                report.foods[0].food.nutrients[20].nutrient_id = 415;
+                report.foods[0].food.nutrients[20].measures = new measures[1];
+                report.foods[0].food.nutrients[20].measures[0] = new measures();
+                report.foods[0].food.nutrients[20].measures[0].value = 76.05M;
+
+                report.foods[0].food.nutrients[21] = new nutrients();
+                report.foods[0].food.nutrients[21].name = "VitaminB12";
+                report.foods[0].food.nutrients[21].nutrient_id = 418;
+                report.foods[0].food.nutrients[21].measures = new measures[1];
+                report.foods[0].food.nutrients[21].measures[0] = new measures();
+                report.foods[0].food.nutrients[21].measures[0].value = 71.055M;
+
+
                 return report;
             }
             else throw new NotImplementedException("wrong search string");

@@ -23,7 +23,7 @@ namespace Lamb_N_Lentil.UI.Models
         public string UpdateDate { get; set; }
         public string Label { get; set; }
         public decimal Eqv { get; set; }
-        public decimal Calories { get; set; } 
+        public decimal Calories { get; set; }
         public decimal Calcium { get; set; }
 
         [Display(Name = "Total Fat")]
@@ -61,6 +61,25 @@ namespace Lamb_N_Lentil.UI.Models
         [Display(Name = "Vitamin C")]
         public decimal VitaminC { get; set; }
 
+        [Display(Name = "Vitamin D")]
+        public decimal VitaminD { get; set; }
+
+        [Display(Name = "Thiamine (Vitamin B-1)")]
+        public decimal Thiamine { get; set; }
+
+        [Display(Name = "Riboflavin (Vitamin B-2)")]
+        public decimal Riboflavin { get; set; }
+
+        [Display(Name = "Niacin (Vitamin B-3)")]
+        public decimal Niacin { get; set; }
+
+        [Display(Name = "Vitamin B-6")]
+        public decimal VitaminB6 { get; set; }
+
+        [Display(Name = "Vitamin B-12")]
+        public decimal VitaminB12 { get; set; }
+
+        public decimal Iron { get; set; }
         public decimal Sugars { get; set; }
 
         public decimal Protein { get; set; }
@@ -71,28 +90,34 @@ namespace Lamb_N_Lentil.UI.Models
             {
                 Description = ingredient.Description,
                 IngredientsInIngredient = ingredient.IngredientsInIngredient,
-
                 Ndbno = ingredient.Ndbno,
                 UpdateDate = ingredient.UpdateDate,
                 Label = ingredient.Label,
                 Eqv = ingredient.Eqv,
-                Calcium=ingredient.Calcium,
+                Calcium = ingredient.Calcium,
                 Calories = ingredient.Calories,
+                Iron = ingredient.Iron,
                 TotalFat = ingredient.TotalFat,
                 SaturatedFat = ingredient.SaturatedFat,
-                TransFat=ingredient.TransFat,
+                TransFat = ingredient.TransFat,
                 MonounsaturatedFat = ingredient.MonounsaturatedFat,
-                PolyunsaturatedFat=ingredient.PolyunsaturatedFat,
+                PolyunsaturatedFat = ingredient.PolyunsaturatedFat,
                 TotalCarbohydrate = ingredient.TotalCarbohydrate,
                 CaloriesFromFat = ingredient.CaloriesFromFat,
-                Sodium=ingredient.Sodium,
-                Cholesterol=ingredient.Cholesterol,
-                Potassium=ingredient.Potassium,
-                DietaryFiber=ingredient.DietaryFiber,
-                Sugars=ingredient.Sugars,
-                Protein=ingredient.Protein,
-                VitaminA=ingredient.VitaminA,
-                VitaminC=ingredient.VitaminC
+                Sodium = ingredient.Sodium,
+                Cholesterol = ingredient.Cholesterol,
+                Potassium = ingredient.Potassium,
+                DietaryFiber = ingredient.DietaryFiber,
+                Sugars = ingredient.Sugars,
+                Protein = ingredient.Protein,
+                VitaminA = ingredient.VitaminA,
+                VitaminB6=ingredient.VitaminB6,
+                VitaminB12=ingredient.VitaminB12,
+                VitaminC = ingredient.VitaminC,
+                VitaminD = ingredient.VitaminD,
+                Thiamine = ingredient.Thiamine,
+                Riboflavin = ingredient.Riboflavin,
+                Niacin = ingredient.Niacin
             };
             return Vm;
         }

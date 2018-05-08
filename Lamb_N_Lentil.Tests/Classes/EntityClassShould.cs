@@ -57,5 +57,60 @@ namespace Lamb_N_Lentil.Tests.Classes
             Assert.AreEqual("VitaminA", pInfo.Name);
         }
 
+        [TestMethod]
+        public void ShouldHaveVitaminB6Property()
+        {
+            var pInfo = typeof(Entity).GetProperty("VitaminB6");
+            Assert.AreEqual("VitaminB6", pInfo.Name);
+        }
+
+        [TestMethod]
+        public void ShouldHaveVitaminB12Property()
+        {
+            var pInfo = typeof(Entity).GetProperty("VitaminB12");
+            Assert.AreEqual("VitaminB12", pInfo.Name);
+        }
+
+        [TestMethod]
+        public void ShouldHaveVitaminCProperty()
+        {
+            var pInfo = typeof(Entity).GetProperty("VitaminC");
+            Assert.AreEqual("VitaminC", pInfo.Name);
+        }
+
+        [TestMethod]
+        public void ShouldHaveVitaminDProperty()
+        {
+            var pInfo = typeof(Entity).GetProperty("VitaminD");
+            Assert.AreEqual("VitaminD", pInfo.Name);
+        }
+
+        [TestMethod]
+        public void ShouldHaveCalciumProperty()
+        {
+            var pInfo = typeof(Entity).GetProperty("Calcium");
+            Assert.AreEqual("Calcium", pInfo.Name);
+        }
+
+        [TestMethod]
+        public void ShouldHaveIronProperty()
+        {
+            var pInfo = typeof(Entity).GetProperty("Iron");
+            Assert.AreEqual("Iron", pInfo.Name);
+        }
+
+        [TestMethod]
+        public void ShouldHaveNiacinProperty()
+        {
+            var pInfo = typeof(Entity).GetProperty("Niacin");
+            Assert.AreEqual("Niacin", pInfo.Name);
+        }
+
+        [TestMethod]
+        public void ShouldHaveRiboflavinProperty()
+        {
+            var pInfo = typeof(Entity).GetProperty("Riboflavin");
+            Assert.AreEqual("Riboflavin", pInfo.Name);
+        }
     }
 } 

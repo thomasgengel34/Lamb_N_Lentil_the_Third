@@ -39,6 +39,7 @@ namespace Lamb_N_Lentil.Domain.UsdaInformation
             ingredient.Calcium = FindNutrient(301);
             ingredient.Calories = FindNutrient(208);
             ingredient.DietaryFiber = FindNutrient(291);
+            ingredient.Iron = FindNutrient(303);
             ingredient.Potassium = FindNutrient(306);
             ingredient.Sodium = FindNutrient(307);
             ingredient.Cholesterol = FindNutrient(601);
@@ -49,7 +50,13 @@ namespace Lamb_N_Lentil.Domain.UsdaInformation
             ingredient.Sugars = FindNutrient(269);
             ingredient.Protein = FindNutrient(203);
             ingredient.VitaminA = FindNutrient(318);
+            ingredient.VitaminB6 = FindNutrient(415);
+            ingredient.VitaminB12 = FindNutrient(418);
             ingredient.VitaminC = FindNutrient(401);
+            ingredient.VitaminD = FindNutrient(324);
+            ingredient.Thiamine = FindNutrient(404);
+            ingredient.Riboflavin = FindNutrient(405);
+            ingredient.Niacin = FindNutrient(406);
             return ingredient;
         }
 

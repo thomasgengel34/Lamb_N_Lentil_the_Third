@@ -11,6 +11,7 @@
         decimal MonounsaturatedFat { get; set; }
         decimal Calories { get; set; }
         decimal Calcium { get; set; }
+        decimal Iron { get; set; }
         decimal TotalFat { get; set; }
         decimal CaloriesFromFat { get; set; }
         decimal Sodium { get; set; }
@@ -23,6 +24,12 @@
         decimal Sugars { get; set; }
         decimal Protein { get; set; }
         decimal VitaminA { get; set; }
+        decimal VitaminB6 { get; set; }
+        decimal VitaminB12 { get; set; }
         decimal VitaminC { get; set; }
+        decimal VitaminD { get; set; }
+        decimal Thiamine { get; set; }
+        decimal Niacin { get; set; }
+        decimal Riboflavin { get; set; }
     } 
 }

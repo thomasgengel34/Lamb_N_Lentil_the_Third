@@ -144,6 +144,13 @@ namespace Lamb_N_Lentil.Tests.ViewModelTest
             Assert.AreEqual("VitaminC", pInfo.Name);
         }
 
+        [TestMethod]
+        public void HaveVitaminDProperty()
+        {
+            var pInfo = type.GetProperty("VitaminD");
+            Assert.AreEqual("VitaminD", pInfo.Name);
+        }
+
 
         [TestMethod]
         public void HaveCalciumProperty()
@@ -152,6 +159,47 @@ namespace Lamb_N_Lentil.Tests.ViewModelTest
             Assert.AreEqual("Calcium", pInfo.Name);
         }
 
+        [TestMethod]
+        public void HaveIronProperty()
+        {
+            var pInfo = type.GetProperty("Iron");
+            Assert.AreEqual("Iron", pInfo.Name);
+        }
+
+        [TestMethod]
+        public void HaveRiboflavinProperty()
+        {
+            var pInfo = type.GetProperty("Riboflavin");
+            Assert.AreEqual("Riboflavin", pInfo.Name);
+        }
+
+        [TestMethod]
+        public void HaveThiamineProperty()
+        {
+            var pInfo = type.GetProperty("Thiamine");
+            Assert.AreEqual("Thiamine", pInfo.Name);
+        }
+
+        [TestMethod]
+        public void HaveNiacinProperty()
+        {
+            var pInfo = type.GetProperty("Niacin");
+            Assert.AreEqual("Niacin", pInfo.Name);
+        }
+
+        [TestMethod]
+        public void HaveVitaminB6Property()
+        {
+            var pInfo = type.GetProperty("VitaminB6");
+            Assert.AreEqual("VitaminB6", pInfo.Name);
+        }
+
+        [TestMethod]
+        public void HaveVitaminB12Property()
+        {
+            var pInfo = type.GetProperty("VitaminB12");
+            Assert.AreEqual("VitaminB12", pInfo.Name);
+        }
 
         [TestMethod]
         public void HaveMapIIngredientToIngredientDetailViewModelMethod()
