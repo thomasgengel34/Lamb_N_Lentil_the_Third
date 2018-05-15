@@ -10,10 +10,11 @@
         decimal SaturatedFat { get; set; }
         decimal MonounsaturatedFat { get; set; }
         decimal Calories { get; set; }
-        decimal Calcium { get; set; }
-        decimal Iron { get; set; }
-        decimal TotalFat { get; set; }
         decimal CaloriesFromFat { get; set; }
+        decimal Calcium { get; set; }
+        decimal FolicAcid { get; set; }
+        decimal Iron { get; set; }
+        decimal TotalFat { get; set; } 
         decimal Sodium { get; set; }
         decimal TotalCarbohydrate { get; set; } 
         decimal PolyunsaturatedFat { get; set; }
@@ -31,5 +32,6 @@
         decimal Thiamine { get; set; }
         decimal Niacin { get; set; }
         decimal Riboflavin { get; set; }
+        decimal Magnesium { get; set; }
     } 
 }

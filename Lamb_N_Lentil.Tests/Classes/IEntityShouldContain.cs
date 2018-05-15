@@ -61,5 +61,12 @@ namespace Lamb_N_Lentil.Tests.Classes
         [TestMethod]
         public void Niacin() => VerifyPropertyIsValid("Niacin");
 
+        [TestMethod]
+        public void Magnesium() => VerifyPropertyIsValid("Magnesium");
+
+
+        [TestMethod]
+        public void FolicAcid() => VerifyPropertyIsValid("FolicAcid");
+
     } 
 }

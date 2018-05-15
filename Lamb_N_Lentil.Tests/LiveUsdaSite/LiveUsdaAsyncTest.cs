@@ -64,7 +64,8 @@ namespace Lamb_N_Lentil.Tests.LiveUsdaSite
         {
             IUsdaAsync usdaAsync = new UsdaAsync();
             string testNdbno = "45032698";
-            string correctIngredients = "DICED PEACHES, WATER, SUGAR, NATURAL FLAVOR, ASCORBIC ACID (VITAMIN C) TO PROTECT COLOR, CITRIC ACID.";
+            string correctIngredients = "DICED PEACHES, WATER, SUGAR, NATURAL FLAVORS, ASCORBIC ACID (VITAMIN C) TO PROTECT COLOR, CITRIC ACID.";
+             
             UsdaFoodReport report = await usdaAsync.FetchUsdaFoodReport(testNdbno);
             string returnedIngredients = report.foods.First().food.ing.desc;
             Assert.AreEqual(correctIngredients, returnedIngredients);

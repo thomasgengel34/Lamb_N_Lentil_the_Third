@@ -233,5 +233,15 @@ namespace Lamb_N_Lentil.Tests.Controllers
             decimal returned = model.VitaminB12;
             Assert.AreEqual(correct, returned);
         }
+
+        [TestMethod]
+        public async Task ProduceAnIngredientDetailViewModelWithMagnesium()
+        {
+            ViewResult vr = await Controller.Details("ShouldReturnIngredients");
+            decimal correct = 22.23M;
+            var model = (IngredientDetailViewModel)vr.Model;
+            decimal returned = model.Magnesium;
+            Assert.AreEqual(correct, returned);
+        }
     }
 }

@@ -202,6 +202,20 @@ namespace Lamb_N_Lentil.Tests.ViewModelTest
         }
 
         [TestMethod]
+        public void HaveMagnesiumProperty()
+        {
+            var pInfo = type.GetProperty("Magnesium");
+            Assert.AreEqual("Magnesium", pInfo.Name);
+        }
+
+        [TestMethod]
+        public void HaveFolicAcidProperty()
+        {
+            var pInfo = type.GetProperty("FolicAcid");
+            Assert.AreEqual("FolicAcid", pInfo.Name);
+        }
+
+        [TestMethod]
         public void HaveMapIIngredientToIngredientDetailViewModelMethod()
         {
             var mInfo = type.GetMethod("MapIIngredientToIngredientDetailViewModel");

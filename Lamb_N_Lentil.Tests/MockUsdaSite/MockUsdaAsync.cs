@@ -268,6 +268,13 @@ namespace Lamb_N_Lentil.Tests.MockUsdaSite
                 report.foods[0].food.nutrients[21].measures[0] = new measures();
                 report.foods[0].food.nutrients[21].measures[0].value = 71.055M;
 
+                report.foods[0].food.nutrients[22] = new nutrients();
+                report.foods[0].food.nutrients[22].name = "Magnesium, Mg";
+                report.foods[0].food.nutrients[22].nutrient_id = 304;
+                report.foods[0].food.nutrients[22].measures = new measures[1];
+                report.foods[0].food.nutrients[22].measures[0] = new measures();
+                report.foods[0].food.nutrients[22].measures[0].value = 22.23M;
+
 
                 return report;
             }

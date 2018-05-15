@@ -79,7 +79,11 @@ namespace Lamb_N_Lentil.UI.Models
         [Display(Name = "Vitamin B-12")]
         public decimal VitaminB12 { get; set; }
 
+        [Display(Name = "Folic Acid")]
+        public decimal FolicAcid { get; set; }
+
         public decimal Iron { get; set; }
+        public decimal Magnesium { get; set; }
         public decimal Sugars { get; set; }
 
         public decimal Protein { get; set; }
@@ -89,30 +93,32 @@ namespace Lamb_N_Lentil.UI.Models
             IngredientDetailViewModel Vm = new IngredientDetailViewModel()
             {
                 Description = ingredient.Description,
+                Eqv = ingredient.Eqv,
                 IngredientsInIngredient = ingredient.IngredientsInIngredient,
+                Label = ingredient.Label,
+                Magnesium = ingredient.Magnesium,
                 Ndbno = ingredient.Ndbno,
                 UpdateDate = ingredient.UpdateDate,
-                Label = ingredient.Label,
-                Eqv = ingredient.Eqv,
                 Calcium = ingredient.Calcium,
                 Calories = ingredient.Calories,
+                FolicAcid = ingredient.FolicAcid,
                 Iron = ingredient.Iron,
-                TotalFat = ingredient.TotalFat,
-                SaturatedFat = ingredient.SaturatedFat,
-                TransFat = ingredient.TransFat,
                 MonounsaturatedFat = ingredient.MonounsaturatedFat,
                 PolyunsaturatedFat = ingredient.PolyunsaturatedFat,
-                TotalCarbohydrate = ingredient.TotalCarbohydrate,
-                CaloriesFromFat = ingredient.CaloriesFromFat,
+                SaturatedFat = ingredient.SaturatedFat,
                 Sodium = ingredient.Sodium,
+                TotalCarbohydrate = ingredient.TotalCarbohydrate,
+                TotalFat = ingredient.TotalFat,
+                TransFat = ingredient.TransFat,
+                CaloriesFromFat = ingredient.CaloriesFromFat,
                 Cholesterol = ingredient.Cholesterol,
                 Potassium = ingredient.Potassium,
                 DietaryFiber = ingredient.DietaryFiber,
                 Sugars = ingredient.Sugars,
                 Protein = ingredient.Protein,
                 VitaminA = ingredient.VitaminA,
-                VitaminB6=ingredient.VitaminB6,
-                VitaminB12=ingredient.VitaminB12,
+                VitaminB6 = ingredient.VitaminB6,
+                VitaminB12 = ingredient.VitaminB12,
                 VitaminC = ingredient.VitaminC,
                 VitaminD = ingredient.VitaminD,
                 Thiamine = ingredient.Thiamine,

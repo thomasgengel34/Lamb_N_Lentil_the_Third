@@ -24,7 +24,7 @@
 
     <p>  <label>Enter text to search for ingredients:</label></p>
     <p>
-        @Html.TextBox("searchText", "Enter Description of What You are Looking For Here", new { @class = "ingredientTextBox", maxlength = "43" })
+        @Html.TextBox("searchText","",   new { @class = "ingredientTextBox", placeholder = "Enter Description of What You are Looking For Here", maxlength = "43", length="43" })
         <br />
         There is a 43 character limit on searches in the USDA databases.
     </p>

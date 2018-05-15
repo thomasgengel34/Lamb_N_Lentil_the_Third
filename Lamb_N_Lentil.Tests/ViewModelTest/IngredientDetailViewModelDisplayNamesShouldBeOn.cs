@@ -151,5 +151,16 @@ namespace Lamb_N_Lentil.Tests.ViewModelTest
 
             Assert.AreEqual("Vitamin B-12", name);
         }
+
+        [TestMethod]
+        public void ShouldHaveCorrectDisplayNamePropertyOnFolicAcid2()
+        {
+            var pInfo = typeof(IngredientDetailViewModel).GetProperty("FolicAcid")
+                                .GetCustomAttributes(typeof(DisplayAttribute), false)
+                                .Cast<DisplayAttribute>().FirstOrDefault();
+            var name = pInfo.Name;
+
+            Assert.AreEqual("Folic Acid", name);
+        }
     }
 }

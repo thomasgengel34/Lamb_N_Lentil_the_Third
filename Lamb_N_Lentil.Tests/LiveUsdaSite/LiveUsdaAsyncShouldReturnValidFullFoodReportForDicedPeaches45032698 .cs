@@ -9,14 +9,14 @@ using System.Linq;
 namespace Lamb_N_Lentil.Tests.LiveUsdaSite
 { 
     [TestClass]
-    public class LiveUsdaAsyncShouldReturnValidFullFoodReportForGreatValueDicedPeaches45032698
+    public class LiveUsdaAsyncShouldReturnValidFullFoodReportForDicedPeaches45032698
     {
         private string ndbno = "45032698";
 
         [TestMethod]
         public async Task  WithCorrectName()
         {
-            string correctName = "GREAT VALUE, DICED PEACHES, YELLOW CLING PEACHES IN NATURALLY PEACH FLAVORED LIGHT SYRUP, UPC: 078742212050";
+            string correctName = "DICED PEACHES, UPC: 078742212050";
             UsdaAsync usdaAsync = new UsdaAsync();
             UsdaFoodReport report = await usdaAsync.FetchFullUsdaFoodReport(ndbno);
             Assert.AreEqual( correctName, report.foods[0].food.desc.name);
@@ -33,7 +33,7 @@ namespace Lamb_N_Lentil.Tests.LiveUsdaSite
         [TestMethod]
         public async Task WithCorrectIngredients()
         {
-            string correctIngredients = "DICED PEACHES, WATER, SUGAR, NATURAL FLAVOR, ASCORBIC ACID (VITAMIN C) TO PROTECT COLOR, CITRIC ACID.";
+            string correctIngredients = "DICED PEACHES, WATER, SUGAR, NATURAL FLAVORS, ASCORBIC ACID (VITAMIN C) TO PROTECT COLOR, CITRIC ACID.";
             UsdaAsync usdaAsync = new UsdaAsync();
             UsdaFoodReport report = await usdaAsync.FetchFullUsdaFoodReport(ndbno);
             Assert.AreEqual(correctIngredients, report.foods[0].food.ing.desc);
@@ -42,7 +42,7 @@ namespace Lamb_N_Lentil.Tests.LiveUsdaSite
         [TestMethod]
         public async Task WithCorrectUpdateDate()
         {
-            string correctUpdateDate = "07/14/2017";
+            string correctUpdateDate = "04/10/2018";
             UsdaAsync usdaAsync = new UsdaAsync();
             UsdaFoodReport report = await usdaAsync.FetchFullUsdaFoodReport(ndbno);
             Assert.AreEqual(correctUpdateDate, report.foods[0].food.ing.upd);

@@ -31,7 +31,8 @@ namespace Lamb_N_Lentil.Tests.Views
         [TestMethod]
         public void HaveCorrectTextBoxToSearchForIngredients()
         {
-            string testString = "@Html.TextBox(\"searchText\", \"Enter Description of What You are Looking For Here\", new { @class = \"ingredientTextBox\", maxlength = \"43\" })";
+            string testString = " @Html.TextBox(\"searchText\",\"\",   new { @class = \"ingredientTextBox\", placeholder = \"Enter Description of What You are Looking For Here\", maxlength = \"43\", length=\"43\" })";
+            // @Html.TextBox("searchText","",   new { @class = "ingredientTextBox", placeholder = "Enter Description of What You are Looking For Here", maxlength = "43", length="43" })
             HaveCorrectText(testString);
         }
 

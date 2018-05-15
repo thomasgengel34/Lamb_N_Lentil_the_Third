@@ -21,13 +21,16 @@ namespace Lamb_N_Lentil.Tests.LiveUsdaSite
         }
 
         [TestMethod]
-        public async Task CaloriesForParfaitShooter45086582()
+        public async Task CaloriesForVanillaIceCream19095()
         {
             IUsdaAsync usdaAsync = new UsdaAsync();
-            string testNdbno = "45086582";
-            int correctkcal = 190;
+            string testNdbno = "19095";
+            int correctkcal = 137;
             UsdaFoodReport report = await usdaAsync.FetchUsdaFoodReport(testNdbno);
-            int returnedkcal = Convert.ToInt16(report.foods[0].food.nutrients[0].measures[0].value);
+            var result = from r in report.foods[0].food.nutrients
+                         where r.name == "Energy"
+                         select r.measures[0].value;
+    int returnedkcal = Convert.ToInt16(result.First());
             Assert.AreEqual(correctkcal, returnedkcal);
         }
 
@@ -80,11 +83,11 @@ namespace Lamb_N_Lentil.Tests.LiveUsdaSite
         }
 
         [TestMethod]
-        public async Task PolyunsaturatedFatFor45035274SandwichWhiteBread()
+        public async Task PolyunsaturatedFatFor04585Margarine_LikeMargarine_Butter_Blend_Soybean_Oil_And_Butter()
         {
             IUsdaAsync usdaAsync = new UsdaAsync();
-            string testNdbno = "45035274";
-            decimal correctResult = 0.499M;
+            string testNdbno = "04585";
+            decimal correctResult = 3.408M;
             UsdaFoodReport report = await usdaAsync.FetchUsdaFoodReport(testNdbno);
             var returned = (from c in report.foods[0].food.nutrients
                             where c.nutrient_id == 646
@@ -120,11 +123,11 @@ namespace Lamb_N_Lentil.Tests.LiveUsdaSite
         }
 
         [TestMethod]
-        public async Task  PotassiumForDannonLightAndFitNonfatYogurtStrawberryBananaUPC036632006219_45035088()
+        public async Task PotassiumFoKrogerBlendedGradeALowFatStrawberryYogurtUPC011110452979()
         {
             IUsdaAsync usdaAsync = new UsdaAsync();
-            string testNdbno = "45035088";
-            decimal correct = 250.00m;
+            string testNdbno = "45114174";
+            decimal correct = 330M;
             UsdaFoodReport report = await usdaAsync.FetchUsdaFoodReport(testNdbno);
             var returned = (from c in report.foods[0].food.nutrients
                             where c.nutrient_id == 306
@@ -284,6 +287,32 @@ namespace Lamb_N_Lentil.Tests.LiveUsdaSite
             UsdaFoodReport report = await usdaAsync.FetchUsdaFoodReport(testNdbno);
             var returned = (from c in report.foods[0].food.nutrients
                             where c.nutrient_id == 418
+                            select c.measures[0].value).FirstOrDefault();
+            Assert.AreEqual(correct, returned);
+        }
+
+        [TestMethod]
+        public async Task MagnesiumForCheddarCheese01009()
+        {
+            IUsdaAsync usdaAsync = new UsdaAsync();
+            string testNdbno = "01009";
+            decimal correct = 36.0M;
+            UsdaFoodReport report = await usdaAsync.FetchUsdaFoodReport(testNdbno);
+            var returned = (from c in report.foods[0].food.nutrients
+                            where c.nutrient_id == 304
+                            select c.measures[0].value).FirstOrDefault();
+            Assert.AreEqual(correct, returned);
+        }
+
+        [TestMethod]
+        public async Task FolicAcidForCheddarCheese01009()
+        {
+            IUsdaAsync usdaAsync = new UsdaAsync();
+            string testNdbno = "01009";
+            decimal correct = 0.0M;
+            UsdaFoodReport report = await usdaAsync.FetchUsdaFoodReport(testNdbno);
+            var returned = (from c in report.foods[0].food.nutrients
+                            where c.nutrient_id == 431
                             select c.measures[0].value).FirstOrDefault();
             Assert.AreEqual(correct, returned);
         }

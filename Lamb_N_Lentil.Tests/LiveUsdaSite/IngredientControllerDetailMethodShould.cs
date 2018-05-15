@@ -31,7 +31,7 @@ namespace Lamb_N_Lentil.Tests.LiveUsdaSite
         {
             var viewResult = await Controller.Details("45032698");
             var model = (IngredientDetailViewModel)viewResult.Model; 
-            string correctUpDateDate = "07/14/2017";
+            string correctUpDateDate = "04/10/2018";
             string returnedUpdateDate = model.UpdateDate;
             Assert.AreEqual(correctUpDateDate, returnedUpdateDate);
         }
@@ -66,9 +66,9 @@ namespace Lamb_N_Lentil.Tests.LiveUsdaSite
         }
 
         [TestMethod]
-        public async Task HavePotassiumInTheViewModelForDannonLightStrawberryBananaYogurt45035088()
+        public async Task HavePotassiumInTheViewModelForDannonLightStrawberryBananaYogurt45039414()
         {
-            var viewResult = await Controller.Details("45035088");
+            var viewResult = await Controller.Details("45039414");
             var model = (IngredientDetailViewModel)viewResult.Model;
             var correct = 250.00M;
             decimal returned = model.Potassium;
@@ -90,7 +90,7 @@ namespace Lamb_N_Lentil.Tests.LiveUsdaSite
         {
             var viewResult = await Controller.Details("45034617");
             var model = (IngredientDetailViewModel)viewResult.Model;
-            var correct = 526.00M;
+            var correct =200.00M;
             decimal returned = model.VitaminA;
             Assert.AreEqual(correct, returned);
         }

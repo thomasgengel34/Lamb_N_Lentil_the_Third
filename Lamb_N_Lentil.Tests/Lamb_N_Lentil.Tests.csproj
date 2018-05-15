@@ -117,7 +117,7 @@
     <Compile Include="Controllers\IngredientControllerShould.cs" />
     <Compile Include="Infrastructure\UITypeShould.cs" />
     <Compile Include="LiveUsdaSite\LiveUsdaAsyncShouldReturnValidFoodWhen.cs" />
-    <Compile Include="LiveUsdaSite\LiveUsdaAsyncShouldReturnValidFullFoodReportForGreatValueDicedPeaches45032698 .cs" />
+    <Compile Include="LiveUsdaSite\LiveUsdaAsyncShouldReturnValidFullFoodReportForDicedPeaches45032698 .cs" />
     <Compile Include="LiveUsdaSite\LiveUsdaAsyncShouldReturnValidFullFoodReportForHominy20030.cs" />
     <Compile Include="LiveUsdaSite\IngredientControllerDetailMethodShould.cs" />
     <Compile Include="LiveUsdaSite\LiveUsdaAsyncTestForNutrientsShouldFind.cs" />

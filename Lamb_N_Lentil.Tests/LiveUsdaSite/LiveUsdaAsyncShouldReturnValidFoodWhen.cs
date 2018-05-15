@@ -29,7 +29,7 @@ namespace Lamb_N_Lentil.Tests.LiveUsdaSite
         public async Task WhenUPC078742212050IsSearchText()
         {
             string searchText = "078742212050";
-            string correctIngredients = "DICED PEACHES, WATER, SUGAR, NATURAL FLAVOR, ASCORBIC ACID (VITAMIN C) TO PROTECT COLOR, CITRIC ACID.";
+            string correctIngredients = "DICED PEACHES, WATER, SUGAR, NATURAL FLAVORS, ASCORBIC ACID (VITAMIN C) TO PROTECT COLOR, CITRIC ACID.";
             int correctCount = 1;
             var list = await usdaAsync.GetListOfIngredientsFromTextSearch(searchText, UsdaDataSource.StandardReference.ToString());
             IIngredient ingredient = (Entity)list.First();

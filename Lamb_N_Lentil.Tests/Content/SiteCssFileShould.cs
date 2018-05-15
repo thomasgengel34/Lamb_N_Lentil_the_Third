@@ -8,12 +8,14 @@ namespace Lamb_N_Lentil.Tests.Content
     public class SiteCssFileShould : BaseViewTests
     { 
         static string testFileContents = @"body {
-     padding-top: 50px;
+    padding-top: 50px;
     padding-bottom: 20px;
     background: linear-gradient(90deg,rgba(250,207,78,0) 12%, transparent 0, transparent 99%, #dca 0);
     background-size: 100px 100px;
     font-family: 'Lucida Handwriting';
-    color: green; 
+    color: green;
+    margin: 0;
+    border-width: 0;
 }
 
 .container .body-content {
@@ -22,8 +24,8 @@ namespace Lamb_N_Lentil.Tests.Content
     min-height: 80vh;
 }
 
-.jumbotron{
-    background-color:white;
+.jumbotron {
+    background-color: white;
 }
 
 /* Set padding to keep content from hitting the edges */
@@ -62,7 +64,7 @@ textarea {
     }
 
 .navbar {
-    margin-left: 0 ;
+    margin-left: 0;
 }
 
 
@@ -84,7 +86,7 @@ a {
     padding-left: 3em;
     padding-right: 3em;
 }
- 
+
 .container.body-content {
     padding-left: 100px;
     background-color: lightgoldenrodyellow;
@@ -106,54 +108,104 @@ p {
     margin-top: -10px;
 }
 
-.IngredientsIndexTable{
-    background-color:white;
-    width:60%;
+.IngredientsIndexTable {
+    background-color: white;
+    width: 60%;
 }
 
-.IngredientsIndexTable .rightJustify{
-   text-align:right; 
+    .IngredientsIndexTable .rightJustify {
+        text-align: right;
+    }
+
+tr td:first-of-type {
+    width: 40%;
+    padding-left: 2%;
 }
 
-tr td:first-of-type{
-    width:40%;
-    padding-left:2%;
-}
-
-tr td:last-of-type{
-    padding-right:2%;
+tr td:last-of-type {
+    padding-right: 2%;
 }
 
 tr .leftpadding10 {
-    padding-left:10%;
+    padding-left: 10%;
 }
 
-.ingredientTextBox{ 
-    padding:1px;
-    padding-left:5px;  
-    width:450px;
-    max-width:450px; 
+.ingredientTextBox {
+    padding: 1px;
+    padding-left: 5px;
+    width: 450px;
+    max-width: 450px;
 }
- 
+
 h2.no_results {
-    color:red;
+    color: red;
 }
 
-#IngredientsIndexTable tr th:last-child, #IngredientsIndexTable tr td:last-child { 
-    width:5%;
+#IngredientsIndexTable tr th:last-child, #IngredientsIndexTable tr td:last-child {
+    width: 5%;
 }
 
 /* Nutrition Label - begin*/
 #NutritionLabel {
-    background: white;
     border: solid black 1px;
+    background: white;
     padding: 1%;
+    font-family: Arial;
+    color: black;
+    width: 50%;
+    padding: 0;
+    border: 0;
+    margin: 0;
 }
 
-    #NutritionLabel.h1, #NutritionLabel.h2, #NutritionLabel.p, #NutritionLabel.dd, #NutritionLabel.dt, #NutritionLabel.dl, #NutritionLabel.td {
+    #NutritionLabel hr {
+        width: 100%;
+        height: 20px;
+        margin: 0;
+    } 
+        #NutritionLabel hr:first-of-type {
+            background: black;
+            height: 20px;
+        }
+
+        #NutritionLabel hr:nth-of-type(2) {
+            background: black;
+            height: 11px;
+            margin-top:-5px;
+        }
+
+
+
+    #NutritionLabel h2:first-of-type {
+        margin-bottom: 0;
+        padding-bottom: 0;
+    }
+
+    #NutritionLabel p {
+        margin-bottom: 0;
+        padding-bottom: 0;
+    }
+
+        #NutritionLabel p:first-of-type, #NutritionLabel hr:nth-of-type(2) {
+            margin-top: 0;
+            padding-top: 0;
+        }
+
+
+    #NutritionLabel h1, #NutritionLabel h2, #NutritionLabel p, #NutritionLabel dd, #NutritionLabel dt, #NutritionLabel dl, #NutritionLabel td, t {
+        background: white;
+        padding: 1%;
         font-family: Arial;
         color: black;
-    } 
+    }
+
+
+    #NutritionLabel .bold {
+        font-weight: 800;
+    }
+    #NutritionLabel .indented { 
+      padding-left:5%;
+    }
 /* Nutrition Label - end*/";
 
 
@@ -168,8 +220,7 @@ private static string filePath = @"C:\Dev\TGE\Lamb_N_Lentil\Lamb_N_Lentil\Conten
         [TestMethod]
         public void LookLikeThis()
         { 
-          Assert.IsTrue(testFileContents.Equals(fileContents)); 
-        }
-         
+          Assert.AreEqual(testFileContents,fileContents); 
+        } 
     }
 } 

@@ -112,5 +112,19 @@ namespace Lamb_N_Lentil.Tests.Classes
             var pInfo = typeof(Entity).GetProperty("Riboflavin");
             Assert.AreEqual("Riboflavin", pInfo.Name);
         }
+
+        [TestMethod]
+        public void ShouldHaveMagnesiumProperty()
+        {
+            var pInfo = typeof(Entity).GetProperty("Magnesium");
+            Assert.AreEqual("Magnesium", pInfo.Name);
+        }
+
+        [TestMethod]
+        public void ShouldHaveFolicAcidProperty()
+        {
+            var pInfo = typeof(Entity).GetProperty("FolicAcid");
+            Assert.AreEqual("FolicAcid", pInfo.Name);
+        }
     }
 } 
