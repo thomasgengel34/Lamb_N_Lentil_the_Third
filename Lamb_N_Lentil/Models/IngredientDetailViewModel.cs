@@ -82,6 +82,10 @@ namespace Lamb_N_Lentil.UI.Models
         [Display(Name = "Folic Acid")]
         public decimal FolicAcid { get; set; }
 
+        [Display(Name = "Manufacturer Or Food Group")]
+        public string ManufacturerOrFoodGroup { get; set; }
+
+
         public decimal Iron { get; set; }
         public decimal Magnesium { get; set; }
         public decimal Sugars { get; set; }
@@ -123,7 +127,8 @@ namespace Lamb_N_Lentil.UI.Models
                 VitaminD = ingredient.VitaminD,
                 Thiamine = ingredient.Thiamine,
                 Riboflavin = ingredient.Riboflavin,
-                Niacin = ingredient.Niacin
+                Niacin = ingredient.Niacin,
+                ManufacturerOrFoodGroup=ingredient.ManufacturerOrFoodGroup
             };
             return Vm;
         }

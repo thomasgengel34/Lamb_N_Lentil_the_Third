@@ -63,9 +63,8 @@ namespace Lamb_N_Lentil.UI.Controllers
 
         public async Task<ViewResult> Details(string ndbno)
         {
-            var report = await usdaAsync.FetchUsdaFoodReport(ndbno); 
-            var food = report.foods[0].food; 
-            IIngredient ingredient = MapUsdaFoodReportToIIngredient.ConvertUsdaFoodReportToIIngredient(food);
+            var report = await usdaAsync.FetchUsdaFoodReport(ndbno);  
+            IIngredient ingredient = MapUsdaFoodReportToIIngredient.ConvertUsdaFoodReportToIIngredient(report);
             var vm = IngredientDetailViewModel.MapIIngredientToIngredientDetailViewModel(ingredient);
             return View(UIType.Details.ToString(), vm);
         }

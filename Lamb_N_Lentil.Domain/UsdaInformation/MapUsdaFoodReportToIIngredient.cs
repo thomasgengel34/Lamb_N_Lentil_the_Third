@@ -7,10 +7,10 @@ namespace Lamb_N_Lentil.Domain.UsdaInformation
     {
         private static food food;
 
-        public static IIngredient ConvertUsdaFoodReportToIIngredient(food _food)
+        public static IIngredient ConvertUsdaFoodReportToIIngredient(UsdaFoodReport _report)
         {
             IIngredient ingredient = new Entity();
-            food = _food;
+            food = _report.foods[0].food;
             if (food == null)
             {
                 return ingredient;
@@ -21,6 +21,7 @@ namespace Lamb_N_Lentil.Domain.UsdaInformation
                 ingredient.IngredientsInIngredient = food.ing.desc;
                 ingredient.Ndbno = food.desc.ndbno;
                 ingredient.Description = food.desc.name;
+                ingredient.ManufacturerOrFoodGroup = GetManufacturerOrFoodGroup(food); 
             }
             if (food.ing != null)
             {
@@ -63,6 +64,19 @@ namespace Lamb_N_Lentil.Domain.UsdaInformation
             return ingredient;
         }
 
+        private static string GetManufacturerOrFoodGroup(food food)
+        {
+            string returnMe = "";
+            if (food.desc.fg !=null)
+            {
+                returnMe=food.desc.fg;
+            }
+            else if (food.desc.manu!=null)
+            {
+                returnMe = food.desc.manu;
+            }
+            return returnMe;
+        }
 
         private static decimal FindNutrient(int nutrient_ID)
         {

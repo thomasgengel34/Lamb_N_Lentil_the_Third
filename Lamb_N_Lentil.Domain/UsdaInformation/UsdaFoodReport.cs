@@ -26,8 +26,12 @@
 
     public class desc
     {
+        public string ds { get; set; } 
+        public string fg { get; set; }
         public string name { get; set; }
         public string ndbno { get; set; }
+       
+        public string manu { get; set; }
     }
 
     public class nutrients

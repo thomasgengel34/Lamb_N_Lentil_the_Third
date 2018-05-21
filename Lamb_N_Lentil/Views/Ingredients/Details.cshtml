@@ -4,162 +4,123 @@
     ViewBag.Title = "Index";
 }
 <div id="NutritionLabel">
-    
+
     <h1> @Html.DisplayFor(model => model.Description) </h1>
 
     <h2>Nutrition Facts</h2>
 
     <p>Serving Size   ( @Html.DisplayFor(model => model.Label) )  ( @Html.DisplayFor(model => model.Eqv)  g)</p>
 
-    <hr/> 
-
-    <p>Amount Per Serving</p>
-
-    <hr />
-    
-
-
-    <p><span class="bold">Calories:</span>   @Html.DisplayFor(model => model.Calories)  
-        @Html.DisplayNameFor(m => m.CaloriesFromFat) : @Html.DisplayFor(m => m.CaloriesFromFat)
-    </p>
     <hr />
 
-    <table id="IngredientsDetailsTable">
-        <tbody>
-            <tr>
-                <td></td>
-                <td></td>
-                <td class="rightJustify">  % Daily Value* </td>
-            </tr>
-            <tr>
-                <td class="bold">@Html.DisplayNameFor(m => m.TotalFat)</td>
-                <td>@Html.DisplayFor(m => m.TotalFat)  g</td>
-                <td class="rightJustify"> %</td>
-            </tr>
-            <tr>
-                <td class="indented">@Html.DisplayNameFor(m => m.SaturatedFat)</td>
-                <td>@Html.DisplayFor(m => m.SaturatedFat)  g</td>
-                <td class="rightJustify"> %</td>
-            </tr>
-            <tr>
-                <td class="indented">@Html.DisplayNameFor(m => m.TransFat)</td>
-                <td>@Html.DisplayFor(m => m.TransFat)  g</td>
-                <td class="rightJustify"> %</td>
-            </tr>
-            <tr>
-                <td class="indented">@Html.DisplayNameFor(m => m.PolyunsaturatedFat)</td>
-                <td>@Html.DisplayFor(m => m.PolyunsaturatedFat)  g</td>
-                <td class="rightJustify"> </td>
-            </tr>
-            <tr>
-                <td class="indented">@Html.DisplayNameFor(m => m.MonounsaturatedFat) </td>
-                <td>@Html.DisplayFor(m => m.MonounsaturatedFat)  g</td>
-                <td class="rightJustify"> </td>
-            </tr>
-            <tr>
-                <td class="bold">@Html.DisplayNameFor(m => m.Cholesterol) </td>
-                <td>@Html.DisplayFor(m => m.Cholesterol)  mg</td>
-                <td class="rightJustify"> %</td>
-            </tr>
-            <tr>
-                <td class="bold">@Html.DisplayNameFor(m => m.Sodium)</td>
-                <td>@Html.DisplayFor(m => m.Sodium)  mg</td>
+    <p class="bold fontSmall">Amount Per Serving</p>
 
-                <td class="rightJustify"> %</td>
-            </tr>
-            <tr>
-                <td class="indented">@Html.DisplayNameFor(m => m.Potassium)</td>
-                <td>@Html.DisplayFor(m => m.Potassium)  mg</td>
-                <td class="rightJustify"> %</td>
-            </tr>
-            <tr>
-                <td class="bold">@Html.DisplayNameFor(m => m.TotalCarbohydrate) </td>
-                <td>@Html.DisplayFor(m => m.TotalCarbohydrate)  g </td>
-                <td class="rightJustify">
-                    %
-                </td>
-            </tr>
-            <tr>
-                <td class="indented">@Html.DisplayNameFor(m => m.DietaryFiber) </td>
-                <td>@Html.DisplayFor(m => m.DietaryFiber)  g </td>
-                <td class="rightJustify"> %</td>
-            </tr>
-            <tr>
-                <td class="indented">@Html.DisplayNameFor(m => m.Sugars) </td>
-                <td>@Html.DisplayFor(m => m.Sugars)  g </td>
-                <td>%</td>
-            </tr>
-            <tr>
-                <td class="bold">@Html.DisplayNameFor(m => m.Protein) </td>
-                <td>@Html.DisplayFor(m => m.Protein)  g </td>
-                <td class="rightJustify">
-                    % 
-            </tr>
-        </tbody>
-    </table>
     <hr />
-    <table class="IngredientsTable">
-        <tbody>
-            <tr>
-                <td>@Html.DisplayNameFor(m => m.VitaminA) </td>
-                <td>@Html.DisplayFor(m => m.VitaminA)  ui </td>
-            </tr>
-            <tr>
-                <td>@Html.DisplayNameFor(m => m.Thiamine)</td>
-                <td>@Html.DisplayFor(m => m.Thiamine)  mg </td>
-            </tr>
-            <tr>
-                <td>@Html.DisplayNameFor(m => m.Riboflavin)</td>
-                <td>@Html.DisplayFor(m => m.Riboflavin)  mg</td>
-            </tr>
-            <tr>
-                <td>@Html.DisplayNameFor(m => m.Niacin)</td>
-                <td>@Html.DisplayFor(m => m.Niacin)  mg</td>
-            </tr>
-            <tr>
-                <td>@Html.DisplayNameFor(m => m.VitaminB6)</td>
-                <td>@Html.DisplayFor(m => m.VitaminB6)  mg</td>
-            </tr>
-            <tr>
-                <td>@Html.DisplayNameFor(m => m.VitaminB12)</td>
-                <td>@Html.DisplayFor(m => m.VitaminB12)  µg</td>
-            </tr>
-            <tr>
-                <td>@Html.DisplayNameFor(m => m.VitaminC) </td>
-                <td>@Html.DisplayFor(m => m.VitaminC)  mg </td>
-            </tr>
-            <tr>
-                <td>@Html.DisplayNameFor(m => m.VitaminD) </td>
-                <td>@Html.DisplayFor(m => m.VitaminD)  ui </td>
-            </tr>
-            <tr>
-                <td>@Html.DisplayNameFor(m => m.Calcium) </td>
-                <td>@Html.DisplayFor(m => m.Calcium)  mg </td>
-            </tr>
-            <tr>
-                <td>@Html.DisplayNameFor(m => m.Iron) </td>
-                <td>@Html.DisplayFor(m => m.Iron)  mg </td>
-            </tr>
-            <tr>
-                <td>@Html.DisplayNameFor(m => m.Magnesium) </td>
-                <td>@Html.DisplayFor(m => m.Magnesium)  mg </td>
-            </tr>
-            <tr>
-                <td>@Html.DisplayNameFor(m => m.FolicAcid) </td>
-                <td>@Html.DisplayFor(m => m.FolicAcid)  µg</td>
-            </tr>
-        </tbody>
-    </table>
-    <p></p>
-    <p>  *Percent Daily Values are based on a 2,000 calorie diet.Your daily values may be higher or lower depending on your calorie needs.</p>
-    <p>Manufacturer or Food Group:</p>
- 
+    <div>
+        <span class="bold"> @Html.DisplayNameFor(m => m.Calories) :</span>   @Html.DisplayFor(model => model.Calories)   <span class="right">
+            @Html.DisplayNameFor(m => m.CaloriesFromFat) : @Html.DisplayFor(m => m.CaloriesFromFat)
+        </span>
+    </div>
+    <hr />
+    <div>
+        <span class="right">  % Daily Value* </span>
+        <hr />
+    </div>
 
-    <dl class="dl-horizontal">
+    <div id="IngredientsDetailsTable">
+        <div>
+            <div class="bold">@Html.DisplayNameFor(m => m.TotalFat)</div>
+            <div>@Html.DisplayFor(m => m.TotalFat)  g</div>
+            <div> %</div>
+        </div>
+
+        <div>
+            <div class="indented">@Html.DisplayNameFor(m => m.SaturatedFat)</div>
+            <div>@Html.DisplayFor(m => m.SaturatedFat)  g</div>
+            <div class="rightJustify"> %</div>
+        </div>
+        <div>
+            <div class="indented">@Html.DisplayNameFor(m => m.TransFat)</div>
+            <div>@Html.DisplayFor(m => m.TransFat)  g</div>
+            <div class="rightJustify"> %</div>
+        </div>
+        <div>
+            <div class="indented">@Html.DisplayNameFor(m => m.PolyunsaturatedFat)</div>
+            <div>@Html.DisplayFor(m => m.PolyunsaturatedFat)  g</div>
+            <div class="rightJustify"> %</div>
+        </div>
+        <div>
+            <div class="indented">@Html.DisplayNameFor(m => m.MonounsaturatedFat) </div>
+            <div>@Html.DisplayFor(m => m.MonounsaturatedFat)  g</div>
+            <div class="rightJustify">% </div>
+        </div>
+        <div>
+            <div class="bold">@Html.DisplayNameFor(m => m.Cholesterol) </div>
+            <div>@Html.DisplayFor(m => m.Cholesterol)  mg</div>
+            <div class="rightJustify"> %</div>
+        </div>
+        <div>
+            <div class="bold">@Html.DisplayNameFor(m => m.Sodium)</div>
+            <div>@Html.DisplayFor(m => m.Sodium)  mg</div>
+
+            <div class="rightJustify"> %</div>
+        </div>
+        <div>
+            <div class="indented">@Html.DisplayNameFor(m => m.Potassium)</div>
+            <div>@Html.DisplayFor(m => m.Potassium)  mg</div>
+            <div class="rightJustify"> %</div>
+        </div>
+        <div>
+            <div class="bold">@Html.DisplayNameFor(m => m.TotalCarbohydrate) </div>
+            <div>@Html.DisplayFor(m => m.TotalCarbohydrate)  g </div>
+            <div class="rightJustify">
+                %
+            </div>
+        </div>
+        <div>
+            <div class="indented">@Html.DisplayNameFor(m => m.DietaryFiber) </div>
+            <div>@Html.DisplayFor(m => m.DietaryFiber)  g </div>
+            <div class="rightJustify"> %</div>
+        </div>
+        <div>
+            <div class="indented">@Html.DisplayNameFor(m => m.Sugars) </div>
+            <div>@Html.DisplayFor(m => m.Sugars)  g </div>
+            <div>%</div>
+        </div>
+        <div>
+            <div class="bold">@Html.DisplayNameFor(m => m.Protein) </div>
+            <div>@Html.DisplayFor(m => m.Protein)  g </div>
+            <div class="rightJustify">
+                %
+            </div>
+        </div>
+        <hr />
+    </div>
+    <div id="Nutrients">
+        <div class="floatLeft">
+            @Html.DisplayNameFor(m => m.VitaminA)  @Html.DisplayFor(m => m.VitaminA)  ui
+        </div>
+        <div class="floatRight">@Html.DisplayNameFor(m => m.VitaminC) @Html.DisplayFor(m => m.VitaminC)  mg </div>
+
+        <div class="floatLeft">@Html.DisplayNameFor(m => m.Calcium)  @Html.DisplayFor(m => m.Calcium)  mg </div>
+        <div class="floatRight">@Html.DisplayNameFor(m => m.Iron) @Html.DisplayFor(m => m.Iron)  mg </div>
+
+        <div class="floatLeft">@Html.DisplayNameFor(m => m.Thiamine) @Html.DisplayFor(m => m.Thiamine)  mg</div>
+        <div class="floatRight">@Html.DisplayNameFor(m => m.Riboflavin) @Html.DisplayFor(m => m.Riboflavin)  mg</div>
+
+        <div class="floatLeft">@Html.DisplayNameFor(m => m.Niacin) @Html.DisplayFor(m => m.Niacin)  mg</div>
+        <div class="floatRight">@Html.DisplayNameFor(m => m.FolicAcid)  @Html.DisplayFor(m => m.FolicAcid)  µg</div>
+        <div class="floatLeft">@Html.DisplayNameFor(m => m.VitaminB6) @Html.DisplayFor(m => m.VitaminB6)  mg</div>
+        <div class="floatRight">@Html.DisplayNameFor(m => m.VitaminB12) @Html.DisplayFor(m => m.VitaminB12)  µg</div>
+        <div class="floatLeft">@Html.DisplayNameFor(m => m.VitaminD)  @Html.DisplayFor(m => m.VitaminD)  ui </div><div class="floatRight">@Html.DisplayNameFor(m => m.Magnesium)  @Html.DisplayFor(m => m.Magnesium)  mg </div>
+        <div>  *Percent Daily Values are based on a 2,000 calorie diet.Your daily values may be higher or lower depending on your calorie needs.</div>
+
+    </div>
+    <dl>
+
         <dt>
             @Html.DisplayNameFor(model => model.IngredientsInIngredient)
         </dt>
-
         <dd>
             @Html.DisplayFor(model => model.IngredientsInIngredient)
         </dd>
@@ -169,8 +130,13 @@
         <dd>
             @Html.DisplayFor(model => model.UpdateDate)
         </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.ManufacturerOrFoodGroup)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.ManufacturerOrFoodGroup)
+        </dd> 
     </dl>
 </div>
-
 
 @*<p>style from  https://www.google.com/search?q=nutrition+facts+for+turkey+sausage&oq=nutrition&aqs=chrome.0.69i59j69i57j69i59j0l3.3343j0j7&sourceid=chrome&ie=UTF-8</p>*@

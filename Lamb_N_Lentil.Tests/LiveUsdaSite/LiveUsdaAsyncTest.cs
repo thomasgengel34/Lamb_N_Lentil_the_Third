@@ -82,6 +82,20 @@ namespace Lamb_N_Lentil.Tests.LiveUsdaSite
             UsdaFoodReport report = await usdaAsync.FetchUsdaFoodReport(list.First().Ndbno);
             string returnedIngredients = report.foods.First().food.ing.desc;
             Assert.AreEqual(correctIngredients, returnedIngredients);
-        } 
+        }
+
+        [TestMethod]
+        public async Task ReturnFoodGroupFoodReportForCheddarCheese()
+        {
+            IUsdaAsync usdaAsync = new UsdaAsync();
+            string testString = "01009";
+            string correct = "Dairy and Egg Products";
+             
+            
+            UsdaFoodReport report = await usdaAsync.FetchUsdaFoodReport(testString);
+           
+           string returned  = report.foods.First().food.desc.fg;
+           Assert.AreEqual(correct , returned );
+        }
     }
 }

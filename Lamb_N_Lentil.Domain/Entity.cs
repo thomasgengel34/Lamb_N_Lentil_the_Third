@@ -10,8 +10,7 @@ namespace Lamb_N_Lentil.Domain
 
         public int ID { get; set; }
         public string InstanceName { get; set; }
-        public string IngredientsInIngredient { get; set; }
-        public string Ndbno { get; set; }
+        public string IngredientsInIngredient { get; set; } 
         public decimal Calcium { get; set; }
         public string Description { get; set; }
         public decimal FolicAcid { get; set; }
@@ -39,6 +38,7 @@ namespace Lamb_N_Lentil.Domain
 
         string IIngredient.Label { get; set; }
         decimal IIngredient.Eqv { get; set; }
+        string IIngredient.ManufacturerOrFoodGroup { get; set; }
 
         string IIngredient.Ndbno { get; set; }
 

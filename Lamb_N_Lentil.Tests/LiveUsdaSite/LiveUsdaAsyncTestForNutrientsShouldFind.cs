@@ -316,5 +316,18 @@ namespace Lamb_N_Lentil.Tests.LiveUsdaSite
                             select c.measures[0].value).FirstOrDefault();
             Assert.AreEqual(correct, returned);
         }
+
+        [TestMethod]
+        public async Task ManufacturerForCheddarCheese01009()
+        {
+            IUsdaAsync usdaAsync = new UsdaAsync();
+            string testNdbno = "01009";
+            decimal correct = 0.0M;
+            UsdaFoodReport report = await usdaAsync.FetchUsdaFoodReport(testNdbno);
+            var returned = (from c in report.foods[0].food.nutrients
+                            where c.nutrient_id == 431
+                            select c.measures[0].value).FirstOrDefault();
+            Assert.AreEqual(correct, returned);
+        }
     }
 }

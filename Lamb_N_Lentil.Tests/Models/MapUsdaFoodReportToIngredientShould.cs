@@ -1,4 +1,4 @@
-﻿using System;
+﻿using System.Linq;
 using Lamb_N_Lentil.Domain;
 using Lamb_N_Lentil.Domain.UsdaInformation;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
@@ -92,7 +92,12 @@ namespace Lamb_N_Lentil.Tests.Models
             food.nutrients[11].measures[0] = new measures();
             food.nutrients[11].measures[0].value = correctTotalCarbohydrate;
 
-            ingredient = MapUsdaFoodReportToIIngredient.ConvertUsdaFoodReportToIIngredient(food);
+            foods[] foods =new foods[1];
+            foods[0] = new foods();
+            foods[0].food = food;
+            UsdaFoodReport report = new UsdaFoodReport();
+            report.foods = foods; 
+             ingredient = MapUsdaFoodReportToIIngredient.ConvertUsdaFoodReportToIIngredient( report);
         }
 
         [TestMethod]
