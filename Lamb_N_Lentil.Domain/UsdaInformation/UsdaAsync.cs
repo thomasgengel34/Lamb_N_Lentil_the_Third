@@ -71,8 +71,9 @@ namespace Lamb_N_Lentil.Domain.UsdaInformation
         {
             HttpClient client = new HttpClient();
 
-            string http = "https://api.nal.usda.gov/ndb/V2/reports/?ndbno="; 
-            string apiKey = "&type=b&format=json&api_key=";
+            string http = "https://api.nal.usda.gov/ndb/V2/reports/?ndbno=";
+            //  string apiKey = "&type=b&format=json&api_key=";
+              string apiKey = "&type=f&format=json&api_key=";
             string foodsUrl = String.Concat(http, ndbno, apiKey, key);
 
             client.BaseAddress = new Uri(foodsUrl);
@@ -101,6 +102,7 @@ namespace Lamb_N_Lentil.Domain.UsdaInformation
             {
                 usdaFoodReport.foods.First().food.ing.desc = FetchedIngredientsInIngredient;
             }
+            string foo = usdaFoodReport.foods.First().food.desc.fg;
              
             return usdaFoodReport;
         }
