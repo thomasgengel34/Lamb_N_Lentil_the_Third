@@ -11,15 +11,12 @@ namespace Lamb_N_Lentil.Tests.LiveUsdaSite
     [TestClass]
     public class LiveUsdaAsyncShouldReturnValidFoodWhen
     {
-        private IUsdaAsync usdaAsync { get; set; }
-        private IngredientsController Controller { get; set; }
-        private int standardTotal { get; set; } = 2699;
-        private int brandedTotal { get; set; } = 14;
-        private int Total { get; set; } = 4411;
+        private readonly IUsdaAsync usdaAsync= new UsdaAsync();
+        private readonly IUsdaAsyncFoodReport usdaAsyncFoodReport= new UsdaAsyncFoodReport();
+        private IngredientsController Controller; 
 
         public LiveUsdaAsyncShouldReturnValidFoodWhen()
-        {
-            usdaAsync = new UsdaAsync();
+        {  
             Controller = new IngredientsController(null, usdaAsync);
         }
 
@@ -33,8 +30,8 @@ namespace Lamb_N_Lentil.Tests.LiveUsdaSite
             int correctCount = 1;
             var list = await usdaAsync.GetListOfIngredientsFromTextSearch(searchText, UsdaDataSource.StandardReference.ToString());
             IIngredient ingredient = (Entity)list.First();
-            var mfr = await usdaAsync.FetchUsdaFoodReport(ingredient.Ndbno);
-            string returnedIngredients = usdaAsync.FetchedIngredientsInIngredient;
+            var mfr = await usdaAsyncFoodReport.FetchUsdaFoodReport(ingredient.Ndbno);
+            string returnedIngredients = ingredient.IngredientsInIngredient;
             Assert.AreEqual(correctCount ,usdaAsync.FetchedTotalFromSearch);
             Assert.AreEqual(correctIngredients, returnedIngredients);
         }

@@ -1,20 +1,16 @@
 ﻿using System.Linq;
 using System.Threading.Tasks;
 using Lamb_N_Lentil.Domain.UsdaInformation;
+using Lamb_N_Lentil.Tests.MockUsdaSiteFoodReport;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
 
-namespace Lamb_N_Lentil.Tests.MockUsdaSite
+namespace Lamb_N_Lentil.Tests.MockUsdaAsyncSiteFoodList
 {
     [TestClass]
-    public class MockUsdaAsyncTest  
+    public class MockUsdaAsyncFoodListTest  
     {
-        private IUsdaAsync usdaAsync { get; set; }
-
-        public MockUsdaAsyncTest()
-        {
-            usdaAsync = new MockUsdaAsync();
-        }
-       
+        private readonly IUsdaAsync usdaAsync = new MockUsdaAsyncFoodList();
+        private IUsdaAsyncFoodReport usdaAsyncFoodReport = new MockUsdaAsyncFoodReportTest(); 
 
         [TestMethod]
         public void ReduceStringLengthToWhatWillWorkOnUsdaWillNotThrowErrorWithEmptyString()
@@ -46,20 +42,11 @@ namespace Lamb_N_Lentil.Tests.MockUsdaSite
         public async Task ReturnIngredientsInIngredientInFoodReport()
         {
             string testString = "ShouldReturnIngredients";
-            string correctIngredients = "peas, porridge, hot";
-            UsdaFoodReport report = await usdaAsync.FetchUsdaFoodReport(testString);
+            string correctIngredients = "ing-desc";
+            UsdaFoodReport report = await usdaAsyncFoodReport.FetchUsdaFoodReport(testString);
                 string returnedIngredients = report.foods.First().food.ing.desc;
            Assert.AreEqual(correctIngredients, returnedIngredients);
         }
 
-        [TestMethod]
-        public async Task ReturnValueInFoodReport()
-        {
-            string testString = "ShouldReturnIngredients";
-            decimal correctValue = 76M;
-            UsdaFoodReport report = await usdaAsync.FetchUsdaFoodReport(testString);
-           decimal returnedValue = report.foods.First().food.nutrients[0].measures[0].value = 76M;
-            Assert.AreEqual(correctValue, returnedValue);
-        }
     }
 }

@@ -1,246 +1,247 @@
-﻿using System.Threading.Tasks;
-using System.Web.Mvc;
-using Lamb_N_Lentil.Tests.MockUsdaSite;
+﻿using Lamb_N_Lentil.Domain.UsdaInformation;
+using Lamb_N_Lentil.Tests.MockUsdaAsyncSiteFoodList;
+using Lamb_N_Lentil.Tests.MockUsdaSiteFoodReport;
 using Lamb_N_Lentil.UI.Controllers;
 using Lamb_N_Lentil.UI.Models;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
-
+using System.Threading.Tasks;
+using System.Web.Mvc;
 
 namespace Lamb_N_Lentil.Tests.Controllers
 {
     [TestClass]
-    public class IngredientControllerDetailsActionMethodShould
+    public class IngredientControllerDetailsActionMethodShouldProduceAnIngredientDetailViewModelWith
     {
-        MockUsdaAsync async = new MockUsdaAsync();
+        private readonly IUsdaAsync asyncFoodList = new MockUsdaAsyncFoodList();
+        private readonly IUsdaAsyncFoodReport asyncFoodReport = new MockUsdaAsyncForFoodReport();
+        private IngredientDetailViewModel model;
+        private ViewResult vr;
 
-        public IngredientsController Controller { get; set; }
+        public IngredientsController Controller { get; set; } 
 
-        public IngredientControllerDetailsActionMethodShould()
+        [TestInitialize]
+        public async Task GetViewResultAsync()
         {
-            Controller = new IngredientsController(null, async);
-        }
-
-
-        [TestMethod]
-        public async Task ProduceAnIngredientDetailViewModelWithALabel()
-        {
-            ViewResult vr = await Controller.Details("ShouldReturnIngredients");
-            var model = (IngredientDetailViewModel)vr.Model;
-            string returnedLabel = model.Label;
-            Assert.IsNotNull(returnedLabel);
-            Assert.AreEqual("I am a label", returnedLabel);
+            Controller = new IngredientsController(null, asyncFoodList, asyncFoodReport);
+            vr = await Controller.Details("ShouldReturnIngredients");
+            model = (IngredientDetailViewModel)vr.Model;
         }
 
         [TestMethod]
-        public async Task ProduceAnIngredientDetailViewModelWithAnEqv()
+        public void MyTestMethod1()
         {
-            ViewResult vr = await Controller.Details("ShouldReturnIngredients");
-            var model = (IngredientDetailViewModel)vr.Model;
-            decimal returnedEqv = model.Eqv;
-            Assert.IsNotNull(returnedEqv);
-            Assert.AreEqual(3.1415926M, returnedEqv);
+         //   Controller = new IngredientsController(null, asyncFoodList, asyncFoodReport);
+         //   vr = await Controller.Details("ShouldReturnIngredients");
+            string returned  = model.Label;
+            Assert.AreEqual("I am a label", returned );
         }
 
         [TestMethod]
-        public async Task ProduceAnIngredientDetailViewModelWithTotalFat()
+        public void ALabel()
         {
-            ViewResult vr = await Controller.Details("ShouldReturnIngredients");
-            var model = (IngredientDetailViewModel)vr.Model;
-            decimal correctTotalFat = 987654.2M;
-            decimal returnedTotalFat = model.TotalFat;
-            Assert.IsNotNull(returnedTotalFat);
-            Assert.AreEqual(correctTotalFat, returnedTotalFat);
+            string returned = model.Label;
+            Assert.AreEqual("I am a label", returned );
         }
 
         [TestMethod]
-        public async Task ProduceAnIngredientDetailViewModelWithSodium()
+        public void AnEqv()
         {
-            ViewResult vr = await Controller.Details("ShouldReturnIngredients");
-            decimal correctSodium = 143.0M;
-            var model = (IngredientDetailViewModel)vr.Model;
-            decimal returnedSodium = model.Sodium;
-            Assert.IsNotNull(returnedSodium);
-            Assert.AreEqual(correctSodium, returnedSodium);
+            decimal returned = model.Eqv;
+            decimal correct = 3.1415926M;
+            Assert.IsNotNull(returned);
+            Assert.AreEqual(correct, returned);
         }
 
         [TestMethod]
-        public async Task ProduceAnIngredientDetailViewModelWithTotalCarbohydrate()
+        public void TotalFat()
         {
-            ViewResult vr = await Controller.Details("ShouldReturnIngredients");
-            decimal correctTotalCarbohydrate = 77.04M; 
-            var model = (IngredientDetailViewModel)vr.Model;
-            decimal returnedTotalCarbohydrate = model.TotalCarbohydrate;
-            Assert.IsNotNull(returnedTotalCarbohydrate);
-            Assert.AreEqual(correctTotalCarbohydrate, returnedTotalCarbohydrate); 
+            decimal correct = 654.2M;
+            decimal returned = model.TotalFat;
+            Assert.IsNotNull(returned);
+            Assert.AreEqual(correct, returned);
         }
 
         [TestMethod]
-        public async Task ProduceAnIngredientDetailViewModelWithPolyunsaturatedFat()
+        public void Sodium()
         {
-            ViewResult vr = await Controller.Details("ShouldReturnIngredients");
-            decimal correctFat = 736.08M;
-            var model = (IngredientDetailViewModel)vr.Model;
-            decimal returnedFat = model.PolyunsaturatedFat; 
-            Assert.AreEqual(correctFat, returnedFat);
+            decimal correct = 143.0M;
+            decimal returned = model.Sodium;
+            Assert.IsNotNull(returned);
+            Assert.AreEqual(correct, returned);
         }
 
         [TestMethod]
-        public async Task ProduceAnIngredientDetailViewModelWithMonounsaturatedFat()
+        public void TotalCarbohydrate()
         {
-            ViewResult vr = await Controller.Details("ShouldReturnIngredients");
-            decimal correctFat = 81.92M;
-            var model = (IngredientDetailViewModel)vr.Model;
-            decimal returnedFat = model.MonounsaturatedFat;
-            Assert.AreEqual(correctFat, returnedFat);
+            decimal correct = 77.04M;
+            decimal returned = model.TotalCarbohydrate;
+            Assert.IsNotNull(returned);
+            Assert.AreEqual(correct, returned);
         }
 
         [TestMethod]
-        public async Task ProduceAnIngredientDetailViewModelWithCholesterol()
+        public void PolyunsaturatedFat()
         {
-            ViewResult vr = await Controller.Details("ShouldReturnIngredients");
-            decimal correct  = 82.93M;
-            var model = (IngredientDetailViewModel)vr.Model;
-            decimal returned  = model.Cholesterol;
-            Assert.AreEqual(correct , returned );
+            decimal correct = 736.08M;
+            decimal returned = model.PolyunsaturatedFat;
+            Assert.AreEqual(correct, returned);
         }
 
         [TestMethod]
-        public async Task ProduceAnIngredientDetailViewModelWithTransFat()
+        public void MonounsaturatedFat()
         {
-            ViewResult vr = await Controller.Details("ShouldReturnIngredients");
+            decimal correct = 81.92M;
+            decimal returned = model.MonounsaturatedFat;
+            Assert.AreEqual(correct, returned);
+        }
+
+        [TestMethod]
+        public void Cholesterol()
+        {
+            decimal correct = 82.93M;
+            decimal returned = model.Cholesterol;
+            Assert.AreEqual(correct, returned);
+        }
+
+        [TestMethod]
+        public void TransFat()
+        {
             decimal correct = 101.01M;
-            var model = (IngredientDetailViewModel)vr.Model;
             decimal returned = model.TransFat;
             Assert.AreEqual(correct, returned);
         }
 
         [TestMethod]
-        public async Task ProduceAnIngredientDetailViewModelWithSugars()
+        public void Sugars()
         {
-            ViewResult vr = await Controller.Details("ShouldReturnIngredients");
             decimal correct = 14.30M;
-            var model = (IngredientDetailViewModel)vr.Model;
             decimal returned = model.Sugars;
             Assert.AreEqual(correct, returned);
         }
 
         [TestMethod]
-        public async Task ProduceAnIngredientDetailViewModelWithProtein()
+        public void Protein()
         {
-            ViewResult vr = await Controller.Details("ShouldReturnIngredients");
             decimal correct = 7.15M;
-            var model = (IngredientDetailViewModel)vr.Model;
             decimal returned = model.Protein;
             Assert.AreEqual(correct, returned);
         }
 
         [TestMethod]
-        public async Task ProduceAnIngredientDetailViewModelWithVitaminA()
+        public void VitaminA()
         {
-            ViewResult vr = await Controller.Details("ShouldReturnIngredients");
-            decimal correct = 3.625M;
-            var model = (IngredientDetailViewModel)vr.Model;
+            decimal correct = 101.02M;
             decimal returned = model.VitaminA;
             Assert.AreEqual(correct, returned);
         }
 
         [TestMethod]
-        public async Task ProduceAnIngredientDetailViewModelWithVitaminC()
+        public void VitaminC()
         {
-            ViewResult vr = await Controller.Details("ShouldReturnIngredients");
             decimal correct = 1.8M;
-            var model = (IngredientDetailViewModel)vr.Model;
             decimal returned = model.VitaminC;
             Assert.AreEqual(correct, returned);
         }
 
         [TestMethod]
-        public async Task ProduceAnIngredientDetailViewModelWithCalcium()
+        public void Calcium()
         {
-            ViewResult vr = await Controller.Details("ShouldReturnIngredients");
             decimal correct = 0.95M;
-            var model = (IngredientDetailViewModel)vr.Model;
             decimal returned = model.Calcium;
             Assert.AreEqual(correct, returned);
         }
 
         [TestMethod]
-        public async Task ProduceAnIngredientDetailViewModelWithIron()
+        public void Iron()
         {
-            ViewResult vr = await Controller.Details("ShouldReturnIngredients");
             decimal correct = 0.114M;
-            var model = (IngredientDetailViewModel)vr.Model;
             decimal returned = model.Iron;
             Assert.AreEqual(correct, returned);
         }
 
         [TestMethod]
-        public async Task ProduceAnIngredientDetailViewModelWithVitaminD()
+        public void VitaminD()
         {
-            ViewResult vr = await Controller.Details("ShouldReturnIngredients");
             decimal correct = 0.228M;
-            var model = (IngredientDetailViewModel)vr.Model;
             decimal returned = model.VitaminD;
             Assert.AreEqual(correct, returned);
         }
 
         [TestMethod]
-        public async Task ProduceAnIngredientDetailViewModelWithThiamine()
+        public void Thiamine()
         {
-            ViewResult vr = await Controller.Details("ShouldReturnIngredients");
             decimal correct = 1.228M;
-            var model = (IngredientDetailViewModel)vr.Model;
             decimal returned = model.Thiamine;
             Assert.AreEqual(correct, returned);
         }
 
         [TestMethod]
-        public async Task ProduceAnIngredientDetailViewModelWithRiboflavin()
+        public void Riboflavin()
         {
-            ViewResult vr = await Controller.Details("ShouldReturnIngredients");
             decimal correct = 3.333M;
-            var model = (IngredientDetailViewModel)vr.Model;
             decimal returned = model.Riboflavin;
             Assert.AreEqual(correct, returned);
         }
 
         [TestMethod]
-        public async Task ProduceAnIngredientDetailViewModelWithNiacin()
+        public void Magnesium()
         {
-            ViewResult vr = await Controller.Details("ShouldReturnIngredients");
+            decimal correct = 22.23M;
+            decimal returned = model.Magnesium;
+            Assert.AreEqual(correct, returned);
+        }
+
+        [TestMethod]
+        public void Niacin()
+        {
             decimal correct = 21.045M;
-            var model = (IngredientDetailViewModel)vr.Model;
             decimal returned = model.Niacin;
             Assert.AreEqual(correct, returned);
         }
 
         [TestMethod]
-        public async Task ProduceAnIngredientDetailViewModelWithVitaminB6()
+        public void VitaminB6()
         {
-            ViewResult vr = await Controller.Details("ShouldReturnIngredients");
             decimal correct = 76.05M;
-            var model = (IngredientDetailViewModel)vr.Model;
             decimal returned = model.VitaminB6;
             Assert.AreEqual(correct, returned);
         }
 
         [TestMethod]
-        public async Task ProduceAnIngredientDetailViewModelWithVitaminB12()
+        public void VitaminB12()
         {
-            ViewResult vr = await Controller.Details("ShouldReturnIngredients");
             decimal correct = 71.055M;
-            var model = (IngredientDetailViewModel)vr.Model;
             decimal returned = model.VitaminB12;
             Assert.AreEqual(correct, returned);
         }
 
         [TestMethod]
-        public async Task ProduceAnIngredientDetailViewModelWithMagnesium()
+        public void FoodGroup()
         {
-            ViewResult vr = await Controller.Details("ShouldReturnIngredients");
-            decimal correct = 22.23M;
-            var model = (IngredientDetailViewModel)vr.Model;
-            decimal returned = model.Magnesium;
+            string correct = "default food group";
+            string returned = model.ManufacturerOrFoodGroup;
+            Assert.AreEqual(correct, returned);
+        }
+
+        [TestMethod]
+        public async Task Manufacturer()
+        {
+            string correct = "default manufacturer";
+            var controller = new IngredientsController(null, asyncFoodList, asyncFoodReport);
+            vr = await controller.Details("ManufacturerNotFoodGroup");
+            model = (IngredientDetailViewModel)vr.Model;
+            string returned = model.ManufacturerOrFoodGroup;
+            Assert.AreEqual(correct, returned);
+        }
+
+        [TestMethod]
+        public async Task NoManufacturerOrFoodGroup()
+        {
+            string correct = "not provided";
+            var controller = new IngredientsController(null, asyncFoodList, asyncFoodReport);
+            vr = await controller.Details("NoManufacturerOrFoodGroup");
+            model = (IngredientDetailViewModel)vr.Model;
+            string returned = model.ManufacturerOrFoodGroup;
             Assert.AreEqual(correct, returned);
         }
     }

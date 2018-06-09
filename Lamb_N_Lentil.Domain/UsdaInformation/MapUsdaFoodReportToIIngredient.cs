@@ -21,7 +21,7 @@ namespace Lamb_N_Lentil.Domain.UsdaInformation
                 ingredient.IngredientsInIngredient = food.ing.desc;
                 ingredient.Ndbno = food.desc.ndbno;
                 ingredient.Description = food.desc.name;
-                ingredient.ManufacturerOrFoodGroup = GetManufacturerOrFoodGroup(food); 
+                ingredient.ManufacturerOrFoodGroup = GetManufacturerOrFoodGroup(food);
             }
             if (food.ing != null)
             {
@@ -60,26 +60,27 @@ namespace Lamb_N_Lentil.Domain.UsdaInformation
             ingredient.VitaminD = FindNutrient(324);
             ingredient.Thiamine = FindNutrient(404);
             ingredient.Riboflavin = FindNutrient(405);
-           
+
             return ingredient;
         }
 
         private static string GetManufacturerOrFoodGroup(food food)
         {
-            string returnMe = "";
-            if (food.desc.fg !=null)
+            if (food.desc.fg == null || food.desc.fg == "")
             {
-                returnMe=food.desc.fg;
+                if (food.desc.manu == null || food.desc.manu == "")
+                {
+                    return "not provided";
+                }
+                else return food.desc.manu; 
             }
-            else if (food.desc.manu!=null)
-            {
-                returnMe = food.desc.manu;
-            }
-            return returnMe;
+            return food.desc.fg;
         }
 
         private static decimal FindNutrient(int nutrient_ID)
         {
+            if (food.nutrients == null) return 0;
+
             var target = (from x in food.nutrients
                           where x != null && x.nutrient_id == nutrient_ID && x.measures[0] != null
                           select x.measures[0]).FirstOrDefault();

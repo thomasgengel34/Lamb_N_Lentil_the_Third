@@ -1,12 +1,12 @@
-﻿using System.Collections.Generic;
+﻿using Lamb_N_Lentil.Domain;
+using Lamb_N_Lentil.Tests.MockUsdaAsyncSiteFoodList;
+using Lamb_N_Lentil.UI.Controllers;
+using Lamb_N_Lentil.UI.Models;
+using Microsoft.VisualStudio.TestTools.UnitTesting;
+using System.Collections.Generic;
+using System.Linq;
 using System.Threading.Tasks;
 using System.Web.Mvc;
-using Lamb_N_Lentil.Domain;
-using Lamb_N_Lentil.UI.Controllers;
-using Microsoft.VisualStudio.TestTools.UnitTesting;
-using System.Linq;
-using Lamb_N_Lentil.UI.Models;
-using Lamb_N_Lentil.Tests.MockUsdaSite;
 
 namespace Lamb_N_Lentil.Tests.Controllers
 {
@@ -18,7 +18,7 @@ namespace Lamb_N_Lentil.Tests.Controllers
         [TestInitialize]
         public void Setup()
         {
-          controller = new IngredientsController(null,new  MockUsdaAsync()); 
+          controller = new IngredientsController(null,new  MockUsdaAsyncFoodList()); 
         }
          
 

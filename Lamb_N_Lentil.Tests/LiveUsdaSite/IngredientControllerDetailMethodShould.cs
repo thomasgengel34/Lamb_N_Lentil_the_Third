@@ -9,19 +9,15 @@ namespace Lamb_N_Lentil.Tests.LiveUsdaSite
     [TestClass]
     public class IngredientControllerDetailMethodShould
     {
-        private IUsdaAsync usdaAsync { get; set; }
-        private IngredientsController Controller { get; set; }
-        private int standardTotal { get; set; } = 2699;
-        private int brandedTotal { get; set; } = 14;
-        private int Total { get; set; } = 4411; 
-        private int correctEqv=113;
-        private decimal correctCholesterol = 25;
-        
+        private readonly IUsdaAsync usdaAsync = new UsdaAsync();
+        private readonly IUsdaAsyncFoodReport usdaAsyncFoodReport = new UsdaAsyncFoodReport();
+        private IngredientsController Controller;
+        private readonly int correctEqv = 113;
+        private readonly decimal correctCholesterol = 25;
 
         public IngredientControllerDetailMethodShould()
         {
-            usdaAsync = new UsdaAsync();
-            Controller = new IngredientsController(null, usdaAsync);
+            Controller = new IngredientsController(null, usdaAsync, usdaAsyncFoodReport);
         }
 
 
@@ -30,7 +26,7 @@ namespace Lamb_N_Lentil.Tests.LiveUsdaSite
         public async Task HaveUpdateDateInTheViewModelForGreatValueDicedPeaches45032698()
         {
             var viewResult = await Controller.Details("45032698");
-            var model = (IngredientDetailViewModel)viewResult.Model; 
+            var model = (IngredientDetailViewModel)viewResult.Model;
             string correctUpDateDate = "04/10/2018";
             string returnedUpdateDate = model.UpdateDate;
             Assert.AreEqual(correctUpDateDate, returnedUpdateDate);
@@ -41,7 +37,7 @@ namespace Lamb_N_Lentil.Tests.LiveUsdaSite
         {
             var viewResult = await Controller.Details("45032698");
             var model = (IngredientDetailViewModel)viewResult.Model;
-         
+
             string correctLabel = "BOWL";
             string returnedLabel = model.Label;
             Assert.AreEqual(correctLabel, returnedLabel);
@@ -51,7 +47,7 @@ namespace Lamb_N_Lentil.Tests.LiveUsdaSite
         public async Task HaveBowlEqvInTheViewModelForGreatValueDicedPeaches45032698()
         {
             var viewResult = await Controller.Details("45032698");
-            var model = (IngredientDetailViewModel)viewResult.Model; 
+            var model = (IngredientDetailViewModel)viewResult.Model;
             decimal returnedEqv = model.Eqv;
             Assert.AreEqual(correctEqv, returnedEqv);
         }
@@ -61,8 +57,8 @@ namespace Lamb_N_Lentil.Tests.LiveUsdaSite
         {
             var viewResult = await Controller.Details("45039512");
             var model = (IngredientDetailViewModel)viewResult.Model;
-            decimal returned  = model.Cholesterol;
-            Assert.AreEqual(correctCholesterol, returned );
+            decimal returned = model.Cholesterol;
+            Assert.AreEqual(correctCholesterol, returned);
         }
 
         [TestMethod]
@@ -90,7 +86,7 @@ namespace Lamb_N_Lentil.Tests.LiveUsdaSite
         {
             var viewResult = await Controller.Details("45034617");
             var model = (IngredientDetailViewModel)viewResult.Model;
-            var correct =200.00M;
+            var correct = 200.00M;
             decimal returned = model.VitaminA;
             Assert.AreEqual(correct, returned);
         }

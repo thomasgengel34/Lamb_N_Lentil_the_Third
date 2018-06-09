@@ -1,23 +1,22 @@
-﻿using System;
-using System.Linq;
-using System.Threading.Tasks;
-using System.Web.Mvc;
-using Lamb_N_Lentil.Tests.MockUsdaSite;
+﻿using Lamb_N_Lentil.Tests.MockUsdaAsyncSiteFoodList;
 using Lamb_N_Lentil.UI.Controllers;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
+using System;
+using System.Linq;
+using System.Web.Mvc;
 
 namespace Lamb_N_Lentil.Tests.Controllers
 {
     [TestClass]
     public class IngredientControllerActionMethodsShouldInclude
     {
-        Type type { get; set; }
-        public IngredientsController Controller { get; set; }
+        Type type;
+        public IngredientsController controller;
 
         public IngredientControllerActionMethodsShouldInclude()
         {
             type = Type.GetType("Lamb_N_Lentil.UI.Controllers.IngredientsController, Lamb_N_Lentil.UI", true);
-            Controller = new IngredientsController(null,new MockUsdaAsync());
+            controller = new IngredientsController(null,new MockUsdaAsyncFoodList());
         }
         [TestMethod]
         public void CorrectNumberOfMethods()

@@ -5,10 +5,7 @@ namespace Lamb_N_Lentil.Domain.UsdaInformation
 {
     public interface IUsdaAsync
     {
-        Task<List<IIngredient>> GetListOfIngredientsFromTextSearch(string searchString, string dataSource = "");
-
-        Task<UsdaFoodReport> FetchUsdaFoodReport(string ndbno);
-
+        Task<List<IIngredient>> GetListOfIngredientsFromTextSearch(string searchString, string dataSource = ""); 
         int FetchedTotalFromSearch { get; set; }
         string FetchedIngredientsInIngredient { get; set; }
     }

@@ -1,6 +1,7 @@
 ﻿using System.ComponentModel.DataAnnotations;
 using Lamb_N_Lentil.Domain;
 using Lamb_N_Lentil.Domain.UsdaInformation;
+using System;
 
 namespace Lamb_N_Lentil.UI.Models
 {
@@ -21,6 +22,9 @@ namespace Lamb_N_Lentil.UI.Models
         [Display(Name = "List of Ingredients")]
         public string  IngredientsInIngredient { get; set; }
 
+        // for 2,000 calorie diet
+        public int TotalFatDailyPercentageValue { get; set; }
+
 
         public static IngredientListViewModel MapIIngredientToIngredientListViewModel(IIngredient ingredient)
         {
@@ -28,7 +32,8 @@ namespace Lamb_N_Lentil.UI.Models
             {
                 Description = ingredient.Description,
                 IngredientsInIngredient = ingredient.IngredientsInIngredient,
-                Ndbno = ingredient.Ndbno
+                Ndbno = ingredient.Ndbno,
+                TotalFatDailyPercentageValue =   Decimal.ToInt32(ingredient.TotalFat / 65) 
             };
             return Vm;
         }
@@ -43,17 +48,17 @@ namespace Lamb_N_Lentil.UI.Models
             return ingredient;
         }
 
-        //private static string GetDisplayNameOfUsdaDataSource(string source)
-        //{
-        //    if (source == UsdaDataSource.BrandedFoodProducts.ToString())
-        //    {
-        //        return "Branded Food Products";
-        //    }
-        //    else if (source == UsdaDataSource.StandardReference.ToString())
-        //    {
-        //        return "Standard Reference";
-        //    }
-        //    else return "Other or Not Provided";
-        //}
+        private static string GetDisplayNameOfUsdaDataSource(string source)
+        {
+            if (source == UsdaDataSource.BrandedFoodProducts.ToString())
+            {
+                return "Branded Food Products";
+            }
+            else if (source == UsdaDataSource.StandardReference.ToString())
+            {
+                return "Standard Reference";
+            }
+            else return "Other or Not Provided";
+        }
     }
 }

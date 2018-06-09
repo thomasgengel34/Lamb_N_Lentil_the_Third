@@ -39,7 +39,7 @@ namespace Lamb_N_Lentil.Domain.UsdaInformation
 
         private static async Task<string> GetIngredientsList(list.Food food)
         { 
-            IUsdaAsync usdaAsync = new UsdaAsync();
+            IUsdaAsyncFoodReport usdaAsync = new UsdaAsyncFoodReport();
             UsdaFoodReport report = await usdaAsync.FetchUsdaFoodReport(food.ndbno);
             string returnedIngredients = report.foods.First().food.ing.desc;
             string alternate="";

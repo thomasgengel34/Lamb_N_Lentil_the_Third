@@ -8,7 +8,7 @@ using System.Threading.Tasks;
 namespace Lamb_N_Lentil.Tests.LiveUsdaSite
 {
     [TestClass]
-    public class LiveUsdaAsyncShouldReturnValidFullFoodReportForHominy20030
+    public class LiveUsdaAsyncShouldReturnValidFoodReportForHominy20030
     {
         private string ndbno = "20030";
 
@@ -17,7 +17,7 @@ namespace Lamb_N_Lentil.Tests.LiveUsdaSite
         {
             string correctName = "Hominy, canned, white";
             UsdaAsync usdaAsync = new UsdaAsync();
-            UsdaFoodReport report = await usdaAsync.FetchFullUsdaFoodReport(ndbno);
+            UsdaFoodReport report = await usdaAsync.FetchUsdaFoodReport(ndbno);
             Assert.AreEqual( correctName, report.foods[0].food.desc.name);
         }
 
@@ -25,7 +25,7 @@ namespace Lamb_N_Lentil.Tests.LiveUsdaSite
         public async Task Hominy20030HasCorrectNdbno()
         { 
             UsdaAsync usdaAsync = new UsdaAsync();
-            UsdaFoodReport report = await usdaAsync.FetchFullUsdaFoodReport(ndbno);
+            UsdaFoodReport report = await usdaAsync.FetchUsdaFoodReport(ndbno);
             Assert.AreEqual(ndbno, report.foods[0].food.desc.ndbno);
         }
     }

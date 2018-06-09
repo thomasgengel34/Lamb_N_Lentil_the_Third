@@ -16,7 +16,7 @@ namespace Lamb_N_Lentil.UI.Models
 
         public int TotalFromSearch { get; set; }
 
-        [Display(Name = "List of Ingredients")]
+        [Display(Name = "INGREDIENTS")]
         public string IngredientsInIngredient { get; set; }
 
         [Display(Name = "Updated On")]
@@ -92,6 +92,16 @@ namespace Lamb_N_Lentil.UI.Models
 
         public decimal Protein { get; set; }
 
+        // for 2,000 calorie diet
+        public int TotalFatPercentageDailyValue { get; set; }
+        public int SaturatedFatPercentageDailyValue { get; set; }
+        public int CholesterolPercentageDailyValue { get; set; }
+        public int SodiumPercentageDailyValue { get; set; }
+        public int PotassiumPercentageDailyValue { get; set; }
+        public int TotalCarbohydratePercentageDailyValue { get; set; }
+        public int DietaryFiberPercentageDailyValue { get; set; }
+        public int VitaminAPercentageDailyValue { get; set; }
+
         public static IngredientDetailViewModel MapIIngredientToIngredientDetailViewModel(IIngredient ingredient)
         {
             IngredientDetailViewModel Vm = new IngredientDetailViewModel()
@@ -128,7 +138,16 @@ namespace Lamb_N_Lentil.UI.Models
                 Thiamine = ingredient.Thiamine,
                 Riboflavin = ingredient.Riboflavin,
                 Niacin = ingredient.Niacin,
-                ManufacturerOrFoodGroup=ingredient.ManufacturerOrFoodGroup
+                ManufacturerOrFoodGroup = ingredient.ManufacturerOrFoodGroup,
+
+                TotalFatPercentageDailyValue = Decimal.ToInt16(100 * ingredient.TotalFat / 65),
+                SaturatedFatPercentageDailyValue = Decimal.ToInt16(100 * ingredient.SaturatedFat / 20),
+                CholesterolPercentageDailyValue = Decimal.ToInt16(100 * ingredient.Cholesterol / 300),
+                SodiumPercentageDailyValue = Decimal.ToInt16(100 * ingredient.Sodium / 2400),
+                PotassiumPercentageDailyValue = Decimal.ToInt16(100 * ingredient.Sodium / 3500),
+                TotalCarbohydratePercentageDailyValue = Decimal.ToInt16(100 * ingredient.TotalCarbohydrate / 300),
+                DietaryFiberPercentageDailyValue = Decimal.ToInt16(100 * ingredient.DietaryFiber / 25),
+                VitaminAPercentageDailyValue = Decimal.ToInt16(100 * ingredient.DietaryFiber / 1000)
             };
             return Vm;
         }

@@ -139,71 +139,62 @@ h2.no_results {
     padding: 1%;
     font-family: Arial;
     color: black;
-    width: 50%;
-    padding: 0;
-    border: 0;
-    margin: 0;
+    width: 48%;
+    /*border: 0;*/
+    margin: 0 5px 0 5px;
 }
 
-#NutritionLabel h2{
-    padding-top:0;
-}
+    #NutritionLabel h1 {
+        font-size: 25px;
+        font-weight: 800;
+        padding-bottom: 0;
+        margin-bottom: 0;
+        border-bottom: 0;
+    }
 
-    #NutritionLabel hr {
+    #NutritionLabel p:first-of-type {
+        padding-top: 0;
+        margin-top: 0;
+        border-top: 0;
+    }
+
+    /*#NutritionLabel hr:nth-of-type(2) {
+        margin-top: 0;
+        padding-top: 0;
+    }*/
+
+    #NutritionLabel .thickHR {
+        height: 25px;
         width: 100%;
+        background-color: black;
+        margin-top: -20px;
+        padding-top: 0;
+    }
+
+    #NutritionLabel .mediumHR {
         height: 10px;
+        width: 100%;
+        background-color: black;
+        margin-top: 0px;
+        padding-top: 0;
+    }
+
+
+    #NutritionLabel .thinHR {
+        height: 2px;
+        width: 100%;
+        background-color: black;
+        padding: 0;
         margin: 0;
+        clear: both;
     }
+     
 
-        #NutritionLabel hr:first-of-type {
-            background: black;
-            height: 5px;
-        }
-
-        #NutritionLabel hr:nth-of-type(2),
-        #NutritionLabel hr:nth-of-type(4) {
-            background: black;
-            height: 11px;
-            margin-top: -5px;
-        }
-
-        #NutritionLabel hr:nth-of-type(3) { 
-            height: 1px;
-            margin-top: -5px;
-        }
-
-    #NutritionLabel h2:first-of-type {
-        margin-bottom: 0;
-        padding-bottom: 0;
+    #NutritionLabel > div {
+        width: 100%;
     }
-
-    #NutritionLabel p {
-        margin-bottom: 0;
-        padding-bottom: 0;
-    }
-
-        #NutritionLabel p:first-of-type, #NutritionLabel hr:nth-of-type(2) {
-            margin-top: 0;
-            padding-top: 0;
-        }
-
-#IngredientsDetailsTable div > div:first-of-type {
-    width: 33%; 
-    float: left;
-}
-
-#IngredientsDetailsTable div > div:nth-of-type(2) { 
-    float: left;
-    width: 33%;
-}
-
-#IngredientsDetailsTable div > div:last-of-type { 
-    float: right;
-    width: 33%;
-}
-
-
-#NutritionLabel h1, #NutritionLabel h2, #NutritionLabel p, #NutritionLabel dd, #NutritionLabel dt, #NutritionLabel dl, #NutritionLabel td, t {
+     
+#NutritionLabel h1, #NutritionLabel h2, #NutritionLabel p {
     background: white;
     padding: 1%;
     font-family: Arial;
@@ -211,44 +202,16 @@ h2.no_results {
 }
 
 #NutritionLabel .bold {
-    font-weight: 800; 
+    font-weight: 800;
 }
 
 #NutritionLabel .indented {
     padding-left: 5%;
 }
-
-#NutritionLabel .fontSmall {
-    font-size: x-small;
-}
+ 
 
 #NutritionLabel .right {
+    display: block;
     float: right;
-}
-
-#NutritionLabel .fullWidthBar {
-    height: 5px;
-    background-color: red;
-}
-
-#Nutrients .floatLeft{
-    float:left; 
-    width:50%;
-}
- 
-#Nutrients  .floatLeft div  {
-    background-color:yellow; 
 } 
-
-#Nutrients  .floatRight  div    {
-    background-color:blueviolet; 
-    width:100%;
-}
-
-#Nutrients div:nth-last-of-type(2),
-#Nutrients div:last-of-type 
-{
-    border-top: 1px solid black;
-}
-
 /* Nutrition Label - end*/

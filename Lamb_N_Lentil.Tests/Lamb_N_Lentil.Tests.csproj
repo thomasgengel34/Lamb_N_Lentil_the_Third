@@ -109,6 +109,7 @@
     <Compile Include="Controllers\IngredientControllerActionMethodsShouldInclude.cs" />
     <Compile Include="Controllers\IngredientControllerActionMethodsShould.cs" />
     <Compile Include="Controllers\IngredientControllerDetailsActionMethodShould.cs" />
+    <Compile Include="Controllers\IngredientControllerDetailsActionMethodTotalPercentageShould.cs" />
     <Compile Include="Infrastructure\UsdaDataSourceShould.cs" />
     <Compile Include="Content\SiteCssFileShould.cs" />
     <Compile Include="Controllers\EntityControllerShould.cs" />
@@ -121,9 +122,11 @@
     <Compile Include="LiveUsdaSite\LiveUsdaAsyncShouldReturnValidFullFoodReportForHominy20030.cs" />
     <Compile Include="LiveUsdaSite\IngredientControllerDetailMethodShould.cs" />
     <Compile Include="LiveUsdaSite\LiveUsdaAsyncTestForNutrientsShouldFind.cs" />
-    <Compile Include="MockUsdaSite\MockUsdaAsync.cs" />
-    <Compile Include="MockUsdaSite\MockUsdaAsyncTest.cs" />
-    <Compile Include="MockUsdaSite\MockUsdaAsyncShouldReturnValidFoodWhen.cs" />
+    <Compile Include="MockUsdaSiteFoodList\MockUsdaAsyncFoodList.cs" />
+    <Compile Include="MockUsdaSiteFoodReport\MockUsdaAsyncForFoodReports.cs" />
+    <Compile Include="MockUsdaSiteFoodList\MockUsdaAsyncFoodListTest.cs" />
+    <Compile Include="MockUsdaSiteFoodList\MockUsdaAsyncFoodListShouldReturnValidFoodWhen.cs" />
+    <Compile Include="MockUsdaSiteFoodReport\MockUsdaAsyncFoodReportTest.cs" />
     <Compile Include="Models\MapUsdaFoodReportToIngredientShould.cs" />
     <Compile Include="Models\IngredientDetailViewModelShould.cs" />
     <Compile Include="RouteTests.cs" />

@@ -8,8 +8,11 @@ using Microsoft.VisualStudio.TestTools.UnitTesting;
 namespace Lamb_N_Lentil.Tests.LiveUsdaSite
 {
     [TestClass]
-    public class LiveUsdaAsyncTest 
-    { 
+    public class LiveUsdaAsyncTest
+    {
+        public readonly IUsdaAsync usdaAsync= new UsdaAsync(); 
+        public readonly IUsdaAsyncFoodReport usdaAsyncFoodReport= new UsdaAsyncFoodReport();
+         
         [TestMethod]
         public void ReduceStringLengthToWhatWillWorkOnUsdaWillNotThrowErrorWithEmptyString()
         {
@@ -35,13 +38,13 @@ namespace Lamb_N_Lentil.Tests.LiveUsdaSite
             Assert.AreEqual(whatTestStringLengthShouldBe, testStringLength);
             Assert.AreEqual(correctLength, returnedString.Length);
         }
-         
+
 
         [TestMethod]
-       public async Task  ShouldGetListOfIngredientsFromTextSearch()
+        public async Task ShouldGetListOfIngredientsFromTextSearch()
         {
             string testString = "cream";
-               List<IIngredient> list = await new UsdaAsync().GetListOfIngredientsFromTextSearch(testString );
+            List<IIngredient> list = await new UsdaAsync().GetListOfIngredientsFromTextSearch(testString);
 
             Assert.IsNotNull(list);
             Assert.IsInstanceOfType(list, typeof(List<IIngredient>));
@@ -51,51 +54,48 @@ namespace Lamb_N_Lentil.Tests.LiveUsdaSite
         public async Task ShouldCreateNewIngredientsListWhenNoResultsASreFound()
         {
             string testString = "qq";
-            List<IIngredient> list = await new UsdaAsync().GetListOfIngredientsFromTextSearch(testString );
+            List<IIngredient> list = await new UsdaAsync().GetListOfIngredientsFromTextSearch(testString);
 
             Assert.IsNotNull(list);
             Assert.IsInstanceOfType(list, typeof(List<IIngredient>));
         }
 
-          
+
 
         [TestMethod]
         public async Task ReturnIngredientsListInFoodReport()
-        {
-            IUsdaAsync usdaAsync = new UsdaAsync();
+        { 
             string testNdbno = "45032698";
             string correctIngredients = "DICED PEACHES, WATER, SUGAR, NATURAL FLAVORS, ASCORBIC ACID (VITAMIN C) TO PROTECT COLOR, CITRIC ACID.";
-             
-            UsdaFoodReport report = await usdaAsync.FetchUsdaFoodReport(testNdbno);
+
+            UsdaFoodReport report = await usdaAsyncFoodReport.FetchUsdaFoodReport(testNdbno);
             string returnedIngredients = report.foods.First().food.ing.desc;
             Assert.AreEqual(correctIngredients, returnedIngredients);
         }
 
         [TestMethod]
         public async Task ReturnIngredientsListInFoodReportFor078895122565()
-        {
-            IUsdaAsync usdaAsync = new UsdaAsync();
+        { 
             string testString = "078895122565";
             string correctIngredients = "SUGAR, SALTED PLUMS (PLUMS, SALT), WATER, RICE VINEGAR, MODIFIED CORN STARCH, GINGER, CITRIC ACID, SODIUM CITRATE, CHILI PEPPERS, XANTHAN GUM.";
 
             List<IIngredient> list = await new UsdaAsync().GetListOfIngredientsFromTextSearch(testString);
-            UsdaFoodReport report = await usdaAsync.FetchUsdaFoodReport(list.First().Ndbno);
+            UsdaFoodReport report = await usdaAsyncFoodReport.FetchUsdaFoodReport(list.First().Ndbno);
             string returnedIngredients = report.foods.First().food.ing.desc;
             Assert.AreEqual(correctIngredients, returnedIngredients);
         }
 
         [TestMethod]
         public async Task ReturnFoodGroupFoodReportForCheddarCheese()
-        {
-            IUsdaAsync usdaAsync = new UsdaAsync();
+        { 
             string testString = "01009";
             string correct = "Dairy and Egg Products";
-             
-            
-            UsdaFoodReport report = await usdaAsync.FetchUsdaFoodReport(testString);
-           
-           string returned  = report.foods.First().food.desc.fg;
-           Assert.AreEqual(correct , returned );
+
+
+            UsdaFoodReport report = await usdaAsyncFoodReport.FetchUsdaFoodReport(testString);
+
+            string returned = report.foods.First().food.desc.fg;
+            Assert.AreEqual(correct, returned);
         }
     }
 }
