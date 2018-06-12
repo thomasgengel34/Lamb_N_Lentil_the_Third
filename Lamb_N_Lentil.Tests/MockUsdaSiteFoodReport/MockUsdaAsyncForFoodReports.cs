@@ -433,6 +433,43 @@ namespace Lamb_N_Lentil.Tests.MockUsdaSiteFoodReport
                 report.foods[0].food.nutrients[15].measures[0].value = 0;
             }
 
+            if (ndbno == "ShouldReturnIngredientsWithPercentageDailyValueVitaminA1000")
+            {
+                report.foods[0].food.nutrients[15].measures[0].value = 1000;
+            }
+            if (ndbno== "ShouldReturnIngredientsWithPercentageDailyValueVitaminC0")
+            {
+                report.foods[0].food.nutrients[18].measures[0].value = 0;
+            }
+            if (ndbno== "ShouldReturnIngredientsWithPercentageDailyValueVitaminC60")
+            {
+                report.foods[0].food.nutrients[18].measures[0].value = 60;
+            }
+            if (ndbno== "ShouldReturnIngredientsWithPercentageDailyValueCalcium0")
+            {
+                report.foods[0].food.nutrients[1].measures[0].value = 0;
+            }
+            if (ndbno== "ShouldReturnIngredientsWithPercentageDailyValueCalcium1")
+            {
+                report.foods[0].food.nutrients[1].measures[0].value = 1;
+            }
+            if (ndbno == "ShouldReturnIngredientsWithPercentageDailyValueIron0")
+            {
+                report.foods[0].food.nutrients[3].measures[0].value = 0;
+            }
+            if (ndbno == "ShouldReturnIngredientsWithPercentageDailyValueIron20")
+            {
+                report.foods[0].food.nutrients[3].measures[0].value = 18;
+            }
+            if (ndbno==  "ShouldReturnIngredientsWithPercentageDailyValueThiamine0")
+            {
+                report.foods[0].food.nutrients[12].measures[0].value = 0;
+            }
+            if (ndbno== "ShouldReturnIngredientsWithPercentageDailyValueThiamine1point5")
+            {
+                report.foods[0].food.nutrients[12].measures[0].value = 1.5M;
+            }
+
             if (ndbno == "ManufacturerNotFoodGroup")
             {
                 report.foods[0].food.desc.fg = "";

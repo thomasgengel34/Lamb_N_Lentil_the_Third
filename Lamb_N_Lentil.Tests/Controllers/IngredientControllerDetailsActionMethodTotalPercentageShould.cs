@@ -21,7 +21,7 @@ namespace Lamb_N_Lentil.Tests.Controllers
         public IngredientsController Controller { get; set; }
 
         [TestInitialize]
-        public new void GetViewResultAsync()
+        public  void GetViewResultAsync()
         {
             Controller = new IngredientsController(null, asyncFoodList, asyncFoodReport); 
         }
@@ -38,7 +38,7 @@ namespace Lamb_N_Lentil.Tests.Controllers
         }
 
         [TestMethod]
-        public async Task ReturnPercentDailyValueOfZeroForTotalFatOf65()
+        public async Task ReturnPercentDailyValueOf100ForTotalFatOf65()
         {
             vr = await Controller.Details("ShouldReturnIngredientsWithPercentageDailyValueTotalFat65");
             model = (IngredientDetailViewModel)vr.Model;
@@ -58,7 +58,7 @@ namespace Lamb_N_Lentil.Tests.Controllers
         }
 
         [TestMethod]
-        public async Task ReturnPercentDailyValueOfZeroForSaturatedFatOf20()
+        public async Task ReturnPercentDailyValueOf100ForSaturatedFatOf20()
         {
             vr = await Controller.Details("ShouldReturnIngredientsWithPercentageDailyValueSaturatedFat20");
             model = (IngredientDetailViewModel)vr.Model;
@@ -78,7 +78,7 @@ namespace Lamb_N_Lentil.Tests.Controllers
         }
 
         [TestMethod]
-        public async Task ReturnPercentDailyValueOfZeroForCholesterolOf300()
+        public async Task ReturnPercentDailyValueOf100ForCholesterolOf300()
         {
             vr = await Controller.Details("ShouldReturnIngredientsWithPercentageDailyValueCholesterol300");
             model = (IngredientDetailViewModel)vr.Model;
@@ -98,7 +98,7 @@ namespace Lamb_N_Lentil.Tests.Controllers
         }
 
         [TestMethod]
-        public async Task ReturnPercentDailyValueOfZeroForSodiumOf2400()
+        public async Task ReturnPercentDailyValueOf100ForSodiumOf2400()
         {
             vr = await Controller.Details("ShouldReturnIngredientsWithPercentageDailyValueSodium2400");
             model = (IngredientDetailViewModel)vr.Model;
@@ -118,7 +118,7 @@ namespace Lamb_N_Lentil.Tests.Controllers
         }
 
         [TestMethod]
-        public async Task ReturnPercentDailyValueOfZeroForPotassiumOf3500()
+        public async Task ReturnPercentDailyValueOf100ForPotassiumOf3500()
         {
             vr = await Controller.Details("ShouldReturnIngredientsWithPercentageDailyValuePotassium3500");
             model = (IngredientDetailViewModel)vr.Model;
@@ -138,7 +138,7 @@ namespace Lamb_N_Lentil.Tests.Controllers
         }
 
         [TestMethod]
-        public async Task ReturnPercentDailyValueOfZeroForTotalCarbohydrateOf300()
+        public async Task ReturnPercentDailyValueOf100ForTotalCarbohydrateOf300()
         {
             vr = await Controller.Details("ShouldReturnIngredientsWithPercentageDailyValueTotalCarbohydrate300");
             model = (IngredientDetailViewModel)vr.Model;
@@ -158,7 +158,7 @@ namespace Lamb_N_Lentil.Tests.Controllers
         }
 
         [TestMethod]
-        public async Task ReturnPercentDailyValueOfZeroForDietaryFiberOf25()
+        public async Task ReturnPercentDailyValueOf100ForDietaryFiberOf25()
         {
             vr = await Controller.Details("ShouldReturnIngredientsWithPercentageDailyValueDietaryFiber25");
             model = (IngredientDetailViewModel)vr.Model;
@@ -166,26 +166,129 @@ namespace Lamb_N_Lentil.Tests.Controllers
             int returned = model.DietaryFiberPercentageDailyValue;
             Assert.AreEqual(correct, returned);
         }
-        // under development
-        //[TestMethod]
-        //public async Task ReturnPercentDailyValueOfZeroForVitaminAOfZero()
-        //{
-        //    vr = await Controller.Details("ShouldReturnIngredientsWithPercentageDailyValueVitaminA0");
-        //    model = (IngredientDetailViewModel)vr.Model;
-        //    int correct = 0;
-        //    int returned = model.VitaminAPercentageDailyValue;
-        //    Assert.AreEqual(correct, returned);
-        //}
 
-        //[TestMethod]
-        //public async Task ReturnPercentDailyValueOfZeroForVitaminAOf1000()
-        //{
-        //    vr = await Controller.Details("ShouldReturnIngredientsWithPercentageDailyValueVitaminA1000");
-        //    model = (IngredientDetailViewModel)vr.Model;
-        //    int correct = 100;
-        //    int returned = model.VitaminAPercentageDailyValue;
-        //    Assert.AreEqual(correct, returned);
-        //}
+        [TestMethod]
+        public async Task ReturnPercentDailyValueOfZeroForVitaminAOfZero()
+        {
+            vr = await Controller.Details("ShouldReturnIngredientsWithPercentageDailyValueVitaminA0");
+            model = (IngredientDetailViewModel)vr.Model;
+            int correct = 0;
+            int returned = model.VitaminAPercentageDailyValue;
+            Assert.AreEqual(correct, returned);
+        }
 
+        [TestMethod]
+        public async Task ReturnPercentDailyValueOf100ForVitaminAOf1000()
+        {
+            vr = await Controller.Details("ShouldReturnIngredientsWithPercentageDailyValueVitaminA1000");
+            model = (IngredientDetailViewModel)vr.Model;
+            int correct = 100;
+            int returned = model.VitaminAPercentageDailyValue;
+            Assert.AreEqual(correct, returned);
+        }
+
+
+
+        [TestMethod]
+        public async Task ReturnPercentDailyValueOfZeroForVitaminCOfZero()
+        {
+            vr = await Controller.Details("ShouldReturnIngredientsWithPercentageDailyValueVitaminC0");
+            model = (IngredientDetailViewModel)vr.Model;
+            int correct = 0;
+            int returned = model.VitaminCPercentageDailyValue;
+            Assert.AreEqual(correct, returned);
+        }
+
+        [TestMethod]
+        public async Task ReturnPercentDailyValueOf100ForVitaminCOf1000()
+        {
+            vr = await Controller.Details("ShouldReturnIngredientsWithPercentageDailyValueVitaminC60");
+            model = (IngredientDetailViewModel)vr.Model;
+            int correct = 100;
+            int returned = model.VitaminCPercentageDailyValue;
+            Assert.AreEqual(correct, returned);
+        }
+
+        [TestMethod]
+        public async Task ReturnPercentDailyValueOfZeroForCalciumOfZero()
+        {
+            vr = await Controller.Details("ShouldReturnIngredientsWithPercentageDailyValueCalcium0");
+            model = (IngredientDetailViewModel)vr.Model;
+            int correct = 0;
+            int returned = model.CalciumPercentageDailyValue;
+            Assert.AreEqual(correct, returned);
+        }
+
+        [TestMethod]
+        public async Task ReturnPercentDailyValueOf100ForCalciumOf1()
+        {
+            vr = await Controller.Details("ShouldReturnIngredientsWithPercentageDailyValueCalcium1");
+            model = (IngredientDetailViewModel)vr.Model;
+            int correct = 100;
+            int returned = model.CalciumPercentageDailyValue;
+            Assert.AreEqual(correct, returned);
+        }
+
+        [TestMethod]
+        public async Task ReturnPercentDailyValueOfZeroForIronOfZero()
+        {
+            vr = await Controller.Details("ShouldReturnIngredientsWithPercentageDailyValueIron0");
+            model = (IngredientDetailViewModel)vr.Model;
+            int correct = 0;
+            int returned = model.IronPercentageDailyValue;
+            Assert.AreEqual(correct, returned);
+        }
+
+        [TestMethod]
+        public async Task ReturnPercentDailyValueOf100ForIronOf20()
+        {
+            vr = await Controller.Details("ShouldReturnIngredientsWithPercentageDailyValueIron20");
+            model = (IngredientDetailViewModel)vr.Model;
+            int correct = 100;
+            int returned = model.IronPercentageDailyValue;
+            Assert.AreEqual(correct, returned);
+        }
+
+
+        [TestMethod]
+        public async Task ReturnPercentDailyValueOfZeroForThiamineOfZero()
+        {
+            vr = await Controller.Details("ShouldReturnIngredientsWithPercentageDailyValueThiamine0");
+            model = (IngredientDetailViewModel)vr.Model;
+            int correct = 0;
+            int returned = model.ThiaminePercentageDailyValue;
+            Assert.AreEqual(correct, returned);
+        }
+
+        [TestMethod]
+        public async Task ReturnPercentDailyValueOf100ForThiamineOf1point5()
+        {
+            vr = await Controller.Details("ShouldReturnIngredientsWithPercentageDailyValueThiamine1point5");
+            model = (IngredientDetailViewModel)vr.Model;
+            int correct = 100;
+            int returned = model.ThiaminePercentageDailyValue;
+            Assert.AreEqual(correct, returned);
+        }
+
+        [TestMethod]
+        public async Task ReturnPercentDailyValueOfZeroForRiboflavinOfZero()
+        {
+            Assert.Fail();
+            vr = await Controller.Details("ShouldReturnIngredientsWithPercentageDailyValueRiboflavin0");
+            model = (IngredientDetailViewModel)vr.Model;
+            int correct = 0;
+            //int returned = model.RiboflavinPercentageDailyValue;
+            //Assert.AreEqual(correct, returned);
+        }
+
+       // [TestMethod]
+        public async Task ReturnPercentDailyValueOf100ForRiboflavinOf1point5()
+        {
+            //vr = await Controller.Details("ShouldReturnIngredientsWithPercentageDailyValueRiboflavin1point5");
+            //model = (IngredientDetailViewModel)vr.Model;
+            //int correct = 100;
+            //int returned = model.RiboflavinPercentageDailyValue;
+            //Assert.AreEqual(correct, returned);
+        }
     } 
 }

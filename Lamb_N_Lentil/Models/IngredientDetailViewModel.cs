@@ -101,6 +101,10 @@ namespace Lamb_N_Lentil.UI.Models
         public int TotalCarbohydratePercentageDailyValue { get; set; }
         public int DietaryFiberPercentageDailyValue { get; set; }
         public int VitaminAPercentageDailyValue { get; set; }
+        public int VitaminCPercentageDailyValue { get; set; }
+        public int CalciumPercentageDailyValue { get; set; }
+        public int IronPercentageDailyValue { get; set; }
+        public int ThiaminePercentageDailyValue { get; set; }
 
         public static IngredientDetailViewModel MapIIngredientToIngredientDetailViewModel(IIngredient ingredient)
         {
@@ -147,7 +151,11 @@ namespace Lamb_N_Lentil.UI.Models
                 PotassiumPercentageDailyValue = Decimal.ToInt16(100 * ingredient.Sodium / 3500),
                 TotalCarbohydratePercentageDailyValue = Decimal.ToInt16(100 * ingredient.TotalCarbohydrate / 300),
                 DietaryFiberPercentageDailyValue = Decimal.ToInt16(100 * ingredient.DietaryFiber / 25),
-                VitaminAPercentageDailyValue = Decimal.ToInt16(100 * ingredient.DietaryFiber / 1000)
+                VitaminAPercentageDailyValue = Decimal.ToInt16(100 * ingredient.VitaminA / 1000),
+                VitaminCPercentageDailyValue = Decimal.ToInt16(100 * ingredient.VitaminC / 60),
+                CalciumPercentageDailyValue = Decimal.ToInt16(100 * ingredient.Calcium / 1) ,   // keep like this to faciliate changes and conform to pattern
+                  IronPercentageDailyValue = Decimal.ToInt16(100 * ingredient.Iron /18),
+                  ThiaminePercentageDailyValue=Decimal.ToInt16(100 * ingredient.Thiamine / 1.5M),
             };
             return Vm;
         }

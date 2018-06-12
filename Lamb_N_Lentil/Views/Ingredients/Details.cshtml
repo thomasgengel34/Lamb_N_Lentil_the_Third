@@ -91,19 +91,19 @@
     </div>
     <div class="mediumHR"></div>
     <div class="row">
-        <div class="col-sm-6">@Html.DisplayNameFor(m => m.VitaminA) @Html.DisplayFor(m => m.VitaminA) g</div>
+        <div class="col-sm-6">@Html.DisplayNameFor(m => m.VitaminA) @Html.DisplayFor(m => m.VitaminA) g (@Html.DisplayFor(m=>m.VitaminAPercentageDailyValue)%)</div>
         <div class="col-sm-1">&#9679; </div>
-        <div class="col-sm-5">@Html.DisplayNameFor(m => m.VitaminC) @Html.DisplayFor(m => m.VitaminC) g</div>
+        <div class="col-sm-5">@Html.DisplayNameFor(m => m.VitaminC) @Html.DisplayFor(m => m.VitaminC) g  (@Html.DisplayFor(m => m.VitaminCPercentageDailyValue)%)</div>
     </div>
     <div class="thinHR"></div>
     <div class="row">
         <div class="col-sm-6">@Html.DisplayNameFor(m => m.Calcium) @Html.DisplayFor(m => m.Calcium) g</div>
         <div class="col-sm-1">&#9679; </div>
-        <div class="col-sm-5">@Html.DisplayNameFor(m => m.Iron) @Html.DisplayFor(m => m.Iron) g</div>
+        <div class="col-sm-5">@Html.DisplayNameFor(m => m.Iron) @Html.DisplayFor(m => m.Iron) g   (@Html.DisplayFor(m => m.IronPercentageDailyValue)%)</div>
     </div>
     <div class="thinHR"></div>
     <div class="row">
-        <div class="col-sm-6">@Html.DisplayNameFor(m => m.Thiamine) @Html.DisplayFor(m => m.Thiamine) g</div>
+        <div class="col-sm-6">@Html.DisplayFor(m => m.Thiamine) g (@Html.DisplayFor(m => m.ThiaminePercentageDailyValue)%)</div>
         <div class="col-sm-1">&#9679;</div>
         <div class="col-sm-5">@Html.DisplayNameFor(m => m.Riboflavin) @Html.DisplayFor(m => m.Riboflavin) g</div>
     </div>
