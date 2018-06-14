@@ -98,6 +98,7 @@ namespace Lamb_N_Lentil.UI.Models
         public int CholesterolPercentageDailyValue { get; set; }
         public int SodiumPercentageDailyValue { get; set; }
         public int PotassiumPercentageDailyValue { get; set; }
+
         public int TotalCarbohydratePercentageDailyValue { get; set; }
         public int DietaryFiberPercentageDailyValue { get; set; }
         public int VitaminAPercentageDailyValue { get; set; }
@@ -105,6 +106,13 @@ namespace Lamb_N_Lentil.UI.Models
         public int CalciumPercentageDailyValue { get; set; }
         public int IronPercentageDailyValue { get; set; }
         public int ThiaminePercentageDailyValue { get; set; }
+        public int RiboflavinPercentageDailyValue { get; set; }
+        public int NiacinPercentageDailyValue { get; set; }
+        public int FolicAcidPercentageDailyValue { get; set; }
+        public int VitaminDPercentageDailyValue { get; set; }
+        public int VitaminB12PercentageDailyValue { get; set; }
+        public int VitaminB6PercentageDailyValue { get; set; } 
+
 
         public static IngredientDetailViewModel MapIIngredientToIngredientDetailViewModel(IIngredient ingredient)
         {
@@ -156,6 +164,12 @@ namespace Lamb_N_Lentil.UI.Models
                 CalciumPercentageDailyValue = Decimal.ToInt16(100 * ingredient.Calcium / 1) ,   // keep like this to faciliate changes and conform to pattern
                   IronPercentageDailyValue = Decimal.ToInt16(100 * ingredient.Iron /18),
                   ThiaminePercentageDailyValue=Decimal.ToInt16(100 * ingredient.Thiamine / 1.5M),
+                RiboflavinPercentageDailyValue= Decimal.ToInt16(100 * ingredient.Riboflavin / 1.7M),
+                NiacinPercentageDailyValue = Decimal.ToInt16(100 * ingredient.Niacin / 20.0M), 
+                  FolicAcidPercentageDailyValue = Decimal.ToInt16(100 * ingredient.FolicAcid / 400.0M),
+                VitaminDPercentageDailyValue = Decimal.ToInt16(100 * ingredient.VitaminD / 400.0M),
+                VitaminB12PercentageDailyValue = Decimal.ToInt16(100 * ingredient.VitaminB12 / 6.0M),
+                VitaminB6PercentageDailyValue = Decimal.ToInt16(100 * ingredient.VitaminB12 / 2.0M),
             };
             return Vm;
         }

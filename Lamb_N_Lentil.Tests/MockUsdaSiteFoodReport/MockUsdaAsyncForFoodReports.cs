@@ -469,6 +469,10 @@ namespace Lamb_N_Lentil.Tests.MockUsdaSiteFoodReport
             {
                 report.foods[0].food.nutrients[12].measures[0].value = 1.5M;
             }
+            if (ndbno==  "ShouldReturnIngredientsWithPercentageDailyValueRiboflavin0")
+            {
+                report.foods[0].food.nutrients[9].measures[0].value = 0;
+            }
 
             if (ndbno == "ManufacturerNotFoodGroup")
             {

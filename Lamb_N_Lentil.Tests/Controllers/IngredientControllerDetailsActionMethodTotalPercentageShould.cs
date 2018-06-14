@@ -272,13 +272,12 @@ namespace Lamb_N_Lentil.Tests.Controllers
 
         [TestMethod]
         public async Task ReturnPercentDailyValueOfZeroForRiboflavinOfZero()
-        {
-            Assert.Fail();
+        { 
             vr = await Controller.Details("ShouldReturnIngredientsWithPercentageDailyValueRiboflavin0");
             model = (IngredientDetailViewModel)vr.Model;
             int correct = 0;
-            //int returned = model.RiboflavinPercentageDailyValue;
-            //Assert.AreEqual(correct, returned);
+           int returned = model.RiboflavinPercentageDailyValue;
+           Assert.AreEqual(correct, returned);
         }
 
        // [TestMethod]
