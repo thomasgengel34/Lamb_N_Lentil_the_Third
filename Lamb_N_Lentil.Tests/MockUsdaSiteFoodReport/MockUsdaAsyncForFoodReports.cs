@@ -12,7 +12,7 @@ namespace Lamb_N_Lentil.Tests.MockUsdaSiteFoodReport
         protected UsdaFoodReport report;
 
         public MockUsdaAsyncForFoodReport()
-        { 
+        {
             report = new UsdaFoodReport
             {
                 foods = new foods[1]
@@ -41,13 +41,15 @@ namespace Lamb_N_Lentil.Tests.MockUsdaSiteFoodReport
                 name = "Total Fat",
                 nutrient_id = 204,
                 value = "24",
+                unit = "unit for total fat",
                 measures = new measures[1]
             };
             report.foods[0].food.nutrients[0].measures[0] = new measures
             {
                 label = "default label total fat",
                 eqv = 3.1415926M,
-                value = 654.2M
+                value = 654.2M,
+
             };
 
             report.foods[0].food.nutrients[1] = new nutrients
@@ -69,6 +71,7 @@ namespace Lamb_N_Lentil.Tests.MockUsdaSiteFoodReport
                 name = "Cholesterol",
                 nutrient_id = 601,
                 value = "25",
+                unit= "unit for cholesterol",
                 measures = new measures[1]
             };
             report.foods[0].food.nutrients[2].measures[0] = new measures
@@ -125,6 +128,7 @@ namespace Lamb_N_Lentil.Tests.MockUsdaSiteFoodReport
                 name = "Monosaturated Fat",
                 nutrient_id = 645,
                 value = "29",
+                unit= "unit for monounsaturated fat",
                 measures = new measures[1]
             };
             report.foods[0].food.nutrients[6].measures[0] = new measures
@@ -139,6 +143,7 @@ namespace Lamb_N_Lentil.Tests.MockUsdaSiteFoodReport
                 name = "Polyunsaturated Fat",
                 nutrient_id = 646,
                 value = "30",
+                unit= "unit for polyunsaturated fat",
                 measures = new measures[1]
             };
             report.foods[0].food.nutrients[7].measures[0] = new measures
@@ -181,6 +186,7 @@ namespace Lamb_N_Lentil.Tests.MockUsdaSiteFoodReport
                 name = "Sodium",
                 nutrient_id = 307,
                 value = "33",
+                unit= "unit for sodium",
                 measures = new measures[1]
             };
             report.foods[0].food.nutrients[10].measures[0] = new measures
@@ -237,6 +243,7 @@ namespace Lamb_N_Lentil.Tests.MockUsdaSiteFoodReport
                 name = "Trans Fat",
                 nutrient_id = 605,
                 value = "37",
+                unit= "unit for trans fat",
                 measures = new measures[1]
             };
             report.foods[0].food.nutrients[14].measures[0] = new measures
@@ -321,6 +328,7 @@ namespace Lamb_N_Lentil.Tests.MockUsdaSiteFoodReport
                 name = "Saturated Fat",
                 nutrient_id = 606,
                 value = "42",
+                unit="unit for saturated fat",
                 measures = new measures[1]
             };
             report.foods[0].food.nutrients[20].measures[0] = new measures
@@ -356,7 +364,7 @@ namespace Lamb_N_Lentil.Tests.MockUsdaSiteFoodReport
                 label = "default label dietary fiber",
                 eqv = 2.3M,
                 value = 306.3M
-            }; 
+            };
         }
 
 
@@ -371,7 +379,7 @@ namespace Lamb_N_Lentil.Tests.MockUsdaSiteFoodReport
             {
                 report.foods[0].food.nutrients[0].measures[0].label = "I am a label";
             }
-            if (ndbno== "ShouldReturnIngredientsWithPercentageDailyValueTotalFat0")
+            if (ndbno == "ShouldReturnIngredientsWithPercentageDailyValueTotalFat0")
             {
                 report.foods[0].food.nutrients[0].measures[0].value = 0;
             }
@@ -388,15 +396,15 @@ namespace Lamb_N_Lentil.Tests.MockUsdaSiteFoodReport
             {
                 report.foods[0].food.nutrients[20].measures[0].value = 20;
             }
-            if (ndbno== "ShouldReturnIngredientsWithPercentageDailyValueCholesterol0")
+            if (ndbno == "ShouldReturnIngredientsWithPercentageDailyValueCholesterol0")
             {
                 report.foods[0].food.nutrients[2].measures[0].value = 0;
             }
-            if (ndbno== "ShouldReturnIngredientsWithPercentageDailyValueCholesterol300")
+            if (ndbno == "ShouldReturnIngredientsWithPercentageDailyValueCholesterol300")
             {
                 report.foods[0].food.nutrients[2].measures[0].value = 300;
             }
-            if (ndbno== "ShouldReturnIngredientsWithPercentageDailyValueSodium0")
+            if (ndbno == "ShouldReturnIngredientsWithPercentageDailyValueSodium0")
             {
                 report.foods[0].food.nutrients[10].measures[0].value = 0;
             }
@@ -408,19 +416,19 @@ namespace Lamb_N_Lentil.Tests.MockUsdaSiteFoodReport
             {
                 report.foods[0].food.nutrients[10].measures[0].value = 0;
             }
-            if (ndbno== "ShouldReturnIngredientsWithPercentageDailyValuePotassium3500")
+            if (ndbno == "ShouldReturnIngredientsWithPercentageDailyValuePotassium3500")
             {
                 report.foods[0].food.nutrients[10].measures[0].value = 3500;
             }
-            if (ndbno== "ShouldReturnIngredientsWithPercentageDailyValueTotalCarbohydrate0")
+            if (ndbno == "ShouldReturnIngredientsWithPercentageDailyValueTotalCarbohydrate0")
             {
                 report.foods[0].food.nutrients[13].measures[0].value = 0;
             }
-            if (ndbno== "ShouldReturnIngredientsWithPercentageDailyValueTotalCarbohydrate300")
-            { 
+            if (ndbno == "ShouldReturnIngredientsWithPercentageDailyValueTotalCarbohydrate300")
+            {
                 report.foods[0].food.nutrients[13].measures[0].value = 300;
             }
-            if (ndbno== "ShouldReturnIngredientsWithPercentageDailyValueDietaryFiber0")
+            if (ndbno == "ShouldReturnIngredientsWithPercentageDailyValueDietaryFiber0")
             {
                 report.foods[0].food.nutrients[22].measures[0].value = 0;
             }
@@ -428,7 +436,7 @@ namespace Lamb_N_Lentil.Tests.MockUsdaSiteFoodReport
             {
                 report.foods[0].food.nutrients[22].measures[0].value = 25;
             }
-            if (ndbno== "ShouldReturnIngredientsWithPercentageDailyValueVitaminA0")
+            if (ndbno == "ShouldReturnIngredientsWithPercentageDailyValueVitaminA0")
             {
                 report.foods[0].food.nutrients[15].measures[0].value = 0;
             }
@@ -437,19 +445,19 @@ namespace Lamb_N_Lentil.Tests.MockUsdaSiteFoodReport
             {
                 report.foods[0].food.nutrients[15].measures[0].value = 1000;
             }
-            if (ndbno== "ShouldReturnIngredientsWithPercentageDailyValueVitaminC0")
+            if (ndbno == "ShouldReturnIngredientsWithPercentageDailyValueVitaminC0")
             {
                 report.foods[0].food.nutrients[18].measures[0].value = 0;
             }
-            if (ndbno== "ShouldReturnIngredientsWithPercentageDailyValueVitaminC60")
+            if (ndbno == "ShouldReturnIngredientsWithPercentageDailyValueVitaminC60")
             {
                 report.foods[0].food.nutrients[18].measures[0].value = 60;
             }
-            if (ndbno== "ShouldReturnIngredientsWithPercentageDailyValueCalcium0")
+            if (ndbno == "ShouldReturnIngredientsWithPercentageDailyValueCalcium0")
             {
                 report.foods[0].food.nutrients[1].measures[0].value = 0;
             }
-            if (ndbno== "ShouldReturnIngredientsWithPercentageDailyValueCalcium1")
+            if (ndbno == "ShouldReturnIngredientsWithPercentageDailyValueCalcium1")
             {
                 report.foods[0].food.nutrients[1].measures[0].value = 1;
             }
@@ -461,24 +469,28 @@ namespace Lamb_N_Lentil.Tests.MockUsdaSiteFoodReport
             {
                 report.foods[0].food.nutrients[3].measures[0].value = 18;
             }
-            if (ndbno==  "ShouldReturnIngredientsWithPercentageDailyValueThiamine0")
+            if (ndbno == "ShouldReturnIngredientsWithPercentageDailyValueThiamine0")
             {
                 report.foods[0].food.nutrients[12].measures[0].value = 0;
             }
-            if (ndbno== "ShouldReturnIngredientsWithPercentageDailyValueThiamine1point5")
+            if (ndbno == "ShouldReturnIngredientsWithPercentageDailyValueThiamine1point5")
             {
                 report.foods[0].food.nutrients[12].measures[0].value = 1.5M;
             }
-            if (ndbno==  "ShouldReturnIngredientsWithPercentageDailyValueRiboflavin0")
+            if (ndbno == "ShouldReturnIngredientsWithPercentageDailyValueRiboflavin0")
             {
                 report.foods[0].food.nutrients[9].measures[0].value = 0;
+            }
+            if (ndbno == "ShouldReturnIngredientsWithPercentageDailyValueRiboflavin1point7")
+            {
+                report.foods[0].food.nutrients[9].measures[0].value = 1.7M;
             }
 
             if (ndbno == "ManufacturerNotFoodGroup")
             {
                 report.foods[0].food.desc.fg = "";
             }
-            if (ndbno== "NoManufacturerOrFoodGroup")
+            if (ndbno == "NoManufacturerOrFoodGroup")
             {
                 report.foods[0].food.desc.fg = "";
                 report.foods[0].food.desc.manu = "";

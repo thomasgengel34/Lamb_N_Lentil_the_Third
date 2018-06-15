@@ -70,5 +70,13 @@ namespace Lamb_N_Lentil.Domain
             PropertyChanged?.Invoke(this, new PropertyChangedEventArgs(name));
             _CaloriesFromFat = 9 * _TotalFat;
         }
+
+        public string TotalFatUnit { get; set; }
+        public string SaturatedFatUnit { get; set; }
+        public string TransFatUnit { get; set; }
+        public string PolyunsaturatedFatUnit { get; set; }
+        public string MonounsaturatedFatUnit { get; set; }
+        public string CholesterolUnit { get; set; }
+        public string SodiumUnit { get; set; }
     }
 }

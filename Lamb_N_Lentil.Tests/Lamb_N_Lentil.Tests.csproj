@@ -109,6 +109,7 @@
     <Compile Include="Controllers\IngredientControllerActionMethodsShouldInclude.cs" />
     <Compile Include="Controllers\IngredientControllerActionMethodsShould.cs" />
     <Compile Include="Controllers\IngredientControllerDetailsActionMethodShould.cs" />
+    <Compile Include="Controllers\IngredientControllerDetailsActionMethodUnitShould.cs" />
     <Compile Include="Controllers\IngredientControllerDetailsActionMethodTotalPercentageShould.cs" />
     <Compile Include="Infrastructure\UsdaDataSourceShould.cs" />
     <Compile Include="Content\SiteCssFileShould.cs" />

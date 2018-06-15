@@ -280,14 +280,14 @@ namespace Lamb_N_Lentil.Tests.Controllers
            Assert.AreEqual(correct, returned);
         }
 
-       // [TestMethod]
-        public async Task ReturnPercentDailyValueOf100ForRiboflavinOf1point5()
+         [TestMethod]
+        public async Task ReturnPercentDailyValueOf100ForRiboflavinOf1point7()
         {
-            //vr = await Controller.Details("ShouldReturnIngredientsWithPercentageDailyValueRiboflavin1point5");
-            //model = (IngredientDetailViewModel)vr.Model;
-            //int correct = 100;
-            //int returned = model.RiboflavinPercentageDailyValue;
-            //Assert.AreEqual(correct, returned);
+            vr = await Controller.Details("ShouldReturnIngredientsWithPercentageDailyValueRiboflavin1point7");
+            model = (IngredientDetailViewModel)vr.Model;
+            int correct = 100;
+            int returned = model.RiboflavinPercentageDailyValue;
+            Assert.AreEqual(correct, returned);
         }
     } 
 }

@@ -113,6 +113,27 @@ namespace Lamb_N_Lentil.UI.Models
         public int VitaminB12PercentageDailyValue { get; set; }
         public int VitaminB6PercentageDailyValue { get; set; } 
 
+        public string TotalFatUnit { get; set; }
+        public string SaturatedFatUnit { get; set; }
+        public string TransFatUnit { get; set; }
+        public string PolyunsaturatedFatUnit { get; set; }
+        public string MonounsaturatedFatUnit { get; set; }
+        public string CholesterolUnit { get; set; }
+         public string SodiumUnit { get; set; }
+        //public string PotassiumUnit { get; set; } 
+        //public string TotalCarbohydrateUnit { get; set; }
+        //public string DietaryFiberUnit { get; set; }
+        //public string VitaminAUnit { get; set; }
+        //public string VitaminCUnit { get; set; }
+        //public string CalciumUnit { get; set; }
+        //public string IronUnit { get; set; }
+        //public string ThiamineUnit { get; set; }
+        //public string RiboflavinUnit { get; set; }
+        //public string NiacinUnit { get; set; }
+        //public string FolicAcidUnit { get; set; }
+        //public string VitaminDUnit { get; set; }
+        //public string VitaminB12Unit { get; set; }
+        //public string VitaminB6Unit { get; set; }
 
         public static IngredientDetailViewModel MapIIngredientToIngredientDetailViewModel(IIngredient ingredient)
         {
@@ -161,15 +182,23 @@ namespace Lamb_N_Lentil.UI.Models
                 DietaryFiberPercentageDailyValue = Decimal.ToInt16(100 * ingredient.DietaryFiber / 25),
                 VitaminAPercentageDailyValue = Decimal.ToInt16(100 * ingredient.VitaminA / 1000),
                 VitaminCPercentageDailyValue = Decimal.ToInt16(100 * ingredient.VitaminC / 60),
-                CalciumPercentageDailyValue = Decimal.ToInt16(100 * ingredient.Calcium / 1) ,   // keep like this to faciliate changes and conform to pattern
-                  IronPercentageDailyValue = Decimal.ToInt16(100 * ingredient.Iron /18),
-                  ThiaminePercentageDailyValue=Decimal.ToInt16(100 * ingredient.Thiamine / 1.5M),
-                RiboflavinPercentageDailyValue= Decimal.ToInt16(100 * ingredient.Riboflavin / 1.7M),
-                NiacinPercentageDailyValue = Decimal.ToInt16(100 * ingredient.Niacin / 20.0M), 
-                  FolicAcidPercentageDailyValue = Decimal.ToInt16(100 * ingredient.FolicAcid / 400.0M),
+                CalciumPercentageDailyValue = Decimal.ToInt16(100 * ingredient.Calcium / 1),   // keep like this to faciliate changes and conform to pattern
+                IronPercentageDailyValue = Decimal.ToInt16(100 * ingredient.Iron / 18),
+                ThiaminePercentageDailyValue = Decimal.ToInt16(100 * ingredient.Thiamine / 1.5M),
+                RiboflavinPercentageDailyValue = Decimal.ToInt16(100 * ingredient.Riboflavin / 1.7M),
+                NiacinPercentageDailyValue = Decimal.ToInt16(100 * ingredient.Niacin / 20.0M),
+                FolicAcidPercentageDailyValue = Decimal.ToInt16(100 * ingredient.FolicAcid / 400.0M),
                 VitaminDPercentageDailyValue = Decimal.ToInt16(100 * ingredient.VitaminD / 400.0M),
                 VitaminB12PercentageDailyValue = Decimal.ToInt16(100 * ingredient.VitaminB12 / 6.0M),
                 VitaminB6PercentageDailyValue = Decimal.ToInt16(100 * ingredient.VitaminB12 / 2.0M),
+
+                TotalFatUnit = ingredient.TotalFatUnit,
+                SaturatedFatUnit = ingredient.SaturatedFatUnit,
+                TransFatUnit = ingredient.TransFatUnit,
+                PolyunsaturatedFatUnit = ingredient.PolyunsaturatedFatUnit,
+                CholesterolUnit=ingredient.CholesterolUnit,
+                MonounsaturatedFatUnit=ingredient.MonounsaturatedFatUnit,
+                SodiumUnit=ingredient.SodiumUnit,
             };
             return Vm;
         }
