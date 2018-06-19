@@ -83,5 +83,133 @@ namespace Lamb_N_Lentil.Tests.Controllers
             string returned = model.SodiumUnit;
             Assert.AreEqual(correct, returned);
         }
+
+        [TestMethod]
+        public void ReturnCorrectUnitForPotassium()
+        {
+            string correct = "unit for potassium";
+            string returned = model.PotassiumUnit;
+            Assert.AreEqual(correct, returned);
+        }  
+
+        [TestMethod]
+        public void ReturnCorrectUnitForTotalCarbohydrate()
+        {
+            string correct = "unit for total carbohydrate";
+            string returned = model.TotalCarbohydrateUnit;
+            Assert.AreEqual(correct, returned);
+        }  
+
+        [TestMethod]
+        public void ReturnCorrectUnitForDietaryFiber()
+        {
+            string correct = "unit for Dietary Fiber";
+            string returned = model.DietaryFiberUnit;
+            Assert.AreEqual(correct, returned);
+        }
+
+        [TestMethod]
+        public void ReturnCorrectUnitForSugars()
+        {
+            string correct = "unit for Sugars";
+            string returned = model.SugarsUnit;
+            Assert.AreEqual(correct, returned);
+        }
+
+        [TestMethod]
+        public void ReturnCorrectUnitForProtein()
+        {
+            string correct = "unit for Protein";
+            string returned = model.ProteinUnit;
+            Assert.AreEqual(correct, returned);
+        }
+
+        [TestMethod]
+        public void ReturnCorrectUnitForVitaminA()
+        {
+            string correct = "unit for VitaminA";
+            string returned = model.VitaminAUnit;
+            Assert.AreEqual(correct, returned);
+        }
+
+        [TestMethod]
+        public void ReturnCorrectUnitForVitaminC()
+        {
+            string correct = "unit for VitaminC";
+            string returned = model.VitaminCUnit;
+            Assert.AreEqual(correct, returned);
+        }
+
+        [TestMethod]
+        public void ReturnCorrectUnitForCalcium()
+        {
+            string correct = "unit for Calcium";
+            string returned = model.CalciumUnit;
+            Assert.AreEqual(correct, returned);
+        }
+
+        [TestMethod]
+        public void ReturnCorrectUnitForIron()
+        {
+            string correct = "unit for Iron";
+            string returned = model.IronUnit;
+            Assert.AreEqual(correct, returned);
+        }
+
+        [TestMethod]
+        public void ReturnCorrectUnitForThiamine()
+        {
+            string correct = "unit for Thiamine";
+            string returned = model.ThiamineUnit;
+            Assert.AreEqual(correct, returned);
+        }
+
+        [TestMethod]
+        public void ReturnCorrectUnitForRiboflavin()
+        {
+            string correct = "unit for Riboflavin";
+            string returned = model.RiboflavinUnit;
+            Assert.AreEqual(correct, returned);
+        }
+
+        [TestMethod]
+        public void ReturnCorrectUnitForNiacin()
+        {
+            string correct = "unit for Niacin";
+            string returned = model.NiacinUnit;
+            Assert.AreEqual(correct, returned);
+        }
+
+        [TestMethod]
+        public void ReturnCorrectUnitForFolicAcid()
+        {
+            string correct = "unit for folic acid";
+            string returned = model.FolicAcidUnit;
+            Assert.AreEqual(correct, returned);
+        }
+        
+        [TestMethod]
+        public void ReturnCorrectUnitForVitaminD()
+        { 
+            string correct = "unit for vitamin D";
+            string returned = model.VitaminDUnit;
+            Assert.AreEqual(correct, returned);
+        }
+
+        [TestMethod]
+        public void ReturnCorrectUnitForVitaminB12()
+        {
+            string correct = "unit for vitamin B12";
+            string returned = model.VitaminB12Unit;
+            Assert.AreEqual(correct, returned);
+        }
+
+        [TestMethod]
+        public void ReturnCorrectUnitForVitaminB6()
+        {
+            string correct = "unit for vitamin B6";
+            string returned = model.VitaminB6Unit;
+            Assert.AreEqual(correct, returned);
+        } 
     }
 }

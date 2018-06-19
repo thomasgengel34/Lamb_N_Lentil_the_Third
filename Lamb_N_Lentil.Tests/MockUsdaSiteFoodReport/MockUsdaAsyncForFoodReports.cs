@@ -7,8 +7,7 @@ using System.Threading.Tasks;
 namespace Lamb_N_Lentil.Tests.MockUsdaSiteFoodReport
 {
     public class MockUsdaAsyncForFoodReport : IUsdaAsyncFoodReport
-    {
-
+    { 
         protected UsdaFoodReport report;
 
         public MockUsdaAsyncForFoodReport()
@@ -34,7 +33,7 @@ namespace Lamb_N_Lentil.Tests.MockUsdaSiteFoodReport
             report.foods[0].food.desc.manu = "default manufacturer";
             report.foods[0].food.ing.upd = "default updated date";
 
-            report.foods[0].food.nutrients = new nutrients[25];
+            report.foods[0].food.nutrients = new nutrients[26];
 
             report.foods[0].food.nutrients[0] = new nutrients
             {
@@ -57,6 +56,7 @@ namespace Lamb_N_Lentil.Tests.MockUsdaSiteFoodReport
                 name = "Calcium",
                 nutrient_id = 301,
                 value = "25",
+                unit= "unit for Calcium",
                 measures = new measures[1]
             };
             report.foods[0].food.nutrients[1].measures[0] = new measures
@@ -86,6 +86,7 @@ namespace Lamb_N_Lentil.Tests.MockUsdaSiteFoodReport
                 name = "Iron",
                 nutrient_id = 303,
                 value = "26",
+                unit = "unit for Iron",
                 measures = new measures[1]
             };
             report.foods[0].food.nutrients[3].measures[0] = new measures
@@ -114,7 +115,8 @@ namespace Lamb_N_Lentil.Tests.MockUsdaSiteFoodReport
                 name = "Niacin",
                 nutrient_id = 406,
                 value = "28",
-                measures = new measures[1]
+                unit= "unit for Niacin", 
+                 measures = new measures[1]
             };
             report.foods[0].food.nutrients[5].measures[0] = new measures
             {
@@ -158,6 +160,7 @@ namespace Lamb_N_Lentil.Tests.MockUsdaSiteFoodReport
                 name = "Protein",
                 nutrient_id = 203,
                 value = "31",
+                unit= "unit for Protein",
                 measures = new measures[1]
             };
             report.foods[0].food.nutrients[8].measures[0] = new measures
@@ -172,6 +175,7 @@ namespace Lamb_N_Lentil.Tests.MockUsdaSiteFoodReport
                 name = "Riboflavin",
                 nutrient_id = 405,
                 value = "32",
+                unit= "unit for Riboflavin",
                 measures = new measures[1]
             };
             report.foods[0].food.nutrients[9].measures[0] = new measures
@@ -201,6 +205,7 @@ namespace Lamb_N_Lentil.Tests.MockUsdaSiteFoodReport
                 name = "Sugars",
                 nutrient_id = 269,
                 value = "34",
+                unit= "unit for Sugars",
                 measures = new measures[1]
             };
             report.foods[0].food.nutrients[11].measures[0] = new measures
@@ -215,7 +220,8 @@ namespace Lamb_N_Lentil.Tests.MockUsdaSiteFoodReport
                 name = "Thiamine",
                 nutrient_id = 404,
                 value = "35",
-                measures = new measures[1]
+                unit= "unit for Thiamine",
+                 measures = new measures[1]
             };
             report.foods[0].food.nutrients[12].measures[0] = new measures
             {
@@ -229,6 +235,7 @@ namespace Lamb_N_Lentil.Tests.MockUsdaSiteFoodReport
                 name = "Total carbohydrate",
                 nutrient_id = 205,
                 value = "36",
+                unit= "unit for total carbohydrate",
                 measures = new measures[1]
             };
             report.foods[0].food.nutrients[13].measures[0] = new measures
@@ -258,6 +265,7 @@ namespace Lamb_N_Lentil.Tests.MockUsdaSiteFoodReport
                 name = "Vitamin A",
                 nutrient_id = 318,
                 value = "39",
+                unit= "unit for VitaminA",
                 measures = new measures[1]
             };
             report.foods[0].food.nutrients[15].measures[0] = new measures
@@ -272,6 +280,7 @@ namespace Lamb_N_Lentil.Tests.MockUsdaSiteFoodReport
                 name = "Vitamin B12",
                 nutrient_id = 418,
                 value = "39",
+                unit= "unit for vitamin B12",
                 measures = new measures[1]
             };
             report.foods[0].food.nutrients[16].measures[0] = new measures
@@ -286,6 +295,7 @@ namespace Lamb_N_Lentil.Tests.MockUsdaSiteFoodReport
                 name = "Vitamin B6",
                 nutrient_id = 415,
                 value = "40",
+                unit= "unit for vitamin B6",
                 measures = new measures[1]
             };
             report.foods[0].food.nutrients[17].measures[0] = new measures
@@ -300,6 +310,7 @@ namespace Lamb_N_Lentil.Tests.MockUsdaSiteFoodReport
                 name = "Vitamin C",
                 nutrient_id = 401,
                 value = "41",
+                unit= "unit for VitaminC",
                 measures = new measures[1]
             };
             report.foods[0].food.nutrients[18].measures[0] = new measures
@@ -314,6 +325,7 @@ namespace Lamb_N_Lentil.Tests.MockUsdaSiteFoodReport
                 name = "Vitamin D",
                 nutrient_id = 324,
                 value = "42",
+                unit= "unit for vitamin D",
                 measures = new measures[1]
             };
             report.foods[0].food.nutrients[19].measures[0] = new measures
@@ -343,6 +355,7 @@ namespace Lamb_N_Lentil.Tests.MockUsdaSiteFoodReport
                 name = "Potassium",
                 nutrient_id = 306,
                 value = "43",
+                unit = "unit for potassium",
                 measures = new measures[1]
             };
             report.foods[0].food.nutrients[21].measures[0] = new measures
@@ -357,6 +370,7 @@ namespace Lamb_N_Lentil.Tests.MockUsdaSiteFoodReport
                 name = "Dietary Fiber",
                 nutrient_id = 291,
                 value = "44",
+                unit= "unit for Dietary Fiber",
                 measures = new measures[1]
             };
             report.foods[0].food.nutrients[22].measures[0] = new measures
@@ -364,6 +378,22 @@ namespace Lamb_N_Lentil.Tests.MockUsdaSiteFoodReport
                 label = "default label dietary fiber",
                 eqv = 2.3M,
                 value = 306.3M
+            };
+
+
+            report.foods[0].food.nutrients[23] = new nutrients
+            {
+                name = "Folic Acid",
+                nutrient_id = 431,
+                value = "45",
+                unit = "unit for folic acid",
+                measures = new measures[1]
+            };
+            report.foods[0].food.nutrients[22].measures[0] = new measures
+            {
+                label = "default label folic acid",
+                eqv = 2.4M,
+                value = 306.4M
             };
         }
 
@@ -414,11 +444,11 @@ namespace Lamb_N_Lentil.Tests.MockUsdaSiteFoodReport
             }
             if (ndbno == "ShouldReturnIngredientsWithPercentageDailyValuePotassium0")
             {
-                report.foods[0].food.nutrients[10].measures[0].value = 0;
+                report.foods[0].food.nutrients[21].measures[0].value = 0;
             }
             if (ndbno == "ShouldReturnIngredientsWithPercentageDailyValuePotassium3500")
             {
-                report.foods[0].food.nutrients[10].measures[0].value = 3500;
+                report.foods[0].food.nutrients[21].measures[0].value = 3500;
             }
             if (ndbno == "ShouldReturnIngredientsWithPercentageDailyValueTotalCarbohydrate0")
             {
@@ -441,9 +471,9 @@ namespace Lamb_N_Lentil.Tests.MockUsdaSiteFoodReport
                 report.foods[0].food.nutrients[15].measures[0].value = 0;
             }
 
-            if (ndbno == "ShouldReturnIngredientsWithPercentageDailyValueVitaminA1000")
+            if (ndbno == "ShouldReturnIngredientsWithPercentageDailyValueVitaminA5000")
             {
-                report.foods[0].food.nutrients[15].measures[0].value = 1000;
+                report.foods[0].food.nutrients[15].measures[0].value = 5000;
             }
             if (ndbno == "ShouldReturnIngredientsWithPercentageDailyValueVitaminC0")
             {
@@ -451,15 +481,15 @@ namespace Lamb_N_Lentil.Tests.MockUsdaSiteFoodReport
             }
             if (ndbno == "ShouldReturnIngredientsWithPercentageDailyValueVitaminC60")
             {
-                report.foods[0].food.nutrients[18].measures[0].value = 60;
+                report.foods[0].food.nutrients[18].measures[0].value = 50;
             }
             if (ndbno == "ShouldReturnIngredientsWithPercentageDailyValueCalcium0")
             {
                 report.foods[0].food.nutrients[1].measures[0].value = 0;
             }
-            if (ndbno == "ShouldReturnIngredientsWithPercentageDailyValueCalcium1")
+            if (ndbno == "ShouldReturnIngredientsWithPercentageDailyValueCalcium1000")
             {
-                report.foods[0].food.nutrients[1].measures[0].value = 1;
+                report.foods[0].food.nutrients[1].measures[0].value = 1000;
             }
             if (ndbno == "ShouldReturnIngredientsWithPercentageDailyValueIron0")
             {

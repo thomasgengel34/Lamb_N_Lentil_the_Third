@@ -39,26 +39,26 @@
          string MonounsaturatedFatUnit { get; set; }
         //string CaloriesUnit { get; set; }
         //string CaloriesFromFatUnit { get; set; }
-        //string CalciumUnit{ get; set; }
-        //string FolicAcidUnit { get; set; }
-        //string IronUnit { get; set; } 
+         string CalciumUnit{ get; set; }
+         string FolicAcidUnit { get; set; }
+         string IronUnit { get; set; } 
         string SodiumUnit { get; set; }
-        //string TotalCarbohydrateUnit { get; set; }
+        string TotalCarbohydrateUnit { get; set; }
          string PolyunsaturatedFatUnit { get; set; }
          string TransFatUnit { get; set; }
          string CholesterolUnit { get; set; }
-        //string PotassiumUnit { get; set; }
-        //string DietaryFiberUnit { get; set; }
-        //string SugarsUnit { get; set; }
-        //string ProteinUnit { get; set; }
-        //string VitaminA { get; set; }
-        //string VitaminB6Unit { get; set; }
-        //string VitaminB12Unit { get; set; }
-        //string VitaminCUnit { get; set; }
-        //string VitaminDUnit { get; set; }
-        //string ThiamineUnit { get; set; }
-        //string NiacinUnit { get; set; }
-        //string RiboflavinUnit{ get; set; }
+         string PotassiumUnit { get; set; }
+         string DietaryFiberUnit { get; set; }
+         string SugarsUnit { get; set; }
+         string ProteinUnit { get; set; }
+         string VitaminAUnit { get; set; }
+         string VitaminB6Unit { get; set; }
+        string VitaminB12Unit { get; set; }
+         string VitaminCUnit { get; set; }
+         string VitaminDUnit { get; set; }
+         string ThiamineUnit { get; set; }
+         string NiacinUnit { get; set; }
+         string RiboflavinUnit{ get; set; }
         //string MagnesiumUnit { get; set; }
     } 
 }

@@ -92,7 +92,7 @@ namespace Lamb_N_Lentil.UI.Models
 
         public decimal Protein { get; set; }
 
-        // for 2,000 calorie diet
+       
         public int TotalFatPercentageDailyValue { get; set; }
         public int SaturatedFatPercentageDailyValue { get; set; }
         public int CholesterolPercentageDailyValue { get; set; }
@@ -120,20 +120,22 @@ namespace Lamb_N_Lentil.UI.Models
         public string MonounsaturatedFatUnit { get; set; }
         public string CholesterolUnit { get; set; }
          public string SodiumUnit { get; set; }
-        //public string PotassiumUnit { get; set; } 
-        //public string TotalCarbohydrateUnit { get; set; }
-        //public string DietaryFiberUnit { get; set; }
-        //public string VitaminAUnit { get; set; }
-        //public string VitaminCUnit { get; set; }
-        //public string CalciumUnit { get; set; }
-        //public string IronUnit { get; set; }
-        //public string ThiamineUnit { get; set; }
-        //public string RiboflavinUnit { get; set; }
-        //public string NiacinUnit { get; set; }
-        //public string FolicAcidUnit { get; set; }
-        //public string VitaminDUnit { get; set; }
-        //public string VitaminB12Unit { get; set; }
-        //public string VitaminB6Unit { get; set; }
+        public string PotassiumUnit { get; set; } 
+        public string TotalCarbohydrateUnit { get; set; }
+         public string DietaryFiberUnit { get; set; }
+        public string SugarsUnit { get; set; }
+        public string ProteinUnit { get; set; }
+         public string VitaminAUnit { get; set; }
+         public string VitaminCUnit { get; set; }
+         public string CalciumUnit { get; set; }
+         public string IronUnit { get; set; }
+         public string ThiamineUnit { get; set; }
+         public string RiboflavinUnit { get; set; }
+         public string NiacinUnit { get; set; }
+         public string FolicAcidUnit { get; set; }
+         public string VitaminDUnit { get; set; }
+         public string VitaminB12Unit { get; set; }
+         public string VitaminB6Unit { get; set; }
 
         public static IngredientDetailViewModel MapIIngredientToIngredientDetailViewModel(IIngredient ingredient)
         {
@@ -172,17 +174,17 @@ namespace Lamb_N_Lentil.UI.Models
                 Riboflavin = ingredient.Riboflavin,
                 Niacin = ingredient.Niacin,
                 ManufacturerOrFoodGroup = ingredient.ManufacturerOrFoodGroup,
-
+                // for 2,000 calorie diet - these need to be verified
                 TotalFatPercentageDailyValue = Decimal.ToInt16(100 * ingredient.TotalFat / 65),
                 SaturatedFatPercentageDailyValue = Decimal.ToInt16(100 * ingredient.SaturatedFat / 20),
                 CholesterolPercentageDailyValue = Decimal.ToInt16(100 * ingredient.Cholesterol / 300),
                 SodiumPercentageDailyValue = Decimal.ToInt16(100 * ingredient.Sodium / 2400),
-                PotassiumPercentageDailyValue = Decimal.ToInt16(100 * ingredient.Sodium / 3500),
+                PotassiumPercentageDailyValue = Decimal.ToInt16(100 * ingredient.Potassium / 3500), // test
                 TotalCarbohydratePercentageDailyValue = Decimal.ToInt16(100 * ingredient.TotalCarbohydrate / 300),
                 DietaryFiberPercentageDailyValue = Decimal.ToInt16(100 * ingredient.DietaryFiber / 25),
-                VitaminAPercentageDailyValue = Decimal.ToInt16(100 * ingredient.VitaminA / 1000),
-                VitaminCPercentageDailyValue = Decimal.ToInt16(100 * ingredient.VitaminC / 60),
-                CalciumPercentageDailyValue = Decimal.ToInt16(100 * ingredient.Calcium / 1),   // keep like this to faciliate changes and conform to pattern
+                VitaminAPercentageDailyValue = Decimal.ToInt16( ingredient.VitaminA / 50),
+                VitaminCPercentageDailyValue = Decimal.ToInt16(100 * ingredient.VitaminC / 50),
+                CalciumPercentageDailyValue = Decimal.ToInt16(100 * ingredient.Calcium / 1000),   
                 IronPercentageDailyValue = Decimal.ToInt16(100 * ingredient.Iron / 18),
                 ThiaminePercentageDailyValue = Decimal.ToInt16(100 * ingredient.Thiamine / 1.5M),
                 RiboflavinPercentageDailyValue = Decimal.ToInt16(100 * ingredient.Riboflavin / 1.7M),
@@ -199,6 +201,22 @@ namespace Lamb_N_Lentil.UI.Models
                 CholesterolUnit=ingredient.CholesterolUnit,
                 MonounsaturatedFatUnit=ingredient.MonounsaturatedFatUnit,
                 SodiumUnit=ingredient.SodiumUnit,
+                PotassiumUnit=ingredient.PotassiumUnit,
+                TotalCarbohydrateUnit=ingredient.TotalCarbohydrateUnit,
+                DietaryFiberUnit=ingredient.DietaryFiberUnit,
+                SugarsUnit=ingredient.SugarsUnit,
+                ProteinUnit=ingredient.ProteinUnit,
+                VitaminAUnit=ingredient.VitaminAUnit,
+                VitaminCUnit=ingredient.VitaminCUnit,
+                CalciumUnit=ingredient.CalciumUnit,
+                IronUnit=ingredient.IronUnit,
+                ThiamineUnit=ingredient.ThiamineUnit,
+                RiboflavinUnit=ingredient.RiboflavinUnit,
+                NiacinUnit=ingredient.NiacinUnit,
+                FolicAcidUnit=ingredient.FolicAcidUnit,
+                VitaminDUnit=ingredient.VitaminDUnit,
+                VitaminB12Unit=ingredient.VitaminB12Unit,
+                VitaminB6Unit=ingredient.VitaminB6Unit,
             };
             return Vm;
         }

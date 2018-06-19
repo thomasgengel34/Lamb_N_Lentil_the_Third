@@ -78,5 +78,21 @@ namespace Lamb_N_Lentil.Domain
         public string MonounsaturatedFatUnit { get; set; }
         public string CholesterolUnit { get; set; }
         public string SodiumUnit { get; set; }
+        public string PotassiumUnit { get; set; }
+        public string TotalCarbohydrateUnit { get; set; }
+        public string DietaryFiberUnit { get; set; }
+        public string SugarsUnit { get; set; }
+        public string ProteinUnit { get; set; }
+        public string VitaminAUnit { get; set; }
+        public string VitaminCUnit { get; set; }
+        public string CalciumUnit { get; set; }
+        public string IronUnit { get; set; }
+        public string ThiamineUnit { get; set; }
+        public string RiboflavinUnit { get; set; }
+        public string NiacinUnit { get; set; }
+        public string FolicAcidUnit { get; set; }
+        public string VitaminDUnit { get; set; }
+        public string VitaminB12Unit { get; set; }
+        public string VitaminB6Unit { get; set; }
     }
 }

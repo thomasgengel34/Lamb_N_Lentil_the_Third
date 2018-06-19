@@ -178,9 +178,9 @@ namespace Lamb_N_Lentil.Tests.Controllers
         }
 
         [TestMethod]
-        public async Task ReturnPercentDailyValueOf100ForVitaminAOf1000()
+        public async Task ReturnPercentDailyValueOf100ForVitaminAOf5000()
         {
-            vr = await Controller.Details("ShouldReturnIngredientsWithPercentageDailyValueVitaminA1000");
+            vr = await Controller.Details("ShouldReturnIngredientsWithPercentageDailyValueVitaminA5000");
             model = (IngredientDetailViewModel)vr.Model;
             int correct = 100;
             int returned = model.VitaminAPercentageDailyValue;
@@ -200,7 +200,7 @@ namespace Lamb_N_Lentil.Tests.Controllers
         }
 
         [TestMethod]
-        public async Task ReturnPercentDailyValueOf100ForVitaminCOf1000()
+        public async Task ReturnPercentDailyValueOf100ForVitaminCOf60()
         {
             vr = await Controller.Details("ShouldReturnIngredientsWithPercentageDailyValueVitaminC60");
             model = (IngredientDetailViewModel)vr.Model;
@@ -220,9 +220,9 @@ namespace Lamb_N_Lentil.Tests.Controllers
         }
 
         [TestMethod]
-        public async Task ReturnPercentDailyValueOf100ForCalciumOf1()
+        public async Task ReturnPercentDailyValueOf100ForCalciumOf1000()
         {
-            vr = await Controller.Details("ShouldReturnIngredientsWithPercentageDailyValueCalcium1");
+            vr = await Controller.Details("ShouldReturnIngredientsWithPercentageDailyValueCalcium1000");
             model = (IngredientDetailViewModel)vr.Model;
             int correct = 100;
             int returned = model.CalciumPercentageDailyValue;

@@ -62,30 +62,30 @@ namespace Lamb_N_Lentil.Domain.UsdaInformation
             ingredient.Riboflavin = FindNutrientValue(405);
 
             ingredient.TotalFatUnit = FindNutrientUnit(204);
-            //ingredient.TotalCarbohydrateUnit = FindNutrientUnit(205);
-            //ingredient.CalciumUnit = FindNutrientUnit(301);
+            ingredient.TotalCarbohydrateUnit = FindNutrientUnit(205);
+            ingredient.CalciumUnit = FindNutrientUnit(301);
             //ingredient.CaloriesUnit = FindNutrientUnit(208);
-            //ingredient.DietaryFiberUnit = FindNutrientUnit(291);
-            //ingredient.FolicAcidUnit = FindNutrientUnit(431);
-            //ingredient.IronUnit = FindNutrientUnit(303);
+            ingredient.DietaryFiberUnit = FindNutrientUnit(291);
+            ingredient.FolicAcidUnit = FindNutrientUnit(431);
+            ingredient.IronUnit = FindNutrientUnit(303);
             //ingredient.MagnesiumUnit = FindNutrientUnit(304);
-            //ingredient.NiacinUnit = FindNutrientUnit(406);
-            //ingredient.PotassiumUnit = FindNutrientUnit(306);
-             ingredient.SodiumUnit = FindNutrientUnit(307);
+            ingredient.NiacinUnit = FindNutrientUnit(406);
+            ingredient.PotassiumUnit = FindNutrientUnit(306);
+            ingredient.SodiumUnit = FindNutrientUnit(307);
             ingredient.CholesterolUnit = FindNutrientUnit(601);
             ingredient.SaturatedFatUnit = FindNutrientUnit(606);
             ingredient.PolyunsaturatedFatUnit = FindNutrientUnit(646);
-             ingredient.MonounsaturatedFatUnit = FindNutrientUnit(645);
-             ingredient.TransFatUnit = FindNutrientUnit(605);
-            //ingredient.Sugars = FindNutrientUnit(269);
-            //ingredient.Protein = FindNutrientUnit(203);
-            //ingredient.VitaminA = FindNutrientUnit(318);
-            //ingredient.VitaminB6 = FindNutrientUnit(415);
-            //ingredient.VitaminB12 = FindNutrientUnit(418);
-            //ingredient.VitaminC = FindNutrientUnit(401);
-            //ingredient.VitaminD = FindNutrientUnit(324);
-            //ingredient.Thiamine = FindNutrientUnit(404);
-            //ingredient.Riboflavin = FindNutrientUnit(405);
+            ingredient.MonounsaturatedFatUnit = FindNutrientUnit(645);
+            ingredient.TransFatUnit = FindNutrientUnit(605);
+            ingredient.SugarsUnit = FindNutrientUnit(269);
+            ingredient.ProteinUnit = FindNutrientUnit(203);
+            ingredient.VitaminAUnit = FindNutrientUnit(318);
+            ingredient.VitaminB6Unit = FindNutrientUnit(415);
+            ingredient.VitaminB12Unit = FindNutrientUnit(418);
+            ingredient.VitaminCUnit = FindNutrientUnit(401);
+            ingredient.VitaminDUnit = FindNutrientUnit(324);
+            ingredient.ThiamineUnit = FindNutrientUnit(404);
+            ingredient.RiboflavinUnit = FindNutrientUnit(405);
 
             return ingredient;
         }
@@ -98,7 +98,7 @@ namespace Lamb_N_Lentil.Domain.UsdaInformation
                 {
                     return "not provided";
                 }
-                else return food.desc.manu; 
+                else return food.desc.manu;
             }
             return food.desc.fg;
         }
@@ -127,13 +127,13 @@ namespace Lamb_N_Lentil.Domain.UsdaInformation
             if (food.nutrients == null) return "";
 
             var target = (from x in food.nutrients
-                          where x != null && x.nutrient_id == nutrient_ID  
+                          where x != null && x.nutrient_id == nutrient_ID
                           select x.unit).FirstOrDefault();
             if (target == null)
             {
                 return "";
             }
-            string result = target ;
+            string result = target;
             if (result == null)
             {
                 return "";
