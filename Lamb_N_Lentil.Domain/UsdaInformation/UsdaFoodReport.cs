@@ -40,6 +40,7 @@
         public string name { get; set; }
         public string unit { get; set; }
         public string value { get; set; }
+        public decimal qty { get; set; }
         public measures[] measures { get; set; }
     }
 

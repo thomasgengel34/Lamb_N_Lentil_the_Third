@@ -108,8 +108,8 @@ namespace Lamb_N_Lentil.Tests.Controllers
             ActionResult actionResult = await Controller.ShowResults("total");
             ViewResult viewResult = (ViewResult)actionResult;
             var model = (List<IngredientListViewModel>)viewResult.Model;
-            int total = viewResult.ViewBag.SearchTotal;
-            Assert.AreEqual(correctTotal, total);
+            int returnedTotal = viewResult.ViewBag.SearchTotal;
+            Assert.AreEqual(correctTotal, returnedTotal);
         }
 
     }

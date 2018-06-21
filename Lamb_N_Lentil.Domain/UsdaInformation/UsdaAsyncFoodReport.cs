@@ -8,9 +8,6 @@ namespace Lamb_N_Lentil.Domain.UsdaInformation
 {
     public class UsdaAsyncFoodReport : UsdaAsync, IUsdaAsyncFoodReport
     {
-        public Task<UsdaFoodReport> Foo(string testString)
-        {
-            throw new NotImplementedException();
-        }
+
     }
 }

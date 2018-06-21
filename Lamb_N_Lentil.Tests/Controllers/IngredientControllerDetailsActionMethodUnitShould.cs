@@ -210,6 +210,14 @@ namespace Lamb_N_Lentil.Tests.Controllers
             string correct = "unit for vitamin B6";
             string returned = model.VitaminB6Unit;
             Assert.AreEqual(correct, returned);
-        } 
+        }
+
+        [TestMethod]
+        public void ReturnCorrectServingSize()
+        {
+            decimal correct = 1.0101M;
+            decimal returned = model.ServingSize;
+            Assert.AreEqual(correct, returned);
+        }
     }
 }

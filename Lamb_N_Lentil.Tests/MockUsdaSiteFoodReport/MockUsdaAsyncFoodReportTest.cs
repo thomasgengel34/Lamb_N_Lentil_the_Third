@@ -46,5 +46,15 @@ namespace Lamb_N_Lentil.Tests.MockUsdaSiteFoodReport
             string returned = report.foods.First().food.desc.fg;
             Assert.AreEqual(correct, returned);
         }
+
+        [TestMethod]
+        public async Task ReturnServingSize()
+        {
+            string testString = "ShouldReturnIngredients";
+           decimal correct = 1.0101M;
+            UsdaFoodReport report = await usdaAsyncFoodReport.FetchUsdaFoodReport(testString);
+            decimal returned = report.foods[0].food.nutrients[0].measures[0].qty; 
+            Assert.AreEqual(correct, returned);
+        }
     }
 }

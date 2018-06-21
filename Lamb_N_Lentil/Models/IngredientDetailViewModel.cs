@@ -136,6 +136,7 @@ namespace Lamb_N_Lentil.UI.Models
          public string VitaminDUnit { get; set; }
          public string VitaminB12Unit { get; set; }
          public string VitaminB6Unit { get; set; }
+        public decimal ServingSize { get; set; }
 
         public static IngredientDetailViewModel MapIIngredientToIngredientDetailViewModel(IIngredient ingredient)
         {
@@ -217,6 +218,7 @@ namespace Lamb_N_Lentil.UI.Models
                 VitaminDUnit=ingredient.VitaminDUnit,
                 VitaminB12Unit=ingredient.VitaminB12Unit,
                 VitaminB6Unit=ingredient.VitaminB6Unit,
+                ServingSize=ingredient.ServingSize,
             };
             return Vm;
         }

@@ -7,6 +7,7 @@
         string IngredientsInIngredient { get; set; } 
         string Description { get; set; } 
         string UpdateDate { get; set; }
+
         decimal SaturatedFat { get; set; }
         decimal MonounsaturatedFat { get; set; }
         decimal Calories { get; set; }
@@ -36,9 +37,7 @@
 
         string TotalFatUnit { get; set; }
         string SaturatedFatUnit { get; set; }
-         string MonounsaturatedFatUnit { get; set; }
-        //string CaloriesUnit { get; set; }
-        //string CaloriesFromFatUnit { get; set; }
+         string MonounsaturatedFatUnit { get; set; } 
          string CalciumUnit{ get; set; }
          string FolicAcidUnit { get; set; }
          string IronUnit { get; set; } 
@@ -58,7 +57,8 @@
          string VitaminDUnit { get; set; }
          string ThiamineUnit { get; set; }
          string NiacinUnit { get; set; }
-         string RiboflavinUnit{ get; set; }
-        //string MagnesiumUnit { get; set; }
+         string RiboflavinUnit{ get; set; } 
+
+        decimal ServingSize { get; set; }
     } 
 }

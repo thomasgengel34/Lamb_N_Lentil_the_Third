@@ -7,7 +7,7 @@ using System.Threading.Tasks;
 namespace Lamb_N_Lentil.Tests.MockUsdaSiteFoodReport
 {
     public class MockUsdaAsyncForFoodReport : IUsdaAsyncFoodReport
-    { 
+    {
         protected UsdaFoodReport report;
 
         public MockUsdaAsyncForFoodReport()
@@ -41,6 +41,7 @@ namespace Lamb_N_Lentil.Tests.MockUsdaSiteFoodReport
                 nutrient_id = 204,
                 value = "24",
                 unit = "unit for total fat",
+
                 measures = new measures[1]
             };
             report.foods[0].food.nutrients[0].measures[0] = new measures
@@ -48,7 +49,7 @@ namespace Lamb_N_Lentil.Tests.MockUsdaSiteFoodReport
                 label = "default label total fat",
                 eqv = 3.1415926M,
                 value = 654.2M,
-
+                qty = 1.0101M,
             };
 
             report.foods[0].food.nutrients[1] = new nutrients
@@ -56,7 +57,7 @@ namespace Lamb_N_Lentil.Tests.MockUsdaSiteFoodReport
                 name = "Calcium",
                 nutrient_id = 301,
                 value = "25",
-                unit= "unit for Calcium",
+                unit = "unit for Calcium",
                 measures = new measures[1]
             };
             report.foods[0].food.nutrients[1].measures[0] = new measures
@@ -71,7 +72,7 @@ namespace Lamb_N_Lentil.Tests.MockUsdaSiteFoodReport
                 name = "Cholesterol",
                 nutrient_id = 601,
                 value = "25",
-                unit= "unit for cholesterol",
+                unit = "unit for cholesterol",
                 measures = new measures[1]
             };
             report.foods[0].food.nutrients[2].measures[0] = new measures
@@ -115,8 +116,8 @@ namespace Lamb_N_Lentil.Tests.MockUsdaSiteFoodReport
                 name = "Niacin",
                 nutrient_id = 406,
                 value = "28",
-                unit= "unit for Niacin", 
-                 measures = new measures[1]
+                unit = "unit for Niacin",
+                measures = new measures[1]
             };
             report.foods[0].food.nutrients[5].measures[0] = new measures
             {
@@ -130,7 +131,7 @@ namespace Lamb_N_Lentil.Tests.MockUsdaSiteFoodReport
                 name = "Monosaturated Fat",
                 nutrient_id = 645,
                 value = "29",
-                unit= "unit for monounsaturated fat",
+                unit = "unit for monounsaturated fat",
                 measures = new measures[1]
             };
             report.foods[0].food.nutrients[6].measures[0] = new measures
@@ -145,7 +146,7 @@ namespace Lamb_N_Lentil.Tests.MockUsdaSiteFoodReport
                 name = "Polyunsaturated Fat",
                 nutrient_id = 646,
                 value = "30",
-                unit= "unit for polyunsaturated fat",
+                unit = "unit for polyunsaturated fat",
                 measures = new measures[1]
             };
             report.foods[0].food.nutrients[7].measures[0] = new measures
@@ -160,7 +161,7 @@ namespace Lamb_N_Lentil.Tests.MockUsdaSiteFoodReport
                 name = "Protein",
                 nutrient_id = 203,
                 value = "31",
-                unit= "unit for Protein",
+                unit = "unit for Protein",
                 measures = new measures[1]
             };
             report.foods[0].food.nutrients[8].measures[0] = new measures
@@ -175,7 +176,7 @@ namespace Lamb_N_Lentil.Tests.MockUsdaSiteFoodReport
                 name = "Riboflavin",
                 nutrient_id = 405,
                 value = "32",
-                unit= "unit for Riboflavin",
+                unit = "unit for Riboflavin",
                 measures = new measures[1]
             };
             report.foods[0].food.nutrients[9].measures[0] = new measures
@@ -190,7 +191,7 @@ namespace Lamb_N_Lentil.Tests.MockUsdaSiteFoodReport
                 name = "Sodium",
                 nutrient_id = 307,
                 value = "33",
-                unit= "unit for sodium",
+                unit = "unit for sodium",
                 measures = new measures[1]
             };
             report.foods[0].food.nutrients[10].measures[0] = new measures
@@ -205,7 +206,7 @@ namespace Lamb_N_Lentil.Tests.MockUsdaSiteFoodReport
                 name = "Sugars",
                 nutrient_id = 269,
                 value = "34",
-                unit= "unit for Sugars",
+                unit = "unit for Sugars",
                 measures = new measures[1]
             };
             report.foods[0].food.nutrients[11].measures[0] = new measures
@@ -220,8 +221,8 @@ namespace Lamb_N_Lentil.Tests.MockUsdaSiteFoodReport
                 name = "Thiamine",
                 nutrient_id = 404,
                 value = "35",
-                unit= "unit for Thiamine",
-                 measures = new measures[1]
+                unit = "unit for Thiamine",
+                measures = new measures[1]
             };
             report.foods[0].food.nutrients[12].measures[0] = new measures
             {
@@ -235,7 +236,7 @@ namespace Lamb_N_Lentil.Tests.MockUsdaSiteFoodReport
                 name = "Total carbohydrate",
                 nutrient_id = 205,
                 value = "36",
-                unit= "unit for total carbohydrate",
+                unit = "unit for total carbohydrate",
                 measures = new measures[1]
             };
             report.foods[0].food.nutrients[13].measures[0] = new measures
@@ -250,7 +251,7 @@ namespace Lamb_N_Lentil.Tests.MockUsdaSiteFoodReport
                 name = "Trans Fat",
                 nutrient_id = 605,
                 value = "37",
-                unit= "unit for trans fat",
+                unit = "unit for trans fat",
                 measures = new measures[1]
             };
             report.foods[0].food.nutrients[14].measures[0] = new measures
@@ -265,7 +266,7 @@ namespace Lamb_N_Lentil.Tests.MockUsdaSiteFoodReport
                 name = "Vitamin A",
                 nutrient_id = 318,
                 value = "39",
-                unit= "unit for VitaminA",
+                unit = "unit for VitaminA",
                 measures = new measures[1]
             };
             report.foods[0].food.nutrients[15].measures[0] = new measures
@@ -280,7 +281,7 @@ namespace Lamb_N_Lentil.Tests.MockUsdaSiteFoodReport
                 name = "Vitamin B12",
                 nutrient_id = 418,
                 value = "39",
-                unit= "unit for vitamin B12",
+                unit = "unit for vitamin B12",
                 measures = new measures[1]
             };
             report.foods[0].food.nutrients[16].measures[0] = new measures
@@ -295,7 +296,7 @@ namespace Lamb_N_Lentil.Tests.MockUsdaSiteFoodReport
                 name = "Vitamin B6",
                 nutrient_id = 415,
                 value = "40",
-                unit= "unit for vitamin B6",
+                unit = "unit for vitamin B6",
                 measures = new measures[1]
             };
             report.foods[0].food.nutrients[17].measures[0] = new measures
@@ -310,7 +311,7 @@ namespace Lamb_N_Lentil.Tests.MockUsdaSiteFoodReport
                 name = "Vitamin C",
                 nutrient_id = 401,
                 value = "41",
-                unit= "unit for VitaminC",
+                unit = "unit for VitaminC",
                 measures = new measures[1]
             };
             report.foods[0].food.nutrients[18].measures[0] = new measures
@@ -325,7 +326,7 @@ namespace Lamb_N_Lentil.Tests.MockUsdaSiteFoodReport
                 name = "Vitamin D",
                 nutrient_id = 324,
                 value = "42",
-                unit= "unit for vitamin D",
+                unit = "unit for vitamin D",
                 measures = new measures[1]
             };
             report.foods[0].food.nutrients[19].measures[0] = new measures
@@ -340,7 +341,7 @@ namespace Lamb_N_Lentil.Tests.MockUsdaSiteFoodReport
                 name = "Saturated Fat",
                 nutrient_id = 606,
                 value = "42",
-                unit="unit for saturated fat",
+                unit = "unit for saturated fat",
                 measures = new measures[1]
             };
             report.foods[0].food.nutrients[20].measures[0] = new measures
@@ -370,7 +371,7 @@ namespace Lamb_N_Lentil.Tests.MockUsdaSiteFoodReport
                 name = "Dietary Fiber",
                 nutrient_id = 291,
                 value = "44",
-                unit= "unit for Dietary Fiber",
+                unit = "unit for Dietary Fiber",
                 measures = new measures[1]
             };
             report.foods[0].food.nutrients[22].measures[0] = new measures

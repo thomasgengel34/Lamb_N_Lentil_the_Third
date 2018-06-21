@@ -20,6 +20,8 @@ namespace Lamb_N_Lentil.Domain
         public decimal SaturatedFat { get; set; }
         public decimal TransFat { get; set; }
         public string UpdateDate { get; set; }
+        public decimal ServingSize { get; set; }
+
         public decimal Calories { get; set; }
         public decimal Cholesterol { get; set; }
         public decimal Potassium { get; set; }

@@ -39,15 +39,18 @@ namespace Lamb_N_Lentil.Tests.Models
             };
             int setHigherThanEverExpected = 40;
             food.nutrients = new nutrients[setHigherThanEverExpected];
+        
             food.nutrients[0] = new nutrients
             {
                 measures = new measures[1],
                 name = "Energy",
-                nutrient_id = 208
-            };
+                nutrient_id = 208,
+               
+        };
             food.nutrients[0].measures[0] = new measures
             {
-                value = correctCalories
+                value = correctCalories,
+                qty =7.25M, 
             };
 
             food.nutrients[2] = new nutrients
@@ -192,6 +195,13 @@ namespace Lamb_N_Lentil.Tests.Models
         {
             decimal correct = 3.11M;
             Assert.AreEqual(correct , ingredient.VitaminA);
+        }
+
+        [TestMethod]
+        public void ConvertServingSize()
+        {
+            decimal correct = 7.25M;
+            Assert.AreEqual(correct, ingredient.ServingSize);
         }
     }
 }

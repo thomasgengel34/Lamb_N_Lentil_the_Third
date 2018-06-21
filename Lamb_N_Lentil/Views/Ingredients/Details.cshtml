@@ -5,10 +5,10 @@
 }  <h2> @Html.DisplayFor(model => model.Description) </h2>  <p>Values shown may vary from those shown on the container. The values shown here are from the database. It is possible the container was not updated or values may vary due to rounding.</p>
 <div id="NutritionLabel">
     <h1>Nutrition Facts</h1>
-    <p>Serving Size   ( @Html.DisplayFor(model => model.Label) )  ( @Html.DisplayFor(model => model.Eqv)  g)</p>
+    <p>Serving Size  @Html.DisplayFor(m=>m.ServingSize)   @Html.DisplayFor(m => m.Label)   ( @Html.DisplayFor(m => m.Eqv)  g)</p>
 
     <div class="thickHR"></div>
-    <p class="bold">Amount Per Serving</p>
+    <div class="bold">Amount Per Serving</div>
     <div class="thinHR"></div>
 
     <span class="bold"> @Html.DisplayNameFor(m => m.Calories) :</span>   @Html.DisplayFor(model => model.Calories)   <span class="right">
@@ -18,8 +18,8 @@
     <div class="mediumHR"></div>
     <div>
         <div class="row">
-            <div class="col-sm-9"></div>
-            <div class="col-sm-3 bold">% Daily Value*</div>
+            <div class="col-sm-8"></div>
+            <div class="col-sm-4 bold">% Daily Value*</div>
         </div>
         <div class="thinHR"></div>
         <div class="row">

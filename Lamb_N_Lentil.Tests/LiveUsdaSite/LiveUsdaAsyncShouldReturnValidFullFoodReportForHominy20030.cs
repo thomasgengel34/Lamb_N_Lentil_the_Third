@@ -1,30 +1,18 @@
-﻿using System.Collections.Generic;
-using Lamb_N_Lentil.Domain;
-using Lamb_N_Lentil.UI.Models;
+﻿using Lamb_N_Lentil.Domain.UsdaInformation;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
-using Lamb_N_Lentil.Domain.UsdaInformation;
 using System.Threading.Tasks;
 
 namespace Lamb_N_Lentil.Tests.LiveUsdaSite
 {
     [TestClass]
-    public class LiveUsdaAsyncShouldReturnValidFoodReportForHominy20030
-    {
-        private string ndbno = "20030";
-        private UsdaFoodReport report;
-        private UsdaAsync usdaAsync;
-
+    public class LiveUsdaAsyncShouldReturnValidFoodReportForHominy20030:LiveUsdaSiteTestSetup
+    {    
         [TestInitialize]
         public async Task CallFetchReport()
         {
+            Ndbno = "20030";  
             await FetchReport();
-        }
-
-        private async Task FetchReport()
-        {
-            usdaAsync = new UsdaAsync();
-            report = await usdaAsync.FetchUsdaFoodReport(ndbno);
-        }
+        } 
 
         [TestMethod]
         public void HasCorrectName()
@@ -36,7 +24,7 @@ namespace Lamb_N_Lentil.Tests.LiveUsdaSite
         [TestMethod]
         public void HasCorrectNdbno()
         {
-            Assert.AreEqual(ndbno, report.foods[0].food.desc.ndbno);
+            Assert.AreEqual(Ndbno, report.foods[0].food.desc.ndbno);
         }
 
         [TestMethod]
@@ -44,6 +32,13 @@ namespace Lamb_N_Lentil.Tests.LiveUsdaSite
         {
             string correct = "g";
             Assert.AreEqual(correct, report.foods[0].food.nutrients[0].unit);
+        }
+
+        [TestMethod]
+        public void HasCorrectServingSizeForFirstNutrient()
+        {
+            decimal correct = 0.0M;
+            Assert.AreEqual(correct, report.foods[0].food.nutrients[0].qty);
         }
     }
 }

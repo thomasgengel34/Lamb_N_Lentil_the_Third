@@ -301,9 +301,9 @@ namespace Lamb_N_Lentil.Tests.LiveUsdaSite
         }
 
         [TestMethod]
-        public async Task ManufacturerForCheddarCheese01009()
-        { 
-            string testNdbno = "01009";
+        public async Task FolicAcidForWalmartGardenRotini45058106()
+        {
+            string testNdbno = "45058106";
             decimal correct = 0.0M;
             UsdaFoodReport report = await usdaAsync.FetchUsdaFoodReport(testNdbno);
             var returned = (from c in report.foods[0].food.nutrients
@@ -312,11 +312,18 @@ namespace Lamb_N_Lentil.Tests.LiveUsdaSite
             Assert.AreEqual(correct, returned);
         }
 
-
         [TestMethod]
-        public async Task MyTestMethod()
+        public async Task FolicAcidForWalmartWholeGreenBeans45258782()
         {
-            UsdaFoodReport report = await usdaAsync.FetchUsdaFoodReport("01009");
+            string testNdbno = "45258782";
+            decimal correct = 0.0M;
+            UsdaFoodReport report = await usdaAsync.FetchUsdaFoodReport(testNdbno);
+            var returned = (from c in report.foods[0].food.nutrients
+                            where c.nutrient_id == 431
+                            select c.measures[0].value).FirstOrDefault();
+            Assert.AreEqual(correct, returned);
         }
+
+         
     }
 }

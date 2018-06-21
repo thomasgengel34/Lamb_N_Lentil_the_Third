@@ -63,7 +63,8 @@ namespace Lamb_N_Lentil.UI.Controllers
             {
                 ViewBag.NoResults = "";
             }
-            ViewBag.SearchTotal = usdaAsync.FetchedTotalFromSearch;
+            
+                 ViewBag.SearchTotal = ingredients.Count();
             ViewBag.TotalShown = ingredients.Count();
 
             return View(UIType.Index.ToString(), vm);

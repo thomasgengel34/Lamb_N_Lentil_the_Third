@@ -10,13 +10,14 @@ namespace Lamb_N_Lentil.Tests.MockUsdaAsyncSiteFoodList
     internal class MockUsdaAsyncFoodList : IUsdaAsync
     {
         public int FetchedTotalFromSearch { get; set; }
-        public string FetchedIngredientsInIngredient { get; set; } 
-        string IUsdaAsync.FetchedIngredientsInIngredient { get; set; } 
+        public string FetchedIngredientsInIngredient { get; set; }
+        string IUsdaAsync.FetchedIngredientsInIngredient { get; set; }
+        int IUsdaAsync.FetchedTotalFromSearch { get; set; }
 
         public async Task<List<IIngredient>> GetListOfIngredientsFromTextSearch(string searchString, string description)
         {
             int someRandomID = 79258888;
-            string sampleManufacturerOrFoodGroup="";
+            string sampleManufacturerOrFoodGroup = "";
             if (description == "" || description == UsdaDataSource.Both.ToString())
             {
                 sampleManufacturerOrFoodGroup = "Sample Manufacturer Or Food Group For Empty String";
@@ -32,7 +33,7 @@ namespace Lamb_N_Lentil.Tests.MockUsdaAsyncSiteFoodList
 
             await Task.Delay(0);
             List<IIngredient> list = new List<IIngredient>();
-            IIngredient ingredient = new Entity() { InstanceName = searchString, ID = someRandomID  };
+            IIngredient ingredient = new Entity() { InstanceName = searchString, ID = someRandomID };
             ingredient.ManufacturerOrFoodGroup = sampleManufacturerOrFoodGroup;
 
             if (searchString == "This Should Return No Ingredients")
@@ -48,10 +49,14 @@ namespace Lamb_N_Lentil.Tests.MockUsdaAsyncSiteFoodList
                )
                 return BuildIngredientList(list, searchString);
 
+
             if (searchString == "total")
             {
                 FetchedTotalFromSearch = 445321;
-                list.Add(ingredient);
+                for (int i = 0; i < FetchedTotalFromSearch; i++)
+                {
+                    list.Add(ingredient);
+                } 
                 return list;
             }
             else
@@ -70,6 +75,16 @@ namespace Lamb_N_Lentil.Tests.MockUsdaAsyncSiteFoodList
                 list.Add(new Entity { ID = i });
             }
             return list;
-        } 
+        }
+
+        Task<List<IIngredient>> IUsdaAsync.GetListOfIngredientsFromTextSearch(string searchString, string dataSource)
+        {
+            return GetListOfIngredientsFromTextSearch(searchString, dataSource);
+        }
+
+        Task<UsdaFoodReport> IUsdaAsync.FetchUsdaFoodReport(string ndbno)
+        {
+            throw new NotImplementedException("MockUsdaAsyncFoodList Fetch is not implemented for the interface");
+        }
     }
 }

@@ -8,5 +8,6 @@ namespace Lamb_N_Lentil.Domain.UsdaInformation
         Task<List<IIngredient>> GetListOfIngredientsFromTextSearch(string searchString, string dataSource = ""); 
         int FetchedTotalFromSearch { get; set; }
         string FetchedIngredientsInIngredient { get; set; }
+        Task<UsdaFoodReport> FetchUsdaFoodReport(string ndbno);
     }
 }

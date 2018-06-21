@@ -119,10 +119,12 @@
     <Compile Include="Controllers\IngredientControllerShould.cs" />
     <Compile Include="Infrastructure\UITypeShould.cs" />
     <Compile Include="LiveUsdaSite\LiveUsdaAsyncShouldReturnValidFoodWhen.cs" />
+    <Compile Include="LiveUsdaSite\LiveUsdaAsyncShouldReturnValidFullFoodReportForCheddarCheese01009.cs" />
     <Compile Include="LiveUsdaSite\LiveUsdaAsyncShouldReturnValidFullFoodReportForDicedPeaches45032698 .cs" />
     <Compile Include="LiveUsdaSite\LiveUsdaAsyncShouldReturnValidFullFoodReportForHominy20030.cs" />
     <Compile Include="LiveUsdaSite\IngredientControllerDetailMethodShould.cs" />
     <Compile Include="LiveUsdaSite\LiveUsdaAsyncTestForNutrientsShouldFind.cs" />
+    <Compile Include="LiveUsdaSite\LiveUsdaSiteTestSetup.cs" />
     <Compile Include="MockUsdaSiteFoodList\MockUsdaAsyncFoodList.cs" />
     <Compile Include="MockUsdaSiteFoodReport\MockUsdaAsyncForFoodReports.cs" />
     <Compile Include="MockUsdaSiteFoodList\MockUsdaAsyncFoodListTest.cs" />

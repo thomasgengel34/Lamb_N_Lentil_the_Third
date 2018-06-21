@@ -33,6 +33,7 @@ namespace Lamb_N_Lentil.Domain.UsdaInformation
                 ingredient.Label = food.nutrients.First().measures.First().label;
                 ingredient.Eqv = food.nutrients.First().measures.First().eqv;
                 Convert.ToInt16(food.nutrients[0].measures[0].value);
+                ingredient.ServingSize = food.nutrients[0].measures[0].qty;
             }
 
             ingredient.TotalFat = FindNutrientValue(204);
