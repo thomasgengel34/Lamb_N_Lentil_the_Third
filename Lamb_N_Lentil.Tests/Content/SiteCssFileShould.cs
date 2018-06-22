@@ -28,6 +28,14 @@ namespace Lamb_N_Lentil.Tests.Content
     background-color: white;
 }
 
+.jumbotron~p { 
+    padding-top:18px;
+}
+
+#footer p{
+    padding-top:20px;
+}
+
 /* Set padding to keep content from hitting the edges */
 .body-content {
     padding-left: 15px;
@@ -74,7 +82,7 @@ h1, h2, h3, h4, h5, h6, table, a {
     background-color: rgba(250,207,78,0);
     color: green;
 }
-
+ 
 a {
     text-decoration: underline;
 }
@@ -108,18 +116,20 @@ p {
     margin-top: -10px;
 }
 
-.IngredientsIndexTable {
+#IngredientsIndexTable {
     background-color: white;
-    width: 60%;
-}
+    
+} 
 
 tr td:first-of-type {
     width: 40%;
     padding-left: 2%;
+    background-color: white;
 }
 
 tr td:last-of-type {
     padding-right: 2%;
+    background-color: white;
 }
 
 tr .leftpadding10 {
@@ -139,6 +149,7 @@ h2.no_results {
 
 #IngredientsIndexTable tr th:last-child, #IngredientsIndexTable tr td:last-child {
     width: 5%;
+    background-color:white;
 }
 
 /* Nutrition Label - begin*/
@@ -166,11 +177,7 @@ h2.no_results {
         margin-top: 0;
         border-top: 0;
     }
-
-    /*#NutritionLabel hr:nth-of-type(2) {
-        margin-top: 0;
-        padding-top: 0;
-    }*/
+     
 
     #NutritionLabel .thickHR {
         height: 25px;

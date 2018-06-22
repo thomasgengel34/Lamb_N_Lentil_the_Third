@@ -51,5 +51,95 @@ namespace Lamb_N_Lentil.Tests.LiveUsdaSite
             decimal correct = 1.0M;
             Assert.AreEqual(correct, report.foods[0].food.nutrients[0].measures[0].qty);
         }
+
+        [TestMethod]
+        public void FolicAcid()
+        {
+            decimal correct = 0.0M;
+            var returned = (from c in report.foods[0].food.nutrients
+                            where c.nutrient_id == 431
+                            select c.measures[0].value).FirstOrDefault();
+            Assert.AreEqual(correct, returned);
+        }
+
+        [TestMethod]
+        public void Magnesium()
+        { 
+            decimal correct = 36.0M; 
+            var returned = (from c in report.foods[0].food.nutrients
+                            where c.nutrient_id == 304
+                            select c.measures[0].value).FirstOrDefault();
+            Assert.AreEqual(correct, returned);
+        }
+        
+        [TestMethod]
+        public void Calcium()
+        { 
+            decimal correct = 937.0M; 
+            var returned = (from c in report.foods[0].food.nutrients
+                            where c.nutrient_id == 301
+                            select c.measures[0].value).FirstOrDefault();
+            Assert.AreEqual(correct, returned);
+        }
+
+        [TestMethod]
+        public void VitaminD()
+        { 
+            decimal correct = 32.0M; 
+            var returned = (from c in report.foods[0].food.nutrients
+                            where c.nutrient_id == 324
+                            select c.measures[0].value).FirstOrDefault();
+            Assert.AreEqual(correct, returned);
+        }
+
+        [TestMethod]
+        public void Thiamine()
+        { 
+            decimal correct = 0.038M; 
+            var returned = (from c in report.foods[0].food.nutrients
+                            where c.nutrient_id == 404
+                            select c.measures[0].value).FirstOrDefault();
+            Assert.AreEqual(correct, returned);
+        }
+
+        [TestMethod]
+        public void Riboflavin()
+        { 
+            decimal correct = 0.565M; 
+            var returned = (from c in report.foods[0].food.nutrients
+                            where c.nutrient_id == 405
+                            select c.measures[0].value).FirstOrDefault();
+            Assert.AreEqual(correct, returned);
+        }
+
+        [TestMethod]
+        public void Niacin()
+        { 
+            decimal correct = 0.078M; 
+            var returned = (from c in report.foods[0].food.nutrients
+                            where c.nutrient_id == 406
+                            select c.measures[0].value).FirstOrDefault();
+            Assert.AreEqual(correct, returned);
+        }
+
+        [TestMethod]
+        public void VitaminB6()
+        { 
+            decimal correct = 0.087M; 
+            var returned = (from c in report.foods[0].food.nutrients
+                            where c.nutrient_id == 415
+                            select c.measures[0].value).FirstOrDefault();
+            Assert.AreEqual(correct, returned);
+        }
+
+        [TestMethod]
+        public void VitaminB12()
+        { 
+            decimal correct = 1.45M; 
+            var returned = (from c in report.foods[0].food.nutrients
+                            where c.nutrient_id == 418
+                            select c.measures[0].value).FirstOrDefault();
+            Assert.AreEqual(correct, returned);
+        }
     }
 }

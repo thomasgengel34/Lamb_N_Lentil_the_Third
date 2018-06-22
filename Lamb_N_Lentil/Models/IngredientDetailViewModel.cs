@@ -23,7 +23,7 @@ namespace Lamb_N_Lentil.UI.Models
         public string UpdateDate { get; set; }
         public string Label { get; set; }
         public decimal Eqv { get; set; }
-        public decimal Calories { get; set; }
+        public int Calories { get; set; }
         public decimal Calcium { get; set; }
 
         [Display(Name = "Total Fat")]
@@ -150,7 +150,7 @@ namespace Lamb_N_Lentil.UI.Models
                 Ndbno = ingredient.Ndbno,
                 UpdateDate = ingredient.UpdateDate,
                 Calcium = ingredient.Calcium,
-                Calories = ingredient.Calories,
+                Calories = Decimal.ToInt16(ingredient.Calories),
                 FolicAcid = ingredient.FolicAcid,
                 Iron = ingredient.Iron,
                 MonounsaturatedFat = ingredient.MonounsaturatedFat,

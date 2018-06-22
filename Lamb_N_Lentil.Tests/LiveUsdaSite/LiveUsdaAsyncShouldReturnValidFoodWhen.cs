@@ -43,8 +43,6 @@ namespace Lamb_N_Lentil.Tests.LiveUsdaSite
             string returnedIngredients = ingredient.IngredientsInIngredient;
             Assert.AreEqual(correctCount, usdaAsync.FetchedTotalFromSearch);
             Assert.AreEqual(correctIngredients, returnedIngredients);
-        }
-
-
+        } 
     }
 }
